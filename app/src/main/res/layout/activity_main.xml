@@ -18,6 +18,8 @@
         android:background="@drawable/nav_background_curved"
         app:itemIconTint="@color/bottomnavcolor"
         app:itemTextColor="@color/bottomnavcolor"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
