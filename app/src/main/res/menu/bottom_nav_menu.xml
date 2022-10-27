@@ -19,10 +19,5 @@
         android:checkable="false"
         android:icon="@drawable/iconsleep"
         android:title="@string/title_item3" />
-    <item
-        android:checkable="false"
-        android:enabled="true"
-        android:title="@string/title_item4"
-        android:visible="true" />
 
 </menu>
