@@ -6,7 +6,6 @@
         android:id="@+id/navigation_home"
         android:checkable="false"
         android:icon="@drawable/habitsicon"
-
         android:title="@string/title_item1" />
 
     <item
