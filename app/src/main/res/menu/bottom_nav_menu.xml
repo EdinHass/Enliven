@@ -22,7 +22,7 @@
     <item
         android:checkable="false"
         android:enabled="true"
-        android:title="Nešto"
+        android:title="@string/title_item4"
         android:visible="true" />
 
 </menu>
