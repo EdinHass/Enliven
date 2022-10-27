@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:checkable="true"
+        android:checkable="false"
         android:icon="@drawable/habitsicon"
 
         android:title="@string/title_item1" />
