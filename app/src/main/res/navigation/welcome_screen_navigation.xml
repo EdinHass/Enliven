@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/welcome_screen_navigation"
+    app:startDestination="@id/welcome_screen_start">
+    <fragment
+        android:id="@+id/welcome_screen_start"
+        android:name="com.example.enliven.welcome_screen_start"
+        android:label="fragment_welcome_screen_start"
+        tools:layout="@layout/fragment_welcome_screen_start" >
+        <action
+            android:id="@+id/action_welcome_screen_start_to_welcome_screen2"
+            app:destination="@id/welcome_screen2"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_from_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcome_screen2"
+        android:name="com.example.enliven.welcome_screen2"
+        android:label="fragment_welcome_screen2"
+        tools:layout="@layout/fragment_welcome_screen2" >
+        <action
+            android:id="@+id/action_welcome_screen2_to_welcome_screen_start"
+            app:destination="@id/welcome_screen_start"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+</navigation>
