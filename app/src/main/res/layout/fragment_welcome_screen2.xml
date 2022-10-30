@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dobrodošli u Enliven."
+            android:text="POZDRAV POZDRAV."
             android:textColor="@color/Pallete1"
             android:textSize="32sp"
             android:layout_marginTop="10dp"
