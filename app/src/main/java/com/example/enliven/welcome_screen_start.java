@@ -1,5 +1,6 @@
 package com.example.enliven;
 
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,8 +11,12 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,6 +61,7 @@ public class welcome_screen_start extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -67,6 +73,8 @@ public class welcome_screen_start extends Fragment {
                              Bundle savedInstanceState) {
         View view1 = inflater.inflate(R.layout.fragment_welcome_screen_start, container, false);
         btnNext = view1.findViewById(R.id.buttonNext);
+
+
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +85,15 @@ public class welcome_screen_start extends Fragment {
             }
 
         });
+
+        ImageView img = (ImageView) view1.findViewById(R.id.imageStarting1);
+        TextView text = (TextView) view1.findViewById(R.id.textWelcome1);
+        Animation animationTop = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_out_top);
+        Animation animationBottom = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_out_bottom);
+        Animation fade = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.fade_in_slow);
+        img.startAnimation(animationTop);
+        text.startAnimation(animationBottom);
+        btnNext.startAnimation(fade);
         return view1;
     }
 }

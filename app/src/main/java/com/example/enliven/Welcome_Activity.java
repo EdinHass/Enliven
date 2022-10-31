@@ -8,12 +8,13 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationBarItemView;
 
 public class Welcome_Activity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

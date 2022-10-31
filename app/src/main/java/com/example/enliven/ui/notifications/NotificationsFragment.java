@@ -1,6 +1,8 @@
 package com.example.enliven.ui.notifications;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,10 +33,13 @@ public class NotificationsFragment extends Fragment {
 
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
+        getActivity().setContentView(R.layout.fragment_notifications);
         card1Sleep = (RelativeLayout) root.findViewById(R.id.card1Sleep);
         card2Sleep = (RelativeLayout) root.findViewById(R.id.card2Sleep);
+        TextView zapocniText = (TextView) getActivity().findViewById(R.id.textViewZapocni);
+        SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
 
+        zapocniText.setText("Zdravo " + prefs.getString("UserName", "invalid"));
         card1Sleep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
