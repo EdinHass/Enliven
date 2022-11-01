@@ -24,20 +24,50 @@
         app:layout_constraintHorizontal_bias="0.5" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="95dp"
         android:layout_height="2dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="659dp"
+        android:background="@color/white"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:background="@color/white"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintVertical_bias="0.070"
-        />
+        app:layout_constraintVertical_bias="0.070" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/diary" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/feelings" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
