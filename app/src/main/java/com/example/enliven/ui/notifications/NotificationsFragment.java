@@ -48,16 +48,35 @@ public class NotificationsFragment extends Fragment {
         TextView zapocniText = (TextView) root.findViewById(R.id.textViewZapocni);
         long compare = GregorianCalendar.getInstance().get(Calendar.HOUR_OF_DAY)*3600 + GregorianCalendar.getInstance().get(Calendar.MINUTE)*60;
         SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
-        if((prefs.getLong("SleepTime", 0L) < compare) || (compare<(prefs.getLong("SleepTime", 0)+8*3600)%86400)){
-            zapocniText.setText("Laku noć, " + prefs.getString("UserName", "invalid") + ".");
-        }else {
-            zapocniText.setText("Zdravo, " + prefs.getString("UserName", "invalid") + ".");
+        if((prefs.getLong("SleepTime", 0)+8*3600)/86400!=0) {
+            if ((prefs.getLong("SleepTime", 0L) < compare) || (compare < (prefs.getLong("SleepTime", 0) + 8 * 3600) % 86400)) {
+                zapocniText.setText("Laku noć, " + prefs.getString("UserName", "invalid") + ".");
+            } else {
+                zapocniText.setText("Zdravo, " + prefs.getString("UserName", "invalid") + ".");
+            }
+        }else{
+            if ((prefs.getLong("SleepTime", 0L) < compare) && (compare < prefs.getLong("SleepTime", 0) + 8 * 3600)){
+                zapocniText.setText("Laku noć, " + prefs.getString("UserName", "invalid") + ".");
+            } else {
+                zapocniText.setText("Zdravo, " + prefs.getString("UserName", "invalid") + ".");
+            }
         }
-        String sleepTimeString = String.valueOf(prefs.getLong("SleepTime", 0L) / 3600);
+
+        String sleepTimeString = null;
+        long hours = prefs.getLong("SleepTime", 0L) / 3600;
+        long minutes = (prefs.getLong("SleepTime", 0L) % 3600) / 60;
+        if(hours<10){
+            sleepTimeString += "0";
+        }
+        sleepTimeString = String.valueOf(hours);
+
         sleepTimeString += ":";
+        if(minutes<10){
+            sleepTimeString += "0";
+        }
         sleepTimeString += String.valueOf((prefs.getLong("SleepTime", 0L) % 3600) / 60);
         TextView currTime = root.findViewById(R.id.currentSleepTime);
-        currTime.setText("Vrijeme spavanja: " + sleepTimeString);
+        currTime.setText(sleepTimeString);
 
 
         return root;

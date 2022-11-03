@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -69,9 +70,13 @@ public class welcome_screen_info1 extends Fragment {
             @Override
             public void onClick(View view) {
                 SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("UserName", nameField.getText().toString());
-                editor.apply();
-                Navigation.findNavController(view).navigate(R.id.action_welcome_screen_info1_to_welcome_sleep);
+                if(!nameField.getText().toString().trim().isEmpty()) {
+                    editor.putString("UserName", nameField.getText().toString().trim());
+                    editor.apply();
+                    Navigation.findNavController(view).navigate(R.id.action_welcome_screen_info1_to_welcome_sleep);
+                }else{
+                    Toast.makeText(getContext(), "Name should not be empty", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         return view1;
