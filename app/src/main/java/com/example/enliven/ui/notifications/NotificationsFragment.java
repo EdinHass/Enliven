@@ -23,6 +23,10 @@ import com.example.enliven.R;
 import com.example.enliven.card1activity;
 import com.example.enliven.databinding.FragmentNotificationsBinding;
 
+import java.sql.CallableStatement;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;
@@ -33,19 +37,27 @@ public class NotificationsFragment extends Fragment {
 
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        getActivity().setContentView(R.layout.fragment_notifications);
         card1Sleep = (RelativeLayout) root.findViewById(R.id.card1Sleep);
         card2Sleep = (RelativeLayout) root.findViewById(R.id.card2Sleep);
-        TextView zapocniText = (TextView) getActivity().findViewById(R.id.textViewZapocni);
-        SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
-
-        zapocniText.setText("Zdravo " + prefs.getString("UserName", "invalid"));
         card1Sleep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_notifications_to_card1activity);
             }
         });
+        TextView zapocniText = (TextView) root.findViewById(R.id.textViewZapocni);
+        long compare = GregorianCalendar.getInstance().get(Calendar.HOUR_OF_DAY)*3600 + GregorianCalendar.getInstance().get(Calendar.MINUTE)*60;
+        SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
+        if((prefs.getLong("SleepTime", 0L) < compare) || (compare<(prefs.getLong("SleepTime", 0)+8*3600)%86400)){
+            zapocniText.setText("Laku noć, " + prefs.getString("UserName", "invalid") + ".");
+        }else {
+            zapocniText.setText("Zdravo, " + prefs.getString("UserName", "invalid") + ".");
+        }
+        String sleepTimeString = String.valueOf(prefs.getLong("SleepTime", 0L) / 3600);
+        sleepTimeString += ":";
+        sleepTimeString += String.valueOf((prefs.getLong("SleepTime", 0L) % 3600) / 60);
+        TextView currTime = root.findViewById(R.id.currentSleepTime);
+        currTime.setText("Vrijeme spavanja: " + sleepTimeString);
 
 
         return root;

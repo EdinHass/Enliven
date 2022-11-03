@@ -24,127 +24,144 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.020" />
 
-    <LinearLayout
-        android:layout_width="80dp"
+
+    <ImageView
+        android:id="@+id/linearLayout2"
+        android:layout_width="150dp"
         android:layout_height="2dp"
+        android:layout_marginTop="12dp"
         android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewZapocni" />
+
+    <TextView
+        android:id="@+id/currentSleepTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alata"
+        android:text="Vrijeme spavanja: "
+        android:textColor="@color/white"
+        android:textSize="16dp"
         app:layout_constraintBottom_toTopOf="@+id/mainCards"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.070" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.061" />
 
+    <LinearLayout
+        android:id="@+id/mainCards"
+        android:layout_width="409dp"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="350dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:id="@+id/mainCards"
-            android:layout_width="409dp"
-            android:layout_height="fill_parent"
-            android:layout_marginTop="380dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="20dp"
-                android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:fontFamily="@font/alata"
+                android:text="Preporučeno"
+                android:textColor="@color/PalleteLightText"
+                android:textSize="16dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="30dp"
-                    android:fontFamily="@font/alata"
-                    android:text="Preporučeno"
-                    android:textColor="@color/PalleteLightText"
-                    android:textSize="16dp" />
+            <HorizontalScrollView
 
-                <HorizontalScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent">
 
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                    <RelativeLayout
+                        android:id="@+id/card1Sleep"
+                        android:layout_width="350dp"
+                        android:layout_height="220dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/simple_background_pink"
+                        android:clickable="true"
+                        android:padding="30dp">
 
-                        <RelativeLayout
-                            android:id="@+id/card1Sleep"
-                            android:layout_width="350dp"
-                            android:layout_height="220dp"
-                            android:layout_marginLeft="20dp"
-                            android:background="@drawable/simple_background_pink"
-                            android:padding="30dp"
-                            android:clickable="true">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/alata"
+                            android:text="Meditacije"
+                            android:textColor="@color/white"
+                            android:textSize="32sp" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/alata"
-                                android:text="Meditacije"
-                                android:textColor="@color/white"
-                                android:textSize="32sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="50dp"
+                            android:fontFamily="@font/alata"
+                            android:text="za spavanje"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="50dp"
-                                android:fontFamily="@font/alata"
-                                android:text="za spavanje"
-                                android:textColor="@color/white"
-                                android:textSize="18sp" />
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="120dp"
+                            android:src="@drawable/headphones_icon" />
 
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_marginTop="120dp"
-                                android:src="@drawable/headphones_icon" />
+                    </RelativeLayout>
 
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/card2Sleep"
-                            android:layout_width="350dp"
-                            android:layout_height="220dp"
-                            android:layout_marginLeft="15dp"
-                            android:background="@drawable/simple_purple_background"
-                            android:padding="30dp">
+                    <RelativeLayout
+                        android:id="@+id/card2Sleep"
+                        android:layout_width="350dp"
+                        android:layout_height="220dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/simple_purple_background"
+                        android:padding="30dp">
 
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/alata"
-                                android:text="Meditacije"
-                                android:textColor="@color/white"
-                                android:textSize="32sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/alata"
+                            android:text="Meditacije"
+                            android:textColor="@color/white"
+                            android:textSize="32sp" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="50dp"
-                                android:fontFamily="@font/alata"
-                                android:text="za spavanje"
-                                android:textColor="@color/white"
-                                android:textSize="18sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="50dp"
+                            android:fontFamily="@font/alata"
+                            android:text="za spavanje"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
 
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_marginTop="120dp"
-                                android:src="@drawable/headphones_icon" />
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="120dp"
+                            android:src="@drawable/headphones_icon" />
 
-                        </RelativeLayout>
-                    </LinearLayout>
-                </HorizontalScrollView>
-            </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
         </LinearLayout>
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

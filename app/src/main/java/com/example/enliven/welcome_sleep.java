@@ -12,13 +12,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TimePicker;
+
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link welcome_screen_info1#newInstance} factory method to
+ * Use the {@link welcome_sleep#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class welcome_screen_info1 extends Fragment {
+public class welcome_sleep extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,7 +32,7 @@ public class welcome_screen_info1 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public welcome_screen_info1() {
+    public welcome_sleep() {
         // Required empty public constructor
     }
 
@@ -39,11 +42,11 @@ public class welcome_screen_info1 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment welcome_screen_info1.
+     * @return A new instance of fragment welcome_sleep.
      */
     // TODO: Rename and change types and number of parameters
-    public static welcome_screen_info1 newInstance(String param1, String param2) {
-        welcome_screen_info1 fragment = new welcome_screen_info1();
+    public static welcome_sleep newInstance(String param1, String param2) {
+        welcome_sleep fragment = new welcome_sleep();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -52,26 +55,40 @@ public class welcome_screen_info1 extends Fragment {
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view1 = inflater.inflate(R.layout.fragment_welcome_screen_info1, container, false);
+        View view1 = inflater.inflate(R.layout.fragment_welcome_sleep, container, false);
         Button buttonPrev = view1.findViewById(R.id.buttonPrev);
         Button buttonNext = view1.findViewById(R.id.buttonNext);
-        EditText nameField = view1.findViewById(R.id.nameField);
         buttonPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_welcome_screen_info1_to_welcome_screen4);
+                Navigation.findNavController(view).navigate(R.id.action_welcome_sleep_to_welcome_screen_info1);
             }
         });
         SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
+        TimePicker vrijeme = view1.findViewById(R.id.timeSelect);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                long vr = 0;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                    vr = vrijeme.getHour() * 3600L + vrijeme.getMinute() * 60L;
+                }
                 SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("UserName", nameField.getText().toString());
+                editor.putLong("SleepTime", vr);
+                editor.putBoolean("firstrun", false);
                 editor.apply();
-                Navigation.findNavController(view).navigate(R.id.action_welcome_screen_info1_to_welcome_sleep);
+                getActivity().finish();
             }
         });
         return view1;
