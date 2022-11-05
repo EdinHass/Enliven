@@ -11,6 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -50,19 +51,30 @@ public class NotificationsFragment extends Fragment {
         long compare = GregorianCalendar.getInstance().get(Calendar.HOUR_OF_DAY)*3600 + GregorianCalendar.getInstance().get(Calendar.MINUTE)*60;
         SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
         int sleepHours = prefs.getInt("sleepHours", 8);
-        if((prefs.getLong("SleepTime", 0)+sleepHours*3600)/86400!=0) {
-            if ((prefs.getLong("SleepTime", 0L) < compare) || (compare < (prefs.getLong("SleepTime", 0) + 8 * 3600) % 86400)) {
+        long sleepTime = prefs.getLong("SleepTime", 0);
+        if((sleepTime+sleepHours*3600L)/86400L!=0) {
+            if ((sleepTime < compare) || (compare < (sleepTime + sleepHours * 3600) % 86400)) {
                 zapocniText.setText("Laku noć, " + prefs.getString("UserName", "invalid") + ".");
+                Toast.makeText(getContext(), "Napomena: Vrijeme je za spavanje!", Toast.LENGTH_SHORT).show();
             } else {
                 zapocniText.setText("Zdravo, " + prefs.getString("UserName", "invalid") + ".");
             }
         }else{
-            if ((prefs.getLong("SleepTime", 0L) < compare) && (compare < prefs.getLong("SleepTime", 0) + 8 * 3600)){
+            if ((sleepTime < compare) && (compare < sleepTime + sleepHours * 3600)){
                 zapocniText.setText("Laku noć, " + prefs.getString("UserName", "invalid") + ".");
+                Toast.makeText(getContext(), "Napomena: Vrijeme je za spavanje!", Toast.LENGTH_SHORT).show();
             } else {
                 zapocniText.setText("Zdravo, " + prefs.getString("UserName", "invalid") + ".");
             }
         }
+        Animation animationTopLight = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_out_top_light);
+        zapocniText.startAnimation(animationTopLight);
+        Animation animationSide = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_from_left_slow);
+        Animation animationBottomLight = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_out_bottom_light);
+        Animation animationFade = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.fade_in_slow);
+        root.findViewById(R.id.informationLayout).startAnimation(animationSide);
+        root.findViewById(R.id.mainCards).startAnimation(animationBottomLight);
+        root.findViewById(R.id.linearLayout2).startAnimation(animationFade);
 
         long hours = prefs.getLong("SleepTime", 0L) / 3600;
         long minutes = (prefs.getLong("SleepTime", 0L) % 3600) / 60;

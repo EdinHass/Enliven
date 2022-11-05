@@ -39,6 +39,7 @@
 
 
     <LinearLayout
+        android:id="@+id/informationLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -78,9 +79,7 @@
             android:id="@+id/wakeUpTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="114dp">
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/currentWakeUpTimeIcon"
@@ -107,7 +106,7 @@
         android:id="@+id/mainCards"
         android:layout_width="409dp"
         android:layout_height="fill_parent"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="330dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
