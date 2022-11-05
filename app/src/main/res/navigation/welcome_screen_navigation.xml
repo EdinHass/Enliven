@@ -90,5 +90,45 @@
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_from_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_welcome_screen_info1_to_welcome_sleep"
+            app:destination="@id/welcome_sleep"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_from_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcome_sleep"
+        android:name="com.example.enliven.welcome_sleep"
+        android:label="fragment_welcome_sleep"
+        tools:layout="@layout/fragment_welcome_sleep" >
+        <action
+            android:id="@+id/action_welcome_sleep_to_welcome_screen_info1"
+            app:destination="@id/welcome_screen_info1"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_welcome_sleep_to_welcome_sleep2"
+            app:destination="@id/welcome_sleep2"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_from_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/welcome_sleep2"
+        android:name="com.example.enliven.welcome_sleep2"
+        android:label="fragment_welcome_sleep2"
+        tools:layout="@layout/fragment_welcome_sleep2" >
+        <action
+            android:id="@+id/action_welcome_sleep2_to_welcome_sleep"
+            app:destination="@id/welcome_sleep"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 </navigation>

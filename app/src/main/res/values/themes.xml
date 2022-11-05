@@ -20,5 +20,9 @@
         <item name="fullscreenTextColor">@color/light_blue_A200</item>
     </style>
 
+    <style name="BottomNavigationViewTextStyle">
+        <item name="android:fontFamily">@font/alata</item>
+    </style>
+
 
 </resources>
