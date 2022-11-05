@@ -46,9 +46,11 @@ public class NotificationsFragment extends Fragment {
             }
         });
         TextView zapocniText = (TextView) root.findViewById(R.id.textViewZapocni);
+
         long compare = GregorianCalendar.getInstance().get(Calendar.HOUR_OF_DAY)*3600 + GregorianCalendar.getInstance().get(Calendar.MINUTE)*60;
         SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
-        if((prefs.getLong("SleepTime", 0)+8*3600)/86400!=0) {
+        int sleepHours = prefs.getInt("sleepHours", 8);
+        if((prefs.getLong("SleepTime", 0)+sleepHours*3600)/86400!=0) {
             if ((prefs.getLong("SleepTime", 0L) < compare) || (compare < (prefs.getLong("SleepTime", 0) + 8 * 3600) % 86400)) {
                 zapocniText.setText("Laku noć, " + prefs.getString("UserName", "invalid") + ".");
             } else {
@@ -62,22 +64,16 @@ public class NotificationsFragment extends Fragment {
             }
         }
 
-        String sleepTimeString = null;
         long hours = prefs.getLong("SleepTime", 0L) / 3600;
         long minutes = (prefs.getLong("SleepTime", 0L) % 3600) / 60;
-        if(hours<10){
-            sleepTimeString += "0";
-        }
-        sleepTimeString = String.valueOf(hours);
-
-        sleepTimeString += ":";
-        if(minutes<10){
-            sleepTimeString += "0";
-        }
-        sleepTimeString += String.valueOf((prefs.getLong("SleepTime", 0L) % 3600) / 60);
+        String sleepTimeString = formatTime(hours, minutes);
         TextView currTime = root.findViewById(R.id.currentSleepTime);
         currTime.setText(sleepTimeString);
 
+        long wakeUpTime = (prefs.getLong("SleepTime", 0)+sleepHours*3600)%86400;
+        String wakeUpTimeString = formatTime(wakeUpTime/3600, (wakeUpTime%3600)/60);
+        TextView wakeupTime = root.findViewById(R.id.wakeUpTimeText);
+        wakeupTime.setText(wakeUpTimeString);
 
         return root;
     }
@@ -86,5 +82,23 @@ public class NotificationsFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public String formatTime(long hours, long minutes){
+        String time = "";
+        if(hours<10){
+            time = "0";
+            time += String.valueOf(hours);
+        }else{
+            time = String.valueOf(hours);
+        }
+
+        time += ":";
+        if(minutes<10){
+            time += "0";
+        }
+        time += String.valueOf(minutes);
+
+        return time;
     }
 }
