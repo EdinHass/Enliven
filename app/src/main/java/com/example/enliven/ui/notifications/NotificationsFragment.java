@@ -82,7 +82,7 @@ public class NotificationsFragment extends Fragment {
         TextView currTime = root.findViewById(R.id.currentSleepTime);
         currTime.setText(sleepTimeString);
 
-        long wakeUpTime = (prefs.getLong("SleepTime", 0)+sleepHours*3600)%86400;
+        long wakeUpTime = (prefs.getLong("SleepTime", 0)+sleepHours*3600L)%86400;
         String wakeUpTimeString = formatTime(wakeUpTime/3600, (wakeUpTime%3600)/60);
         TextView wakeupTime = root.findViewById(R.id.wakeUpTimeText);
         wakeupTime.setText(wakeUpTimeString);

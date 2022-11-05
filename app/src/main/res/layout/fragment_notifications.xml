@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_sleep"
+    android:background="@drawable/background_sleep_ff"
     tools:context=".ui.notifications.NotificationsFragment">
 
 
@@ -106,7 +106,7 @@
         android:id="@+id/mainCards"
         android:layout_width="409dp"
         android:layout_height="fill_parent"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="320dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +127,8 @@
                 android:fontFamily="@font/alata"
                 android:text="Preporučeno"
                 android:textColor="@color/PalleteLightText"
-                android:textSize="16dp" />
+                android:textSize="16dp"
+                android:layout_marginBottom="10dp"/>
 
             <HorizontalScrollView
 
@@ -143,8 +144,8 @@
                         android:id="@+id/card1Sleep"
                         android:layout_width="350dp"
                         android:layout_height="220dp"
-                        android:layout_marginLeft="20dp"
-                        android:background="@drawable/simple_background_pink"
+                        android:layout_marginLeft="30dp"
+                        android:background="@drawable/newcard_purple"
                         android:clickable="true"
                         android:padding="30dp">
 
@@ -179,7 +180,7 @@
                         android:layout_width="350dp"
                         android:layout_height="220dp"
                         android:layout_marginLeft="15dp"
-                        android:background="@drawable/simple_purple_background"
+                        android:background="@drawable/newcard_pink"
                         android:padding="30dp">
 
 

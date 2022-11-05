@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 
 /**
@@ -67,6 +69,14 @@ public class welcome_sleep2 extends Fragment {
         card1 = view1.findViewById(R.id.SixHourPlanCard);
         card2 = view1.findViewById(R.id.SevenHourPlanCard);
         card3 = view1.findViewById(R.id.EightHourPlanCard);
+
+        Animation slideLeft = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_from_left_slow);
+        Animation slideRight = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_from_right_slow);
+
+
+        view1.findViewById(R.id.SixHourContainer).startAnimation(slideLeft);
+        view1.findViewById(R.id.SevenHourContainer).startAnimation(slideRight);
+        view1.findViewById(R.id.EightHourContainer).startAnimation(slideLeft);
 
         SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();

@@ -75,7 +75,7 @@ public class welcome_screen_info1 extends Fragment {
                     editor.apply();
                     Navigation.findNavController(view).navigate(R.id.action_welcome_screen_info1_to_welcome_sleep);
                 }else{
-                    Toast.makeText(getContext(), "Name should not be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Ime ne može biti prazno!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

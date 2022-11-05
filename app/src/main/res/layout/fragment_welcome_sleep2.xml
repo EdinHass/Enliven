@@ -18,7 +18,7 @@
             android:text="Plan spavanja"
             android:layout_marginEnd="20dp"
             android:textColor="@color/Pallete1"
-            android:textSize="32sp"
+            android:textSize="46sp"
             android:layout_marginTop="15dp"
             android:layout_marginStart="50dp"
             android:layout_marginBottom="20dp"
@@ -27,6 +27,7 @@
 
 
         <LinearLayout
+            android:id="@+id/SixHourContainer"
             android:layout_width="400dp"
             android:layout_height="180dp"
             android:orientation="vertical">
@@ -39,24 +40,24 @@
                 android:layout_height="150dp"
                 android:layout_marginStart="10dp"
                 android:layout_gravity="center"
-                android:background="@drawable/simple_purple_background">
+                android:background="@drawable/curved_dark">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="6-Satni Plan"
                     android:textColor="@color/white"
                     android:fontFamily="@font/alata"
-                    android:textSize="20sp"
+                    android:textSize="24sp"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="30dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nije preporučljivo"
-                    android:textColor="@color/Pallete1"
+                    android:textColor="@color/PalleteLightText"
                     android:fontFamily="@font/alata"
                     android:textSize="16sp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="60dp"
                     android:layout_marginLeft="30dp"/>
 
             </RelativeLayout>
@@ -68,6 +69,7 @@
                 android:layout_marginLeft="200dp"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/SevenHourContainer"
             android:layout_width="400dp"
             android:layout_height="180dp"
             android:orientation="vertical">
@@ -80,24 +82,24 @@
                 android:layout_height="150dp"
                 android:layout_marginStart="10dp"
                 android:layout_gravity="center"
-                android:background="@drawable/simple_purple_background">
+                android:background="@drawable/curved_dark">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="7-Satni Plan"
                     android:textColor="@color/white"
                     android:fontFamily="@font/alata"
-                    android:textSize="20sp"
+                    android:textSize="24sp"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="30dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Srednje"
-                    android:textColor="@color/Pallete1"
+                    android:textColor="@color/PalleteLightText"
                     android:fontFamily="@font/alata"
                     android:textSize="16sp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="60dp"
                     android:layout_marginLeft="30dp"/>
 
             </RelativeLayout>
@@ -109,6 +111,7 @@
                 android:layout_marginLeft="180dp"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/EightHourContainer"
             android:layout_width="400dp"
             android:layout_height="180dp"
             android:orientation="vertical">
@@ -121,24 +124,24 @@
                 android:layout_height="150dp"
                 android:layout_marginStart="10dp"
                 android:layout_gravity="center"
-                android:background="@drawable/simple_purple_background">
+                android:background="@drawable/curved_dark">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="8-Satni Plan"
                     android:textColor="@color/white"
                     android:fontFamily="@font/alata"
-                    android:textSize="20sp"
+                    android:textSize="24sp"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="30dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Prepoučeno"
-                    android:textColor="@color/Pallete1"
+                    android:textColor="@color/Pallete3"
                     android:fontFamily="@font/alata"
                     android:textSize="16sp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="60dp"
                     android:layout_marginLeft="30dp"/>
 
             </RelativeLayout>
