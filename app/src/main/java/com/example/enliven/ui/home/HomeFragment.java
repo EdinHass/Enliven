@@ -21,7 +21,7 @@ import com.example.enliven.databinding.FragmentHomeBinding;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
-    private ConstraintLayout dnevnikcard, osjecanjecard;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -31,13 +31,7 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        getActivity().setContentView(R.layout.fragment_home);
-        dnevnikcard = (ConstraintLayout) root.findViewById(R.id.dnevnikcard);
-        osjecanjecard = (ConstraintLayout) root.findViewById(R.id.osjecanjecard);
-        TextView textpocetni = (TextView) getActivity().findViewById(R.id.textpocetni);
-        SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
 
-        textpocetni.setText("Kako se danas osjećaš?");
 
 
         return root;
