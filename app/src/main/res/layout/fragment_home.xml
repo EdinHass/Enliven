@@ -8,7 +8,7 @@
     tools:context=".ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textpocetni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alata"
@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textpocetni"
         app:layout_constraintVertical_bias="0.070" />
 
     <LinearLayout
@@ -56,7 +56,8 @@
             android:layout_width="match_parent"
             android:layout_height="173dp"
             android:layout_margin="16dp"
-            android:background="@drawable/simple_background_pink">
+            android:background="@drawable/simple_background_pink"
+            android:id="@+id/dnevnikcard">
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -111,7 +112,8 @@
             android:layout_width="match_parent"
             android:layout_height="173dp"
             android:layout_margin="16dp"
-            android:background="@drawable/simple_background_pink">
+            android:background="@drawable/simple_background_pink"
+            android:id="@+id/osjecanjecard">
 
             <ImageView
                 android:id="@+id/imageView7"
