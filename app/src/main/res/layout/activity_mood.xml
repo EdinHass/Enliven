@@ -59,15 +59,156 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="20dp"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
                         <RelativeLayout
                             android:layout_width="150dp"
                             android:layout_height="150dp"
-                            android:background="@drawable/newcard_purple_light">
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/new_purple_card"
+                            android:clickable="true">
+
+                            <TextView
+                                android:id="@+id/textsreca"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginEnd="34dp"
+                                android:fontFamily="@font/alata"
+                                android:text="Sreća"
+                                android:textColor="@color/white"
+                                android:textSize="35sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="30dp"
+                            android:background="@drawable/new_purple_card"
+                            android:clickable="true">
+
+                            <TextView
+                                android:id="@+id/texttuga"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginEnd="34dp"
+                                android:fontFamily="@font/alata"
+                                android:text="Tuga"
+                                android:textColor="@color/white"
+                                android:textSize="35sp" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/new_purple_card"
+                            android:clickable="true">
+
+                            <TextView
+                                android:id="@+id/textljutnja"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginEnd="20dp"
+                                android:fontFamily="@font/alata"
+                                android:text="Ljutnja"
+                                android:textColor="@color/white"
+                                android:textSize="35sp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="30dp"
+                            android:background="@drawable/new_purple_card"
+                            android:clickable="true">
+
+                            <TextView
+                                android:id="@+id/textumor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginEnd="34dp"
+                                android:fontFamily="@font/alata"
+                                android:text="Umor"
+                                android:textColor="@color/white"
+                                android:textSize="35sp" />
 
                         </RelativeLayout>
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/new_purple_card"
+                            android:clickable="true">
+
+                            <TextView
+                                android:id="@+id/textanksioznost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginEnd="20dp"
+                                android:fontFamily="@font/alata"
+                                android:text="Anksiozno"
+                                android:textColor="@color/white"
+                                android:textSize="26sp"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="30dp"
+                            android:background="@drawable/new_purple_card"
+                            android:clickable="true">
+
+                            <TextView
+                                android:id="@+id/texdepresivno"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginEnd="34dp"
+                                android:fontFamily="@font/alata"
+                                android:text="Depresija"
+                                android:textColor="@color/white"
+                                android:textSize="26sp" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
                 </LinearLayout>
 
         </LinearLayout>
