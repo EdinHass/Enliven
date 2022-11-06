@@ -20,7 +20,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".diary_activity"
+            android:name=".diaryactivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
