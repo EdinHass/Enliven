@@ -21,6 +21,7 @@ import com.example.enliven.databinding.FragmentHomeBinding;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private  ConstraintLayout carddnevnik, cardosjecanje;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -30,6 +31,10 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        carddnevnik = (ConstraintLayout) root.findViewById(R.id.dnevnikcard);
+        cardosjecanje = (ConstraintLayout) root.findViewById(R.id.osjecanjecard);
+
 
 
 
