@@ -31,4 +31,14 @@
         android:name="com.example.enliven.card1activity"
         android:label="activity_card1activity"
         tools:layout="@layout/activity_card1activity" />
+    <activity
+        android:id="@+id/moodActivity"
+        android:name="com.example.enliven.MoodActivity"
+        android:label="activity_mood"
+        tools:layout="@layout/activity_mood" />
+    <activity
+        android:id="@+id/diaryactivity"
+        android:name="com.example.enliven.diaryactivity"
+        android:label="activity_diaryactivity"
+        tools:layout="@layout/activity_diaryactivity" />
 </navigation>

@@ -30,9 +30,23 @@ public class DashboardFragment extends Fragment {
         dnevnikcard = (ConstraintLayout) root.findViewById(R.id.dnevnikcard);
         osjecanjecard = (ConstraintLayout) root.findViewById(R.id.osjecanjecard);
 
+        osjecanjecard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_dashboardFragment_to_moodActivity22);
+            }
+        });
+
+        dnevnikcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_dashboardFragment_to_diaryactivity23);
+            }
+        });
 
 
-        TextView textpocetni = (TextView) root.findViewById(R.id.textpocetni);
+
+
 
 
 
