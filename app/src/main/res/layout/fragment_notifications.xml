@@ -39,6 +39,7 @@
 
 
     <LinearLayout
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/informationLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,7 +60,6 @@
                 android:id="@+id/currentSleepTimeIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginEnd="5dp"
                 android:src="@drawable/ic_baseline_single_bed_24" />
@@ -85,7 +85,6 @@
                 android:id="@+id/currentWakeUpTimeIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginEnd="5dp"
                 android:src="@drawable/ic_baseline_wb_sunny_24" />
@@ -102,36 +101,26 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/mainCards"
-        android:layout_width="409dp"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="320dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
+            android:id="@+id/mainCards"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="370dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp"
                 android:fontFamily="@font/alata"
                 android:text="Preporučeno"
                 android:textColor="@color/PalleteLightText"
                 android:textSize="16dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginBottom="10dp"/>
 
             <HorizontalScrollView
-
+                android:scrollbars="none"
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent">
 
@@ -141,10 +130,10 @@
                     android:orientation="horizontal">
 
                     <RelativeLayout
+                        android:layout_marginStart="20dp"
                         android:id="@+id/card1Sleep"
                         android:layout_width="350dp"
                         android:layout_height="220dp"
-                        android:layout_marginLeft="30dp"
                         android:background="@drawable/newcard_purple"
                         android:clickable="true"
                         android:padding="30dp">
@@ -154,7 +143,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:fontFamily="@font/alata"
-                            android:text="Meditacije"
+                            android:text="Zvukovi i Muzika"
                             android:textColor="@color/white"
                             android:textSize="32sp" />
 
@@ -212,7 +201,7 @@
                 </LinearLayout>
             </HorizontalScrollView>
         </LinearLayout>
-    </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
