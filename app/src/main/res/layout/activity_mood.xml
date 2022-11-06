@@ -177,12 +177,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
-                                android:layout_marginLeft="35dp"
+                                android:layout_marginStart="20dp"
                                 android:layout_marginEnd="20dp"
                                 android:fontFamily="@font/alata"
                                 android:text="Anksiozno"
                                 android:textColor="@color/white"
-                                android:textSize="26sp"/>
+                                android:textSize="26sp" />
 
                         </RelativeLayout>
 
@@ -208,6 +208,11 @@
 
                         </RelativeLayout>
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"></LinearLayout>
 
                 </LinearLayout>
 
