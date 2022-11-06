@@ -33,14 +33,14 @@ public class DashboardFragment extends Fragment {
         osjecanjecard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_dashboardFragment_to_moodActivity22);
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_dashboardFragment_to_moodActivity2);
             }
         });
 
         dnevnikcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_dashboardFragment_to_diaryactivity23);
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_dashboardFragment_to_diaryactivity2);
             }
         });
 

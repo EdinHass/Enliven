@@ -39,8 +39,8 @@
         android:id="@+id/Cards"
         android:layout_width="409dp"
         android:layout_height="fill_parent"
-        android:layout_marginTop="240dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="70dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="173dp"
             android:layout_margin="16dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/new_card_light_dark"
             android:clickable="true">
 
@@ -114,6 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="173dp"
             android:layout_margin="16dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/new_card_light_dark"
             android:clickable="true">
 

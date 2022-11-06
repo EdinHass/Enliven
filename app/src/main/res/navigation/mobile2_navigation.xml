@@ -11,10 +11,10 @@
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" >
         <action
-            android:id="@+id/action_dashboardFragment_to_moodActivity22"
+            android:id="@+id/action_dashboardFragment_to_moodActivity2"
             app:destination="@id/moodActivity2" />
         <action
-            android:id="@+id/action_dashboardFragment_to_diaryactivity23"
+            android:id="@+id/action_dashboardFragment_to_diaryactivity2"
             app:destination="@id/diaryactivity2" />
     </fragment>
     <activity
