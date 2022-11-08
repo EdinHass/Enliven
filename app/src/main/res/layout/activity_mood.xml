@@ -177,12 +177,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginEnd="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginTop="20dp"
                                 android:fontFamily="@font/alata"
                                 android:text="Anksiozno"
                                 android:textColor="@color/white"
-                                android:textSize="26sp" />
+                                android:textSize="23sp" />
 
                         </RelativeLayout>
 
@@ -198,13 +199,13 @@
                                 android:id="@+id/texdepresivno"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginLeft="35dp"
-                                android:layout_marginEnd="34dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginTop="20dp"
                                 android:fontFamily="@font/alata"
-                                android:text="Depresija"
+                                android:text="Depresivno"
                                 android:textColor="@color/white"
-                                android:textSize="26sp" />
+                                android:textSize="21sp" />
 
                         </RelativeLayout>
                     </LinearLayout>
@@ -229,8 +230,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
-                                android:layout_marginStart="20dp"
                                 android:layout_marginEnd="20dp"
+
                                 android:fontFamily="@font/alata"
                                 android:text="Stres"
                                 android:textColor="@color/white"

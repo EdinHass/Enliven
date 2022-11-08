@@ -15,7 +15,14 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.example.enliven.ui.dashboard.DashboardFragment"
         android:label="@string/title_item2"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_moodActivity"
+            app:destination="@id/moodActivity" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_diaryactivity"
+            app:destination="@id/diaryactivity" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
