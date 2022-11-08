@@ -60,7 +60,7 @@ public class DashboardFragment extends Fragment {
 
         TextView pocetniText = (TextView) root.findViewById(R.id.textpocetni);
         SharedPreferences sprefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
-        pocetniText.setText( "Zdravo,"+ sprefs.getString("UserName", "invalid") + "!");
+        pocetniText.setText( "Zdravo, "+ sprefs.getString("UserName", "invalid") + "!");
 
 
 
