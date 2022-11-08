@@ -22,6 +22,8 @@ import com.example.enliven.MainActivity;
 import  com.example.enliven.diaryactivity;
 import com.example.enliven.databinding.FragmentDashboardBinding;
 
+import org.w3c.dom.Text;
+
 public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
@@ -55,6 +57,10 @@ public class DashboardFragment extends Fragment {
                 Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_diaryactivity);
             }
         });
+
+        TextView pocetniText = (TextView) root.findViewById(R.id.textpocetni);
+        SharedPreferences sprefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
+        pocetniText.setText( "Zdravo,"+ sprefs.getString("UserName", "invalid") + "!");
 
 
 
