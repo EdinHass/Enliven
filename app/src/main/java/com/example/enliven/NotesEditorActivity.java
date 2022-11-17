@@ -77,15 +77,12 @@ public class NotesEditorActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.save_note_menu, menu);
-        return  super.onCreateOptionsMenu(menu);
-    }
-
+        return  super.onCreateOptionsMenu(menu);}
 
 
     @Override
-    public boolean onOptionsMenuItemSelected(@NonNull MenuItem item){
-
-        super.onOptionsItemSelected(item);
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+       super.onOptionsItemSelected(item);
 
         if(item.getItemId() == R.id.save_note){
 
@@ -96,4 +93,9 @@ public class NotesEditorActivity extends AppCompatActivity {
         }
         return false;
     }
+
+
+
+
+
 }
