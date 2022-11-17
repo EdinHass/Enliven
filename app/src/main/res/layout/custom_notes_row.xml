@@ -20,9 +20,12 @@
             android:textColor="@color/black"
             android:fontFamily="@font/alata"
             android:textSize="18sp"
+            android:id="@+id/example"
             >
 
         </TextView>
     </com.google.android.material.card.MaterialCardView>
-
+<Space
+    android:layout_width="0dp"
+    android:layout_height="10dp"/>
 </LinearLayout>
