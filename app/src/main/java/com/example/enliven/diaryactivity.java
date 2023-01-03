@@ -38,7 +38,11 @@ public class diaryactivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Dnevnik");
-
+//provjeriti
+        notesListView.setSelector(android.R.color.transparent);
+        notesListView.setDivider(null);
+        notesListView.setBackgroundResource(R.drawable.shape);
+//
         sharedpref = this.getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
 
         notesListView = findViewById(R.id.notes_ListView);
@@ -119,6 +123,8 @@ public class diaryactivity extends AppCompatActivity {
         }
         return false;
     }
+
+
 
 }
 

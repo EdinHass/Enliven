@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".diaryactivity">
+    tools:context=".diaryactivity"
+    android:background="@drawable/gradient_dark_purple">
 
 
     <TextView
@@ -14,10 +15,10 @@
         android:fontFamily="@font/alata"
         android:paddingStart="20dp"
         android:text="Moj dnevnik"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="36sp"
-        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -38,9 +39,10 @@
         android:id="@+id/emptyText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Prazno"
+        android:text="Još uvijek niste ništa napisali"
         android:gravity="center"
         android:textSize="18sp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/notes_ListView"
         app:layout_constraintTop_toBottomOf="@+id/textView5"/>
 
