@@ -62,11 +62,11 @@
                         android:orientation="horizontal">
 
                         <RelativeLayout
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
+                            android:layout_width="320dp"
+                            android:layout_height="80dp"
                             android:layout_marginLeft="30dp"
                             android:layout_marginRight="20dp"
-                            android:background="@drawable/new_purple_card"
+                            android:background="@drawable/rounded_corners"
                             android:clickable="true">
 
                             <TextView
@@ -74,34 +74,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
-                                android:layout_marginStart="25dp"
-                                android:layout_marginEnd="34dp"
+                                android:layout_marginEnd="201dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginStart="15dp"
                                 android:fontFamily="@font/alata"
                                 android:text="Sreća"
                                 android:textColor="@color/white"
                                 android:textSize="35sp" />
                         </RelativeLayout>
 
-                        <RelativeLayout
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="30dp"
-                            android:background="@drawable/new_purple_card"
-                            android:clickable="true">
-
-                            <TextView
-                                android:id="@+id/texttuga"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginLeft="35dp"
-                                android:layout_marginEnd="34dp"
-                                android:fontFamily="@font/alata"
-                                android:text="Tuga"
-                                android:textColor="@color/white"
-                                android:textSize="35sp" />
-                        </RelativeLayout>
 
                     </LinearLayout>
 
@@ -113,11 +95,11 @@
                         android:orientation="horizontal">
 
                         <RelativeLayout
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
+                            android:layout_width="320dp"
+                            android:layout_height="80dp"
                             android:layout_marginLeft="30dp"
                             android:layout_marginRight="20dp"
-                            android:background="@drawable/new_purple_card"
+                            android:background="@drawable/rounded_corners"
                             android:clickable="true">
 
                             <TextView
@@ -125,8 +107,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
-                                android:layout_marginLeft="35dp"
-                                android:layout_marginEnd="20dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="183dp"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginTop="15dp"
                                 android:fontFamily="@font/alata"
                                 android:text="Ljutnja"
                                 android:textColor="@color/white"
@@ -134,27 +118,7 @@
 
                         </RelativeLayout>
 
-                        <RelativeLayout
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="30dp"
-                            android:background="@drawable/new_purple_card"
-                            android:clickable="true">
 
-                            <TextView
-                                android:id="@+id/textumor"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginLeft="35dp"
-                                android:layout_marginEnd="34dp"
-                                android:fontFamily="@font/alata"
-                                android:text="Umor"
-                                android:textColor="@color/white"
-                                android:textSize="35sp" />
-
-                        </RelativeLayout>
                     </LinearLayout>
 
                     <LinearLayout
@@ -165,11 +129,11 @@
                         android:orientation="horizontal">
 
                         <RelativeLayout
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
+                            android:layout_width="320dp"
+                            android:layout_height="80dp"
                             android:layout_marginLeft="30dp"
                             android:layout_marginRight="20dp"
-                            android:background="@drawable/new_purple_card"
+                            android:background="@drawable/rounded_corners"
                             android:clickable="true">
 
                             <TextView
@@ -178,36 +142,19 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginLeft="20dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginEnd="105dp"
+                                android:layout_marginBottom="15dp"
                                 android:layout_marginRight="20dp"
-                                android:layout_marginTop="20dp"
+                                android:layout_marginStart="15dp"
                                 android:fontFamily="@font/alata"
-                                android:text="Anksiozno"
+                                android:text="Anksioznost"
                                 android:textColor="@color/white"
-                                android:textSize="23sp" />
+                                android:textSize="35sp" />
 
                         </RelativeLayout>
 
-                        <RelativeLayout
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="30dp"
-                            android:background="@drawable/new_purple_card"
-                            android:clickable="true">
 
-                            <TextView
-                                android:id="@+id/texdepresivno"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginRight="20dp"
-                                android:layout_marginTop="20dp"
-                                android:fontFamily="@font/alata"
-                                android:text="Depresivno"
-                                android:textColor="@color/white"
-                                android:textSize="21sp" />
-
-                        </RelativeLayout>
                     </LinearLayout>
 
                     <LinearLayout
@@ -218,11 +165,11 @@
                         android:orientation="horizontal">
 
                         <RelativeLayout
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
+                            android:layout_width="320dp"
+                            android:layout_height="80dp"
                             android:layout_marginLeft="30dp"
                             android:layout_marginRight="20dp"
-                            android:background="@drawable/new_purple_card"
+                            android:background="@drawable/rounded_corners"
                             android:clickable="true">
 
                             <TextView
@@ -230,36 +177,18 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="20dp"
-
+                                android:layout_marginTop="15dp"
+                                android:layout_marginEnd="212dp"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginStart="15dp"
                                 android:fontFamily="@font/alata"
                                 android:text="Stres"
                                 android:textColor="@color/white"
-                                android:textSize="26sp" />
+                                android:textSize="35sp" />
 
                         </RelativeLayout>
 
-                        <RelativeLayout
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="30dp"
-                            android:background="@drawable/new_purple_card"
-                            android:clickable="true">
 
-                            <TextView
-                                android:id="@+id/textrazocarano"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginLeft="35dp"
-                                android:layout_marginEnd="34dp"
-                                android:fontFamily="@font/alata"
-                                android:text="Razočarenje"
-                                android:textColor="@color/white"
-                                android:textSize="26sp" />
-
-                        </RelativeLayout>
                     </LinearLayout>
 
                     <LinearLayout
@@ -270,11 +199,11 @@
                         android:orientation="horizontal">
 
                         <RelativeLayout
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
+                            android:layout_width="320dp"
+                            android:layout_height="80dp"
                             android:layout_marginLeft="30dp"
                             android:layout_marginRight="20dp"
-                            android:background="@drawable/new_purple_card"
+                            android:background="@drawable/rounded_corners"
                             android:clickable="true">
 
                             <TextView
@@ -282,34 +211,184 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginEnd="20dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginEnd="204dp"
+                                android:layout_marginBottom="15dp"
                                 android:fontFamily="@font/alata"
                                 android:text="Strah"
                                 android:textColor="@color/white"
-                                android:textSize="26sp"/>
+                                android:textSize="35sp" />
                         </RelativeLayout>
 
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
                         <RelativeLayout
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
+                            android:layout_width="320dp"
+                            android:layout_height="80dp"
                             android:layout_marginLeft="30dp"
                             android:layout_marginRight="20dp"
-                            android:background="@drawable/new_purple_card"
+                            android:background="@drawable/rounded_corners"
                             android:clickable="true">
 
                             <TextView
-                                android:id="@+id/textsram"
+                                android:id="@+id/texttuga"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
-                                android:layout_marginLeft="35dp"
-                                android:layout_marginEnd="34dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginEnd="208dp"
+                                android:layout_marginBottom="15dp"
+
                                 android:fontFamily="@font/alata"
-                                android:text="Sram"
+                                android:text="Tuga"
                                 android:textColor="@color/white"
-                                android:textSize="26sp" />
+                                android:textSize="35sp" />
                         </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="320dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/rounded_corners"
+                            android:clickable="true">
+
+                            <TextView
+                                android:id="@+id/textdepresija"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginEnd="87dp"
+                                android:layout_marginBottom="15dp"
+                                android:fontFamily="@font/alata"
+                                android:text="Depresivnost"
+                                android:textColor="@color/white"
+                                android:textSize="35sp" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="320dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/rounded_corners"
+                            android:clickable="true">
+
+                            <TextView
+                                android:id="@+id/textrazocarenje"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginEnd="97dp"
+                                android:fontFamily="@font/alata"
+                                android:text="Razočaranje"
+                                android:textColor="@color/white"
+                                android:textSize="35sp" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="320dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/rounded_corners"
+                            android:clickable="true">
+
+                            <TextView
+                                android:id="@+id/textstid"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="230dp"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginStart="15dp"
+                                android:fontFamily="@font/alata"
+                                android:text="Stid"
+                                android:textColor="@color/white"
+                                android:textSize="35sp" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="320dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/rounded_corners"
+                            android:clickable="true">
+
+                            <TextView
+                                android:id="@+id/textumor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="202dp"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginTop="15dp"
+                                android:fontFamily="@font/alata"
+                                android:text="Umor"
+                                android:textColor="@color/white"
+                                android:textSize="35sp"/>
+                        </RelativeLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>
