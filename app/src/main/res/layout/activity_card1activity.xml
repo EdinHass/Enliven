@@ -156,7 +156,7 @@
                         android:orientation="horizontal">
 
                         <RelativeLayout
-                            android:id="@+id/card1Sleep"
+                            android:id="@+id/cardRain1"
                             android:layout_width="350dp"
                             android:layout_height="220dp"
                             android:layout_marginStart="20dp"

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SoundsPlayerActivity"
+    android:background="@drawable/gradient_dark_purple">
+
+    <TextView
+        android:layout_marginTop="130dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/soundName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alata"
+        android:text="Name"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:typeface="normal" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:src="@drawable/gifmagical2"></pl.droidsonroids.gif.GifImageView>
+
+    <ImageView
+        android:id="@+id/soundImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_below="@id/soundName"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/placeholder">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/startButton"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="227dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_baseline_play_circle_outline_24"></ImageView>
+
+
+
+
+
+</RelativeLayout>

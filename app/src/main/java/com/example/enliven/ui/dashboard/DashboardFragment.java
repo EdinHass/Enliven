@@ -30,13 +30,8 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-
-
-
 
         dnevnikcard = (ConstraintLayout) root.findViewById(R.id.dnevnikcard);
         osjecanjecard = (ConstraintLayout) root.findViewById(R.id.osjecanjecard);
@@ -45,7 +40,6 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_moodActivity);
-
             }
         });
 
