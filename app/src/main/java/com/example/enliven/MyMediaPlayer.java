@@ -12,10 +12,14 @@ public class MyMediaPlayer {
         if(instance == null){
             instance = MediaPlayer.create(context, v);
         }
-
         return instance;
 
+    }
 
+    public static void freeMediaPlayer(){
+        instance.stop();
+        instance.release();
+        instance = null;
     }
 
 
