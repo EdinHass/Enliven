@@ -43,12 +43,11 @@ public class diaryactivity extends AppCompatActivity {
 
         notesListView = findViewById(R.id.notes_ListView);
         emptyText = findViewById(R.id.emptyText);
-
         notes = new ArrayList<>();
 
         HashSet<String> noteSet = (HashSet<String>) sharedpref.getStringSet("notes", null);
 
-        if(noteSet.isEmpty() || noteSet==null){
+        if(noteSet==null){
             emptyText.setVisibility(View.VISIBLE);
         }else{
             emptyText.setVisibility(View.GONE);
@@ -73,7 +72,7 @@ public class diaryactivity extends AppCompatActivity {
                 new AlertDialog.Builder(diaryactivity.this)
                         .setTitle("Da li ste sigurni?")
                         .setMessage("Želiš li izbrisati ovo?")
-                        .setPositiveButton("Yes.", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int which) {
                                       notes.remove(itemToDelete);
@@ -87,7 +86,7 @@ public class diaryactivity extends AppCompatActivity {
                                 }
                             }
                         })
-                        .setNegativeButton("No.", null)
+                        .setNegativeButton("No", null)
                         .show();
                 return true;
             }
@@ -114,6 +113,7 @@ public class diaryactivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
 
         if(item.getItemId() == R.id.dodaj){
+            finish();
             startActivity(new Intent(getApplicationContext(), NotesEditorActivity.class));
             return true;
         }

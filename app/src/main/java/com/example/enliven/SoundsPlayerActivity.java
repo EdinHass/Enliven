@@ -72,6 +72,7 @@ public class SoundsPlayerActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
+        mediaPlayer.pause();
         finish();
         return true;
     }
