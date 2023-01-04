@@ -24,5 +24,9 @@
         <item name="android:fontFamily">@font/alata</item>
     </style>
 
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/gradient_dark_purple</item>
+    </style>
+
 
 </resources>

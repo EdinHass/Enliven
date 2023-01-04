@@ -8,44 +8,82 @@
     android:id="@+id/backgroundSound"
     android:background="@drawable/gradient_dark_purple">
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
     <TextView
-        android:layout_marginTop="130dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/soundName"
+        android:layout_alignParentTop="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alata"
         android:text="Name"
         android:textColor="@color/white"
-        android:textSize="48sp"
+        android:textSize="32sp"
         android:typeface="normal" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gif"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_centerInParent="true"
         android:visibility="gone"
+        android:layout_centerInParent="true"
         android:src="@drawable/gifmagical2"></pl.droidsonroids.gif.GifImageView>
 
-    <ImageView
-        android:id="@+id/soundImage"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:layout_below="@id/soundName"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="38dp"
-        android:src="@drawable/river1">
-
-    </ImageView>
+        <ImageView
+            android:id="@+id/soundImage"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_above="@id/soundcontrol"
+            android:layout_below="@id/soundName"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="-100dp"
+            android:src="@drawable/river1"></ImageView>
 
     <ImageView
         android:id="@+id/startButton"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="277dp"
         android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:src="@drawable/ic_baseline_play_arrow_24"></ImageView>
+
+        <RelativeLayout
+            android:id="@+id/soundcontrol"
+            android:layout_alignParentBottom="true"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="350dp"
+            android:paddingStart="20dp">
+            <ImageView
+                android:id="@+id/volumeIcon"
+                android:layout_centerVertical="true"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_volume_up_24"
+                android:layout_toLeftOf="@id/slider"></ImageView>
+            <com.google.android.material.slider.Slider
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/slider"
+                android:layout_width="300dp"
+                android:layout_marginTop="30dp"
+                android:layout_height="wrap_content"
+                app:trackColorActive="@color/Pallete3"
+                app:trackColorInactive="@color/PalleteLightText"
+                app:thumbColor="@color/Pallete1"
+                app:labelBehavior="floating"
+
+            ></com.google.android.material.slider.Slider>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
 
 
 

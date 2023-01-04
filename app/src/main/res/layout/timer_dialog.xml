@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alata"
+        android:text="Postavi Timer"
+        android:textColor="@color/white"
+        android:textSize="46sp"
+        android:typeface="normal" />
+
+    <com.google.android.material.slider.Slider
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/sliderTimer"
+        android:layout_width="300dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        app:trackColorActive="@color/Pallete3"
+        app:thumbColor="@color/Pallete3"
+        app:trackColorInactive="@color/PalleteLightText"
+        android:layout_below="@id/textView"
+        ></com.google.android.material.slider.Slider>
+</RelativeLayout>
