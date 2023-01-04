@@ -13,17 +13,20 @@
         <action
             android:id="@+id/action_dashboardFragment_to_moodActivity2"
             app:destination="@id/moodActivity2" />
-        <action
-            android:id="@+id/action_dashboardFragment_to_diaryactivity2"
-            app:destination="@id/diaryactivity2" />
     </fragment>
     <activity
         android:id="@+id/moodActivity2"
         android:name="com.example.enliven.MoodActivity"
         android:label="activity_mood"
-        tools:layout="@layout/activity_mood" />
+        tools:layout="@layout/activity_mood">
+        <action
+            android:id="@+id/action_dmoodActivity2_to_diaryactivity"
+            app:destination="@id/diaryactivity" />
+    </activity>
+
+
     <activity
-        android:id="@+id/diaryactivity2"
+        android:id="@+id/diaryactivity"
         android:name="com.example.enliven.diaryactivity"
         android:label="activity_diaryactivity"
         tools:layout="@layout/activity_diaryactivity" />

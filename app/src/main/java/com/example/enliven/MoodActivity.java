@@ -2,8 +2,11 @@ package com.example.enliven;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.Navigation;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 public class MoodActivity extends AppCompatActivity {
 
@@ -14,6 +17,8 @@ public class MoodActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Osjećanje");
+
+
     }
     @Override
     public boolean onSupportNavigateUp() {
