@@ -14,6 +14,11 @@ import com.example.enliven.databinding.FragmentDashboardBinding;
 
 public class MoodActivity extends AppCompatActivity {
       RelativeLayout sreca;
+      RelativeLayout tuga;
+      RelativeLayout ljutnja;
+      RelativeLayout strah;
+      RelativeLayout stres;
+      RelativeLayout anksioznost;
 
 
     @Override
@@ -25,11 +30,52 @@ public class MoodActivity extends AppCompatActivity {
         actionBar.setTitle("Osjećanje");
 
         sreca=findViewById(R.id.textsreca1);
+        tuga=findViewById(R.id.texttuga1);
+        ljutnja=findViewById(R.id.textljutnja1);
+        strah=findViewById(R.id.textstrah1);
+        stres=findViewById(R.id.textstres1);
+        anksioznost=findViewById(R.id.textanksioznost1);
 
         sreca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), diaryactivity.class));
+
+                startActivity(new Intent(getApplicationContext(), sreca_tips.class));
+            }
+        });
+
+        tuga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), tugaa_tips.class));
+            }
+        });
+
+        ljutnja.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ljutnja_tips.class));
+            }
+        });
+
+        strah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), strah_tips.class));
+            }
+        });
+
+        stres.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), stres_tips.class));
+            }
+        });
+
+        anksioznost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), anksioznost_tips.class));
             }
         });
 

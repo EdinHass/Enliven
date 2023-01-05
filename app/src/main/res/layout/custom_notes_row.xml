@@ -19,7 +19,7 @@
             android:text="Primjer"
             android:textColor="@color/black"
             android:fontFamily="@font/alata"
-            android:textSize="18sp"
+            android:textSize="18dp"
             android:id="@+id/example"
             >
 
