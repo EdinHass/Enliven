@@ -67,7 +67,8 @@
                             android:layout_marginLeft="30dp"
                             android:layout_marginRight="20dp"
                             android:background="@drawable/rounded_corners"
-                            android:clickable="true">
+                            android:clickable="true"
+                            android:id="@+id/textsreca1">
 
                             <TextView
                                 android:id="@+id/textsreca"

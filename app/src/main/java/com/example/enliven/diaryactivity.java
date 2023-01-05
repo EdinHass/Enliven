@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -26,6 +27,8 @@ import java.util.List;
 public class diaryactivity extends AppCompatActivity {
     ListView notesListView;
     TextView emptyText;
+    ImageView dodaj_note;
+    TextView plus;
 
     static List<String> notes;
     static ArrayAdapter adapter;
@@ -38,15 +41,13 @@ public class diaryactivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Dnevnik");
-//provjeriti
-        notesListView.setSelector(android.R.color.transparent);
-        notesListView.setDivider(null);
-        notesListView.setBackgroundResource(R.drawable.shape);
-//
+
         sharedpref = this.getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
 
         notesListView = findViewById(R.id.notes_ListView);
         emptyText = findViewById(R.id.emptyText);
+        dodaj_note = findViewById(R.id.imageView2);
+        plus=findViewById(R.id.textView6);
         notes = new ArrayList<>();
 
         HashSet<String> noteSet = (HashSet<String>) sharedpref.getStringSet("notes", null);
@@ -69,6 +70,19 @@ public class diaryactivity extends AppCompatActivity {
             }
         });
 
+        dodaj_note.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), NotesEditorActivity.class));
+            }
+        });
+
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), NotesEditorActivity.class));
+            }
+        });
         notesListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -105,24 +119,7 @@ public class diaryactivity extends AppCompatActivity {
         return true;
     }
 
-@Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.diary_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
-
- @Override   public boolean onOptionsItemSelected(@NonNull MenuItem item){
-        super.onOptionsItemSelected(item);
-
-        if(item.getItemId() == R.id.dodaj){
-            finish();
-            startActivity(new Intent(getApplicationContext(), NotesEditorActivity.class));
-            return true;
-        }
-        return false;
-    }
 
 
 
