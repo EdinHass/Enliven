@@ -14,7 +14,7 @@
         android:fontFamily="@font/alata"
         android:text="Postavi Timer"
         android:textColor="@color/white"
-        android:textSize="46sp"
+        android:textSize="32sp"
         android:typeface="normal" />
 
     <com.google.android.material.slider.Slider

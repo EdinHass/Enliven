@@ -27,8 +27,9 @@ public class card1activity extends AppCompatActivity {
 
         Rain1 = findViewById(R.id.cardRain1);
         recommended = findViewById(R.id.recommended);
-        setupSound(recommended.getChildAt(0), new SoundItem("Summer Rain", R.raw.rain1, R.drawable.rain1));
-        setupSound(recommended.getChildAt(1), new SoundItem("River", R.raw.river1, R.drawable.river1));
+        setupSound(recommended.getChildAt(0), new SoundItem("Ljetna Kiša", R.raw.rain1, R.drawable.rain1));
+        setupSound(recommended.getChildAt(1), new SoundItem("Planinski Potok", R.raw.river1, R.drawable.river1));
+        setupSound(recommended.getChildAt(2), new SoundItem("Tihi Klavir", R.raw.piano1, R.drawable.piano1));
 
 
     }
