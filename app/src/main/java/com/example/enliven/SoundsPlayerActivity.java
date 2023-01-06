@@ -15,6 +15,8 @@ import android.graphics.Color;
 import android.graphics.Picture;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -67,6 +69,7 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         slider = findViewById(R.id.slider);
         volumeIcon = findViewById(R.id.volumeIcon);
         startButton = findViewById(R.id.startButton);
+
         Drawable soundIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_volume_up_24);
         Drawable playIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_play_arrow_24);
         Drawable pauseIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_pause_24);
@@ -132,6 +135,8 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
 
         mediaPlayer = MyMediaPlayer.getInstance(this, SoundData);
         mediaPlayer.setLooping(true);
+        AudioManager audioManager = (AudioManager) this.getSystemService(getApplicationContext().AUDIO_SERVICE);
+        audioManager.setStreamVolume (AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),0);
 
 
         startButton.setOnClickListener(new View.OnClickListener() {
@@ -148,7 +153,7 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
 
                 }else{
                     mediaPlayer.seekTo(0);
-                    mediaPlayer.setVolume(slider.getValue(), slider.getValue());
+                    mediaPlayer.setVolume(slider.getValue()*10, slider.getValue()*10);
                     mediaPlayer.start();
                     startButton.setImageDrawable(pauseIconWrapped);
                     startButton.startAnimation(animFadein);
@@ -157,6 +162,14 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
                 }
             }
         });
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        MyMediaPlayer.freeMediaPlayer();
+        super.onBackPressed();
     }
 
     @Override

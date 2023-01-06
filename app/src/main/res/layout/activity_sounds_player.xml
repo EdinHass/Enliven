@@ -21,14 +21,16 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/alata"
         android:text="Name"
+        android:layout_marginTop="20dp"
         android:textColor="@color/white"
-        android:textSize="32sp"
+        android:textSize="30sp"
         android:typeface="normal" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gif"
         android:layout_width="300dp"
         android:layout_height="300dp"
+        android:layout_marginTop="-120dp"
         android:visibility="gone"
         android:layout_centerInParent="true"
         android:src="@drawable/gifmagical2"></pl.droidsonroids.gif.GifImageView>
@@ -40,7 +42,7 @@
             android:layout_above="@id/soundcontrol"
             android:layout_below="@id/soundName"
             android:layout_centerInParent="true"
-            android:layout_marginTop="-100dp"
+            android:layout_marginTop="-120dp"
             android:src="@drawable/river1"></ImageView>
 
     <ImageView
@@ -66,7 +68,7 @@
                 android:src="@drawable/ic_baseline_volume_up_24"
                 android:layout_toLeftOf="@id/slider"></ImageView>
             <com.google.android.material.slider.Slider
-
+                android:contentDescription="Timer Slider"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/slider"

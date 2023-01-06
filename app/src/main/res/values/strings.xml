@@ -5,6 +5,6 @@
     <string name="title_item3">San</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ambient_info">Ambijentalni zvuk se odnosi na pozadinsku buku koja je prisutna na datoj sceni ili lokaciji. To može uključivati zvukove poput kiše, saobraćaja, cvrčaka, ptica itd.</string>
 </resources>
