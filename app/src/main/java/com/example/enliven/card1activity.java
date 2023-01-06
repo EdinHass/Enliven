@@ -14,7 +14,7 @@ import android.widget.RelativeLayout;
 
 public class card1activity extends AppCompatActivity {
 
-    RelativeLayout Rain1;
+    RelativeLayout Rain1, soundsinfo;
     LinearLayout recommended;
 
     @Override
@@ -24,6 +24,15 @@ public class card1activity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Zvukovi");
+        soundsinfo = findViewById(R.id.soundsinfo);
+
+        soundsinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SoundsDialogFragment soundsDialogFragment = new SoundsDialogFragment();
+                soundsDialogFragment.show(getSupportFragmentManager(), "Informacije");
+            }
+        });
 
         Rain1 = findViewById(R.id.cardRain1);
         recommended = findViewById(R.id.recommended);

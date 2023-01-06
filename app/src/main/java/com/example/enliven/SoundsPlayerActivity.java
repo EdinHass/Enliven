@@ -69,6 +69,7 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         slider = findViewById(R.id.slider);
         volumeIcon = findViewById(R.id.volumeIcon);
         startButton = findViewById(R.id.startButton);
+
         Drawable soundIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_volume_up_24);
         Drawable playIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_play_arrow_24);
         Drawable pauseIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_pause_24);
@@ -161,6 +162,8 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
                 }
             }
         });
+
+
     }
 
     @Override
