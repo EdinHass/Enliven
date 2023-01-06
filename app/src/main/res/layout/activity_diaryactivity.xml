@@ -66,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/notes_ListView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/dnevnik_button" />
+        app:srcCompat="@drawable/plus_button" />
 
     <TextView
         android:id="@+id/textView6"

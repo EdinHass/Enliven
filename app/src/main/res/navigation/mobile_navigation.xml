@@ -20,8 +20,8 @@
             android:id="@+id/action_navigation_dashboard_to_moodActivity"
             app:destination="@id/moodActivity" />
         <action
-            android:id="@+id/action_navigation_dashboard_to_diaryactivity2"
-            app:destination="@id/diaryactivity2" />
+            android:id="@+id/action_navigation_dashboard_to_general_tips"
+            app:destination="@id/general_tips" />
     </fragment>
 
     <fragment
@@ -43,9 +43,16 @@
         android:name="com.example.enliven.MoodActivity"
         android:label="activity_mood"
         tools:layout="@layout/activity_mood" />
+    <fragment
+        android:id="@+id/general_tips"
+        android:name="com.example.enliven.general_tips"
+        android:label="fragment_general_tips"
+        tools:layout="@layout/fragment_general_tips" />
     <activity
-        android:id="@+id/diaryactivity2"
+        android:id="@+id/diaryactivity"
         android:name="com.example.enliven.diaryactivity"
         android:label="activity_diaryactivity"
         tools:layout="@layout/activity_diaryactivity" />
+
+
 </navigation>

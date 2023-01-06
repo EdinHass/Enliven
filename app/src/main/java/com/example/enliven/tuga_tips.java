@@ -11,21 +11,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 
-public class stres_tips extends Fragment {
-
+public class tuga_tips extends Fragment {
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view1 = inflater.inflate(R.layout.fragment_stres_tips, container, false);
+        View view1 = inflater.inflate(R.layout.fragment_tuga_tips, container, false);
 
         Button button = view1.findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_stres_tips_to_diaryactivity3);
+                Navigation.findNavController(v).navigate(R.id.action_tuga_tips_to_diaryactivity3);
             }
         });
         return view1;

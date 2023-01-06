@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tuga_tip3"
+    tools:context=".general_tip3"
     android:background="@drawable/gradient_dark_purple">
 
     <LinearLayout
@@ -32,28 +32,20 @@
             android:textSize="30dp" />
 
 
-        <RelativeLayout
+        <Button
             android:id="@+id/buttonnext2"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="50dp"
             android:layout_marginLeft="280dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/osjecanjaa_card2"
             android:clickable="true"
+            android:textColor="@color/white"
+            android:text="Next"
             >
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Next"
-                android:fontFamily="@font/alata"
-                android:textColor="@color/white"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="20dp"
-                android:textSize="25dp" />
-        </RelativeLayout>
+        </Button>
 
     </LinearLayout>
 

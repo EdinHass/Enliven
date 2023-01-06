@@ -3,12 +3,202 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ljutnja_tips">
+    tools:context=".ljutnja_tips"
+    android:background="@drawable/gradient_dark_purple">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Savjeti da se osjećaš bolje"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textFontWeight="800"
+                android:typeface="normal" />
+
+            <LinearLayout
+
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:background="@color/white"
+                android:layout_marginVertical="20dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@drawable/curved_light"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/opustanje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="Vježbaj vještine opuštanja"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/opustanjetxt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/opustanje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/opustanje_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+                <ImageView
+                    android:layout_marginTop="40dp"
+                    android:layout_below="@id/opustanjetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undraw_nature_m5ll"></ImageView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/vrijeme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="Daj sebi vremena"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/vrijemetxt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/vrijeme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/vrijeme_info"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+                <ImageView
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/vrijemetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undraw_hiking_re_k0bc"></ImageView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/vjezbe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="Vježbaj"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/vjezbetxt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/vjezbe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/vjezbe_info"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+                <ImageView
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/vjezbetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undraw_biking_kc_4_f"></ImageView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@drawable/curved_light"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/kreativno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="Riješi se ljutnje na kreativan način"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/kreativnotxt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/kreativno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/kreativno_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+                <ImageView
+                    android:layout_marginTop="40dp"
+                    android:layout_below="@id/kreativnotxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undraw_gardening_re_e658"></ImageView>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zapiši kako se osjećaš"
+                android:textColor="@color/white"
+                android:fontFamily="@font/alata"
+                android:textSize="14dp"
+                android:layout_marginLeft="130dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:background="@drawable/gradient_dark_purple"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

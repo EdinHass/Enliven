@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".anksioznost_tips"
+    tools:context=".tuga_tips"
     android:background="@drawable/gradient_dark_purple">
 
     <ScrollView
@@ -40,34 +40,34 @@
                 android:padding="20dp"
                 android:layout_marginBottom="20dp">
                 <TextView
-                    android:id="@+id/meditate"
+                    android:id="@+id/dosmth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
-                    android:text="Meditiraj"
+                    android:text="Radi ono što voliš"
                     android:textColor="@color/Pallete3"
                     android:layout_gravity="center"
                     android:textSize="18dp"
                     android:fontFamily="@font/alata"/>
 
                 <TextView
-                    android:id="@+id/medtxt"
+                    android:id="@+id/dosmthtxt"
                     android:layout_marginTop="20dp"
-                    android:layout_below="@id/meditate"
+                    android:layout_below="@id/dosmth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
-                    android:text="@string/meditacija_info"
+                    android:text="@string/dosmth_info"
                     android:textColor="@color/Pallete2"
                     android:layout_gravity="center"
                     android:textSize="14dp"
                     android:fontFamily="@font/alata"/>
                 <ImageView
                     android:layout_marginTop="40dp"
-                    android:layout_below="@id/medtxt"
+                    android:layout_below="@id/dosmthtxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/meditacija"></ImageView>
+                    android:src="@drawable/undraw_making_art_re_ee8w"></ImageView>
 
             </RelativeLayout>
             <RelativeLayout
@@ -77,36 +77,37 @@
                 android:padding="20dp"
                 android:layout_marginBottom="20dp">
                 <TextView
-                    android:id="@+id/setnja"
+                    android:id="@+id/pokrenise"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
-                    android:text="Prošetaj ili vježbaj"
+                    android:text="Pokreni se"
                     android:textColor="@color/Pallete3"
                     android:layout_gravity="center"
                     android:textSize="18dp"
                     android:fontFamily="@font/alata"/>
 
                 <TextView
-                    android:id="@+id/setnjatxt"
+                    android:id="@+id/pokrenisetxt"
                     android:layout_marginTop="20dp"
-                    android:layout_below="@id/setnja"
+                    android:layout_below="@id/pokrenise"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
-                    android:text="@string/setnja_info"
+                    android:text="@string/pokrenise_info"
                     android:textColor="@color/white"
                     android:layout_gravity="center"
                     android:textSize="14dp"
                     android:fontFamily="@font/alata"/>
                 <ImageView
                     android:layout_marginTop="20dp"
-                    android:layout_below="@id/setnjatxt"
+                    android:layout_below="@id/pokrenisetxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/undraw_walking_outside_re_56xo"></ImageView>
+                    android:src="@drawable/undraw_workout_gcgu"></ImageView>
 
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
@@ -114,34 +115,34 @@
                 android:padding="20dp"
                 android:layout_marginBottom="20dp">
                 <TextView
-                    android:id="@+id/pisanje"
+                    android:id="@+id/crying"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
-                    android:text="Zapiši kako se osjećaš"
+                    android:text="Plači"
                     android:textColor="@color/white"
                     android:layout_gravity="center"
                     android:textSize="18dp"
                     android:fontFamily="@font/alata"/>
 
                 <TextView
-                    android:id="@+id/pisanjetxt"
+                    android:id="@+id/cryingtxt"
                     android:layout_marginTop="20dp"
-                    android:layout_below="@id/pisanje"
+                    android:layout_below="@id/crying"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
-                    android:text="@string/pisanje_info"
+                    android:text="@string/crying_info"
                     android:textColor="@color/white"
                     android:layout_gravity="center"
                     android:textSize="14dp"
                     android:fontFamily="@font/alata"/>
                 <ImageView
                     android:layout_marginTop="20dp"
-                    android:layout_below="@id/pisanjetxt"
+                    android:layout_below="@id/cryingtxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/undraw_notebook_re_id0r"></ImageView>
+                    android:src="@drawable/undraw_feeling_blue__4_b7q"></ImageView>
 
             </RelativeLayout>
 
@@ -152,34 +153,34 @@
                 android:padding="20dp"
                 android:layout_marginBottom="20dp">
                 <TextView
-                    android:id="@+id/druzenje"
+                    android:id="@+id/razgovor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
-                    android:text="Socijalizuj se"
+                    android:text="Razgovaraj sa nekim"
                     android:textColor="@color/Pallete3"
                     android:layout_gravity="center"
                     android:textSize="18dp"
                     android:fontFamily="@font/alata"/>
 
                 <TextView
-                    android:id="@+id/druzenjetxt"
+                    android:id="@+id/razgovortxt"
                     android:layout_marginTop="20dp"
-                    android:layout_below="@id/druzenje"
+                    android:layout_below="@id/razgovor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
-                    android:text="@string/druzenje_info"
+                    android:text="@string/razgovor_info"
                     android:textColor="@color/Pallete2"
                     android:layout_gravity="center"
                     android:textSize="14dp"
                     android:fontFamily="@font/alata"/>
                 <ImageView
                     android:layout_marginTop="40dp"
-                    android:layout_below="@id/druzenjetxt"
+                    android:layout_below="@id/razgovortxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/undraw_conversation_re_c26v"></ImageView>
+                    android:src="@drawable/undraw_getting_coffee_re_f2do"></ImageView>
 
             </RelativeLayout>
 

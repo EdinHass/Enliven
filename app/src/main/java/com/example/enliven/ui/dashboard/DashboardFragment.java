@@ -29,6 +29,7 @@ public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
     private RelativeLayout dnevnikcard;
+    private RelativeLayout card2;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class DashboardFragment extends Fragment {
         View root = binding.getRoot();
 
         dnevnikcard = (RelativeLayout) root.findViewById(R.id.dnevnikcard);
+        card2 = (RelativeLayout) root.findViewById(R.id.card2);
 
 
 
@@ -44,6 +46,13 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_moodActivity);
+            }
+        });
+
+        card2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_general_tips);
             }
         });
 

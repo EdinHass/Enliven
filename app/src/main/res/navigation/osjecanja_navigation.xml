@@ -3,92 +3,76 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/osjecanja_navigation"
-    app:startDestination="@id/moodActivity3">
+    app:startDestination="@id/moodActivity2">
 
     <activity
-        android:id="@+id/moodActivity3"
+        android:id="@+id/moodActivity2"
         android:name="com.example.enliven.MoodActivity"
         android:label="activity_mood"
         tools:layout="@layout/activity_mood" >
-    <action
-        android:id="@+id/action_moodActivity3_to_strah_tips"
-        app:destination="@id/strah_tips" />
         <action
-            android:id="@+id/action_moodActivity3_to_ljutnja_tips"
-            app:destination="@id/ljutnja_tips" />
+            android:id="@+id/action_moodActivity2_to_sreca_tips"
+            app:destination="@id/sreca_tips"/>
         <action
-            android:id="@+id/action_moodActivity3_to_stres_tips"
-            app:destination="@id/stres_tips" />
+            android:id="@+id/action_moodActivity2_to_strah_tips"
+            app:destination="@id/strah_tips"/>
         <action
-            android:id="@+id/action_moodActivity3_to_anksioznost_tips"
-            app:destination="@id/anksioznost_tips" />
+            android:id="@+id/action_moodActivity2_to_stres_tips"
+            app:destination="@id/stres_tips"/>
         <action
-            android:id="@+id/action_moodActivity3_to_sreca_tips"
-            app:destination="@id/sreca_tips" />
+            android:id="@+id/action_moodActivity2_to_ljutnja_tips"
+            app:destination="@id/ljutnja_tips"/>
         <action
-            android:id="@+id/action_moodActivity3_to_tugaa_tips"
-            app:destination="@id/tugaa_tips" />
+            android:id="@+id/action_moodActivity2_to_anksioznost_tips"
+            app:destination="@id/anksioznost_tips"/>
+        <action
+            android:id="@+id/action_moodActivity2_to_tuga_tips"
+            app:destination="@id/tuga_tips"/>
+
     </activity>
-    <fragment
-        android:id="@+id/ljutnja_tips"
-        android:name="com.example.enliven.ljutnja_tips"
-        android:label="fragment_ljutnja_tips"
-        tools:layout="@layout/fragment_ljutnja_tips" />
-    <fragment
-        android:id="@+id/anksioznost_tips"
-        android:name="com.example.enliven.anksioznost_tips"
-        android:label="fragment_anksioznost_tips"
-        tools:layout="@layout/fragment_anksioznost_tips" />
     <fragment
         android:id="@+id/sreca_tips"
         android:name="com.example.enliven.sreca_tips"
         android:label="fragment_sreca_tips"
-        tools:layout="@layout/fragment_sreca_tips" />
+        tools:layout="@layout/fragment_sreca_tips" >
+        <action
+            android:id="@+id/action_sreca_tips_to_diaryactivity3"
+            app:destination="@id/diaryactivity3" />
+    </fragment>
     <fragment
-        android:id="@+id/strah_tips"
-        android:name="com.example.enliven.strah_tips"
-        android:label="fragment_strah_tips"
-        tools:layout="@layout/fragment_strah_tips" />
+        android:id="@+id/anksioznost_tips"
+        android:name="com.example.enliven.anksioznost_tips"
+        android:label="fragment_anksioznost_tips"
+        tools:layout="@layout/fragment_anksioznost_tips" >
+        <action
+            android:id="@+id/action_anksioznost_tips_to_diaryactivity3"
+            app:destination="@id/diaryactivity3" />
+    </fragment>
     <fragment
         android:id="@+id/stres_tips"
         android:name="com.example.enliven.stres_tips"
         android:label="fragment_stres_tips"
-        tools:layout="@layout/fragment_stres_tips" />
-    <fragment
-        android:id="@+id/tugaa_tips"
-        android:name="com.example.enliven.tugaa_tips"
-        android:label="fragment_tugaa_tips"
-        tools:layout="@layout/fragment_tugaa_tips" >
-
+        tools:layout="@layout/fragment_stres_tips" >
         <action
-            android:id="@+id/action_tugaa_tips_to_tuga_tip2"
-            app:destination="@id/tuga_tip2" />
+            android:id="@+id/action_stres_tips_to_diaryactivity3"
+            app:destination="@id/diaryactivity3" />
     </fragment>
     <fragment
-        android:id="@+id/tuga_tip2"
-        android:name="com.example.enliven.tuga_tip2"
-        android:label="fragment_tuga_tip2"
-        tools:layout="@layout/fragment_tuga_tip2" >
+        android:id="@+id/strah_tips"
+        android:name="com.example.enliven.strah_tips"
+        android:label="fragment_strah_tips"
+        tools:layout="@layout/fragment_strah_tips" >
         <action
-            android:id="@+id/action_tuga_tip2_to_tuga_tip3"
-            app:destination="@id/tuga_tip3" />
+            android:id="@+id/action_strah_tips_to_diaryactivity3"
+            app:destination="@id/diaryactivity3" />
     </fragment>
     <fragment
-        android:id="@+id/tuga_tip3"
-        android:name="com.example.enliven.tuga_tip3"
-        android:label="fragment_tuga_tip3"
-        tools:layout="@layout/fragment_tuga_tip3" >
+        android:id="@+id/ljutnja_tips"
+        android:name="com.example.enliven.ljutnja_tips"
+        android:label="fragment_ljutnja_tips"
+        tools:layout="@layout/fragment_ljutnja_tips" >
         <action
-            android:id="@+id/action_tuga_tip3_to_tip_o_pisanju"
-            app:destination="@id/tip_o_pisanju" />
-    </fragment>
-    <fragment
-        android:id="@+id/tip_o_pisanju"
-        android:name="com.example.enliven.tip_o_pisanju"
-        android:label="fragment_tip_o_pisanju"
-        tools:layout="@layout/fragment_tip_o_pisanju" >
-        <action
-            android:id="@+id/action_tip_o_pisanju_to_diaryactivity3"
+            android:id="@+id/action_ljutnja_tips_to_diaryactivity3"
             app:destination="@id/diaryactivity3" />
     </fragment>
     <activity
@@ -96,4 +80,13 @@
         android:name="com.example.enliven.diaryactivity"
         android:label="activity_diaryactivity"
         tools:layout="@layout/activity_diaryactivity" />
+    <fragment
+        android:id="@+id/tuga_tips"
+        android:name="com.example.enliven.tuga_tips"
+        android:label="fragment_tuga_tips"
+        tools:layout="@layout/fragment_tuga_tips" >
+        <action
+            android:id="@+id/action_tuga_tips_to_diaryactivity3"
+            app:destination="@id/diaryactivity3" />
+    </fragment>
 </navigation>

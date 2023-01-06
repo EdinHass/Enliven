@@ -3,12 +3,202 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".strah_tips">
+    tools:context=".strah_tips"
+    android:background="@drawable/gradient_dark_purple">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Savjeti da se osjećaš bolje"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textFontWeight="800"
+                android:typeface="normal" />
+
+            <LinearLayout
+
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:background="@color/white"
+                android:layout_marginVertical="20dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@drawable/curved_light"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="Odvoji vrijeme za sebe"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/timetxt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/time_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+                <ImageView
+                    android:layout_marginTop="40dp"
+                    android:layout_below="@id/timetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undraw_hot_beverage_re_9mpe"></ImageView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/fyf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="Suoči se sa strahovima"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/fyftxt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/fyf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/fyf_info"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+                <ImageView
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/fyftxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undraw_notify_re_65on"></ImageView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/happyplace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="Zamisli sigurno mjesto"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/happyplacetxt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/happyplace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/happyplace_info"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+                <ImageView
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/happyplacetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undraw_adventure_re_ncqp"></ImageView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@drawable/curved_light"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/perfect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="Ne pokušavaj biti perfektan/a"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/perfecttxt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/perfect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/perfect_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+                <ImageView
+                    android:layout_marginTop="40dp"
+                    android:layout_below="@id/perfecttxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undraw_like_dislike_re_dwcj"></ImageView>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zapiši kako se osjećaš"
+                android:textColor="@color/white"
+                android:fontFamily="@font/alata"
+                android:textSize="14dp"
+                android:layout_marginLeft="130dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:background="@drawable/gradient_dark_purple"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

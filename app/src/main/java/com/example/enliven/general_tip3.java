@@ -12,30 +12,25 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
-import com.example.enliven.databinding.FragmentGeneralTipsBinding;
 
+public class general_tip3 extends Fragment {
 
-public class tip_o_pisanju extends Fragment {
-
-
-    private Button button_next3;
+    private Button button_next2;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view1 = inflater.inflate(R.layout.fragment_tip_o_pisanju, container, false);
+        View view1 = inflater.inflate(R.layout.fragment_general_tip3, container, false);
 
-        button_next3=view1.findViewById(R.id.buttonnext3);
+        button_next2=view1.findViewById(R.id.buttonnext2);
 
-        button_next3.setOnClickListener(new View.OnClickListener() {
+        button_next2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_tip_o_pisanju_to_diaryactivity2);
+                Navigation.findNavController(view).navigate(R.id.action_general_tip3_to_tip_o_pisanju);
             }
         });
 
         return view1;
     }
-
-
 }

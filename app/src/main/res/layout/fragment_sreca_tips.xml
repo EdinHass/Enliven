@@ -3,12 +3,202 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sreca_tips">
+    tools:context=".sreca_tips"
+    android:background="@drawable/gradient_dark_purple">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Savjeti da se ostaneš sretan/a"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textFontWeight="800"
+                android:typeface="normal" />
+
+            <LinearLayout
+
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:background="@color/white"
+                android:layout_marginVertical="20dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@drawable/curved_light"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/hrana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="Jedi zdravo"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/hranatxt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/hrana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/hrana_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+                <ImageView
+                    android:layout_marginTop="40dp"
+                    android:layout_below="@id/hranatxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undraw_diet_ghvw"></ImageView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/druzise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="Druži se"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/druzisetxt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/druzise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/druzise_info"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+                <ImageView
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/druzisetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undraw_coffee_with_friends_3cbj"></ImageView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/uporedivanje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="Izbjegavaj da se upoređuješ sa drugima"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/uporedivanjetxt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/uporedivanje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/uporedivanje_info"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+                <ImageView
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/uporedivanjetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undraw_stand_out__1_oag"></ImageView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@drawable/curved_light"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/priroda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="Provodi više vremena u prirodi"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/prirodatxt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/priroda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/priroda_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+                <ImageView
+                    android:layout_marginTop="40dp"
+                    android:layout_below="@id/prirodatxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undraw_nature_benefits_re_kk70"></ImageView>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zapiši kako se osjećaš"
+                android:textColor="@color/white"
+                android:fontFamily="@font/alata"
+                android:textSize="14dp"
+                android:layout_marginLeft="130dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:background="@drawable/gradient_dark_purple"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
