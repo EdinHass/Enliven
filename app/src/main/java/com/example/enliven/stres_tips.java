@@ -25,7 +25,7 @@ public class stres_tips extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_stres_tips_to_diaryactivity3);
+
             }
         });
         return view1;

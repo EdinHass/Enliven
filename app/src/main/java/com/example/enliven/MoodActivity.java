@@ -6,6 +6,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -47,7 +48,8 @@ public class MoodActivity extends AppCompatActivity {
         tuga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_tuga_tips_to_diaryactivity3);
+                Intent i = new Intent(getApplicationContext(), tuga_tips.class);
+                startActivity(i);
                 String pom1=strOsjecanja[0];
                 strOsjecanja[0]="Tuga";
                 String pom2=strOsjecanja[1];
@@ -65,6 +67,7 @@ public class MoodActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), sreca_tips.class);
                 startActivity(i);
+
                 String pom1=strOsjecanja[0];
                 strOsjecanja[0]="Sreca";
                 String pom2=strOsjecanja[1];

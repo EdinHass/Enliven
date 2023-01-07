@@ -16,6 +16,13 @@
         android:theme="@style/Theme.Enliven"
         tools:targetApi="31">
         <activity
+            android:name=".citati_activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".sounds_category_nature"
             android:exported="false">
             <meta-data

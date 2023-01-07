@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="citati1">
+       <item>\'Vjeruj da možeš i već si na pola puta.\' - Theodore Roosevelt</item>
+        <item>\'Život je kao vožnja bicikla. Da biste održali ravnotežu, morate se nastaviti kretati.\' - Albert Einstein</item>
+        <item>\'Pokušaj biti duga u nečijem oblaku.\' -Maya Angelou</item>
+        <item>\'Nemojte tražiti sretan život. Napravite jedan.\' - Camilla Eyring Kimball</item>
+        <item>\'Inspiracija dolazi iz vas samih. Čovjek mora biti pozitivan. Kada ste pozitivni, događaju se dobre stvari.\' - Deep Roy</item>
+    </string-array>
+</resources>

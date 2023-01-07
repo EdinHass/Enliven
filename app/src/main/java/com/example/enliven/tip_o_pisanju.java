@@ -30,7 +30,7 @@ public class tip_o_pisanju extends Fragment {
         button_next3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_tip_o_pisanju_to_diaryactivity2);
+                Navigation.findNavController(getActivity(),R.id.nav_host_fragment_activity_main).navigate(R.id.action_tip_o_pisanju2_to_diaryactivity);
             }
         });
 

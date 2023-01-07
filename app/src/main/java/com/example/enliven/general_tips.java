@@ -22,7 +22,7 @@ private Button button_next;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        
+
 
         View view1 = inflater.inflate(R.layout.fragment_general_tips, container, false);
 
@@ -31,7 +31,7 @@ private Button button_next;
         button_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_general_tips2_to_general_tip2);
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_general_tips_to_general_tip22);
             }
         });
 

@@ -25,7 +25,7 @@ public class anksioznost_tips extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_anksioznost_tips_to_diaryactivity3);
+
             }
         });
         return view1;

@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_navigation_dashboard_to_general_tips"
             app:destination="@id/general_tips" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_citati_activity"
+            app:destination="@id/citati_activity" />
     </fragment>
 
     <fragment
@@ -42,12 +45,48 @@
         android:id="@+id/moodActivity"
         android:name="com.example.enliven.MoodActivity"
         android:label="activity_mood"
-        tools:layout="@layout/activity_mood" />
+        tools:layout="@layout/activity_mood"/>
     <fragment
         android:id="@+id/general_tips"
         android:name="com.example.enliven.general_tips"
         android:label="fragment_general_tips"
-        tools:layout="@layout/fragment_general_tips" />
+        tools:layout="@layout/fragment_general_tips" >
+        <action
+            android:id="@+id/action_general_tips_to_general_tip22"
+            app:destination="@id/general_tip22" />
+    </fragment>
+    <activity
+        android:id="@+id/citati_activity"
+        android:name="com.example.enliven.citati_activity"
+        android:label="activity_citati"
+        tools:layout="@layout/activity_citati" />
+    <fragment
+        android:id="@+id/general_tip22"
+        android:name="com.example.enliven.general_tip2"
+        android:label="fragment_general_tip2"
+        tools:layout="@layout/fragment_general_tip2" >
+        <action
+            android:id="@+id/action_general_tip22_to_general_tip32"
+            app:destination="@id/general_tip32" />
+    </fragment>
+    <fragment
+        android:id="@+id/general_tip32"
+        android:name="com.example.enliven.general_tip3"
+        android:label="fragment_general_tip3"
+        tools:layout="@layout/fragment_general_tip3" >
+        <action
+            android:id="@+id/action_general_tip32_to_tip_o_pisanju2"
+            app:destination="@id/tip_o_pisanju2" />
+    </fragment>
+    <fragment
+        android:id="@+id/tip_o_pisanju2"
+        android:name="com.example.enliven.tip_o_pisanju"
+        android:label="fragment_tip_o_pisanju"
+        tools:layout="@layout/fragment_tip_o_pisanju" >
+        <action
+            android:id="@+id/action_tip_o_pisanju2_to_diaryactivity"
+            app:destination="@id/diaryactivity" />
+    </fragment>
     <activity
         android:id="@+id/diaryactivity"
         android:name="com.example.enliven.diaryactivity"

@@ -1,5 +1,6 @@
 package com.example.enliven;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -24,7 +25,7 @@ public class sreca_tips extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_sreca_tips_to_diaryactivity3);
+
             }
         });
         return view1;
