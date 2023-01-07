@@ -18,6 +18,8 @@ import android.graphics.drawable.GradientDrawable;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,12 +49,12 @@ import pl.droidsonroids.gif.GifImageView;
 
 public class SoundsPlayerActivity extends AppCompatActivity implements TimerDialogFragment.NoticeDialogListener{
 
-    String SoundName;
-    int SoundData, PictureData;
+    String SoundName, SoundData;
+    int PictureData;
     TextView Title;
     MediaPlayer mediaPlayer;
     ImageView startButton, soundImage, volumeIcon;
-    GifImageView gif;
+    GifImageView gif, loading;
     RelativeLayout back;
     Slider slider;
 
@@ -61,11 +63,12 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sounds_player);
         SoundName = getIntent().getStringExtra("SoundName");
-        SoundData = getIntent().getIntExtra("SoundData", R.raw.rain1);
+        SoundData = getIntent().getStringExtra("SoundData");
         PictureData = getIntent().getIntExtra("ImageData", R.drawable.rain1);
         back = findViewById(R.id.backgroundSound);
         Title = findViewById(R.id.soundName);
         gif = findViewById(R.id.gif);
+        loading = findViewById(R.id.loading);
         slider = findViewById(R.id.slider);
         volumeIcon = findViewById(R.id.volumeIcon);
         startButton = findViewById(R.id.startButton);
@@ -129,15 +132,20 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
 
         Title.setText(SoundName);
 
-        soundImage = (ImageView)findViewById(R.id.soundImage);
+        soundImage = findViewById(R.id.soundImage);
         soundImage.setImageResource(PictureData);
 
-
-        mediaPlayer = MyMediaPlayer.getInstance(this, SoundData);
+        mediaPlayer = MyMediaPlayer.getInstance(this);
         mediaPlayer.setLooping(true);
         AudioManager audioManager = (AudioManager) this.getSystemService(getApplicationContext().AUDIO_SERVICE);
         audioManager.setStreamVolume (AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),0);
-
+        mediaPlayer.setAudioAttributes(
+                new AudioAttributes.Builder()
+                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                        .setUsage(AudioAttributes.USAGE_MEDIA)
+                        .build()
+        );
+        boolean firstRun = true;
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,6 +170,25 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
                 }
             }
         });
+
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                startButton.setVisibility(View.VISIBLE);
+                loading.setVisibility(View.GONE);
+                startButton.setClickable(true);
+            }
+        });
+
+
+
+        try {
+            mediaPlayer.setDataSource(SoundData);
+            mediaPlayer.prepareAsync();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        super.onResume();
 
 
     }
@@ -253,7 +280,7 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         this.runOnUiThread(Timer_Tick);
     }
 
-    private Runnable Timer_Tick = new Runnable() {
+    private final Runnable Timer_Tick = new Runnable() {
         public void run() {
             if(mediaPlayer.isPlaying()) {
                 startButton.callOnClick();

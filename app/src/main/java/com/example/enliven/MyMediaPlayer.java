@@ -8,9 +8,9 @@ public class MyMediaPlayer {
 
     static MediaPlayer instance;
 
-    public static MediaPlayer getInstance(Context context, int v){
+    public static MediaPlayer getInstance(Context context){
         if(instance == null){
-            instance = MediaPlayer.create(context, v);
+            instance = new MediaPlayer();
         }
         return instance;
 

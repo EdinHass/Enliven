@@ -7,4 +7,7 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ambient_info">Ambijentalni zvuk se odnosi na pozadinsku buku koja je prisutna na datoj sceni ili lokaciji. To može uključivati zvukove poput kiše, saobraćaja, cvrčaka, ptica itd.</string>
+    <string name="ambient_info2">Istraživači su otkrili da su sudionici istraživanja bolje rješavali kognitivne zadatke, radili su brže i dolazili do inovativnijih ideja kada su radili sa ambijentalnim pozadinskim zvukovima.</string>
+    <string name="ambient_info3">Koji je idealan nivo pozadinske buke? Odgovor može varirati među pojedincima. Neki ljudi zaista ne uživaju u atmosferi kafića, dok bi drugi mogli napredovati uz relativno visok nivo buke oko sebe. Zbog toga smo se potrudili da Enliven ponudi ponešto za svakoga.</string>
+    <string name="ambient_info4">Male količine „smetnji" – tj. buke – su zapravo korisne za mozak. Lagana kiša, žuborenje potoka, klavir, šum televizora, pa čak i povremene vibracije na površini kože pojačavaju našu sposobnost da čujemo, vidimo i osjećamo.</string>
 </resources>

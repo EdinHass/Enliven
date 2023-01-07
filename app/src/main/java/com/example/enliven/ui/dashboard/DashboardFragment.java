@@ -35,8 +35,8 @@ public class DashboardFragment extends Fragment {
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        dnevnikcard = (ConstraintLayout) root.findViewById(R.id.dnevnikcard);
-        osjecanjecard = (ConstraintLayout) root.findViewById(R.id.osjecanjecard);
+        dnevnikcard = root.findViewById(R.id.dnevnikcard);
+        osjecanjecard = root.findViewById(R.id.osjecanjecard);
 
         osjecanjecard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +52,7 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        TextView pocetniText = (TextView) root.findViewById(R.id.textpocetni);
+        TextView pocetniText = root.findViewById(R.id.textpocetni);
         SharedPreferences sprefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
         pocetniText.setText( "Zdravo, "+ sprefs.getString("UserName", "invalid") + "!");
 
