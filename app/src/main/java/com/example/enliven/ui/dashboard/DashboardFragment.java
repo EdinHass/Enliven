@@ -22,6 +22,7 @@ import com.example.enliven.R;
 import com.example.enliven.MainActivity;
 import  com.example.enliven.diaryactivity;
 import com.example.enliven.databinding.FragmentDashboardBinding;
+import com.example.enliven.sreca_tips;
 
 import org.w3c.dom.Text;
 
@@ -45,6 +46,7 @@ public class DashboardFragment extends Fragment {
         dnevnikcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_moodActivity);
             }
         });

@@ -47,8 +47,7 @@ public class MoodActivity extends AppCompatActivity {
         tuga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), tuga_tips.class);
-                startActivity(i);
+                Navigation.findNavController(v).navigate(R.id.action_tuga_tips_to_diaryactivity3);
                 String pom1=strOsjecanja[0];
                 strOsjecanja[0]="Tuga";
                 String pom2=strOsjecanja[1];

@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,17 +15,29 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.util.HashSet;
+import java.util.List;
 
 public class NotesEditorActivity extends AppCompatActivity {
 
     EditText noteEditText;
 
+
+
+
+
     int noteId;
 
     SharedPreferences sharedPreferences;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +45,13 @@ public class NotesEditorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notes_editor);
 
         ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("Emotion book");
 
         sharedPreferences = this.getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
         noteEditText = findViewById(R.id.note_EditText);
+
+
 
         Intent intent = getIntent();
         noteId =intent.getIntExtra("noteId", -1);

@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/alata"
         android:paddingStart="20dp"
-        android:text="Moj dnevnik"
+        android:text="Moj dnevnik osjećanja"
         android:textColor="@color/white"
         android:textSize="36dp"
         app:layout_constraintBottom_toBottomOf="parent"

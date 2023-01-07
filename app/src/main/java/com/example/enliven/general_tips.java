@@ -3,6 +3,7 @@ package com.example.enliven;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -19,10 +20,9 @@ private Button button_next;
 
 
 
-
-
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        
 
         View view1 = inflater.inflate(R.layout.fragment_general_tips, container, false);
 

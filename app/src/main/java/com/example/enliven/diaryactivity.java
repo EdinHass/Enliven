@@ -40,7 +40,7 @@ public class diaryactivity extends AppCompatActivity {
         setContentView(R.layout.activity_diaryactivity);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle("Dnevnik");
+        actionBar.setTitle("Emotion book");
 
         sharedpref = this.getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
 
