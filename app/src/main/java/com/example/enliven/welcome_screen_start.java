@@ -86,8 +86,8 @@ public class welcome_screen_start extends Fragment {
 
         });
 
-        ImageView img = (ImageView) view1.findViewById(R.id.imageStarting1);
-        TextView text = (TextView) view1.findViewById(R.id.textWelcome1);
+        ImageView img = view1.findViewById(R.id.imageStarting1);
+        TextView text = view1.findViewById(R.id.textWelcome1);
         Animation animationTop = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_out_top);
         Animation animationBottom = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_out_bottom);
         Animation fade = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.fade_in_slow);

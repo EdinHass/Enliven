@@ -38,15 +38,15 @@ public class NotificationsFragment extends Fragment {
 
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        card1Sleep = (RelativeLayout) root.findViewById(R.id.card1Sleep);
-        card2Sleep = (RelativeLayout) root.findViewById(R.id.card2Sleep);
+        card1Sleep = root.findViewById(R.id.card1Sleep);
+        card2Sleep = root.findViewById(R.id.card2Sleep);
         card1Sleep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_notifications_to_card1activity);
             }
         });
-        TextView zapocniText = (TextView) root.findViewById(R.id.textViewZapocni);
+        TextView zapocniText = root.findViewById(R.id.textViewZapocni);
 
         long compare = GregorianCalendar.getInstance().get(Calendar.HOUR_OF_DAY)*3600 + GregorianCalendar.getInstance().get(Calendar.MINUTE)*60;
         SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);

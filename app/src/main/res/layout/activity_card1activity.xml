@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alata"
-                android:text="Započni"
+                android:text="Ambijentalni Zvukovi"
                 android:textColor="@color/white"
                 android:textSize="30dp"
                 android:textFontWeight="800"
@@ -97,11 +97,13 @@
                 android:layout_marginStart="20dp">
 
             <LinearLayout
+                android:id="@+id/cats"
                 android:orientation="horizontal"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="0dp">
                 <LinearLayout
+                    android:id="@+id/cat1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -121,6 +123,7 @@
                     android:fontFamily="@font/alata"/>
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/cat2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -140,6 +143,7 @@
                         android:textSize="14dp"/>
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/cat3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -159,6 +163,7 @@
                         android:fontFamily="@font/alata"/>
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/cat4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -179,6 +184,7 @@
 
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/cat5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">

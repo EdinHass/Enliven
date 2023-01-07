@@ -19,8 +19,8 @@ import com.google.android.material.slider.Slider;
 public class TimerDialogFragment extends DialogFragment {
 
     public interface NoticeDialogListener {
-        public void onDialogPositiveClick(TimerDialogFragment dialog);
-        public void onDialogNegativeClick(TimerDialogFragment dialog);
+        void onDialogPositiveClick(TimerDialogFragment dialog);
+        void onDialogNegativeClick(TimerDialogFragment dialog);
     }
 
     // Use this instance of the interface to deliver action events

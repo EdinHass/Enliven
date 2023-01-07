@@ -2,10 +2,10 @@ package com.example.enliven;
 
 public class SoundItem {
     String name;
-    int soundData;
+    String soundData;
     int pictureData;
 
-    public SoundItem(String name, int soundData, int pictureData) {
+    public SoundItem(String name, String soundData, int pictureData) {
         this.name = name;
         this.soundData = soundData;
         this.pictureData = pictureData;
@@ -19,11 +19,11 @@ public class SoundItem {
         this.name = name;
     }
 
-    public int getSoundData() {
+    public String getSoundData() {
         return soundData;
     }
 
-    public void setSoundData(int soundData) {
+    public void setSoundData(String soundData) {
         this.soundData = soundData;
     }
 
