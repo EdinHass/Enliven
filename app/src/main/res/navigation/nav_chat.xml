@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_chat.xml"
+    app:startDestination="@id/channelsFragment">
+
+    <fragment
+        android:id="@+id/newMessageFragment"
+        android:name="com.example.enliven.ui.chat.NewMessageFragment"
+        android:label="NewMessageFragment" >
+        <action
+            android:id="@+id/action_newMessageFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_newMessageFragment_to_channelsFragment2"
+            app:destination="@id/channelsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.enliven.ui.chat.ChatFragment"
+        android:label="ChatFragment" >
+        <action
+            android:id="@+id/action_chatFragment_to_channelsFragment"
+            app:destination="@id/channelsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/channelsFragment"
+        android:name="com.example.enliven.ui.chat.ChannelsFragment"
+        android:label="ChannelsFragment" >
+        <action
+            android:id="@+id/action_channelsFragment_to_newMessageFragment"
+            app:destination="@id/newMessageFragment"
+            app:enterAnim="@anim/slide_out_bottom_light" />
+        <action
+            android:id="@+id/action_channelsFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+</navigation>
