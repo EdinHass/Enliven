@@ -1,5 +1,6 @@
 package com.example.enliven.ui.auth
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -50,9 +51,17 @@ class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile){
             )
         )
 
+        val sharedPreference = requireActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE)
+        val editor = sharedPreference.edit()
+        editor.putString("loginToken", tokenProvider.getTokenProvider(currentUser.uid).loadToken())
+        editor.putString("loginName", binding.editTextName.text.toString().trim())
+        editor.putString("loginPhone", currentUser.phoneNumber!!)
+        editor.putString("loginImage", UserExtra.DEFAULT_AVATAR)
+        editor.apply()
+
         ChatClient
             .instance()
-            .connectUser(user, tokenProvider.getTokenProvider(currentUser.uid))
+            .connectUser(user, sharedPreference.getString("loginToken","")!!)
             .enqueue {  result ->
                 if(result.isSuccess){
                     //User Connected to the BAckend Successfully

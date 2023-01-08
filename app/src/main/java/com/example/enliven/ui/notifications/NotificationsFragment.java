@@ -22,11 +22,25 @@ import androidx.navigation.Navigation;
 import com.example.enliven.MainActivity;
 import com.example.enliven.R;
 import com.example.enliven.card1activity;
+import com.example.enliven.data.StreamTokenApi;
+import com.example.enliven.data.UserExtra;
 import com.example.enliven.databinding.FragmentNotificationsBinding;
+import com.example.enliven.ui.auth.AuthActivity;
+import com.example.enliven.ui.auth.SetupProfileFragment;
+import com.example.enliven.ui.auth.StreamTokenProvider;
+import com.example.enliven.ui.chat.ChatActivity;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.sql.CallableStatement;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Map;
+
+import io.getstream.chat.android.client.ChatClient;
+import io.getstream.chat.android.client.models.User;
 
 public class NotificationsFragment extends Fragment {
 
@@ -46,6 +60,34 @@ public class NotificationsFragment extends Fragment {
                 Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_notifications_to_card1activity);
             }
         });
+
+        card2Sleep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
+                FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+                if (currentUser == null) {
+                    startActivity(new Intent(getContext(), AuthActivity.class));
+                } else {
+                    User user = new User();
+                    user.setId(currentUser.getUid());
+                    HashMap extraData = new HashMap<String, String>();
+                    extraData.put(UserExtra.NAME, prefs.getString("loginName", ""));
+                    extraData.put(UserExtra.PHONE, prefs.getString("loginPhone", ""));
+                    extraData.put(UserExtra.IMAGE, prefs.getString("loginImage", ""));
+                    user.setExtraData(extraData);
+                    ChatClient.instance().connectUser(user, prefs.getString("loginToken", "")).enqueue(result -> {
+                        if(result.isSuccess()){
+                            startActivity(new Intent(getContext(), ChatActivity.class));
+                        }else{
+                            Toast.makeText(getContext(), "Login Error", Toast.LENGTH_LONG);
+                        }
+                    });
+                }
+            }
+            });
+
+
         TextView zapocniText = root.findViewById(R.id.textViewZapocni);
 
         long compare = GregorianCalendar.getInstance().get(Calendar.HOUR_OF_DAY)*3600 + GregorianCalendar.getInstance().get(Calendar.MINUTE)*60;
