@@ -7,7 +7,9 @@ import com.google.android.material.snackbar.Snackbar
 
 fun <A: Activity>Activity.startNewActivity(activity: Class<A>){
     Intent(this, activity).also{
+        it.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(it)
+        finishAndRemoveTask();
     }
 }
 
