@@ -9,21 +9,25 @@
 
     <ImageView
         android:id="@+id/image_view_avatar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/circle_background"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="8dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_view_name"
         android:fontFamily="@font/alata"
         android:layout_width="0dp"
+        android:textSize="14dp"
+        android:textFontWeight="600"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="16dp"
-        android:text="Belal Khan"
+        android:textColor="@color/black"
+        android:text="Edin Hasanovic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image_view_avatar"
         app:layout_constraintTop_toTopOf="@+id/image_view_avatar" />
@@ -34,6 +38,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="+917549161079"
+
         app:layout_constraintStart_toStartOf="@+id/text_view_name"
         app:layout_constraintTop_toBottomOf="@+id/text_view_name" />
 

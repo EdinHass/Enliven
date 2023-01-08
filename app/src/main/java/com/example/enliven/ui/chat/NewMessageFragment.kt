@@ -1,7 +1,9 @@
 package com.example.enliven.ui.chat
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -21,11 +23,16 @@ class NewMessageFragment : Fragment(R.layout.fragment_new_message) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentNewMessageBinding.bind(view)
+        (activity as AppCompatActivity).supportActionBar?.hide()
         currentUser = FirebaseAuth.getInstance().currentUser ?: return
         binding.recyclerViewUsers.adapter = adapter
         getUsers()
         adapter.itemClickListener = {item, position, _ ->
-            findNavController().navigate(R.id.chatFragment, bundleOf(ChatFragment.RECIPIENT_ID to item.id))
+            findNavController().navigate(R.id.action_newMessageFragment_to_chatFragment, bundleOf(ChatFragment.RECIPIENT_ID to item.id,
+            ChatFragment.CHANNEL_ID to "n/a"))
+        }
+        binding.backbtn.setOnClickListener {
+            findNavController().navigate(R.id.action_newMessageFragment_to_channelsFragment2)
         }
 
     }
@@ -33,11 +40,14 @@ class NewMessageFragment : Fragment(R.layout.fragment_new_message) {
     private fun getUsers(){
 
         val request = QueryUsersRequest(
-            filter = Filters.ne("id", currentUser.uid),
+            filter = Filters.and(
+                Filters.ne("id", currentUser.uid),
+                Filters.eq("role", "user")
+                ),
             offset = 0,
             limit = 100
         )
-        ChatClient.instance().queryUsers(request).enqueue(){
+        ChatClient.instance().queryUsers(request).enqueue {
             if(it.isSuccess){
                 adapter.submitList(it.data())
             }else{

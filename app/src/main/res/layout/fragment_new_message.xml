@@ -6,16 +6,21 @@
     android:layout_height="match_parent"
     android:theme="@style/Theme.Design.Light.NoActionBar">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/Pallete0"
+
+    <TextView
+        android:layout_margin="20dp"
+        android:id="@+id/textView"
+        android:textFontWeight="800"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alata"
+        android:textColor="@color/Pallete0"
+        android:textSize="30dp"
+        android:text="Nova konverzacija"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_view_users"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="New Message"
-        app:titleTextColor="@color/Pallete2"/>
+        app:layout_constraintTop_toTopOf="parent"></TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_users"
@@ -29,8 +34,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@id/textView"
         tools:listitem="@layout/item_user" />
+
+    <RelativeLayout
+        android:id="@+id/backbtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_baseline_arrow_drop_down_circle_24"
+        android:gravity="bottom"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_view_users"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

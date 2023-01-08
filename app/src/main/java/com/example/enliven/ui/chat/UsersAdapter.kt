@@ -21,7 +21,6 @@ class UsersAdapter: BaseListAdapter<User, ItemUserBinding>(Comparator()) {
 
     override fun bindItem(binding: ItemUserBinding, item: User) {
         binding.textViewName.text = item.name
-        Log.e("Hey", "Bound ${item.extraData[UserExtra.PHONE].toString()}")
         binding.textViewPhone.text = item.extraData[UserExtra.PHONE].toString()
     }
 
