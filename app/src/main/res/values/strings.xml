@@ -10,4 +10,7 @@
     <string name="ambient_info2">Istraživači su otkrili da su sudionici istraživanja bolje rješavali kognitivne zadatke, radili su brže i dolazili do inovativnijih ideja kada su radili sa ambijentalnim pozadinskim zvukovima.</string>
     <string name="ambient_info3">Koji je idealan nivo pozadinske buke? Odgovor može varirati među pojedincima. Neki ljudi zaista ne uživaju u atmosferi kafića, dok bi drugi mogli napredovati uz relativno visok nivo buke oko sebe. Zbog toga smo se potrudili da Enliven ponudi ponešto za svakoga.</string>
     <string name="ambient_info4">Male količine „smetnji" – tj. buke – su zapravo korisne za mozak. Lagana kiša, žuborenje potoka, klavir, šum televizora, pa čak i povremene vibracije na površini kože pojačavaju našu sposobnost da čujemo, vidimo i osjećamo.</string>
+    <string name="enter_num">Unesite Vaš broj telefona da započnete</string>
+    <string name="verify_num">Molimo Vas unesite Vaš verifikacijski kod.</string>
+    <string name="setup_profile">Kreirajte svoj profil</string>
 </resources>
