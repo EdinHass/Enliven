@@ -6,53 +6,71 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_dark_purple"
     tools:context=".ui.dashboard.DashboardFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginBottom="60dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
         android:id="@+id/textpocetni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alata"
         android:text="Kako se osjećaš?"
         android:textColor="@color/white"
-        android:textSize="48dp"
+        android:textSize="30dp"
         android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+         />
 
 
-    <ImageView
+    <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:layout_height="2dp"
-        android:layout_marginTop="12dp"
         android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         android:layout_marginStart="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textpocetni" />
+        android:orientation="horizontal" />
+
+        <TextView
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:text="Citati"
+            android:textColor="@color/PalleteLightText"
+            android:textSize="14dp"
+            android:layout_marginTop="20dp"/>
 
     <HorizontalScrollView
         android:id="@+id/citati_story"
         android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/Cards"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        >
 
         <LinearLayout
             android:id="@+id/citati"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="0dp"
-           android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -140,19 +158,93 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <LinearLayout
-        android:id="@+id/Cards"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="250dp"
-        android:layout_marginBottom="80dp"
-        android:gravity="bottom"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        <TextView
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:text="Istraži"
+            android:textColor="@color/PalleteLightText"
+            android:textSize="14dp"
+            android:layout_marginTop="20dp"/>
+
+        <RelativeLayout
+            android:id="@+id/socialinfo"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:background="@drawable/newcard_blue"
+            android:clickable="true"
+            >
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Zašto da iskazuješ emocije?"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Saznaj više"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/Pallete3"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/enlivensocial"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="270dp"
+            android:layout_width="365dp"
+            android:outlineAmbientShadowColor="@android:color/transparent"
+            android:background="@drawable/newcard_blue"
+            android:layout_marginBottom="20dp"
+      >
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Enliven Social"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Započni"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/Pallete3"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
 
 
         <HorizontalScrollView
@@ -162,8 +254,9 @@
        >
 
             <LinearLayout
+                android:id="@+id/cards"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 >
 
@@ -175,6 +268,11 @@
                     android:background="@drawable/newcard_purple"
                     android:clickable="true"
                     android:padding="30dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -188,11 +286,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
                         android:fontFamily="@font/alata"
                         android:text="Zabilježi kako se osjećaš"
-                        android:textColor="@color/white"
-                        android:textSize="18dp" />
+                        android:textColor="@color/Pallete3"
+                        android:textSize="14dp" />
+                    </LinearLayout>
 
 
 
@@ -202,9 +300,15 @@
                     android:id="@+id/card2"
                     android:layout_width="350dp"
                     android:layout_height="220dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="20dp"
                     android:background="@drawable/newcard_pink"
-                    android:padding="30dp">
+                    android:padding="30dp"
+                    android:clickable="true">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
 
                     <TextView
@@ -219,11 +323,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
                         android:fontFamily="@font/alata"
                         android:text="za poboljšanje raspoloženja"
-                        android:textColor="@color/white"
-                        android:textSize="18dp" />
+                        android:textColor="@color/Pallete3"
+                        android:textSize="14dp" />
+                    </LinearLayout>
 
 
 
@@ -232,9 +336,11 @@
         </HorizontalScrollView>
 
 
+
     </LinearLayout>
+    </ScrollView>
 
-
+</LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

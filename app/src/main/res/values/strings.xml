@@ -36,4 +36,7 @@
     <string name="verify_num">Molimo Vas unesite Vaš verifikacijski kod.</string>
     <string name="setup_profile">Kreirajte svoj profil</string>
     <string name="enlivenchat">Enliven Social</string>
+    <string name="zasto_info">Mnoga istraživanja su pokazala da ćeš se osjećati mnogo bolje ukoliko podijeliš s nekim kako se osjećaš. Zadržavanje svega samo za sebe nije zdravo, potrebno je teret podijeliti i "izbaciti" iz sebe. Enliven ti nudi dvije opcije da podijeliš kako se osjećaš: \n1. Enliven Social \n2. Emotion book</string>
+    <string name="social_info">Ukoliko se ne osjećaš ugodno da razgovaraš sa prijateljima, porodicom ili pronađeš stručnu osobu za razgovor Enliven Social ti nudi mogućnost da se povežeš i razgovaraš sa drugim korisnicima.</string>
+    <string name="emotion_info">Ukoliko se ne osjećaš ugodno da razgovaraš i dijeliš svoja osjećanja sa bilo kojom osobom, onda ih zapiši. Enliven ti nudi Emotion book gdje možeš voditi dnevnik svojih osjećanja i zapisivanjem "izbaciti" sve iz sebe.</string>
 </resources>

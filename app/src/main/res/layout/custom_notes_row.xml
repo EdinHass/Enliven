@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:contentPadding="10dp"
+        android:layout_marginTop="20dp"
         app:strokeWidth="1dp"
         app:strokeColor="@color/Pallete1"
         app:cardBackgroundColor="@color/Pallete1"

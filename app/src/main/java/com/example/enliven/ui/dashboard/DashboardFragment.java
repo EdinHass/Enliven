@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -22,18 +24,39 @@ import androidx.navigation.Navigation;
 import com.example.enliven.MoodActivity;
 import com.example.enliven.R;
 import com.example.enliven.MainActivity;
+import com.example.enliven.SocialDialogFragment;
 import com.example.enliven.citati_activity;
+import com.example.enliven.data.UserExtra;
 import  com.example.enliven.diaryactivity;
 import com.example.enliven.databinding.FragmentDashboardBinding;
 import com.example.enliven.sreca_tips;
+import com.example.enliven.ui.auth.AuthActivity;
+import com.example.enliven.ui.chat.ChatActivity;
+import com.example.enliven.data.StreamTokenApi;
+import com.example.enliven.data.UserExtra;
+import com.example.enliven.ui.auth.AuthActivity;
+import com.example.enliven.ui.auth.SetupProfileFragment;
+import com.example.enliven.ui.auth.StreamTokenProvider;
+import com.example.enliven.ui.chat.ChatActivity;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.w3c.dom.Text;
+import java.sql.CallableStatement;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import io.getstream.chat.android.client.ChatClient;
+import io.getstream.chat.android.client.models.User;
 
 public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
-    private RelativeLayout dnevnikcard, tipscard;
+    private RelativeLayout dnevnikcard, tipscard, socialinfo, enlivensocial;
     private ImageView story1, story2, story3, story4, story5;
+    int i=1;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -49,6 +72,42 @@ public class DashboardFragment extends Fragment {
         story3=root.findViewById(R.id.story31);
         story4=root.findViewById(R.id.story41);
         story5=root.findViewById(R.id.story51);
+        socialinfo=root.findViewById(R.id.socialinfo);
+        enlivensocial=root.findViewById(R.id.enlivensocial);
+
+        enlivensocial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
+                FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+                if (currentUser == null) {
+                    startActivity(new Intent(getContext(), AuthActivity.class));
+                } else {
+                    User user = new User();
+                    user.setId(currentUser.getUid());
+                    HashMap extraData = new HashMap<String, String>();
+                    extraData.put(UserExtra.NAME, prefs.getString("loginName", ""));
+                    extraData.put(UserExtra.PHONE, prefs.getString("loginPhone", ""));
+                    extraData.put(UserExtra.IMAGE, prefs.getString("loginImage", ""));
+                    user.setExtraData(extraData);
+                    ChatClient.instance().connectUser(user, prefs.getString("loginToken", "")).enqueue(result -> {
+                        if(result.isSuccess()){
+                            startActivity(new Intent(getContext(), ChatActivity.class));
+                        }else{
+                            Toast.makeText(getContext(), "Login Error", Toast.LENGTH_LONG);
+                        }
+                    });
+                }
+            }
+        });
+
+        socialinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SocialDialogFragment socialDialogFragment = new SocialDialogFragment();
+                socialDialogFragment.show(getChildFragmentManager(),"Informacije");
+            }
+        });
 
         story1.setOnClickListener(new View.OnClickListener() {
             @Override

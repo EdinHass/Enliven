@@ -47,20 +47,7 @@ public class citati_activity extends AppCompatActivity {
 
 
 
-          new CountDownTimer(1000, 1000) {
 
-
-              @Override
-              public void onTick(long millisUntilFinished) {
-
-              }
-
-              public void onFinish() {
-                  random(text);
-
-
-              }
-          }.start();
 
 
 
