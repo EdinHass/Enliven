@@ -143,14 +143,14 @@ public class DashboardFragment extends Fragment {
         tipscard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_general_tips);
+                Navigation.findNavController(getActivity(), R.id.general_tips_fragmentView).navigate(R.id.action_navigation_dashboard_to_general_tips);
             }
         });
 
         dnevnikcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_moodActivity);
+                Navigation.findNavController(getActivity(), R.id.osjecanja_fragmentView).navigate(R.id.action_navigation_dashboard_to_moodActivity);
             }
         });
 

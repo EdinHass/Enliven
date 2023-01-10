@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:name=".StreamChatApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,7 +15,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Enliven"
+        android:usesCleartextTraffic="true"
         tools:targetApi="33">
+        <activity
+            android:name=".general_tip"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".osjecanja_tips"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".ui.chat.ChatActivity"
             android:exported="false">
@@ -25,7 +39,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.enliven.ui.auth.AuthActivity"
+            android:name=".ui.auth.AuthActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

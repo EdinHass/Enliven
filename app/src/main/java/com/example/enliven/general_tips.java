@@ -31,7 +31,7 @@ private Button button_next;
         button_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_general_tips_to_general_tip22);
+                Navigation.findNavController(getActivity(), R.id.general_tips_fragmentView).navigate(R.id.action_general_tips2_to_general_tip2);
             }
         });
 

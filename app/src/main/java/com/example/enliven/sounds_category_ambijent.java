@@ -36,8 +36,8 @@ public class sounds_category_ambijent extends AppCompatActivity {
 
 
         setupSound(list1.getChildAt(0), new SoundItem("Mjehurići", "https://cdn.pixabay.com/download/audio/2022/01/18/audio_4bf02d9d82.mp3?filename=bubbles-14830.mp3", R.drawable.mjehurici_sound));
-        setupSound(list1.getChildAt(1), new SoundItem("Otkucavanje sata","https://cdn.pixabay.com/download/audio/2022/03/09/audio_4b7bb9d4c1.mp3?filename=ticking-clock_1-27477.mp3", R.drawable.mjehurici_sound));
-        setupSound(list1.getChildAt(2), new SoundItem("Pranje ruku","https://cdn.pixabay.com/download/audio/2022/03/10/audio_2b5ec30ccd.mp3?filename=washing-hands-in-kitchen-sink-30759.mp3",R.drawable.mjehurici_sound));
+        setupSound(list1.getChildAt(1), new SoundItem("Otkucavanje sata","https://cdn.pixabay.com/download/audio/2022/03/09/audio_4b7bb9d4c1.mp3?filename=ticking-clock_1-27477.mp3", R.drawable.otkucavanje_sata_sound1));
+        setupSound(list1.getChildAt(2), new SoundItem("Pranje ruku","https://cdn.pixabay.com/download/audio/2022/03/10/audio_2b5ec30ccd.mp3?filename=washing-hands-in-kitchen-sink-30759.mp3",R.drawable.pranje_ruku_sound1));
         setupSound(list1.getChildAt(3), new SoundItem("Sječenje povrća", "https://cdn.pixabay.com/download/audio/2022/03/13/audio_0614063894.mp3?filename=vegetables-peeling-55056.mp3",R.drawable.sjecenje_povrca_sound));
     }
 

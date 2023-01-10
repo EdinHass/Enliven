@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_general_tips"
+    app:startDestination="@id/general_tips2">
+
+    <fragment
+        android:id="@+id/general_tips2"
+        android:name="com.example.enliven.general_tips"
+        android:label="fragment_general_tips"
+        tools:layout="@layout/fragment_general_tips" >
+        <action
+            android:id="@+id/action_general_tips2_to_general_tip2"
+            app:destination="@id/general_tip2" />
+    </fragment>
+    <fragment
+        android:id="@+id/general_tip2"
+        android:name="com.example.enliven.general_tip2"
+        android:label="fragment_general_tip2"
+        tools:layout="@layout/fragment_general_tip2" >
+        <action
+            android:id="@+id/action_general_tip2_to_general_tip3"
+            app:destination="@id/general_tip3" />
+    </fragment>
+    <fragment
+        android:id="@+id/general_tip3"
+        android:name="com.example.enliven.general_tip3"
+        android:label="fragment_general_tip3"
+        tools:layout="@layout/fragment_general_tip3" >
+        <action
+            android:id="@+id/action_general_tip3_to_tip_o_pisanju"
+            app:destination="@id/tip_o_pisanju" />
+    </fragment>
+    <fragment
+        android:id="@+id/tip_o_pisanju"
+        android:name="com.example.enliven.tip_o_pisanju"
+        android:label="fragment_tip_o_pisanju"
+        tools:layout="@layout/fragment_tip_o_pisanju" >
+        <action
+            android:id="@+id/action_tip_o_pisanju_to_diaryactivity2"
+            app:destination="@id/diaryactivity2" />
+    </fragment>
+    <activity
+        android:id="@+id/diaryactivity2"
+        android:name="com.example.enliven.diaryactivity"
+        android:label="activity_diaryactivity"
+        tools:layout="@layout/activity_diaryactivity" />
+</navigation>

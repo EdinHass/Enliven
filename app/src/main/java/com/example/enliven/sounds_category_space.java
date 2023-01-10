@@ -29,7 +29,7 @@ public class sounds_category_space extends AppCompatActivity {
         list1=findViewById(R.id.list1);
 
 
-        setupSound(meduzvjezdaniamb, new SoundItem("Međuzvjezdani Amb.", "https://cdn.pixabay.com/download/audio/2021/09/11/audio_d40f2dfa1d.mp3?filename=interstellar-science-fiction-sounds-8239.mp3", R.drawable.biblioteka_sound1));
+        setupSound(meduzvjezdaniamb, new SoundItem("Međuzvjezdani Amb.", "https://cdn.pixabay.com/download/audio/2021/09/11/audio_d40f2dfa1d.mp3?filename=interstellar-science-fiction-sounds-8239.mp3", R.drawable.interstellar_sound1));
         setupSound(nlo, new SoundItem("NLO let", "https://cdn.pixabay.com/download/audio/2022/03/14/audio_bf6c2ef2e5.mp3?filename=epp-ufo-flight-65106.mp3", R.drawable.nlo1_sound1));
         setupSound(recomm.getChildAt(0), new SoundItem("Andromeda", "https://cdn.pixabay.com/download/audio/2021/10/21/audio_d891ea7488.mp3?filename=andromeda-voices-from-another-galaxy-9690.mp3", R.drawable.andromeda_sound1));
         setupSound(recomm.getChildAt(1), new SoundItem("U svemiru", "https://cdn.pixabay.com/download/audio/2022/02/07/audio_f008bec1aa.mp3?filename=astronaut-child-in-space-17141.mp3", R.drawable.space1_sound1));

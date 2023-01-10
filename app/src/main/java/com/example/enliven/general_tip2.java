@@ -27,7 +27,7 @@ public class general_tip2 extends Fragment {
         button_next1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_general_tip22_to_general_tip32);
+                Navigation.findNavController(getActivity(), R.id.general_tips_fragmentView).navigate(R.id.action_general_tip2_to_general_tip3);
             }
         });
 
