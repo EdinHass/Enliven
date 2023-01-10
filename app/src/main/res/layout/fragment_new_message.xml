@@ -14,13 +14,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alata"
-        android:textColor="@color/Pallete0"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="30dp"
         android:text="Nova konverzacija"
         app:layout_constraintBottom_toTopOf="@+id/recycler_view_users"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_users"

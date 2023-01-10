@@ -27,7 +27,8 @@ class EnterPhoneFragment: Fragment(R.layout.fragment_enter_phone) {
         binding.spinnerCountries.adapter = adapter
 
         binding.editTextPhone.addTextChangedListener {
-            binding.buttonNext.isEnabled = it?.length == 9
+            if(!it.isNullOrBlank())
+                binding.buttonNext.isEnabled = it.length >=9
         }
 
         binding.buttonNext.setOnClickListener {

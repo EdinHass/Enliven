@@ -116,7 +116,7 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
 
     private fun finish() {
         (activity as AppCompatActivity).supportActionBar?.show()
-        findNavController().navigate(R.id.action_chatFragment_to_channelsFragment)
+        findNavController().navigate(R.id.channelsFragment)
     }
 
     companion object{
