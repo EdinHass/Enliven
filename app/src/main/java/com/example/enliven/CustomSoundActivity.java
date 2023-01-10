@@ -33,6 +33,7 @@ public class CustomSoundActivity extends AppCompatActivity implements TimerDialo
     ImageView startButton;
     GifImageView gif;
     LoopMediaPlayer m1, m2, m3, m4, m5, m6, m7, m8;
+    Timer myTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,19 +122,29 @@ public class CustomSoundActivity extends AppCompatActivity implements TimerDialo
     @Override
     public void onBackPressed() {
         freeMediaPlayers();
+        if(myTimer!=null) {
+            myTimer.cancel();
+            myTimer.purge();
+            Toast.makeText(getApplicationContext(), "Timer: Prekinut!", Toast.LENGTH_SHORT).show();
+        }
         super.onBackPressed();
     }
 
     @Override
     public boolean onSupportNavigateUp() {
         freeMediaPlayers();
+        if(myTimer!=null) {
+            myTimer.cancel();
+            myTimer.purge();
+            Toast.makeText(getApplicationContext(), "Timer: Prekinut!", Toast.LENGTH_SHORT).show();
+        }
         finish();
         return true;
     }
 
     @Override
     public void onDialogPositiveClick(TimerDialogFragment dialog) {
-        Timer myTimer = new Timer();
+        myTimer = new Timer();
         myTimer.schedule(new TimerTask() {
             @Override
             public void run() {

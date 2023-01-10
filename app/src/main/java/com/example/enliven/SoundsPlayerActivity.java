@@ -57,6 +57,7 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
     GifImageView gif, loading;
     RelativeLayout back;
     Slider slider;
+    Timer myTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -195,15 +196,26 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
     @Override
     public void onBackPressed() {
         MyMediaPlayer.freeMediaPlayer();
+        if(myTimer!=null) {
+            myTimer.cancel();
+            myTimer.purge();
+            Toast.makeText(getApplicationContext(), "Timer: Prekinut!", Toast.LENGTH_SHORT).show();
+        }
         super.onBackPressed();
     }
 
     @Override
     public boolean onSupportNavigateUp() {
         MyMediaPlayer.freeMediaPlayer();
+        if(myTimer!=null) {
+            myTimer.cancel();
+            myTimer.purge();
+            Toast.makeText(getApplicationContext(), "Timer: Prekinut!", Toast.LENGTH_SHORT).show();
+        }
         finish();
         return true;
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -261,7 +273,7 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
 
     @Override
     public void onDialogPositiveClick(TimerDialogFragment dialog) {
-        Timer myTimer = new Timer();
+        myTimer = new Timer();
         myTimer.schedule(new TimerTask() {
             @Override
             public void run() {
