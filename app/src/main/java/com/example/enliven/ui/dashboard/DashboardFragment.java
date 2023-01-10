@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,8 +56,8 @@ public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
     private RelativeLayout dnevnikcard, tipscard, socialinfo, enlivensocial;
-    private ImageView story1, story2, story3, story4, story5;
-    int i=1;
+    private LinearLayout story_citati;
+
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -67,13 +68,23 @@ public class DashboardFragment extends Fragment {
 
         dnevnikcard = root.findViewById(R.id.dnevnikcard);
         tipscard = root.findViewById(R.id.card2);
-        story1=root.findViewById(R.id.story11);
-        story2=root.findViewById(R.id.story21);
-        story3=root.findViewById(R.id.story31);
-        story4=root.findViewById(R.id.story41);
-        story5=root.findViewById(R.id.story51);
+        story_citati=root.findViewById(R.id.citati);
         socialinfo=root.findViewById(R.id.socialinfo);
         enlivensocial=root.findViewById(R.id.enlivensocial);
+
+        for(int i=0;i<20;i++){
+            int i1=i;
+            story_citati.getChildAt(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getContext(), citati_activity.class);
+
+                    intent.putExtra("Broj citata", i1);
+                            startActivity(intent);
+                }
+            });
+
+        }
 
         enlivensocial.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,36 +120,7 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        story1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_citati_activity);
-            }
-        });
-        story2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_citati_activity);
-            }
-        });
-        story3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_citati_activity);
-            }
-        });
-        story4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_citati_activity);
-            }
-        });
-        story5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_citati_activity);
-            }
-        });
+
 
         tipscard.setOnClickListener(new View.OnClickListener() {
             @Override

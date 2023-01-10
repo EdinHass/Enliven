@@ -43,7 +43,19 @@ public class citati_activity extends AppCompatActivity {
         text=findViewById(R.id.textViewcitat);
 
         citati=getResources().getStringArray(R.array.citati1);
-        random(text);
+
+        String data = getIntent().getExtras().getString("keyName","defaultKey");
+        int brojstorija = getIntent().getExtras().getInt("Broj citata");
+        text.setText(citati[brojstorija]);
+
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                text.setText(citati[(getIntent().getExtras().getInt("Broj citata")+1)]);
+            }
+        };
+        timer.schedule(task,5000,5000);
 
 
 
