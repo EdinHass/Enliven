@@ -145,7 +145,6 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
                         .setUsage(AudioAttributes.USAGE_MEDIA)
                         .build()
         );
-        boolean firstRun = true;
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override

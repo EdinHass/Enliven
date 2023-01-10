@@ -14,8 +14,8 @@ import android.widget.RelativeLayout;
 
 public class card1activity extends AppCompatActivity {
 
-    RelativeLayout Rain1, soundsinfo;
-    LinearLayout recommended;
+    RelativeLayout Rain1, soundsinfo, customSoundCard;
+    LinearLayout recommended, recommended2;
     LinearLayout cats;
 
     @Override
@@ -27,6 +27,17 @@ public class card1activity extends AppCompatActivity {
         actionBar.setTitle("Ambijentalni Zvukovi");
         soundsinfo = findViewById(R.id.soundsinfo);
         cats = findViewById(R.id.cats);
+        customSoundCard = findViewById(R.id.custom_sound_card);
+        recommended2 = findViewById(R.id.recommended2);
+
+        setupCustomSounds(customSoundCard, new float[]{0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f});
+        setupCustomSounds(recommended2.getChildAt(0), new float[]{0.0f, 0.05f, 0.0f, 0.0f, 0.15f, 0.5f, 0.0f, 0.0f});
+        setupCustomSounds(recommended2.getChildAt(1), new float[]{0.0f, 0.0f, 0.0f, 0.1f, 0.0f, 0.0f, 0.5f, 0.8f});
+        setupCustomSounds(recommended2.getChildAt(2), new float[]{0.0f, 0.0f, 0.0f, 0.0f, 0.05f, 0.3f, 0.5f, 0.0f});
+
+
+
+
 
         cats.getChildAt(0).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,4 +81,23 @@ public class card1activity extends AppCompatActivity {
         finish();
         return true;
     }
+
+    public void setupCustomSounds(View view, float[] vols){
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), CustomSoundActivity.class);
+                i.putExtra("vol1", vols[0]);
+                i.putExtra("vol2", vols[1]);
+                i.putExtra("vol3", vols[2]);
+                i.putExtra("vol4", vols[3]);
+                i.putExtra("vol5", vols[4]);
+                i.putExtra("vol6", vols[5]);
+                i.putExtra("vol7", vols[6]);
+                i.putExtra("vol8", vols[7]);
+                startActivity(i);
+            }
+        });
+    }
+
 }

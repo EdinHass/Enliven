@@ -28,7 +28,7 @@ class EnterPhoneFragment: Fragment(R.layout.fragment_enter_phone) {
 
         binding.editTextPhone.addTextChangedListener {
             if(!it.isNullOrBlank())
-            binding.buttonNext.isEnabled = it.length >=9
+                binding.buttonNext.isEnabled = it.length >=9
         }
 
         binding.buttonNext.setOnClickListener {
