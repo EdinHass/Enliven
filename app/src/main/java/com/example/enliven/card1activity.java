@@ -59,6 +59,13 @@ public class card1activity extends AppCompatActivity {
             }
         });
 
+        cats.getChildAt(1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),sounds_category_music.class));
+            }
+        });
+
         soundsinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

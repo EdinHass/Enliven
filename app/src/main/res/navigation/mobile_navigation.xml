@@ -20,9 +20,6 @@
             android:id="@+id/action_navigation_dashboard_to_moodActivity"
             app:destination="@id/moodActivity" />
         <action
-            android:id="@+id/action_navigation_dashboard_to_general_tips"
-            app:destination="@id/general_tips" />
-        <action
             android:id="@+id/action_navigation_dashboard_to_citati_activity"
             app:destination="@id/citati_activity" />
     </fragment>
@@ -46,11 +43,6 @@
         android:name="com.example.enliven.MoodActivity"
         android:label="activity_mood"
         tools:layout="@layout/activity_mood"/>
-    <fragment
-        android:id="@+id/general_tips"
-        android:name="com.example.enliven.general_tips"
-        android:label="fragment_general_tips"
-        tools:layout="@layout/fragment_general_tips" />
     <activity
         android:id="@+id/citati_activity"
         android:name="com.example.enliven.citati_activity"

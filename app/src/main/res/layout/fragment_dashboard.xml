@@ -77,7 +77,8 @@
                 android:id="@+id/story1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:clickable="true">
 
                 <ImageView
                     android:id="@+id/story1_1"

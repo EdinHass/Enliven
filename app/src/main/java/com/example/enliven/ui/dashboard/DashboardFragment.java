@@ -26,10 +26,13 @@ import com.example.enliven.MoodActivity;
 import com.example.enliven.R;
 import com.example.enliven.MainActivity;
 import com.example.enliven.SocialDialogFragment;
+import com.example.enliven.SoundsPlayerActivity;
 import com.example.enliven.citati_activity;
 import com.example.enliven.data.UserExtra;
 import  com.example.enliven.diaryactivity;
 import com.example.enliven.databinding.FragmentDashboardBinding;
+import com.example.enliven.general_tip;
+import com.example.enliven.general_tips;
 import com.example.enliven.sreca_tips;
 import com.example.enliven.ui.auth.AuthActivity;
 import com.example.enliven.ui.chat.ChatActivity;
@@ -125,14 +128,15 @@ public class DashboardFragment extends Fragment {
         tipscard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(getActivity(), R.id.general_tips_fragmentView).navigate(R.id.action_navigation_dashboard_to_general_tips);
+                Intent i = new Intent(getContext(), general_tip.class);
+                startActivity(i);
             }
         });
 
         dnevnikcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(getActivity(), R.id.osjecanja_fragmentView).navigate(R.id.action_navigation_dashboard_to_moodActivity);
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_moodActivity);
             }
         });
 
