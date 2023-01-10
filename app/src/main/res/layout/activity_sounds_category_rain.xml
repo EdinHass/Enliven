@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".card1activity"
+    android:background="@drawable/gradient_dark_purple">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Kiša"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textFontWeight="800"
+                android:typeface="normal" />
+
+            <LinearLayout
+                android:layout_marginStart="20dp"
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:background="@color/white"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Istaknuto"
+                android:textColor="@color/PalleteLightText"
+                android:textSize="14dp"
+                android:layout_marginTop="20dp"/>
+
+            <RelativeLayout
+                android:id="@+id/kisanakrovu"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="250dp"
+                android:layout_width="wrap_content"
+                android:outlineAmbientShadowColor="@android:color/transparent">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/rain_on_roof"></ImageView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical"
+                    android:layout_marginStart="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Kiša  \nna krovu"
+                        android:textColor="@color/white"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Slušaj sada"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/Pallete3"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_marginStart="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Istraži"
+                    android:textColor="@color/PalleteLightText"
+                    android:textSize="14dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <HorizontalScrollView
+                    android:scrollbars="none"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/recommended"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <RelativeLayout
+                            android:layout_width="220dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/newcard_blue2"
+                            android:clickable="true"
+                            android:padding="30dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/alata"
+                                    android:text="Pljusak"
+                                    android:textColor="@color/white"
+                                    android:textSize="18dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alata"
+                                    android:text="za inspiraciju"
+                                    android:textColor="@color/Pallete2"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginTop="15dp"
+                                    android:src="@drawable/headphones_icon" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="220dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/newcard_green"
+                            android:clickable="true"
+                            android:padding="30dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/alata"
+                                    android:text="Blaga kiša"
+                                    android:textColor="@color/white"
+                                    android:textSize="18dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alata"
+                                    android:text="za relaksaciju"
+
+                                    android:textColor="@color/Pallete2"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginTop="15dp"
+                                    android:src="@drawable/headphones_icon" />
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="220dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/newcard_pink"
+                            android:clickable="true"
+                            android:padding="30dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/alata"
+                                    android:text="Kišovit dan"
+                                    android:textColor="@color/white"
+                                    android:textSize="18dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alata"
+                                    android:text="za inspiraciju"
+
+                                    android:textColor="@color/Pallete2"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginTop="15dp"
+                                    android:src="@drawable/headphones_icon" />
+
+                            </LinearLayout>
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="220dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/newcard_blue2"
+                            android:clickable="true"
+                            android:padding="30dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/alata"
+                                    android:text="Zvuk kiše"
+                                    android:textColor="@color/white"
+                                    android:textSize="18dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alata"
+                                    android:text="za duboko spavanje"
+                                    android:textColor="@color/Pallete2"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginTop="15dp"
+                                    android:src="@drawable/headphones_icon" />
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="220dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/newcard_pink"
+                            android:clickable="true"
+                            android:padding="30dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/alata"
+                                    android:text="Opuštajuća kiša"
+                                    android:textColor="@color/white"
+                                    android:textSize="18dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alata"
+                                    android:text="za opuštanje"
+
+                                    android:textColor="@color/Pallete2"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginTop="15dp"
+                                    android:src="@drawable/headphones_icon" />
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Kiša i grmljavina"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+
+                android:typeface="normal" />
+            <TextView
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Aktuelno"
+                android:textColor="@color/PalleteLightText"
+                android:textSize="14dp"
+                android:layout_marginBottom="20dp"/>
+            <RelativeLayout
+                android:id="@+id/kisaigrmljavina"
+                android:layout_marginHorizontal="20dp"
+                android:layout_height="250dp"
+                android:layout_width="wrap_content"
+                android:outlineAmbientShadowColor="@android:color/transparent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/rain_and_thunder"></ImageView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical"
+                    android:layout_marginStart="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Kiša i grmljavina"
+                        android:textColor="@color/white"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Slušaj sada"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/Pallete3"
+                        android:textSize="18dp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+
+
+                <HorizontalScrollView
+                    android:scrollbars="none"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/list1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <RelativeLayout
+                            android:layout_width="220dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/newcard_blue2"
+                            android:clickable="true"
+                            android:padding="30dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/alata"
+                                    android:text="Oluja"
+                                    android:textColor="@color/white"
+                                    android:textSize="18dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alata"
+                                    android:text="Slušaj sada"
+
+                                    android:textColor="@color/Pallete2"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginTop="15dp"
+                                    android:src="@drawable/headphones_icon" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="220dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/newcard_pink"
+                            android:clickable="true"
+                            android:padding="30dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/alata"
+                                    android:text="Epska oluja"
+                                    android:textColor="@color/white"
+                                    android:textSize="18dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alata"
+                                    android:text="Slušaj sada"
+
+                                    android:textColor="@color/Pallete2"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginTop="15dp"
+                                    android:src="@drawable/headphones_icon" />
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/cardklavir3"
+                            android:layout_width="220dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/newcard_green"
+                            android:clickable="true"
+                            android:padding="30dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/alata"
+                                    android:text="Ponoćna oluja"
+                                    android:textColor="@color/white"
+                                    android:textSize="18dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alata"
+                                    android:text="Slušaj sada"
+
+                                    android:textColor="@color/Pallete2"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginTop="15dp"
+                                    android:src="@drawable/headphones_icon" />
+
+                            </LinearLayout>
+
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
