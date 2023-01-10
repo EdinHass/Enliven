@@ -30,6 +30,7 @@ public class citati_activity extends AppCompatActivity {
     private static int TIME_OUT = 1000;
 
     int brojac=0;
+    Timer timer = new Timer();
 
 
     @Override
@@ -44,15 +45,30 @@ public class citati_activity extends AppCompatActivity {
 
         citati=getResources().getStringArray(R.array.citati1);
 
-        String data = getIntent().getExtras().getString("keyName","defaultKey");
-        int brojstorija = getIntent().getExtras().getInt("Broj citata");
-        text.setText(citati[brojstorija]);
+        Intent intent=getIntent();
 
-        Timer timer = new Timer();
+        int i1=intent.getIntExtra("Broj storija", 0);
+
+
+       int brojstorija=i1;
+       text.setText(citati[brojstorija]);
+
+       if(brojstorija+1==19){
+           timer.cancel();
+       }
+
+
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                text.setText(citati[(getIntent().getExtras().getInt("Broj citata")+1)]);
+
+                if(brojstorija+1==19){
+                    Intent i=new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(i);
+                    timer.cancel();
+                }else{
+                intent.putExtra("Broj storija", brojstorija+1);
+                startActivity(intent);}
             }
         };
         timer.schedule(task,5000,5000);
@@ -73,10 +89,12 @@ public class citati_activity extends AppCompatActivity {
 
     }
 
+    public void onBackPressed(){
+        this.finish();
+        timer.cancel();
+        Intent i=new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(i);
 
-    public void random(TextView textView){
-        int randomIndex = new Random().nextInt(citati.length);
-        String randomCitat = citati[randomIndex];
-        text.setText(randomCitat);
+
     }
 }

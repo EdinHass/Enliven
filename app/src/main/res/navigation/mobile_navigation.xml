@@ -17,11 +17,14 @@
         android:label="@string/title_item2"
         tools:layout="@layout/fragment_dashboard" >
         <action
-            android:id="@+id/action_navigation_dashboard_to_moodActivity"
-            app:destination="@id/moodActivity" />
-        <action
             android:id="@+id/action_navigation_dashboard_to_citati_activity"
             app:destination="@id/citati_activity" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_general_tip"
+            app:destination="@id/general_tip" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_mood2"
+            app:destination="@id/mood2" />
     </fragment>
 
     <fragment
@@ -39,15 +42,20 @@
         android:label="activity_card1activity"
         tools:layout="@layout/activity_card1activity" />
     <activity
-        android:id="@+id/moodActivity"
-        android:name="com.example.enliven.MoodActivity"
-        android:label="activity_mood"
-        tools:layout="@layout/activity_mood"/>
-    <activity
         android:id="@+id/citati_activity"
         android:name="com.example.enliven.citati_activity"
         android:label="activity_citati"
         tools:layout="@layout/activity_citati" />
+    <activity
+        android:id="@+id/general_tip"
+        android:name="com.example.enliven.general_tip"
+        android:label="activity_general_tip"
+        tools:layout="@layout/activity_general_tip" />
+    <fragment
+        android:id="@+id/mood2"
+        android:name="com.example.enliven.mood"
+        android:label="fragment_mood"
+        tools:layout="@layout/fragment_mood" />
 
 
 </navigation>

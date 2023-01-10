@@ -2,33 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_osjecanja"
-    app:startDestination="@id/moodActivity2">
+    android:id="@+id/nav_osjecanja">
 
-    <activity
-        android:id="@+id/moodActivity2"
-        android:name="com.example.enliven.MoodActivity"
-        android:label="activity_mood"
-        tools:layout="@layout/activity_mood" >
-        <action
-            android:id="@+id/action_moodActivity2_to_sreca_tips"
-            app:destination="@id/sreca_tips" />
-        <action
-            android:id="@+id/action_moodActivity2_to_ljutnja_tips"
-            app:destination="@id/ljutnja_tips" />
-        <action
-            android:id="@+id/action_moodActivity2_to_tuga_tips"
-            app:destination="@id/tuga_tips" />
-        <action
-            android:id="@+id/action_moodActivity2_to_strah_tips"
-            app:destination="@id/strah_tips" />
-        <action
-            android:id="@+id/action_moodActivity2_to_stres_tips"
-            app:destination="@id/stres_tips" />
-        <action
-            android:id="@+id/action_moodActivity2_to_anksioznost_tips"
-            app:destination="@id/anksioznost_tips" />
-    </activity>
     <fragment
         android:id="@+id/sreca_tips"
         android:name="com.example.enliven.sreca_tips"
@@ -59,4 +34,28 @@
         android:name="com.example.enliven.anksioznost_tips"
         android:label="fragment_anksioznost_tips"
         tools:layout="@layout/fragment_anksioznost_tips" />
+    <fragment
+        android:id="@+id/mood"
+        android:name="com.example.enliven.mood"
+        android:label="fragment_mood"
+        tools:layout="@layout/fragment_mood" >
+        <action
+            android:id="@+id/action_mood_to_anksioznost_tips"
+            app:destination="@id/anksioznost_tips" />
+        <action
+            android:id="@+id/action_mood_to_ljutnja_tips"
+            app:destination="@id/ljutnja_tips" />
+        <action
+            android:id="@+id/action_mood_to_sreca_tips"
+            app:destination="@id/sreca_tips" />
+        <action
+            android:id="@+id/action_mood_to_strah_tips"
+            app:destination="@id/strah_tips" />
+        <action
+            android:id="@+id/action_mood_to_stres_tips"
+            app:destination="@id/stres_tips" />
+        <action
+            android:id="@+id/action_mood_to_tuga_tips"
+            app:destination="@id/tuga_tips" />
+    </fragment>
 </navigation>
