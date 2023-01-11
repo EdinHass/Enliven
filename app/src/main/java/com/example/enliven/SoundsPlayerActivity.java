@@ -43,6 +43,7 @@ import android.widget.Toast;
 
 import com.google.android.material.slider.LabelFormatter;
 import com.google.android.material.slider.Slider;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.w3c.dom.Text;
 
@@ -178,7 +179,7 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
                     favorited = true;
                     favoriteIcon.setImageDrawable(heartFilledWrapped);
                     animateHeart(favoriteIcon);
-                    Toast.makeText(getApplicationContext(), "Dodano u favorite", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(favoriteIcon.getRootView(), "Dodano u favorite", Snackbar.LENGTH_SHORT).show();
 
                     Set<String> set = new HashSet<>();
                     Set<String> oldFavs = (HashSet<String>) prefs.getStringSet("favorites", set);
