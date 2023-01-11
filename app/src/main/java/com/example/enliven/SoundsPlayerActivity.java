@@ -31,8 +31,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -124,17 +127,49 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
             DrawableCompat.setTint(heartFilled, palette.getVibrantSwatch().getRgb());
             startButton.setImageDrawable(playIconWrapped);
 
-            if(prefs.getStringSet("favorites", null).contains(SoundName + "," + SoundData + "," + PictureData)){
-                favoriteIcon.setImageDrawable(heartFilledWrapped);
-                favorited=true;
-            }
-            else {
+            if(prefs.getStringSet("favorites", null)!=null) {
+                if (prefs.getStringSet("favorites", null).contains(SoundName + "," + SoundData + "," + PictureData)) {
+                    favoriteIcon.setImageDrawable(heartFilledWrapped);
+                    favorited = true;
+                } else {
+                    favoriteIcon.setImageDrawable(heartEmptyWrapped);
+                    favorited = false;
+                }
+            } else {
                 favoriteIcon.setImageDrawable(heartEmptyWrapped);
-                favorited=false;
+                favorited = false;
             }
 
 
         }
+
+        mediaPlayer = MyMediaPlayer.getInstance(this);
+        mediaPlayer.setLooping(true);
+        AudioManager audioManager = (AudioManager) this.getSystemService(getApplicationContext().AUDIO_SERVICE);
+        audioManager.setStreamVolume (AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),0);
+        mediaPlayer.setAudioAttributes(
+                new AudioAttributes.Builder()
+                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                        .setUsage(AudioAttributes.USAGE_MEDIA)
+                        .build()
+        );
+
+
+        try {
+            mediaPlayer.setDataSource(SoundData);
+            mediaPlayer.prepareAsync();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                startButton.setVisibility(View.VISIBLE);
+                loading.setVisibility(View.GONE);
+                startButton.setClickable(true);
+            }
+        });
 
         favoriteIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,8 +177,8 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
                 if(!favorited) {
                     favorited = true;
                     favoriteIcon.setImageDrawable(heartFilledWrapped);
+                    animateHeart(favoriteIcon);
                     Toast.makeText(getApplicationContext(), "Dodano u favorite", Toast.LENGTH_SHORT).show();
-
 
                     Set<String> set = new HashSet<>();
                     Set<String> oldFavs = (HashSet<String>) prefs.getStringSet("favorites", set);
@@ -156,6 +191,7 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
                 }else{
                     favorited = false;
                     favoriteIcon.setImageDrawable(heartEmptyWrapped);
+                    animateHeart(favoriteIcon);
                     Toast.makeText(getApplicationContext(), "Izbačeno iz favorita", Toast.LENGTH_SHORT).show();
                     Set<String> set = new HashSet<>();
                     Set<String> oldFavs = (HashSet<String>) prefs.getStringSet("favorites", set);
@@ -178,9 +214,6 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
             }
         });
 
-
-
-
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(SoundName);
@@ -191,16 +224,7 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         soundImage = findViewById(R.id.soundImage);
         soundImage.setImageResource(PictureData);
 
-        mediaPlayer = MyMediaPlayer.getInstance(this);
-        mediaPlayer.setLooping(true);
-        AudioManager audioManager = (AudioManager) this.getSystemService(getApplicationContext().AUDIO_SERVICE);
-        audioManager.setStreamVolume (AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),0);
-        mediaPlayer.setAudioAttributes(
-                new AudioAttributes.Builder()
-                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                        .setUsage(AudioAttributes.USAGE_MEDIA)
-                        .build()
-        );
+
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -225,26 +249,6 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
                 }
             }
         });
-
-        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                startButton.setVisibility(View.VISIBLE);
-                loading.setVisibility(View.GONE);
-                startButton.setClickable(true);
-            }
-        });
-
-
-
-        try {
-            mediaPlayer.setDataSource(SoundData);
-            mediaPlayer.prepareAsync();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        super.onResume();
-
 
     }
 
@@ -370,4 +374,21 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         String res = hours + "h " + minutes + "m";
         return res;
     }
+
+    public void animateHeart(final ImageView view) {
+        ScaleAnimation scaleAnimation = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f,
+                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
+
+        AnimationSet animation = new AnimationSet(true);
+        animation.addAnimation(alphaAnimation);
+        animation.addAnimation(scaleAnimation);
+        animation.setDuration(300);
+
+        view.startAnimation(animation);
+
+    }
+
+
 }

@@ -67,10 +67,12 @@ public class card1activity extends AppCompatActivity {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                view.setClickable(false);
                 Intent i = new Intent(getApplicationContext(), SoundsPlayerActivity.class);
                 i.putExtra("SoundName", soundItem.getName());
                 i.putExtra("SoundData", soundItem.getSoundData());
                 i.putExtra("ImageData", soundItem.getPictureData());
+                view.setClickable(true);
                 startActivity(i);
             }
         });
@@ -86,6 +88,7 @@ public class card1activity extends AppCompatActivity {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                view.setClickable(false);
                 Intent i = new Intent(getApplicationContext(), CustomSoundActivity.class);
                 i.putExtra("vol1", vols[0]);
                 i.putExtra("vol2", vols[1]);
@@ -95,6 +98,7 @@ public class card1activity extends AppCompatActivity {
                 i.putExtra("vol6", vols[5]);
                 i.putExtra("vol7", vols[6]);
                 i.putExtra("vol8", vols[7]);
+                view.setClickable(true);
                 startActivity(i);
             }
         });

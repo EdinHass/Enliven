@@ -155,6 +155,7 @@ public class NotificationsFragment extends Fragment {
         Set<String> currentFavs = prefs.getStringSet("favorites", emp);
 
         if(currentFavs.isEmpty()){
+            binding.getRoot().findViewById(R.id.noFavs).setVisibility(View.VISIBLE);
             return;
         }else{
             binding.getRoot().findViewById(R.id.noFavs).setVisibility(View.GONE);
@@ -271,6 +272,7 @@ public class NotificationsFragment extends Fragment {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                view.setClickable(false);
                 Intent i = new Intent(getActivity(), CustomSoundActivity.class);
                 i.putExtra("vol1", vols[0]);
                 i.putExtra("vol2", vols[1]);
@@ -280,6 +282,7 @@ public class NotificationsFragment extends Fragment {
                 i.putExtra("vol6", vols[5]);
                 i.putExtra("vol7", vols[6]);
                 i.putExtra("vol8", vols[7]);
+                view.setClickable(true);
                 startActivity(i);
             }
         });
@@ -289,10 +292,12 @@ public class NotificationsFragment extends Fragment {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                view.setClickable(false);
                 Intent i = new Intent(getActivity(), SoundsPlayerActivity.class);
                 i.putExtra("SoundName", soundItem.getName());
                 i.putExtra("SoundData", soundItem.getSoundData());
                 i.putExtra("ImageData", soundItem.getPictureData());
+                view.setClickable(true);
                 startActivity(i);
             }
         });
