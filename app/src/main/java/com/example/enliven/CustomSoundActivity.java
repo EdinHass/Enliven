@@ -188,23 +188,38 @@ public class CustomSoundActivity extends AppCompatActivity implements TimerDialo
     }
 
     private void freeMediaPlayers(){
-        m1.stop();
-        m2.stop();
-        m3.stop();
-        m4.stop();
-        m5.stop();
-        m6.stop();
-        m7.stop();
-        m8.stop();
-
-        m1.release();
-        m2.release();
-        m3.release();
-        m4.release();
-        m5.release();
-        m6.release();
-        m7.release();
-        m8.release();
+        if(m1!=null){
+            m1.stop();
+            m1.release();
+        }
+        if(m2!=null){
+            m2.stop();
+            m2.release();
+        }
+        if(m3!=null){
+            m3.stop();
+            m3.release();
+        }
+        if(m4!=null){
+            m4.stop();
+            m4.release();
+        }
+        if(m5!=null){
+            m5.stop();
+            m5.release();
+        }
+        if(m6!=null){
+            m6.stop();
+            m6.release();
+        }
+        if(m7!=null){
+            m7.stop();
+            m7.release();
+        }
+        if(m8!=null){
+            m8.stop();
+            m8.release();
+        }
     }
     private void setVolumes() {
         m1.setVolume(slider1.getValue(), slider1.getValue());

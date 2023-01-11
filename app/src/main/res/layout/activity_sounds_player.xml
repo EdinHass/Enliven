@@ -96,6 +96,13 @@
                 app:labelBehavior="floating"
 
             ></com.google.android.material.slider.Slider>
+                <ImageView
+                    android:id="@+id/favoriteIcon"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/heart_empty"
+                    android:layout_toLeftOf="@id/slider"></ImageView>
             </LinearLayout>
 
         </RelativeLayout>

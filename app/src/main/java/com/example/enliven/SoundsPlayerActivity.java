@@ -8,6 +8,8 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.palette.graphics.Palette;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -42,6 +44,8 @@ import com.google.android.material.slider.Slider;
 import org.w3c.dom.Text;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -58,6 +62,8 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
     RelativeLayout back;
     Slider slider;
     Timer myTimer;
+    private ImageView favoriteIcon;
+    Boolean favorited = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,10 +79,15 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         slider = findViewById(R.id.slider);
         volumeIcon = findViewById(R.id.volumeIcon);
         startButton = findViewById(R.id.startButton);
+        favoriteIcon = findViewById(R.id.favoriteIcon);
+        SharedPreferences prefs = getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
 
         Drawable soundIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_volume_up_24);
         Drawable playIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_play_arrow_24);
         Drawable pauseIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_pause_24);
+        Drawable heartEmpty = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.heart_empty);
+        Drawable heartFilled = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.heart_filled);
+
 
         slider.setValue(0.5f);
         slider.setLabelFormatter(new LabelFormatter() {
@@ -90,6 +101,8 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         Drawable soundIconWrapped = DrawableCompat.wrap(soundIcon);
         Drawable pauseIconWrapped = DrawableCompat.wrap(pauseIcon);
         Drawable playIconWrapped = DrawableCompat.wrap(playIcon);
+        Drawable heartEmptyWrapped = DrawableCompat.wrap(heartEmpty);
+        Drawable heartFilledWrapped = DrawableCompat.wrap(heartFilled);
         Bitmap bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), PictureData);
         Palette palette = Palette.from(bitmap).generate();
         Palette.Swatch vibrant = palette.getDarkVibrantSwatch();
@@ -107,11 +120,54 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
             volumeIcon.setImageDrawable(soundIconWrapped);
             DrawableCompat.setTint(pauseIconWrapped, vibrant.getRgb());
             DrawableCompat.setTint(playIconWrapped, vibrant.getRgb());
+            DrawableCompat.setTint(heartEmpty, vibrant.getRgb());
+            DrawableCompat.setTint(heartFilled, palette.getVibrantSwatch().getRgb());
             startButton.setImageDrawable(playIconWrapped);
 
+            if(prefs.getStringSet("favorites", null).contains(SoundName + "," + SoundData + "," + PictureData)){
+                favoriteIcon.setImageDrawable(heartFilledWrapped);
+                favorited=true;
+            }
+            else {
+                favoriteIcon.setImageDrawable(heartEmptyWrapped);
+                favorited=false;
+            }
 
 
         }
+
+        favoriteIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!favorited) {
+                    favorited = true;
+                    favoriteIcon.setImageDrawable(heartFilledWrapped);
+                    Toast.makeText(getApplicationContext(), "Dodano u favorite", Toast.LENGTH_SHORT).show();
+
+
+                    Set<String> set = new HashSet<>();
+                    Set<String> oldFavs = (HashSet<String>) prefs.getStringSet("favorites", set);
+                    Set<String> currentFavs = new HashSet<>();
+                    currentFavs.add(SoundName + "," + SoundData + "," + PictureData);
+                    currentFavs.addAll(oldFavs);
+                    prefs.edit().putStringSet("favorites", currentFavs)
+                                .apply();
+
+                }else{
+                    favorited = false;
+                    favoriteIcon.setImageDrawable(heartEmptyWrapped);
+                    Toast.makeText(getApplicationContext(), "Izbačeno iz favorita", Toast.LENGTH_SHORT).show();
+                    Set<String> set = new HashSet<>();
+                    Set<String> oldFavs = (HashSet<String>) prefs.getStringSet("favorites", set);
+
+                    Set<String> currentFavs = new HashSet<>(oldFavs);
+                    currentFavs.remove(SoundName + "," + SoundData + "," + PictureData);
+
+                    prefs.edit().putStringSet("favorites", currentFavs)
+                                .apply();
+                }
+            }
+        });
 
         slider.addOnChangeListener(new Slider.OnChangeListener() {
             @Override
@@ -128,7 +184,6 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(SoundName);
-
 
 
         Title.setText(SoundName);
@@ -195,13 +250,13 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
 
     @Override
     public void onBackPressed() {
-        MyMediaPlayer.freeMediaPlayer();
         if(myTimer!=null) {
             myTimer.cancel();
             myTimer.purge();
             Toast.makeText(getApplicationContext(), "Timer: Prekinut!", Toast.LENGTH_SHORT).show();
         }
         super.onBackPressed();
+        MyMediaPlayer.freeMediaPlayer();
     }
 
     @Override

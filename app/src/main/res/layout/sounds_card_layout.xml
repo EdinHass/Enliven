@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cardRain1"
+        android:layout_width="220dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/curved_dark"
+        android:clickable="true"
+        android:padding="30dp"
+        android:paddingHorizontal="20dp">
+
+        <LinearLayout
+            android:clickable="false"
+            android:id="@+id/inside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/cardText"
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/alata"
+                android:text="Ljetna Kiša"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+            <TextView
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Slušaj sada"
+                android:textColor="@color/Pallete3"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:clickable="false"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/headphones_icon" />
+
+        </LinearLayout>
+
+
+
+</RelativeLayout>
