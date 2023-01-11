@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".meditacije"
+    android:background="@drawable/gradient_dark_purple">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:id="@+id/textnaslov"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:text="Meditacije"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:typeface="normal"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="80dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            android:layout_marginStart="20dp"
+            android:orientation="horizontal" />
+
+        <RelativeLayout
+            android:id="@+id/zastomeditacija"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:background="@drawable/newcard_blue"
+            android:clickable="true"
+            >
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Zašto meditirati?"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Saznaj više"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/Pallete3"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/meditacijazapocetnike"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="370dp"
+                android:layout_height="220dp"
+                android:background="@drawable/curved_dark"
+                android:clickable="true"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical"
+                    android:layout_marginStart="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Samostalna meditacija \nza početnike"
+                        android:textColor="@color/white"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Saznaj više"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/Pallete3"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/meditacija"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="220dp"
+                android:background="@drawable/newcard_blue"
+                android:clickable="true"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical"
+                    android:layout_marginStart="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Meditacija sa instrukcijama"
+                        android:textColor="@color/white"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Saznaj više"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/Pallete3"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
