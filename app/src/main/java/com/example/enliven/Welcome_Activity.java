@@ -24,6 +24,13 @@ public class Welcome_Activity extends AppCompatActivity {
         NavHostFragment navHostFragment =
                 (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.welcome_screen_fragmentView);
         NavController navController = navHostFragment.getNavController();
+        if(getIntent().getBooleanExtra("changeSleep", false)){
+            navController.navigate(R.id.welcome_sleep);
+        }
+
+
+
+
 
     }
 }

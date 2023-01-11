@@ -8,6 +8,8 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.palette.graphics.Palette;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -29,8 +31,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -38,10 +43,13 @@ import android.widget.Toast;
 
 import com.google.android.material.slider.LabelFormatter;
 import com.google.android.material.slider.Slider;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.w3c.dom.Text;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -57,6 +65,9 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
     GifImageView gif, loading;
     RelativeLayout back;
     Slider slider;
+    Timer myTimer;
+    private ImageView favoriteIcon;
+    Boolean favorited = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,10 +83,15 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         slider = findViewById(R.id.slider);
         volumeIcon = findViewById(R.id.volumeIcon);
         startButton = findViewById(R.id.startButton);
+        favoriteIcon = findViewById(R.id.favoriteIcon);
+        SharedPreferences prefs = getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
 
         Drawable soundIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_volume_up_24);
         Drawable playIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_play_arrow_24);
         Drawable pauseIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_pause_24);
+        Drawable heartEmpty = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.heart_empty);
+        Drawable heartFilled = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.heart_filled);
+
 
         slider.setValue(0.5f);
         slider.setLabelFormatter(new LabelFormatter() {
@@ -89,6 +105,8 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         Drawable soundIconWrapped = DrawableCompat.wrap(soundIcon);
         Drawable pauseIconWrapped = DrawableCompat.wrap(pauseIcon);
         Drawable playIconWrapped = DrawableCompat.wrap(playIcon);
+        Drawable heartEmptyWrapped = DrawableCompat.wrap(heartEmpty);
+        Drawable heartFilledWrapped = DrawableCompat.wrap(heartFilled);
         Bitmap bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), PictureData);
         Palette palette = Palette.from(bitmap).generate();
         Palette.Swatch vibrant = palette.getDarkVibrantSwatch();
@@ -106,34 +124,25 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
             volumeIcon.setImageDrawable(soundIconWrapped);
             DrawableCompat.setTint(pauseIconWrapped, vibrant.getRgb());
             DrawableCompat.setTint(playIconWrapped, vibrant.getRgb());
+            DrawableCompat.setTint(heartEmpty, vibrant.getRgb());
+            DrawableCompat.setTint(heartFilled, palette.getVibrantSwatch().getRgb());
             startButton.setImageDrawable(playIconWrapped);
 
+            if(prefs.getStringSet("favorites", null)!=null) {
+                if (prefs.getStringSet("favorites", null).contains(SoundName + "," + SoundData + "," + PictureData)) {
+                    favoriteIcon.setImageDrawable(heartFilledWrapped);
+                    favorited = true;
+                } else {
+                    favoriteIcon.setImageDrawable(heartEmptyWrapped);
+                    favorited = false;
+                }
+            } else {
+                favoriteIcon.setImageDrawable(heartEmptyWrapped);
+                favorited = false;
+            }
 
 
         }
-
-        slider.addOnChangeListener(new Slider.OnChangeListener() {
-            @Override
-            public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
-                if(mediaPlayer.isPlaying()){
-                    mediaPlayer.setVolume(slider.getValue(), slider.getValue());
-                }
-            }
-        });
-
-
-
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle(SoundName);
-
-
-
-        Title.setText(SoundName);
-
-        soundImage = findViewById(R.id.soundImage);
-        soundImage.setImageResource(PictureData);
 
         mediaPlayer = MyMediaPlayer.getInstance(this);
         mediaPlayer.setLooping(true);
@@ -145,6 +154,78 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
                         .setUsage(AudioAttributes.USAGE_MEDIA)
                         .build()
         );
+
+
+        try {
+            mediaPlayer.setDataSource(SoundData);
+            mediaPlayer.prepareAsync();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                startButton.setVisibility(View.VISIBLE);
+                loading.setVisibility(View.GONE);
+                startButton.setClickable(true);
+            }
+        });
+
+        favoriteIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!favorited) {
+                    favorited = true;
+                    favoriteIcon.setImageDrawable(heartFilledWrapped);
+                    animateHeart(favoriteIcon);
+                    Snackbar.make(favoriteIcon.getRootView(), "Dodano u favorite", Snackbar.LENGTH_SHORT).show();
+
+                    Set<String> set = new HashSet<>();
+                    Set<String> oldFavs = (HashSet<String>) prefs.getStringSet("favorites", set);
+                    Set<String> currentFavs = new HashSet<>();
+                    currentFavs.add(SoundName + "," + SoundData + "," + PictureData);
+                    currentFavs.addAll(oldFavs);
+                    prefs.edit().putStringSet("favorites", currentFavs)
+                                .apply();
+
+                }else{
+                    favorited = false;
+                    favoriteIcon.setImageDrawable(heartEmptyWrapped);
+                    animateHeart(favoriteIcon);
+                    Toast.makeText(getApplicationContext(), "Izbačeno iz favorita", Toast.LENGTH_SHORT).show();
+                    Set<String> set = new HashSet<>();
+                    Set<String> oldFavs = (HashSet<String>) prefs.getStringSet("favorites", set);
+
+                    Set<String> currentFavs = new HashSet<>(oldFavs);
+                    currentFavs.remove(SoundName + "," + SoundData + "," + PictureData);
+
+                    prefs.edit().putStringSet("favorites", currentFavs)
+                                .apply();
+                }
+            }
+        });
+
+        slider.addOnChangeListener(new Slider.OnChangeListener() {
+            @Override
+            public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
+                if(mediaPlayer.isPlaying()){
+                    mediaPlayer.setVolume(slider.getValue(), slider.getValue());
+                }
+            }
+        });
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle(SoundName);
+
+
+        Title.setText(SoundName);
+
+        soundImage = findViewById(R.id.soundImage);
+        soundImage.setImageResource(PictureData);
+
+
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,40 +251,31 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
             }
         });
 
-        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                startButton.setVisibility(View.VISIBLE);
-                loading.setVisibility(View.GONE);
-                startButton.setClickable(true);
-            }
-        });
-
-
-
-        try {
-            mediaPlayer.setDataSource(SoundData);
-            mediaPlayer.prepareAsync();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        super.onResume();
-
-
     }
 
     @Override
     public void onBackPressed() {
-        MyMediaPlayer.freeMediaPlayer();
+        if(myTimer!=null) {
+            myTimer.cancel();
+            myTimer.purge();
+            Toast.makeText(getApplicationContext(), "Timer: Prekinut!", Toast.LENGTH_SHORT).show();
+        }
         super.onBackPressed();
+        MyMediaPlayer.freeMediaPlayer();
     }
 
     @Override
     public boolean onSupportNavigateUp() {
         MyMediaPlayer.freeMediaPlayer();
+        if(myTimer!=null) {
+            myTimer.cancel();
+            myTimer.purge();
+            Toast.makeText(getApplicationContext(), "Timer: Prekinut!", Toast.LENGTH_SHORT).show();
+        }
         finish();
         return true;
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -261,7 +333,7 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
 
     @Override
     public void onDialogPositiveClick(TimerDialogFragment dialog) {
-        Timer myTimer = new Timer();
+        myTimer = new Timer();
         myTimer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -303,4 +375,21 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         String res = hours + "h " + minutes + "m";
         return res;
     }
+
+    public void animateHeart(final ImageView view) {
+        ScaleAnimation scaleAnimation = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f,
+                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
+
+        AnimationSet animation = new AnimationSet(true);
+        animation.addAnimation(alphaAnimation);
+        animation.addAnimation(scaleAnimation);
+        animation.setDuration(300);
+
+        view.startAnimation(animation);
+
+    }
+
+
 }

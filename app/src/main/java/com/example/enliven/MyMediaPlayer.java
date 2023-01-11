@@ -17,8 +17,10 @@ public class MyMediaPlayer {
     }
 
     public static void freeMediaPlayer(){
-        instance.stop();
-        instance.release();
+        if(instance!=null) {
+            instance.stop();
+            instance.release();
+        }
         instance = null;
     }
 

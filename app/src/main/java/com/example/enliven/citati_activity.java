@@ -27,7 +27,7 @@ public class citati_activity extends AppCompatActivity {
     TextView text;
     private String[] citati;
 
-    private static int TIME_OUT = 1000;
+
 
     int brojac=0;
     Timer timer = new Timer();
@@ -55,25 +55,24 @@ public class citati_activity extends AppCompatActivity {
 
        if(brojstorija+1==19){
            timer.cancel();
+           timer.purge();
        }
 
 
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
+           timer.schedule(new TimerTask() {
+               @Override
+               public void run() {
+                   if(brojstorija+1==19){
+                       Intent i=new Intent(getApplicationContext(), MainActivity.class);
+                       startActivity(i);
+                       timer.cancel();
 
-                if(brojstorija+1==19){
-                    Intent i=new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(i);
-                    timer.cancel();
-                }else{
-                intent.putExtra("Broj storija", brojstorija+1);
-                startActivity(intent);}
-            }
-        };
-        timer.schedule(task,5000,5000);
-
-
+                   }else{
+                       intent.putExtra("Broj storija", brojstorija+1);
+                       startActivity(intent);}
+               }
+           }, 5000, 5000);
+       }
 
 
 
@@ -87,11 +86,17 @@ public class citati_activity extends AppCompatActivity {
 
 
 
-    }
+
+
+
+
+
+
 
     public void onBackPressed(){
         this.finish();
         timer.cancel();
+
         Intent i=new Intent(getApplicationContext(), MainActivity.class);
         startActivity(i);
 

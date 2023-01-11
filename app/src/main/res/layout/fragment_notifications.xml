@@ -1,210 +1,387 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_sleep_ff"
+    android:background="@drawable/gradient_dark_purple"
+    android:orientation="vertical"
     tools:context=".ui.notifications.NotificationsFragment">
-
-
-    <TextView
-        android:id="@+id/textViewZapocni"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/alata"
-        android:text="Započni"
-        android:textColor="@color/white"
-        android:textSize="48sp"
-        android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="20dp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
-
-    <ImageView
-        android:id="@+id/linearLayout2"
-        android:layout_width="100dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="12dp"
-        android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewZapocni" />
-
-
     <LinearLayout
-        android:layout_marginHorizontal="20dp"
-        android:id="@+id/informationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_dark_purple"
+        android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/mainCards"
-        app:layout_constraintVertical_bias="0.05">
-
-        <LinearLayout
-            android:id="@+id/sleepTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/currentSleepTimeIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="5dp"
-                android:src="@drawable/ic_baseline_single_bed_24" />
-
-            <TextView
-                android:id="@+id/currentSleepTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="@font/alata"
-                android:text="11:30"
-                android:textColor="@color/white"
-                android:textSize="20dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/wakeUpTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/currentWakeUpTimeIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="5dp"
-                android:src="@drawable/ic_baseline_wb_sunny_24" />
-
-            <TextView
-                android:id="@+id/wakeUpTimeText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="@font/alata"
-                android:text="11:30"
-                android:textColor="@color/white"
-                android:textSize="20dp" />
-        </LinearLayout>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/mainCards"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="80dp">
+        android:padding="20dp"
+        android:background="@drawable/curved_dark"
+        android:layout_marginHorizontal="20dp">
 
         <TextView
+            android:id="@+id/textViewZapocni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="10dp"
             android:fontFamily="@font/alata"
-            android:text="Preporučeno"
-            android:textColor="@color/PalleteLightText"
-            android:textSize="16dp" />
+            android:text="San"
+            android:textFontWeight="800"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:typeface="normal" />
 
-        <HorizontalScrollView
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/infoPlane"
+            android:layout_width="120dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/curved_dark"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:paddingEnd="0dp">
+
+            <TextView
+                android:id="@+id/textViewSan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="San"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:typeface="normal" />
+
+            <ImageView
+                android:id="@+id/linearLayout2"
+                android:layout_width="50dp"
+                android:layout_height="2dp"
+                android:layout_marginVertical="12dp"
+                android:background="@color/white" />
+
+
+            <LinearLayout
+                android:id="@+id/sleepTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/currentSleepTimeIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_baseline_single_bed_24" />
+
+                <TextView
+                    android:id="@+id/currentSleepTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/alata"
+                    android:text="11:30"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/wakeUpTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/currentWakeUpTimeIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_baseline_wb_sunny_24" />
+
+                <TextView
+                    android:id="@+id/wakeUpTimeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/alata"
+                    android:text="11:30"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/wakeUpTimePlane"
+            android:layout_toEndOf="@id/infoPlane"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="200dp"
             android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none">
+            android:padding="20dp"
+            android:background="@drawable/curved_dark"
+            android:outlineAmbientShadowColor="@android:color/transparent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/timeUntil1"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="3h 15min"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/timeUntil2"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="do buđenja"
+
+                    android:textColor="@color/Pallete2"
+                    android:textSize="18dp" />
 
                 <RelativeLayout
-                    android:id="@+id/card1Sleep"
-                    android:layout_width="350dp"
-                    android:layout_height="220dp"
-                    android:layout_marginStart="20dp"
-                    android:background="@drawable/newcard_purple"
-                    android:clickable="true"
-                    android:padding="30dp">
+                    android:id="@+id/changeBtn"
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    android:background="@drawable/curved_light">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
+                        android:layout_centerInParent="true"
                         android:fontFamily="@font/alata"
-                        android:text="Zvukovi i Muzika"
-                        android:textColor="@color/white"
-                        android:textSize="32sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
-                        android:fontFamily="@font/alata"
-                        android:text="za spavanje"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="120dp"
-                        android:src="@drawable/headphones_icon" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/card2Sleep"
-                    android:layout_width="350dp"
-                    android:layout_height="220dp"
-                    android:layout_marginLeft="15dp"
-                    android:background="@drawable/newcard_pink"
-                    android:padding="30dp">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/alata"
-                        android:text="Meditacije"
-                        android:textColor="@color/white"
-                        android:textSize="32sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
-                        android:fontFamily="@font/alata"
-                        android:text="za spavanje"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="120dp"
-                        android:src="@drawable/headphones_icon" />
+                        android:text="Promijeni"
+                        android:textSize="14dp"
+                        android:textColor="@color/Pallete2"></TextView>
 
                 </RelativeLayout>
             </LinearLayout>
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:padding="30dp"
+        android:id="@+id/card1Sleep"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="250dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/curved_dark"
+        android:outlineAmbientShadowColor="@android:color/transparent">
+
+        <LinearLayout
+            android:id="@+id/textCardSounds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Zvukovi\nAmbijenta"
+                android:textColor="@color/white"
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Istraži"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/Pallete3"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textCardSounds"
+            android:src="@drawable/ambient_illustration4"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/favorites"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:text="Vaši favoriti"
+            android:textColor="@color/PalleteLightText"
+            android:textSize="14dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/noFavs"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:layout_gravity="center"
+            android:layout_marginEnd="30dp"
+            android:text="Nemate trenutno favorita."
+            android:textColor="@color/PalleteLightText"
+            android:textSize="14dp"
+            android:layout_marginBottom="20dp"/>
+
+        <HorizontalScrollView
+            android:scrollbars="none"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/recommended"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            </LinearLayout>
+
         </HorizontalScrollView>
     </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <LinearLayout
+                android:id="@+id/infoPlane2"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/curved_dark"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/alata"
+                        android:text="Vaš zvuk"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Slušaj sada"
+                        android:textColor="@color/Pallete3"
+                        android:textSize="14dp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/ambient_illustration5" />
+
+                </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:gravity="center_vertical"
+                android:layout_toEndOf="@id/infoPlane2"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="190dp"
+                android:layout_width="fill_parent"
+                android:padding="20dp"
+                android:background="@drawable/curved_dark"
+                android:outlineAmbientShadowColor="@android:color/transparent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Meditacije"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="za spavanje"
+                        android:textColor="@color/Pallete3"
+                        android:textSize="14dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"/>
+
+                    <ImageView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/ambient_illustration2"
+
+                        ></ImageView>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

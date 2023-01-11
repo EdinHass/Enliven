@@ -76,6 +76,9 @@ public class welcome_sleep extends Fragment {
             }
         });
         SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
+        if(!prefs.getBoolean("firstrun", true)){
+            view1.findViewById(R.id.buttonPrev).setVisibility(View.GONE);
+        }
         TimePicker vrijeme = view1.findViewById(R.id.timeSelect);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
