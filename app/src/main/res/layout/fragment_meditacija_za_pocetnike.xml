@@ -48,7 +48,7 @@
                 android:id="@+id/med3"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
+                android:layout_width="320dp"
                 android:layout_height="180dp"
                 android:background="@drawable/curved_dark"
                 android:clickable="true"
@@ -103,7 +103,7 @@
                 <RelativeLayout
                     android:id="@+id/med1"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_width="330dp"
+                    android:layout_width="320dp"
                     android:layout_height="180dp"
                     android:background="@drawable/curved_dark"
                     android:clickable="true"
@@ -140,7 +140,7 @@
                 <RelativeLayout
                     android:id="@+id/med4"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_width="330dp"
+                    android:layout_width="320dp"
                     android:layout_height="180dp"
                     android:background="@drawable/curved_dark"
                     android:clickable="true"
@@ -149,10 +149,9 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:gravity="center_vertical|center_horizontal"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:layout_marginStart="20dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -200,7 +199,7 @@
                     <RelativeLayout
                         android:id="@+id/med2"
                         android:layout_marginHorizontal="20dp"
-                        android:layout_width="330dp"
+                        android:layout_width="320dp"
                         android:layout_height="180dp"
                         android:background="@drawable/curved_dark"
                         android:clickable="true"
@@ -209,9 +208,8 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
-                            android:gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="20dp"
                             android:orientation="vertical">
 
                             <TextView
@@ -238,7 +236,7 @@
                     <RelativeLayout
                         android:id="@+id/med5"
                         android:layout_marginHorizontal="20dp"
-                        android:layout_width="330dp"
+                        android:layout_width="320dp"
                         android:layout_height="180dp"
                         android:background="@drawable/curved_dark"
                         android:clickable="true"
@@ -247,9 +245,8 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
-                            android:gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="20dp"
                             android:orientation="vertical">
 
                             <TextView

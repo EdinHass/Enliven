@@ -35,6 +35,9 @@ public class vjezba_disanja extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressStatus=0;
+                i=0;
+                textView.setText("Udahni");
                 new Thread(new Runnable() {
                     public void run() {
                         while (progressStatus < 50) {
@@ -60,9 +63,6 @@ public class vjezba_disanja extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         }
-                        progressStatus=0;
-                        i=0;
-                        textView.setText("Udahni");
 
                     }
                 }).start();
