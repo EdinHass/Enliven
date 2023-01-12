@@ -69,6 +69,21 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".osjecanja_tips"
+            android:noHistory="true"
+            android:exported="false">
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
+        </activity>
+        <activity
+            android:name=".general_tip"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".sounds_category_nature"
             android:exported="false">
             <meta-data

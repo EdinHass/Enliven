@@ -10,7 +10,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="60dp"
         android:orientation="vertical">
 
         <ScrollView
@@ -27,26 +26,27 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textpocetni"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                <RelativeLayout
                     android:layout_marginTop="20dp"
-                    android:fontFamily="@font/alata"
-                    android:text="Kako se osjećaš?"
-                    android:textColor="@color/white"
-                    android:textSize="30dp"
-                    android:typeface="normal" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:background="@drawable/curved_dark"
+                    android:layout_marginHorizontal="20dp">
 
+                    <TextView
+                        android:id="@+id/textpocetni"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="San"
+                        android:textFontWeight="800"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:typeface="normal" />
 
-                <LinearLayout
-                    android:id="@+id/linearLayout"
-                    android:layout_width="80dp"
-                    android:layout_height="2dp"
-                    android:layout_marginStart="20dp"
-                    android:background="@color/white"
-                    android:orientation="horizontal" />
+                </RelativeLayout>
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginVertical="20dp">
 
                     <LinearLayout
                         android:id="@+id/citati"
@@ -71,8 +71,6 @@
                         android:layout_height="match_parent"
                         android:layout_marginStart="0dp"
                         android:orientation="horizontal">
-
-
                     </LinearLayout>
                 </HorizontalScrollView>
 
@@ -80,173 +78,323 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/alata"
+                    android:text="Istaknuto"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/PalleteLightText"
+                    android:textSize="14dp" />
+
+                <RelativeLayout
+                    android:id="@+id/enlivensocial"
+                    android:padding="30dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_height="250dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/curved_dark"
+                    android:outlineAmbientShadowColor="@android:color/transparent">
+
+                    <LinearLayout
+                        android:id="@+id/textCardSounds"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Enliven"
+                            android:textFontWeight="1000"
+                            android:textColor="@color/Pallete3"
+                            android:textSize="30dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Social"
+                            android:textColor="@color/white"
+                            android:textSize="30dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Pridruži se"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/Pallete3"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/textCardSounds"
+                        android:src="@drawable/ambient_illustration6"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/card2"
+                        android:layout_width="170dp"
+                        android:layout_height="200dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/curved_dark"
+                        android:orientation="vertical"
+                        android:paddingEnd="0dp">
+
+                        <TextView
+                            android:id="@+id/brojBilj"
+                            android:layout_marginTop="25dp"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Savjeti"
+                            android:textColor="@color/white"
+                            android:textSize="30dp" />
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="za raspoloženje"
+                            android:textColor="@color/Pallete2"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_marginVertical="10dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:src="@drawable/ambient_illustration4"/>
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/vodic"
+                        android:layout_toEndOf="@id/card2"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="200dp"
+                        android:layout_width="fill_parent"
+                        android:padding="20dp"
+                        android:background="@drawable/curved_dark"
+                        android:outlineAmbientShadowColor="@android:color/transparent">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/timeUntil1"
+                                android:layout_marginTop="5dp"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/alata"
+                                android:text="Vodič"
+                                android:textColor="@color/white"
+                                android:textSize="30dp" />
+
+                            <TextView
+                                android:id="@+id/timeUntil2"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/alata"
+                                android:text="za emocije"
+
+                                android:textColor="@color/Pallete2"
+                                android:textSize="18dp" />
+
+                            <RelativeLayout
+                                android:id="@+id/socialinfo"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:padding="10dp"
+                                android:background="@drawable/curved_light">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/alata"
+                                    android:text="Započni"
+                                    android:textColor="@color/Pallete2"
+                                    android:textSize="14dp"></TextView>
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/alata"
                     android:text="Istraži"
                     android:textColor="@color/PalleteLightText"
                     android:textSize="14dp" />
 
                 <RelativeLayout
-                    android:id="@+id/socialinfo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="220dp"
+                    android:id="@+id/dnevnikcard"
+                    android:padding="30dp"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/newcard_blue"
-                    android:clickable="true">
-
+                    android:layout_height="250dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/curved_dark"
+                    android:outlineAmbientShadowColor="@android:color/transparent">
 
                     <LinearLayout
+                        android:id="@+id/textCardSounds1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="20dp"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/alata"
-                            android:text="Zašto da iskazuješ emocije?"
+                            android:text="Emotion"
+                            android:textFontWeight="1000"
+                            android:textColor="@color/Pallete3"
+                            android:textSize="30dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Book"
                             android:textColor="@color/white"
                             android:textSize="30dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
                             android:fontFamily="@font/alata"
-                            android:text="Saznaj više"
+                            android:text="Istraži"
+                            android:layout_marginTop="20dp"
                             android:textColor="@color/Pallete3"
                             android:textSize="18dp" />
                     </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@id/textCardSounds1"
+                        android:src="@drawable/ambient_illustration2" />
+
 
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/enlivensocial"
-                    android:layout_width="365dp"
-                    android:layout_height="270dp"
-                    android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/newcard_blue"
-                    android:outlineAmbientShadowColor="@android:color/transparent">
+                    android:layout_marginBottom="60dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:background="@drawable/curved_dark"
+                    android:layout_marginHorizontal="20dp">
 
-
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/historijaem"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="20dp"
-                        android:orientation="vertical">
+                        android:fontFamily="@font/alata"
+                        android:text="Historija osjećanja:"
+                        android:textColor="@color/Pallete2"
+                        android:textSize="14sp"
+                        android:typeface="normal" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
-                            android:text="Enliven Social"
-                            android:textColor="@color/white"
-                            android:textSize="30dp" />
+                    <TextView
+                        android:id="@+id/nohisttext"
+                        android:visibility="gone"
+                        android:layout_below="@id/historijaem"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:layout_marginTop="10dp"
+                        android:text="Nemate zabilježenih osjećanja"
+                        android:textColor="@color/PalleteLightText"
+                        android:textSize="14sp"
+                        android:typeface="normal" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:fontFamily="@font/alata"
-                            android:text="Započni"
-                            android:textColor="@color/Pallete3"
-                            android:textSize="18dp" />
-                    </LinearLayout>
-
-
-                </RelativeLayout>
-
-
-                <HorizontalScrollView
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:scrollbars="none">
 
                     <LinearLayout
-                        android:id="@+id/cards"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@id/historijaem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
-                        <RelativeLayout
-                            android:id="@+id/dnevnikcard"
-                            android:layout_width="350dp"
-                            android:layout_height="220dp"
-                            android:layout_marginStart="20dp"
-                            android:background="@drawable/newcard_purple"
-                            android:clickable="true"
-                            android:padding="30dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
-                                    android:fontFamily="@font/alata"
-                                    android:text="Kako se osjećaš?"
-                                    android:textColor="@color/white"
-                                    android:textSize="30dp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/alata"
-                                    android:text="Zabilježi kako se osjećaš"
-                                    android:textColor="@color/Pallete3"
-                                    android:textSize="14dp" />
-                            </LinearLayout>
-
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/card2"
-                            android:layout_width="350dp"
-                            android:layout_height="220dp"
-                            android:layout_marginStart="20dp"
-                            android:background="@drawable/newcard_pink"
-                            android:clickable="true"
-                            android:padding="30dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                        <ImageView
+                            android:layout_gravity="left"
+                            android:id="@+id/icon1"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:visibility="gone"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/iconmental"/>
+                        <ImageView
+                            android:layout_gravity="left"
+                            android:id="@+id/icon2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:visibility="gone"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/iconmental"/>
+                        <ImageView
+                            android:layout_gravity="left"
+                            android:id="@+id/icon3"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:visibility="gone"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/iconmental"/>
+                        <ImageView
+                            android:layout_gravity="left"
+                            android:id="@+id/icon4"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:visibility="gone"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/iconmental"/>
+                        <ImageView
+                            android:layout_gravity="left"
+                            android:id="@+id/icon5"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:visibility="gone"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/iconmental"/>
 
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
-                                    android:fontFamily="@font/alata"
-                                    android:text="Generalni savjeti"
-                                    android:textColor="@color/white"
-                                    android:textSize="30dp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/alata"
-                                    android:text="za poboljšanje raspoloženja"
-                                    android:textColor="@color/Pallete3"
-                                    android:textSize="14dp" />
-                            </LinearLayout>
-
-
-                        </RelativeLayout>
                     </LinearLayout>
-                </HorizontalScrollView>
 
+                </RelativeLayout>
 
             </LinearLayout>
         </ScrollView>

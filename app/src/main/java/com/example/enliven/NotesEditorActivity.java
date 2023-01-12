@@ -3,12 +3,14 @@ package com.example.enliven;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -21,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashSet;
 import java.util.List;
@@ -32,7 +35,7 @@ public class NotesEditorActivity extends AppCompatActivity {
 
 
 
-
+    String emotion;
     int noteId;
 
     SharedPreferences sharedPreferences;
@@ -43,6 +46,7 @@ public class NotesEditorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes_editor);
+        emotion = getIntent().getStringExtra("emotion");
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -67,28 +71,6 @@ public class NotesEditorActivity extends AppCompatActivity {
             actionBar.setTitle("Dodaj");
         }
 
-        noteEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                  diaryactivity.notes.set(noteId, String.valueOf(charSequence));
-                  diaryactivity.adapter.notifyDataSetChanged();
-
-                HashSet<String> notesSet = new HashSet<>(diaryactivity.notes);
-                sharedPreferences.edit().putStringSet("notes", notesSet).apply();
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
-
     }
 
     @Override
@@ -100,20 +82,60 @@ public class NotesEditorActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-       super.onOptionsItemSelected(item);
+
 
         if(item.getItemId() == R.id.save_note){
-
-            startActivity(new Intent(getApplicationContext(), diaryactivity.class));
-            finish();
-
+            if(noteEditText.getText().toString().trim().isEmpty()){
+                Toast.makeText(getApplicationContext(), "Polje ne smije biti prazno!", Toast.LENGTH_SHORT).show();
+            }else {
+                diaryactivity.notes.set(noteId, noteEditText.getText().toString().trim());
+                if(emotion==null){
+                    emotion=sharedPreferences.getString("noteEmotion" + noteId, null);
+                }
+                sharedPreferences.edit().putString("noteEmotion" + noteId, emotion).apply();
+                diaryactivity.adapter.notifyDataSetChanged();
+                HashSet<String> notesSet = new HashSet<>(diaryactivity.notes);
+                updateLast();
+                sharedPreferences.edit().putStringSet("notes", notesSet).apply();
+                finish();
+            }
             return true;
         }
         return false;
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 
-
-
+    public void updateLast(){
+        if(sharedPreferences.getString("lastEmotion1",null)==null) {
+            sharedPreferences.edit().putString("lastEmotion1", emotion).apply();
+        } else
+            if(sharedPreferences.getString("lastEmotion2",null)==null){
+                sharedPreferences.edit().putString("lastEmotion2", emotion).apply();
+            } else
+            if(sharedPreferences.getString("lastEmotion3",null)==null){
+                sharedPreferences.edit().putString("lastEmotion3", emotion).apply();
+            } else
+                if(sharedPreferences.getString("lastEmotion4",null)==null){
+                    sharedPreferences.edit().putString("lastEmotion4", emotion).apply();
+                }else
+                if(sharedPreferences.getString("lastEmotion5",null)==null){
+                    sharedPreferences.edit().putString("lastEmotion5", emotion).apply();
+                }else{
+                    sharedPreferences.edit().putString("lastEmotion1", sharedPreferences.getString("lastEmotion2",null)).apply();
+                    sharedPreferences.edit().putString("lastEmotion2", sharedPreferences.getString("lastEmotion3",null)).apply();
+                    sharedPreferences.edit().putString("lastEmotion3", sharedPreferences.getString("lastEmotion4",null)).apply();
+                    sharedPreferences.edit().putString("lastEmotion4", sharedPreferences.getString("lastEmotion5",null)).apply();
+                    sharedPreferences.edit().putString("lastEmotion5", emotion).apply();
+                }
+    }
 }

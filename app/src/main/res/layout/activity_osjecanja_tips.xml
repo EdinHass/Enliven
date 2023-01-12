@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/Theme.Enliven"
     tools:context=".osjecanja_tips">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/osjecanja_fragmentView"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/nav_osjecanja" />
+        app:navGraph="@navigation/nav_osjecanja"
+        tools:layout="@layout/fragment_sreca_tips" />
 </androidx.constraintlayout.widget.ConstraintLayout>

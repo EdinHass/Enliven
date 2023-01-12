@@ -78,6 +78,7 @@ public class citati_activity extends AppCompatActivity {
                 progressBar.setProgress((Integer)animation.getAnimatedValue());
             }
         });
+        animator.start();
 
         int color = (new ColorDiagram()).getColor();
         GradientDrawable gd = new GradientDrawable(
@@ -100,7 +101,9 @@ public class citati_activity extends AppCompatActivity {
                 switch (event.getAction()){
                     case MotionEvent.ACTION_UP:
                         if(!holding) {
-                            animator.cancel();
+                            if(animator!=null) {
+                                animator.cancel();
+                            }
                         }else {
                             holding = false;
                             if (animator.isPaused()) {
@@ -138,7 +141,9 @@ public class citati_activity extends AppCompatActivity {
                         if(!holding) {
                             if(brojstorija[0]>=1) {
                                 brojstorija[0] = brojstorija[0] - 2;
-                                animator.cancel();
+                                if(animator!=null) {
+                                    animator.cancel();
+                                }
                             }
                         }else {
                             holding = false;
@@ -154,7 +159,9 @@ public class citati_activity extends AppCompatActivity {
                             @Override
                             public void run() {
                                 if(event.getAction()==MotionEvent.ACTION_DOWN) {
-                                    animator.pause();
+                                    if(animator!=null) {
+                                        animator.pause();
+                                    }
                                     holding = true;
                                 }
                             }
@@ -190,8 +197,6 @@ public class citati_activity extends AppCompatActivity {
                 }
             }
         });
-        animator.start();
-
         text.setText(citati[brojstorija[0]]);
        }
 

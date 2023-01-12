@@ -1,5 +1,6 @@
 package com.example.enliven;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -25,7 +26,9 @@ public class stres_tips extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getContext(), NotesEditorActivity.class);
+                intent.putExtra("emotion", "str");
+                startActivity(intent);
             }
         });
         return view1;

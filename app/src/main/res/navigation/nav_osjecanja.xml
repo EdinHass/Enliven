@@ -2,7 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_osjecanja">
+    android:id="@+id/nav_osjecanja"
+    app:startDestination="@id/mood">
 
     <fragment
         android:id="@+id/sreca_tips"
@@ -38,7 +39,7 @@
         android:id="@+id/mood"
         android:name="com.example.enliven.mood"
         android:label="fragment_mood"
-        tools:layout="@layout/fragment_mood" >
+        tools:layout="@layout/fragment_mood">
         <action
             android:id="@+id/action_mood_to_anksioznost_tips"
             app:destination="@id/anksioznost_tips" />

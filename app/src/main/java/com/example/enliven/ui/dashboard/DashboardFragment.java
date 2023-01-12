@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -12,6 +13,8 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -20,6 +23,7 @@ import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -63,22 +67,36 @@ import io.getstream.chat.android.client.models.User;
 public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
-    private RelativeLayout dnevnikcard, tipscard, socialinfo, enlivensocial;
+    private RelativeLayout dnevnikcard, socialinfo, enlivensocial, vodic;
+    private LinearLayout tipscard;
     private LinearLayout story_citati;
     SharedPreferences prefs;
+    View root;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        root = binding.getRoot();
 
         dnevnikcard = root.findViewById(R.id.dnevnikcard);
         tipscard = root.findViewById(R.id.card2);
         story_citati=root.findViewById(R.id.citati);
         socialinfo=root.findViewById(R.id.socialinfo);
+        vodic=root.findViewById(R.id.vodic);
         enlivensocial=root.findViewById(R.id.enlivensocial);
+        TextView pocetniText = root.findViewById(R.id.textpocetni);
+
+        Animation floatUpFast = AnimationUtils.loadAnimation(getActivity(),R.anim.animation_bottom_lighter);
+        Animation floatDown = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_out_top_light);
+        Animation slideoutright = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_from_right_light);
+        pocetniText.startAnimation(floatDown);
+        enlivensocial.startAnimation(floatUpFast);
+        dnevnikcard.startAnimation(floatUpFast);
+        story_citati.startAnimation(slideoutright);
+        tipscard.startAnimation(floatUpFast);
+        vodic.startAnimation(floatUpFast);
 
 
         prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
@@ -125,22 +143,27 @@ public class DashboardFragment extends Fragment {
         tipscard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_general_tip);
+                startActivity(new Intent(getContext(), general_tip.class));
             }
         });
 
         dnevnikcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), osjecanja_tips.class);
+                Intent intent = new Intent(getContext(), diaryactivity.class);
                 startActivity(intent);
-
             }
         });
 
-        TextView pocetniText = root.findViewById(R.id.textpocetni);
+
         SharedPreferences sprefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
-        pocetniText.setText( "Zdravo, "+ sprefs.getString("UserName", "invalid") + "!");
+        if(sprefs.getString("UserName", "invalid")=="invalid"){
+            pocetniText.setText( "Osjećanja");
+        }else{
+            pocetniText.setText( "Kako si, " + sprefs.getString("UserName", "invalid") + "?");
+        }
+
+        setupLastEmotions();
 
 
 
@@ -148,10 +171,81 @@ public class DashboardFragment extends Fragment {
         return root;
     }
 
+    public void setupLastEmotions(){
+
+
+        ImageView[] icons = new ImageView[5];
+        icons[0]=root.findViewById(R.id.icon5);
+        icons[1]=root.findViewById(R.id.icon4);
+        icons[2]=root.findViewById(R.id.icon3);
+        icons[3]=root.findViewById(R.id.icon2);
+        icons[4]=root.findViewById(R.id.icon1);
+
+        TextView noText = root.findViewById(R.id.nohisttext);
+        if(prefs.getString("lastEmotion1",null)==null && prefs.getString("lastEmotion2",null)==null && prefs.getString("lastEmotion3",null)==null
+           && prefs.getString("lastEmotion4",null)==null && prefs.getString("lastEmotion5",null)==null
+        ){
+            noText.setVisibility(View.VISIBLE);
+            return;
+        }
+        if(prefs.getString("lastEmotion1",null)!=null)
+            setupIcon(icons[0], prefs.getString("lastEmotion1",null));
+        if(prefs.getString("lastEmotion2",null)!=null)
+            setupIcon(icons[1], prefs.getString("lastEmotion2",null));
+        if(prefs.getString("lastEmotion3",null)!=null)
+            setupIcon(icons[2], prefs.getString("lastEmotion3",null));
+        if(prefs.getString("lastEmotion4",null)!=null)
+            setupIcon(icons[3], prefs.getString("lastEmotion4",null));
+        if(prefs.getString("lastEmotion5",null)!=null)
+            setupIcon(icons[4], prefs.getString("lastEmotion5",null));
+
+
+
+    }
+
+    public void setupIcon(ImageView viewIcon, String emotion){
+        Drawable happyIcon = AppCompatResources.getDrawable(getContext(), R.drawable.happyicon);
+        Drawable sadIcon = AppCompatResources.getDrawable(getContext(), R.drawable.sadicon);
+        Drawable angryIcon = AppCompatResources.getDrawable(getContext(), R.drawable.angryicon);
+        Drawable anxiousIcon = AppCompatResources.getDrawable(getContext(), R.drawable.anxiousicon);
+        Drawable scaredIcon = AppCompatResources.getDrawable(getContext(), R.drawable.scaredicon);
+        Drawable stressIcon = AppCompatResources.getDrawable(getContext(), R.drawable.stressicon);
+
+        switch(emotion){
+            case "sad":
+                viewIcon.setImageDrawable(sadIcon);
+                viewIcon.setVisibility(View.VISIBLE);
+                return;
+            case "hap":
+                viewIcon.setImageDrawable(happyIcon);
+                viewIcon.setVisibility(View.VISIBLE);
+                return;
+            case "ang":
+                viewIcon.setImageDrawable(angryIcon);
+                viewIcon.setVisibility(View.VISIBLE);
+                return;
+            case "anx":
+                viewIcon.setImageDrawable(anxiousIcon);
+                viewIcon.setVisibility(View.VISIBLE);
+                return;
+            case "sca":
+                viewIcon.setImageDrawable(scaredIcon);
+                viewIcon.setVisibility(View.VISIBLE);
+                return;
+            case "str":
+                viewIcon.setImageDrawable(stressIcon);
+                viewIcon.setVisibility(View.VISIBLE);
+                return;
+            default:
+                return;
+        }
+    }
+
     @Override
     public void onResume() {
         story_citati.removeAllViews();
         setupStories();
+        setupLastEmotions();
         super.onResume();
     }
 
