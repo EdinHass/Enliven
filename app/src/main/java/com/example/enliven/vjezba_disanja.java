@@ -30,7 +30,7 @@ public class vjezba_disanja extends AppCompatActivity {
 
         button=findViewById(R.id.buttonstart);
         textView=findViewById(R.id.text);
-        progressBar=findViewById(R.id.progressBar2);
+        progressBar=findViewById(R.id.progressBar3);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,21 +43,24 @@ public class vjezba_disanja extends AppCompatActivity {
                             handler.post(new Runnable() {
                                 public void run() {
                                     progressBar.setProgress(progressStatus);
-                                    if(i%5==0){
+                                    if(i==5 || i==15 || i==25 || i==35 || i==45){
                                         textView.setText("Izdahni");
                                     }
-                                    else{
+                                    else if(i==10 || i==20 || i==30 || i==40){
                                         textView.setText("Udahni");
+                                    }
+                                    else if(i==50){
+                                        Toast.makeText(getApplicationContext(),"Bravo! Vježba je završena.", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
                             try {
-                                Thread.sleep(100);
+                                Thread.sleep(1000);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
                         }
-                        Toast.makeText(getApplicationContext(),"Bravo! Vježba je završena.", Toast.LENGTH_SHORT).show();
+
                     }
                 }).start();
 

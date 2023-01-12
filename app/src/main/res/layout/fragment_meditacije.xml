@@ -46,9 +46,9 @@
             android:id="@+id/zastomeditacija"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="220dp"
-            android:background="@drawable/newcard_blue"
+            android:background="@drawable/curved_dark"
             android:clickable="true"
             >
 
@@ -82,7 +82,7 @@
                 android:id="@+id/meditacijazapocetnike"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_width="370dp"
+                android:layout_width="match_parent"
                 android:layout_height="220dp"
                 android:background="@drawable/curved_dark"
                 android:clickable="true"
@@ -119,9 +119,9 @@
                 android:id="@+id/vjezbeDisanja"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:background="@drawable/newcard_blue"
+                android:background="@drawable/curved_dark"
                 android:clickable="true"
                 >
 
@@ -136,7 +136,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/alata"
-                        android:text="Vjezba disanja"
+                        android:text="Vježba disanja"
                         android:textColor="@color/white"
                         android:textSize="30dp" />
 
