@@ -3,12 +3,18 @@ package com.example.enliven.ui.dashboard;
 import android.content.Intent;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -17,7 +23,9 @@ import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
@@ -59,242 +67,41 @@ import io.getstream.chat.android.client.models.User;
 public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
-    private RelativeLayout dnevnikcard, tipscard, socialinfo, enlivensocial;
+    private RelativeLayout dnevnikcard, socialinfo, enlivensocial, vodic;
+    private LinearLayout tipscard;
     private LinearLayout story_citati;
-    private  ImageView story1, story2, story3, story4, story5, story6, story7, story8, story9, story10, story11, story12, story13, story14, story15, story16, story17, story18, story19, story20;
-
+    SharedPreferences prefs;
+    View root;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        root = binding.getRoot();
 
         dnevnikcard = root.findViewById(R.id.dnevnikcard);
         tipscard = root.findViewById(R.id.card2);
         story_citati=root.findViewById(R.id.citati);
         socialinfo=root.findViewById(R.id.socialinfo);
+        vodic=root.findViewById(R.id.vodic);
         enlivensocial=root.findViewById(R.id.enlivensocial);
+        TextView pocetniText = root.findViewById(R.id.textpocetni);
 
-        story1=root.findViewById(R.id.story1_1);
-        story2=root.findViewById(R.id.story21);
-        story3=root.findViewById(R.id.story31);
-        story4=root.findViewById(R.id.story41);
-        story5=root.findViewById(R.id.story51);
-        story6=root.findViewById(R.id.story61);
-        story7=root.findViewById(R.id.story71);
-        story8=root.findViewById(R.id.story81);
-        story9=root.findViewById(R.id.story91);
-        story10=root.findViewById(R.id.story101);
-        story11=root.findViewById(R.id.story111);
-        story12=root.findViewById(R.id.story121);
-        story13=root.findViewById(R.id.story131);
-        story14=root.findViewById(R.id.story141);
-        story15=root.findViewById(R.id.story151);
-        story16=root.findViewById(R.id.story161);
-        story17=root.findViewById(R.id.story171);
-        story18=root.findViewById(R.id.story181);
-        story19=root.findViewById(R.id.story191);
-        story20=root.findViewById(R.id.story201);
+        Animation floatUpFast = AnimationUtils.loadAnimation(getActivity(),R.anim.animation_bottom_lighter);
+        Animation floatDown = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_out_top_light);
+        Animation slideoutright = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_from_right_light);
+        pocetniText.startAnimation(floatDown);
+        enlivensocial.startAnimation(floatUpFast);
+        dnevnikcard.startAnimation(floatUpFast);
+        story_citati.startAnimation(slideoutright);
+        tipscard.startAnimation(floatUpFast);
+        vodic.startAnimation(floatUpFast);
 
 
-
-        story1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 0);
-                startActivity(intent);
-            }
-        });
-        story2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 1);
-                startActivity(intent);
-            }
-        });
-        story3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 2);
-                startActivity(intent);
-            }
-        });
-        story4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 3);
-                startActivity(intent);
-            }
-        });
-        story5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 4);
-                startActivity(intent);
-            }
-        });
-        story6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 5);
-                startActivity(intent);
-            }
-        });
-        story7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 6);
-                startActivity(intent);
-            }
-        });
-        story8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 7);
-                startActivity(intent);
-            }
-        });
-        story9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 8);
-                startActivity(intent);
-            }
-        });
-        story10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 9);
-                startActivity(intent);
-            }
-        });
-        story11.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 10);
-                startActivity(intent);
-            }
-        });
-        story12.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 11);
-                startActivity(intent);
-            }
-        });
-        story13.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 12);
-                startActivity(intent);
-            }
-        });
-        story14.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 13);
-                startActivity(intent);
-            }
-        });
-        story15.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 14);
-                startActivity(intent);
-            }
-        });
-        story16.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 15);
-                startActivity(intent);
-            }
-        });
-        story17.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 16);
-                startActivity(intent);
-            }
-        });
-        story18.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 17);
-                startActivity(intent);
-            }
-        });
-        story19.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 18);
-                startActivity(intent);
-            }
-        });
-        story20.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), citati_activity.class);
-
-                intent.putExtra("Broj storija", 19);
-                startActivity(intent);
-            }
-        });
+        prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
 
 
-        for(int i=0;i<20;i++){
-            int i1=i;
-            story_citati.getChildAt(i).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getContext(), citati_activity.class);
-
-                    intent.putExtra("Broj storija", i1);
-                            startActivity(intent);
-                }
-            });
-
-        }
 
 
         enlivensocial.setOnClickListener(new View.OnClickListener() {
@@ -336,22 +143,27 @@ public class DashboardFragment extends Fragment {
         tipscard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_dashboard_to_general_tip);
+                startActivity(new Intent(getContext(), general_tip.class));
             }
         });
 
         dnevnikcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), osjecanja_tips.class);
+                Intent intent = new Intent(getContext(), diaryactivity.class);
                 startActivity(intent);
-
             }
         });
 
-        TextView pocetniText = root.findViewById(R.id.textpocetni);
+
         SharedPreferences sprefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
-        pocetniText.setText( "Zdravo, "+ sprefs.getString("UserName", "invalid") + "!");
+        if(sprefs.getString("UserName", "invalid")=="invalid"){
+            pocetniText.setText( "Osjećanja");
+        }else{
+            pocetniText.setText( "Kako si, " + sprefs.getString("UserName", "invalid") + "?");
+        }
+
+        setupLastEmotions();
 
 
 
@@ -359,9 +171,169 @@ public class DashboardFragment extends Fragment {
         return root;
     }
 
+    public void setupLastEmotions(){
+
+
+        ImageView[] icons = new ImageView[5];
+        icons[0]=root.findViewById(R.id.icon5);
+        icons[1]=root.findViewById(R.id.icon4);
+        icons[2]=root.findViewById(R.id.icon3);
+        icons[3]=root.findViewById(R.id.icon2);
+        icons[4]=root.findViewById(R.id.icon1);
+
+        TextView noText = root.findViewById(R.id.nohisttext);
+        if(prefs.getString("lastEmotion1",null)==null && prefs.getString("lastEmotion2",null)==null && prefs.getString("lastEmotion3",null)==null
+           && prefs.getString("lastEmotion4",null)==null && prefs.getString("lastEmotion5",null)==null
+        ){
+            noText.setVisibility(View.VISIBLE);
+            return;
+        }
+        if(prefs.getString("lastEmotion1",null)!=null)
+            setupIcon(icons[0], prefs.getString("lastEmotion1",null));
+        if(prefs.getString("lastEmotion2",null)!=null)
+            setupIcon(icons[1], prefs.getString("lastEmotion2",null));
+        if(prefs.getString("lastEmotion3",null)!=null)
+            setupIcon(icons[2], prefs.getString("lastEmotion3",null));
+        if(prefs.getString("lastEmotion4",null)!=null)
+            setupIcon(icons[3], prefs.getString("lastEmotion4",null));
+        if(prefs.getString("lastEmotion5",null)!=null)
+            setupIcon(icons[4], prefs.getString("lastEmotion5",null));
+
+
+
+    }
+
+    public void setupIcon(ImageView viewIcon, String emotion){
+        Drawable happyIcon = AppCompatResources.getDrawable(getContext(), R.drawable.happyicon);
+        Drawable sadIcon = AppCompatResources.getDrawable(getContext(), R.drawable.sadicon);
+        Drawable angryIcon = AppCompatResources.getDrawable(getContext(), R.drawable.angryicon);
+        Drawable anxiousIcon = AppCompatResources.getDrawable(getContext(), R.drawable.anxiousicon);
+        Drawable scaredIcon = AppCompatResources.getDrawable(getContext(), R.drawable.scaredicon);
+        Drawable stressIcon = AppCompatResources.getDrawable(getContext(), R.drawable.stressicon);
+
+        switch(emotion){
+            case "sad":
+                viewIcon.setImageDrawable(sadIcon);
+                viewIcon.setVisibility(View.VISIBLE);
+                return;
+            case "hap":
+                viewIcon.setImageDrawable(happyIcon);
+                viewIcon.setVisibility(View.VISIBLE);
+                return;
+            case "ang":
+                viewIcon.setImageDrawable(angryIcon);
+                viewIcon.setVisibility(View.VISIBLE);
+                return;
+            case "anx":
+                viewIcon.setImageDrawable(anxiousIcon);
+                viewIcon.setVisibility(View.VISIBLE);
+                return;
+            case "sca":
+                viewIcon.setImageDrawable(scaredIcon);
+                viewIcon.setVisibility(View.VISIBLE);
+                return;
+            case "str":
+                viewIcon.setImageDrawable(stressIcon);
+                viewIcon.setVisibility(View.VISIBLE);
+                return;
+            default:
+                return;
+        }
+    }
+
+    @Override
+    public void onResume() {
+        story_citati.removeAllViews();
+        setupStories();
+        setupLastEmotions();
+        super.onResume();
+    }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public void setupStories(){
+        final int[] currIndex = {-1};
+        for(int i=0;i<20;i++){
+            int finalI = i;
+            ImageView temp = new ImageView(getContext());
+            if(prefs.getBoolean("storyCitat"+i, false)) {
+                continue;
+            }
+            else{
+                currIndex[0]++;
+                temp.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.questionmark));
+            }
+
+            Resources r = getContext().getResources();
+            int px = (int) TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    80,
+                    r.getDisplayMetrics()
+            );
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(px, px);
+            px = (int) TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    10,
+                    r.getDisplayMetrics()
+            );
+            layoutParams.setMargins(0,0,px, 0);
+            temp.setLayoutParams(layoutParams);
+            story_citati.addView(temp);
+
+            temp.setClickable(true);
+            prefs.edit().putInt("storyRedoslijed"+ currIndex[0], finalI).apply();
+            temp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getContext(), citati_activity.class);
+                    intent.putExtra("Broj storija", finalI);
+                    startActivity(intent);
+                }
+            });
+        }
+
+        for(int i=0;i<20;i++){
+            int finalI = i;
+            ImageView temp = new ImageView(getContext());
+            if(prefs.getBoolean("storyCitat"+i, false)) {
+                currIndex[0]++;
+                temp.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.check));
+            }
+            else{
+                continue;
+            }
+
+            Resources r = getContext().getResources();
+            int px = (int) TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    80,
+                    r.getDisplayMetrics()
+            );
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(px, px);
+            px = (int) TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    10,
+                    r.getDisplayMetrics()
+            );
+            layoutParams.setMargins(0,0,px, 0);
+            temp.setLayoutParams(layoutParams);
+            story_citati.addView(temp);
+
+            temp.setClickable(true);
+            prefs.edit().putInt("storyRedoslijed" + currIndex[0], finalI).apply();
+            temp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getContext(), citati_activity.class);
+                    intent.putExtra("Broj storija", finalI);
+                    startActivity(intent);
+                }
+            });
+        }
+        currIndex[0]=-1;
     }
 }

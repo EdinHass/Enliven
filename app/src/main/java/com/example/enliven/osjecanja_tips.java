@@ -19,4 +19,11 @@ public class osjecanja_tips extends AppCompatActivity {
                 (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.osjecanja_fragmentView);
         NavController navController = navHostFragment.getNavController();
     }
+
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
+    }
 }

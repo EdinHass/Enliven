@@ -6,585 +6,400 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_dark_purple"
     tools:context=".ui.dashboard.DashboardFragment">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_marginBottom="60dp">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:id="@+id/textpocetni"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/alata"
-        android:text="Kako se osjećaš?"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        android:typeface="normal"
-         />
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="80dp"
-        android:layout_height="2dp"
-        android:background="@color/white"
-        android:layout_marginStart="20dp"
-        android:orientation="horizontal" />
-
-        <TextView
-            android:layout_marginStart="20dp"
-            android:layout_width="wrap_content"
+        <ScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/alata"
-            android:text="Citati"
-            android:textColor="@color/PalleteLightText"
-            android:textSize="14dp"
-            android:layout_marginTop="20dp"/>
-
-    <HorizontalScrollView
-        android:id="@+id/citati_story"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        >
-
-        <LinearLayout
-            android:id="@+id/citati"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="0dp"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
-                android:id="@+id/story1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:clickable="true">
-
-                <ImageView
-                    android:id="@+id/story1_1"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_nature"
-                    android:clickable="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story21"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_music"
-                    android:clickable="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story31"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_ambient"
-                    android:clickable="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story41"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_rain"
-                    android:clickable="true"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story51"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_space"
-                    android:clickable="true"/>
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/story6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story61"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_nature"
-                    android:clickable="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story71"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_music"
-                    android:clickable="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story81"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_ambient"
-                    android:clickable="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story91"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_rain"
-                    android:clickable="true"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story101"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_space"
-                    android:clickable="true"/>
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/story11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story111"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_nature"
-                    android:clickable="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story121"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_music"
-                    android:clickable="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story131"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_ambient"
-                    android:clickable="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story141"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_rain"
-                    android:clickable="true"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story151"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_space"
-                    android:clickable="true"/>
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/story16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story161"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_nature"
-                    android:clickable="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story171"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_music"
-                    android:clickable="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story181"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_ambient"
-                    android:clickable="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story19"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story191"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_rain"
-                    android:clickable="true"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/story20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/story201"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/category_space"
-                    android:clickable="true"/>
-
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-        <TextView
-            android:layout_marginStart="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/alata"
-            android:text="Istraži"
-            android:textColor="@color/PalleteLightText"
-            android:textSize="14dp"
-            android:layout_marginTop="20dp"/>
-
-        <RelativeLayout
-            android:id="@+id/socialinfo"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="220dp"
-            android:background="@drawable/newcard_blue"
-            android:clickable="true"
-            >
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:orientation="vertical"
-                android:layout_marginStart="20dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/alata"
-                    android:text="Zašto da iskazuješ emocije?"
-                    android:textColor="@color/white"
-                    android:textSize="30dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/alata"
-                    android:text="Saznaj više"
-                    android:layout_marginTop="20dp"
-                    android:textColor="@color/Pallete3"
-                    android:textSize="18dp" />
-            </LinearLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/enlivensocial"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_height="270dp"
-            android:layout_width="365dp"
-            android:outlineAmbientShadowColor="@android:color/transparent"
-            android:background="@drawable/newcard_blue"
-            android:layout_marginBottom="20dp"
-      >
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:orientation="vertical"
-                android:layout_marginStart="20dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/alata"
-                    android:text="Enliven Social"
-                    android:textColor="@color/white"
-                    android:textSize="30dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/alata"
-                    android:text="Započni"
-                    android:layout_marginTop="20dp"
-                    android:textColor="@color/Pallete3"
-                    android:textSize="18dp" />
-            </LinearLayout>
-
-
-        </RelativeLayout>
-
-
-
-
-        <HorizontalScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none"
-       >
-
-            <LinearLayout
-                android:id="@+id/cards"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:background="@drawable/curved_dark"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/textpocetni"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="San"
+                        android:textFontWeight="800"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:typeface="normal" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/alata"
+                    android:text="Citati"
+                    android:textColor="@color/PalleteLightText"
+                    android:textSize="14dp" />
+
+                <HorizontalScrollView
+                    android:id="@+id/citati_story"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginVertical="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/citati"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:orientation="horizontal">
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/alata"
+                    android:text="Istaknuto"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/PalleteLightText"
+                    android:textSize="14dp" />
+
+                <RelativeLayout
+                    android:id="@+id/enlivensocial"
+                    android:padding="30dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_height="250dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/curved_dark"
+                    android:outlineAmbientShadowColor="@android:color/transparent">
+
+                    <LinearLayout
+                        android:id="@+id/textCardSounds"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Enliven"
+                            android:textFontWeight="1000"
+                            android:textColor="@color/Pallete3"
+                            android:textSize="30dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Social"
+                            android:textColor="@color/white"
+                            android:textSize="30dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Pridruži se"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/Pallete3"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/textCardSounds"
+                        android:src="@drawable/ambient_illustration6"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/card2"
+                        android:layout_width="170dp"
+                        android:layout_height="200dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/curved_dark"
+                        android:orientation="vertical"
+                        android:paddingEnd="0dp">
+
+                        <TextView
+                            android:id="@+id/brojBilj"
+                            android:layout_marginTop="25dp"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Savjeti"
+                            android:textColor="@color/white"
+                            android:textSize="30dp" />
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="za raspoloženje"
+                            android:textColor="@color/Pallete2"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_marginVertical="10dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:src="@drawable/ambient_illustration4"/>
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/vodic"
+                        android:layout_toEndOf="@id/card2"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="200dp"
+                        android:layout_width="fill_parent"
+                        android:padding="20dp"
+                        android:background="@drawable/curved_dark"
+                        android:outlineAmbientShadowColor="@android:color/transparent">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/timeUntil1"
+                                android:layout_marginTop="5dp"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/alata"
+                                android:text="Vodič"
+                                android:textColor="@color/white"
+                                android:textSize="30dp" />
+
+                            <TextView
+                                android:id="@+id/timeUntil2"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/alata"
+                                android:text="za emocije"
+
+                                android:textColor="@color/Pallete2"
+                                android:textSize="18dp" />
+
+                            <RelativeLayout
+                                android:id="@+id/socialinfo"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:padding="10dp"
+                                android:background="@drawable/curved_light">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/alata"
+                                    android:text="Započni"
+                                    android:textColor="@color/Pallete2"
+                                    android:textSize="14dp"></TextView>
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/alata"
+                    android:text="Istraži"
+                    android:textColor="@color/PalleteLightText"
+                    android:textSize="14dp" />
 
                 <RelativeLayout
                     android:id="@+id/dnevnikcard"
-                    android:layout_width="350dp"
-                    android:layout_height="220dp"
-                    android:layout_marginStart="20dp"
-                    android:background="@drawable/newcard_purple"
-                    android:clickable="true"
-                    android:padding="30dp">
+                    android:padding="30dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_height="250dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/curved_dark"
+                    android:outlineAmbientShadowColor="@android:color/transparent">
 
                     <LinearLayout
+                        android:id="@+id/textCardSounds1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
                         android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/alata"
-                        android:text="Kako se osjećaš?"
-                        android:textColor="@color/white"
-                        android:textSize="30dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Emotion"
+                            android:textFontWeight="1000"
+                            android:textColor="@color/Pallete3"
+                            android:textSize="30dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Book"
+                            android:textColor="@color/white"
+                            android:textSize="30dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="Zabilježi kako se osjećaš"
-                        android:textColor="@color/Pallete3"
-                        android:textSize="14dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Istraži"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/Pallete3"
+                            android:textSize="18dp" />
                     </LinearLayout>
 
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@id/textCardSounds1"
+                        android:src="@drawable/ambient_illustration2" />
 
 
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/card2"
-                    android:layout_width="350dp"
-                    android:layout_height="220dp"
-                    android:layout_marginStart="20dp"
-                    android:background="@drawable/newcard_pink"
-                    android:padding="30dp"
-                    android:clickable="true">
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="60dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:background="@drawable/curved_dark"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/historijaem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Historija osjećanja:"
+                        android:textColor="@color/Pallete2"
+                        android:textSize="14sp"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:id="@+id/nohisttext"
+                        android:visibility="gone"
+                        android:layout_below="@id/historijaem"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:layout_marginTop="10dp"
+                        android:text="Nemate zabilježenih osjećanja"
+                        android:textColor="@color/PalleteLightText"
+                        android:textSize="14sp"
+                        android:typeface="normal" />
+
 
                     <LinearLayout
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@id/historijaem"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_gravity="left"
+                            android:id="@+id/icon1"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:visibility="gone"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/iconmental"/>
+                        <ImageView
+                            android:layout_gravity="left"
+                            android:id="@+id/icon2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:visibility="gone"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/iconmental"/>
+                        <ImageView
+                            android:layout_gravity="left"
+                            android:id="@+id/icon3"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:visibility="gone"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/iconmental"/>
+                        <ImageView
+                            android:layout_gravity="left"
+                            android:id="@+id/icon4"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:visibility="gone"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/iconmental"/>
+                        <ImageView
+                            android:layout_gravity="left"
+                            android:id="@+id/icon5"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:visibility="gone"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/iconmental"/>
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/alata"
-                        android:text="Generalni savjeti"
-                        android:textColor="@color/white"
-                        android:textSize="30dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="za poboljšanje raspoloženja"
-                        android:textColor="@color/Pallete3"
-                        android:textSize="14dp" />
                     </LinearLayout>
 
-
-
                 </RelativeLayout>
+
             </LinearLayout>
-        </HorizontalScrollView>
-
-
+        </ScrollView>
 
     </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

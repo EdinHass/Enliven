@@ -49,7 +49,7 @@ class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile){
             }
         }
 
-        binding.frameLayout.setOnClickListener(){
+        binding.frameLayout.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             resultLauncher.launch(gallery)
         }

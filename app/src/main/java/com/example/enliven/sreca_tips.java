@@ -25,7 +25,9 @@ public class sreca_tips extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getContext(), NotesEditorActivity.class);
+                intent.putExtra("emotion", "hap");
+                startActivity(intent);
             }
         });
         return view1;
