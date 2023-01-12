@@ -1,5 +1,8 @@
 package com.example.enliven;
 
+import static com.example.enliven.ui.UtilsKt.interpolateColor;
+import static com.example.enliven.ui.UtilsKt.manipulateColor;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -193,7 +196,8 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
                     favorited = false;
                     favoriteIcon.setImageDrawable(heartEmptyWrapped);
                     animateHeart(favoriteIcon);
-                    Toast.makeText(getApplicationContext(), "Izbačeno iz favorita", Toast.LENGTH_SHORT).show();
+
+                    Snackbar.make(favoriteIcon.getRootView(), "Izbačeno iz favorita", Snackbar.LENGTH_SHORT).show();
                     Set<String> set = new HashSet<>();
                     Set<String> oldFavs = (HashSet<String>) prefs.getStringSet("favorites", set);
 
@@ -294,42 +298,7 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
 
 
 
-    private float interpolate(float a, float b, float proportion) {
-        return (a + ((b - a) * proportion));
-    }
 
-    private int interpolateColor(int a, int b, float proportion) {
-
-        if (proportion > 1 || proportion < 0) {
-            throw new IllegalArgumentException("proportion must be [0 - 1]");
-        }
-        float[] hsva = new float[3];
-        float[] hsvb = new float[3];
-        float[] hsv_output = new float[3];
-
-        Color.colorToHSV(a, hsva);
-        Color.colorToHSV(b, hsvb);
-        for (int i = 0; i < 3; i++) {
-            hsv_output[i] = interpolate(hsva[i], hsvb[i], proportion);
-        }
-
-        int alpha_a = Color.alpha(a);
-        int alpha_b = Color.alpha(b);
-        float alpha_output = interpolate(alpha_a, alpha_b, proportion);
-
-        return Color.HSVToColor((int) alpha_output, hsv_output);
-    }
-
-    public static int manipulateColor(int color, float factor) {
-        int a = Color.alpha(color);
-        int r = Math.round(Color.red(color) * factor);
-        int g = Math.round(Color.green(color) * factor);
-        int b = Math.round(Color.blue(color) * factor);
-        return Color.argb(a,
-                Math.min(r,255),
-                Math.min(g,255),
-                Math.min(b,255));
-    }
 
     @Override
     public void onDialogPositiveClick(TimerDialogFragment dialog) {

@@ -5,24 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".citati_activity"
+    android:id="@+id/backgroundLayout"
     android:background="@drawable/gradient_dark_purple">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <ProgressBar
+            android:layout_alignParentTop="true"
+            android:id="@+id/ProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
         <TextView
             android:id="@+id/textViewcitat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textColor="@color/white"
+            android:layout_centerInParent="true"
             android:fontFamily="@font/alata"
-            android:textSize="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="200dp"/>
-    </LinearLayout>
+            android:text="TextView"
+            android:layout_margin="20dp"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+        <RelativeLayout
+            android:id="@+id/clickZoneLeft"
+            android:layout_toLeftOf="@id/clickZoneRight"
+            android:layout_alignParentStart="true"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"/>
+        <RelativeLayout
+            android:id="@+id/clickZoneRight"
+            android:layout_width="200dp"
+            android:layout_alignParentEnd="true"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
