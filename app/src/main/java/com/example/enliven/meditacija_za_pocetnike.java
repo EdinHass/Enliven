@@ -47,6 +47,19 @@ public class meditacija_za_pocetnike extends Fragment {
                 Navigation.findNavController(getActivity(),R.id.meditacijaFragmentView).navigate(R.id.action_meditacija_za_pocetnike_to_meditacija_prihvacanje_sebe);
             }
         });
+        med4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(getActivity(),R.id.meditacijaFragmentView).navigate(R.id.action_meditacija_za_pocetnike_to_meditacija_za_spavanje);
+            }
+        });
+
+        med5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(getActivity(),R.id.meditacijaFragmentView).navigate(R.id.action_meditacija_za_pocetnike_to_meditacija_za_raspolozenje);
+            }
+        });
         return view1;
     }
 }

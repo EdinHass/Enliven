@@ -38,6 +38,12 @@
         <action
             android:id="@+id/action_meditacija_za_pocetnike_to_meditacija_prihvacanje_sebe"
             app:destination="@id/meditacija_prihvacanje_sebe" />
+        <action
+            android:id="@+id/action_meditacija_za_pocetnike_to_meditacija_za_raspolozenje"
+            app:destination="@id/meditacija_za_raspolozenje" />
+        <action
+            android:id="@+id/action_meditacija_za_pocetnike_to_meditacija_za_spavanje"
+            app:destination="@id/meditacija_za_spavanje" />
     </fragment>
     <activity
         android:id="@+id/vjezba_disanja"
@@ -59,4 +65,14 @@
         android:name="com.example.enliven.meditacija_prihvacanje_sebe"
         android:label="fragment_meditacija_prihvacanje_sebe"
         tools:layout="@layout/fragment_meditacija_prihvacanje_sebe" />
+    <fragment
+        android:id="@+id/meditacija_za_raspolozenje"
+        android:name="com.example.enliven.meditacija_za_raspolozenje"
+        android:label="fragment_meditacija_za_raspolozenje"
+        tools:layout="@layout/fragment_meditacija_za_raspolozenje" />
+    <fragment
+        android:id="@+id/meditacija_za_spavanje"
+        android:name="com.example.enliven.meditacija_za_spavanje"
+        android:label="fragment_meditacija_za_spavanje"
+        tools:layout="@layout/fragment_meditacija_za_spavanje" />
 </navigation>

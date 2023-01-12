@@ -9,12 +9,14 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 
 public class meditacije extends Fragment {
 
-   private RelativeLayout zastoMeditacije, meditacijaZaPocetnike, vjezbaDisanja;
+   private RelativeLayout zastoMeditacije, vjezbaDisanja;
+   private LinearLayout meditacijaZaPocetnike;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -22,8 +24,8 @@ public class meditacije extends Fragment {
         View view1 = inflater.inflate(R.layout.fragment_meditacije, container, false);
 
         zastoMeditacije=view1.findViewById(R.id.zastomeditacija);
-        meditacijaZaPocetnike=view1.findViewById(R.id.meditacijazapocetnike);
-        vjezbaDisanja=view1.findViewById(R.id.vjezbeDisanja);
+        meditacijaZaPocetnike=view1.findViewById(R.id.meditacija);
+        vjezbaDisanja=view1.findViewById(R.id.cardvjezbaDisanja);
 
         zastoMeditacije.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -60,6 +60,9 @@ public class vjezba_disanja extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         }
+                        progressStatus=0;
+                        i=0;
+                        textView.setText("Udahni");
 
                     }
                 }).start();

@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".meditacije"
     android:background="@drawable/gradient_dark_purple">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
         <TextView
             android:layout_marginTop="20dp"
@@ -40,14 +33,25 @@
             android:layout_height="2dp"
             android:background="@color/white"
             android:layout_marginStart="20dp"
-            android:orientation="horizontal" />
+            android:orientation="horizontal"
+            android:layout_marginVertical="20dp"/>
+
+            <TextView
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Istraži"
+                android:textColor="@color/PalleteLightText"
+                android:textSize="14dp"
+                />
 
         <RelativeLayout
             android:id="@+id/zastomeditacija"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="180dp"
             android:background="@drawable/curved_dark"
             android:clickable="true"
             >
@@ -78,83 +82,126 @@
             </LinearLayout>
 
         </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/meditacijazapocetnike"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:background="@drawable/curved_dark"
-                android:clickable="true"
-                >
 
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:orientation="vertical"
-                    android:layout_marginStart="20dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="Meditacija \nsa koracima"
-                        android:textColor="@color/white"
-                        android:textSize="30dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="Saznaj više"
-                        android:layout_marginTop="20dp"
-                        android:textColor="@color/Pallete3"
-                        android:textSize="18dp" />
-                </LinearLayout>
-
-            </RelativeLayout>
+            <TextView
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Započni"
+                android:textColor="@color/PalleteLightText"
+                android:textSize="14dp"
+                android:layout_marginVertical="20dp"
+                />
 
             <RelativeLayout
-                android:id="@+id/vjezbeDisanja"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:background="@drawable/curved_dark"
-                android:clickable="true"
-                >
-
+                android:layout_height="300dp">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
+                    android:id="@+id/meditacija"
+                    android:layout_width="190dp"
+                    android:layout_height="190dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/curved_dark"
                     android:orientation="vertical"
-                    android:layout_marginStart="20dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="Vježba disanja"
-                        android:textColor="@color/white"
-                        android:textSize="30dp" />
+                    android:padding="20dp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="Saznaj više"
-                        android:layout_marginTop="20dp"
-                        android:textColor="@color/Pallete3"
-                        android:textSize="18dp" />
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/alata"
+                            android:text="Meditacija"
+                            android:textColor="@color/white"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="sa koracima"
+                            android:textColor="@color/Pallete3"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/ambient_illustration2" />
+
+                    </LinearLayout>
+
+
+
+
+
+
+
+
                 </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/cardvjezbaDisanja"
+                    android:gravity="center_vertical"
+                    android:layout_toEndOf="@id/meditacija"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_height="190dp"
+                    android:layout_width="fill_parent"
+                    android:padding="20dp"
+                    android:background="@drawable/curved_dark"
+                    android:outlineAmbientShadowColor="@android:color/transparent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Vježba"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="disanja"
+                            android:textColor="@color/Pallete3"
+                            android:textSize="14dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="20dp"/>
+
+                        <ImageView
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/undraw_mindfulness_wboq"
+
+                            ></ImageView>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+
 
             </RelativeLayout>
         </LinearLayout>
-    </ScrollView>
-    </LinearLayout>
+</RelativeLayout>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
