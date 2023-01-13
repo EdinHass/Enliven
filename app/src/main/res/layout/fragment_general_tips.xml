@@ -27,57 +27,66 @@
             android:textColor="@color/white"
             android:textSize="30dp" />
 
-        <ImageView
+        <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="100dp"
             android:layout_height="2dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-
+            android:layout_marginVertical="20dp"
+            android:orientation="horizontal"
             android:background="@color/white" />
 
         <TextView
             android:id="@+id/textpocetni2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:fontFamily="@font/alata"
             android:text="Nekoliko savjeta koji će ti pomoći da se osjećaš bolje:"
             android:textColor="@color/white"
             android:textSize="18dp" />
 
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center|center_vertical|center_horizontal"
+    android:layout_marginStart="75dp"
+    android:layout_marginEnd="75dp">
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:layout_marginLeft="75dp"
-            android:layout_marginRight="75dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/undraw_personal_trainer_re_cnua" />
-
+            android:src="@drawable/vjezbanje" />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="130dp"
+    android:layout_marginStart="130dp"
+    >
         <TextView
             android:id="@+id/tip2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="130dp"
             android:fontFamily="@font/alata"
             android:text="Vježbaj"
-            android:textColor="@color/white"
+            android:textColor="@color/Pallete3"
             android:textSize="30dp" />
+</LinearLayout>
 
-
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginEnd="30dp">
         <Button
             android:id="@+id/buttonnext"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="280dp"
-            android:layout_marginRight="30dp"
             android:background="@drawable/osjecanjaa_card2"
             android:clickable="true"
             android:textColor="@color/white"
@@ -85,6 +94,7 @@
           >
 
         </Button>
+        </LinearLayout>
 
 
     </LinearLayout>
