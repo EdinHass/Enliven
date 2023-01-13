@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".meditacija_za_spavanje"
+    android:background="@drawable/gradient_dark_purple">
+
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Koraci"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textFontWeight="800"
+                android:typeface="normal"
+                android:layout_marginStart="20dp"/>
+
+            <LinearLayout
+
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:background="@color/white"
+                android:layout_marginVertical="20dp"
+                android:layout_marginStart="20dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/korak1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="1. Prisjetite se da je Vaš um promjenjiv"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/korak1txt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/korak1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/med4_korak1_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/korak2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="2. Prisjetite se svega dobrog što ste danas učinili"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/korak2txt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/korak2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/med4_korak2_info"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/korak3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="3. Prisjetite se dobra kojeg su Vama drugi pokazali"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/korak3txt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/korak3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/med4_korak3_info"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/korak4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="4. Prisjetite se onoga što žalite da ste uradili"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/korak4txt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/korak4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/med4_korak4_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/korak5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="5. Zamislite ono što ste mogli učiniti danas"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/korak5txt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/korak5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/med4_korak5_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/korak6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="6. Vizualizirajte"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/korak6txt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/korak6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/med4_korak6_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/korak7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="7. Zamislite da se stapate sa svjetlom"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/korak7txt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/korak7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/med4_korak7_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/korak8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="8. Zamislite da Vam je potpuno oprošteno"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/korak8txt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/korak8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/med4_korak8_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/korak9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="9. Odlučite kako ćete se osjećati sutra"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/korak9txt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/korak9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/med4_korak9_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/korak10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="10. Sada 'izađite' iz meditacije"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/korak10txt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/korak10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/med4_korak10_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/korak11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="11. Primijetite kako se Vaše tijelo sada čini lakšim, smirenijim"
+                    android:textColor="@color/Pallete3"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/alata"/>
+
+                <TextView
+                    android:id="@+id/korak11txt"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/korak11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/med4_korak11_info"
+                    android:textColor="@color/Pallete2"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/alata"/>
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

@@ -332,6 +332,7 @@
             </LinearLayout>
 
             <RelativeLayout
+                android:id="@+id/cardMeditacije"
                 android:gravity="center_vertical"
                 android:layout_toEndOf="@id/infoPlane2"
                 android:layout_marginHorizontal="20dp"

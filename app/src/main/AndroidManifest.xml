@@ -18,6 +18,26 @@
         android:theme="@style/Theme.Enliven"
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
+        <activity android:name=".CustomSoundActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value=""/>
+        </activity>
+        <activity
+            android:name=".meditacija"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".vjezba_disanja"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".sounds_category_rain"
             android:exported="false">

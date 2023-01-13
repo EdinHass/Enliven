@@ -34,6 +34,7 @@ import com.example.enliven.card1activity;
 import com.example.enliven.data.StreamTokenApi;
 import com.example.enliven.data.UserExtra;
 import com.example.enliven.databinding.FragmentNotificationsBinding;
+import com.example.enliven.meditacija;
 import com.example.enliven.ui.auth.AuthActivity;
 import com.example.enliven.ui.auth.SetupProfileFragment;
 import com.example.enliven.ui.auth.StreamTokenProvider;
@@ -59,7 +60,7 @@ import io.getstream.chat.android.client.models.User;
 public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;
-    private RelativeLayout card1Sleep, card2Sleep;
+    private RelativeLayout card1Sleep, card2Sleep, cardMeditacije;
     TextView timeUntil1, timeUntil2, zapocniText;
     private View changeBtn;
     private View root;
@@ -81,11 +82,19 @@ public class NotificationsFragment extends Fragment {
         wakeupTimePlane = root.findViewById(R.id.wakeUpTimePlane);
         favorites = root.findViewById(R.id.favorites);
         infoPlane2 = root.findViewById(R.id.infoPlane2);
+        cardMeditacije=root.findViewById(R.id.cardMeditacije);
         //card2Sleep = root.findViewById(R.id.card2Sleep);
         card1Sleep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main).navigate(R.id.action_navigation_notifications_to_card1activity);
+            }
+        });
+        cardMeditacije.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), meditacija.class);
+                startActivity(intent);
             }
         });
         setupCustomSounds(infoPlane2, new float[]{0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f});

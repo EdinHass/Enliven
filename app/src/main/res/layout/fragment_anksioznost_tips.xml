@@ -148,7 +148,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
-                android:background="@drawable/curved_light"
+                android:background="@drawable/curved_dark"
                 android:padding="20dp"
                 android:layout_marginBottom="20dp">
                 <TextView

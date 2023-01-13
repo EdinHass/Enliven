@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vjezba_disanja"
+    android:background="@drawable/gradient_dark_purple">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/textpocetni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alata"
+        android:text="Vježba disanja"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:typeface="normal"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="80dp"
+        android:layout_height="2dp"
+        android:background="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginVertical="20dp"
+        android:orientation="horizontal" />
+
+    <TextView
+        android:layout_marginStart="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alata"
+        android:text="Započni"
+        android:textColor="@color/PalleteLightText"
+        android:textSize="14dp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_marginTop="20dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        >
+
+
+
+        <ProgressBar
+            android:id="@+id/progressBar3"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="302dp"
+            android:layout_height="263dp"
+            android:layout_weight="100"
+            android:progressBackgroundTint="@color/Pallete3"
+            android:layout_gravity="center|center_horizontal|center_vertical"
+            android:progress="1"
+            android:max="50"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center|center_horizontal|center_vertical">
+        <Button
+            android:id="@+id/buttonstart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            >
+
+        </Button>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center|center_horizontal|center_vertical">
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Udahni"
+            android:fontFamily="@font/alata"
+            android:textSize="30dp"
+            android:textColor="@color/white">
+
+        </TextView>
+    </LinearLayout>
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_meditacija"
+    app:startDestination="@id/meditacije">
+
+    <fragment
+        android:id="@+id/meditacije"
+        android:name="com.example.enliven.meditacije"
+        android:label="fragment_meditacije"
+        tools:layout="@layout/fragment_meditacije" >
+        <action
+            android:id="@+id/action_meditacije_to_dialog_meditacija"
+            app:destination="@id/dialog_meditacija" />
+        <action
+            android:id="@+id/action_meditacije_to_vjezba_disanja"
+            app:destination="@id/vjezba_disanja" />
+        <action
+            android:id="@+id/action_meditacije_to_meditacija_za_pocetnike"
+            app:destination="@id/meditacija_za_pocetnike" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialog_meditacija"
+        android:name="com.example.enliven.dialog_meditacija"
+        android:label="dialog_meditacija" />
+    <fragment
+        android:id="@+id/meditacija_za_pocetnike"
+        android:name="com.example.enliven.meditacija_za_pocetnike"
+        android:label="fragment_meditacija_za_pocetnike"
+        tools:layout="@layout/fragment_meditacija_za_pocetnike" >
+        <action
+            android:id="@+id/action_meditacija_za_pocetnike_to_osnovna_meditacija"
+            app:destination="@id/osnovna_meditacija" />
+        <action
+            android:id="@+id/action_meditacija_za_pocetnike_to_meditacija_stres"
+            app:destination="@id/meditacija_stres" />
+        <action
+            android:id="@+id/action_meditacija_za_pocetnike_to_meditacija_prihvacanje_sebe"
+            app:destination="@id/meditacija_prihvacanje_sebe" />
+        <action
+            android:id="@+id/action_meditacija_za_pocetnike_to_meditacija_za_raspolozenje"
+            app:destination="@id/meditacija_za_raspolozenje" />
+        <action
+            android:id="@+id/action_meditacija_za_pocetnike_to_meditacija_za_spavanje"
+            app:destination="@id/meditacija_za_spavanje" />
+    </fragment>
+    <activity
+        android:id="@+id/vjezba_disanja"
+        android:name="com.example.enliven.vjezba_disanja"
+        android:label="activity_vjezba_disanja"
+        tools:layout="@layout/activity_vjezba_disanja" />
+    <fragment
+        android:id="@+id/osnovna_meditacija"
+        android:name="com.example.enliven.osnovna_meditacija"
+        android:label="fragment_osnovna_meditacija"
+        tools:layout="@layout/fragment_osnovna_meditacija" />
+    <fragment
+        android:id="@+id/meditacija_stres"
+        android:name="com.example.enliven.meditacija_stres"
+        android:label="fragment_meditacija_stres"
+        tools:layout="@layout/fragment_meditacija_stres" />
+    <fragment
+        android:id="@+id/meditacija_prihvacanje_sebe"
+        android:name="com.example.enliven.meditacija_prihvacanje_sebe"
+        android:label="fragment_meditacija_prihvacanje_sebe"
+        tools:layout="@layout/fragment_meditacija_prihvacanje_sebe" />
+    <fragment
+        android:id="@+id/meditacija_za_raspolozenje"
+        android:name="com.example.enliven.meditacija_za_raspolozenje"
+        android:label="fragment_meditacija_za_raspolozenje"
+        tools:layout="@layout/fragment_meditacija_za_raspolozenje" />
+    <fragment
+        android:id="@+id/meditacija_za_spavanje"
+        android:name="com.example.enliven.meditacija_za_spavanje"
+        android:label="fragment_meditacija_za_spavanje"
+        tools:layout="@layout/fragment_meditacija_za_spavanje" />
+</navigation>
