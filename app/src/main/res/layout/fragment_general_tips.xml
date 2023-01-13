@@ -10,37 +10,36 @@
 
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
             android:id="@+id/pocetnitext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:fontFamily="@font/alata"
             android:text="Osjećaš se loše?"
             android:textColor="@color/white"
             android:textSize="30dp" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="100dp"
-            android:layout_height="2dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginVertical="20dp"
-            android:orientation="horizontal"
-            android:background="@color/white" />
+
 
         <TextView
             android:id="@+id/textpocetni2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/pocetnitext"
+            android:layout_alignParentLeft="true"
             android:layout_marginStart="20dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/alata"
@@ -48,10 +47,10 @@
             android:textColor="@color/white"
             android:textSize="18dp" />
 
-<LinearLayout
+        <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:gravity="center|center_vertical|center_horizontal"
+    android:layout_centerInParent="true"
     android:layout_marginStart="75dp"
     android:layout_marginEnd="75dp">
         <ImageView
@@ -60,29 +59,28 @@
             android:layout_height="250dp"
             android:src="@drawable/vjezbanje" />
 </LinearLayout>
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:layout_marginEnd="130dp"
-    android:layout_marginStart="130dp"
-    >
-        <TextView
-            android:id="@+id/tip2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/alata"
-            android:text="Vježbaj"
-            android:textColor="@color/Pallete3"
-            android:textSize="30dp" />
-</LinearLayout>
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="280dp"
-            android:layout_marginEnd="30dp">
+            android:layout_marginTop="130dp"
+            android:layout_marginEnd="130dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="130dp">
+                <TextView
+                    android:id="@+id/tip2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Vježbaj"
+                    android:textColor="@color/Pallete3"
+                    android:textSize="30dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true">
         <Button
             android:id="@+id/buttonnext"
             android:layout_width="100dp"
@@ -97,7 +95,7 @@
         </LinearLayout>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 

@@ -98,7 +98,8 @@
         </activity>
         <activity
             android:name=".general_tip"
-            android:exported="false">
+            android:exported="false"
+            android:noHistory="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -112,13 +113,6 @@
         </activity>
         <activity
             android:name=".SoundsPlayerActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".CustomSoundActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

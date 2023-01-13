@@ -1,5 +1,6 @@
 package com.example.enliven;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -25,12 +26,13 @@ public class tip_o_pisanju extends Fragment {
 
         View view1 = inflater.inflate(R.layout.fragment_tip_o_pisanju, container, false);
 
-        button_next3=view1.findViewById(R.id.buttonnext3);
+        button_next3=view1.findViewById(R.id.buttonnext1);
+        button_next3.setText("Zapiši");
 
         button_next3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(getActivity(),R.id.general_tips_fragmentView).navigate(R.id.action_tip_o_pisanju_to_diaryactivity2);
+                startActivity(new Intent(getContext(), diaryactivity.class));
             }
         });
 

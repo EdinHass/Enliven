@@ -106,34 +106,6 @@ public class NotificationsFragment extends Fragment {
         wakeupTimePlane.startAnimation(floatUpFast);
         favorites.startAnimation(floatUpFast);
         zapocniText.startAnimation(floatDown);
-
-
-        /*card2Sleep.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
-                FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-                if (currentUser == null) {
-                    startActivity(new Intent(getContext(), AuthActivity.class));
-                } else {
-                    User user = new User();
-                    user.setId(currentUser.getUid());
-                    HashMap extraData = new HashMap<String, String>();
-                    extraData.put(UserExtra.NAME, prefs.getString("loginName", ""));
-                    extraData.put(UserExtra.PHONE, prefs.getString("loginPhone", ""));
-                    extraData.put(UserExtra.IMAGE, prefs.getString("loginImage", ""));
-                    user.setExtraData(extraData);
-                    ChatClient.instance().connectUser(user, prefs.getString("loginToken", "")).enqueue(result -> {
-                        if(result.isSuccess()){
-                            startActivity(new Intent(getContext(), ChatActivity.class));
-                        }else{
-                            Toast.makeText(getContext(), "Login Error", Toast.LENGTH_LONG);
-                        }
-                    });
-                }
-            }
-            });*/
-
         changeBtn = root.findViewById(R.id.changeBtn);
         changeBtn.setOnClickListener(new View.OnClickListener() {
             @Override

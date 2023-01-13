@@ -22,7 +22,7 @@ public class general_tip3 extends Fragment {
 
         View view1 = inflater.inflate(R.layout.fragment_general_tip3, container, false);
 
-        button_next2=view1.findViewById(R.id.buttonnext2);
+        button_next2=view1.findViewById(R.id.buttonnext1);
 
         button_next2.setOnClickListener(new View.OnClickListener() {
             @Override

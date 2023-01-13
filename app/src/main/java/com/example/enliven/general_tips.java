@@ -34,8 +34,9 @@ private Button button_next;
                 Navigation.findNavController(getActivity(), R.id.general_tips_fragmentView).navigate(R.id.action_general_tips2_to_general_tip2);
             }
         });
-
-return view1;
+        return view1;
     }
+
+
 
 }
