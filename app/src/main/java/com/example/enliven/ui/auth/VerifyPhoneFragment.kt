@@ -1,6 +1,7 @@
 package com.example.enliven.ui.auth
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
@@ -56,6 +57,7 @@ class VerifyPhoneFragment: Fragment(R.layout.fragment_verify_phone) {
         }
 
         override fun onVerificationFailed(e: FirebaseException) {
+            Log.e("ERROR", e.message!!)
             Toast.makeText(requireContext(), e.message, Toast.LENGTH_LONG).show()
         }
 
@@ -69,7 +71,8 @@ class VerifyPhoneFragment: Fragment(R.layout.fragment_verify_phone) {
             if(task.isSuccessful){
                 findNavController().navigate(R.id.setupProfileFragment)
             }else{
-                val exc = task.exception //@todo handle errors properly
+                val exc = task.exception
+                Log.e("ERROR", task.exception?.message!!)
                 Toast.makeText(requireContext(), exc?.message, Toast.LENGTH_LONG).show()
             }
         }

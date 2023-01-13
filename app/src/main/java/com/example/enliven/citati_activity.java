@@ -122,7 +122,7 @@ public class citati_activity extends AppCompatActivity {
                                     holding = true;
                                 }
                             }
-                        }, 100);
+                        }, 70);
                         return true;
                 }
                 return false;

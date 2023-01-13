@@ -39,6 +39,7 @@ public class diaryactivity extends AppCompatActivity {
     TextView plus;
 
     static List<String> notes;
+    HashSet<String> noteSet;
     static ArrayAdapter adapter;
 
     SharedPreferences sharedpref;
@@ -60,7 +61,7 @@ public class diaryactivity extends AppCompatActivity {
         plus=findViewById(R.id.textView6);
         notes = new ArrayList<>();
 
-        HashSet<String> noteSet = (HashSet<String>) sharedpref.getStringSet("notes", null);
+        noteSet = (HashSet<String>) sharedpref.getStringSet("notes", null);
         sharedPreferences = this.getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
 
         if(noteSet==null){
@@ -68,8 +69,10 @@ public class diaryactivity extends AppCompatActivity {
         }else{
             emptyText.setVisibility(View.GONE);
             notes=new ArrayList<>(noteSet);
-            if(Objects.equals(notes.get(notes.size() - 1), "")){
-                notes.remove(notes.size() - 1);
+            if(notes.size()-1>=0) {
+                if (Objects.equals(notes.get(notes.size() - 1), "")) {
+                    notes.remove(notes.size() - 1);
+                }
             }
         }
         adapter = new ArrayAdapter(getApplicationContext(), R.layout.custom_notes_row, R.id.example, notes);
@@ -166,6 +169,9 @@ public class diaryactivity extends AppCompatActivity {
                                             i++;
                                         }
                                       adapter.notifyDataSetChanged();
+                                        if(notes.isEmpty()){
+                                            emptyText.setVisibility(View.VISIBLE);
+                                        }
 
                                       HashSet<String> notesSet = new HashSet<>(notes);
                                       sharedpref.edit().putStringSet("notes", notesSet).apply();
@@ -190,8 +196,15 @@ public class diaryactivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(Objects.equals(notes.get(notes.size() - 1), "")){
-            notes.remove(notes.size() - 1);
+        if(notes.size()-1>=0) {
+            if (Objects.equals(notes.get(notes.size() - 1), "")) {
+                notes.remove(notes.size() - 1);
+            }
+        }
+        if(notes.isEmpty()) {
+            emptyText.setVisibility(View.VISIBLE);
+        }else{
+            emptyText.setVisibility(View.GONE);
         }
         adapter.notifyDataSetChanged();
     }

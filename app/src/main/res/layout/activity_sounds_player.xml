@@ -77,8 +77,8 @@
 
                 <ImageView
                     android:id="@+id/volumeIcon"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="16dp"
                     android:layout_toLeftOf="@id/slider"
@@ -116,6 +116,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_toLeftOf="@id/slider"
                     android:src="@drawable/heart_empty"
+                    android:layout_marginBottom="3dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/slider"
                     app:layout_constraintEnd_toEndOf="parent"

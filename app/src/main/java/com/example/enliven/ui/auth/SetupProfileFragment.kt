@@ -3,19 +3,15 @@ package com.example.enliven.ui.auth
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.graphics.drawable.Drawable
-import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.FrameLayout
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import com.example.enliven.R
+import com.example.enliven.data.ImageURLS
 import com.example.enliven.data.StreamTokenApi
 import com.example.enliven.data.UserExtra
 import com.example.enliven.databinding.FragmentSetupProfileBinding
@@ -33,6 +29,7 @@ class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile){
     private val streamApi = StreamTokenApi()
     private val tokenProvider = StreamTokenProvider(streamApi)
     private var chosenImage = UserExtra.DEFAULT_AVATAR
+    val sharedPreference = activity?.getSharedPreferences("PREFERENCE_NAME",Context.MODE_PRIVATE)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -59,8 +56,6 @@ class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile){
         binding.buttonNext.setOnClickListener {
             setupProfile()
         }
-
-
     }
 
     private fun setupProfile() {
@@ -69,7 +64,7 @@ class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile){
             extraData = mutableMapOf(
                 UserExtra.NAME to binding.editTextName.text.toString().trim(),
                 UserExtra.PHONE to currentUser.phoneNumber!!,
-                UserExtra.IMAGE to chosenImage
+                UserExtra.IMAGE to getImageEmotion()!!
             )
         )
 
@@ -86,12 +81,31 @@ class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile){
             .connectUser(user, sharedPreference.getString("loginToken","")!!)
             .enqueue {  result ->
                 if(result.isSuccess){
-                    //User Connected to the BAckend Successfully
                     requireActivity().startNewActivity(ChatActivity::class.java)
                 }else{
+                    Log.e("ERROR", result.error().message!!);
                     snackbar("${result.error().message}")
                 }
             }
+    }
+
+    fun getImageEmotion(): String? {
+        var emotion: String? = null
+        var i = 5
+        while (emotion == null && i > 0) {
+            emotion = sharedPreference?.getString("lastEmotion$i", null)
+            i--
+        }
+            when (emotion) {
+                "sad" -> ImageURLS.SAD
+                "hap" -> ImageURLS.HAPPY
+                "ang" -> ImageURLS.ANGRY
+                "anx" -> ImageURLS.ANXIOUS
+                "sca" -> ImageURLS.SCARED
+                "str" -> ImageURLS.STRESSED
+                else -> UserExtra.DEFAULT_AVATAR
+            }
+        return UserExtra.DEFAULT_AVATAR
     }
 
 }

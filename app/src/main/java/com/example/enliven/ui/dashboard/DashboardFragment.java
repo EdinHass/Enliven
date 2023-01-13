@@ -36,6 +36,7 @@ import com.example.enliven.MainActivity;
 import com.example.enliven.SocialDialogFragment;
 import com.example.enliven.SoundsPlayerActivity;
 import com.example.enliven.citati_activity;
+import com.example.enliven.data.ImageURLS;
 import com.example.enliven.data.UserExtra;
 import  com.example.enliven.diaryactivity;
 import com.example.enliven.databinding.FragmentDashboardBinding;
@@ -117,13 +118,17 @@ public class DashboardFragment extends Fragment {
                     HashMap extraData = new HashMap<String, String>();
                     extraData.put(UserExtra.NAME, prefs.getString("loginName", ""));
                     extraData.put(UserExtra.PHONE, prefs.getString("loginPhone", ""));
-                    extraData.put(UserExtra.IMAGE, prefs.getString("loginImage", ""));
+                    extraData.put(UserExtra.IMAGE, getImageEmotion());
+                    if(ChatClient.instance().getCurrentUser()!=null){
+                        ChatClient.instance().getCurrentUser().setImage(getImageEmotion());
+                    }
                     user.setExtraData(extraData);
                     ChatClient.instance().connectUser(user, prefs.getString("loginToken", "")).enqueue(result -> {
                         if(result.isSuccess()){
                             startActivity(new Intent(getContext(), ChatActivity.class));
                         }else{
-                            Toast.makeText(getContext(), "Login Error", Toast.LENGTH_LONG);
+                            Log.e("ERROR", result.error().getMessage());
+                            Toast.makeText(getContext(), "Login Error", Toast.LENGTH_LONG).show();
                         }
                     });
                 }
@@ -157,8 +162,8 @@ public class DashboardFragment extends Fragment {
 
 
         SharedPreferences sprefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
-        if(sprefs.getString("UserName", "invalid")=="invalid"){
-            pocetniText.setText( "Osjećanja");
+        if(sprefs.getString("UserName", "invalid").equals("invalid")){
+            pocetniText.setText( "Dobrodošli!");
         }else{
             pocetniText.setText( "Kako si, " + sprefs.getString("UserName", "invalid") + "?");
         }
@@ -335,5 +340,34 @@ public class DashboardFragment extends Fragment {
             });
         }
         currIndex[0]=-1;
+    }
+
+    public String getImageEmotion(){
+        String emotion = null;
+        int i = 5;
+        while(emotion==null && i>0) {
+            emotion = prefs.getString("lastEmotion" + i, null);
+            i--;
+        }
+        if(emotion==null){
+            return UserExtra.DEFAULT_AVATAR;
+        }else{
+            switch(emotion){
+                case "sad":
+                    return ImageURLS.SAD;
+                case "hap":
+                    return ImageURLS.HAPPY;
+                case "ang":
+                    return ImageURLS.ANGRY;
+                case "anx":
+                    return ImageURLS.ANXIOUS;
+                case "sca":
+                    return ImageURLS.SCARED;
+                case "str":
+                    return ImageURLS.STRESSED;
+                default:
+                    return UserExtra.DEFAULT_AVATAR;
+            }
+        }
     }
 }

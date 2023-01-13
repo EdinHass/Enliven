@@ -226,7 +226,7 @@ public class NotificationsFragment extends Fragment {
             if ((sleepTime < compare) || (compare < (sleepTime + sleepHours * 3600) % 86400)) {
                 zapocniText.setText("Laku noć, " + prefs.getString("UserName", "invalid") + ".");
                 timeUntil2.setText("do buđenja");
-                long timeBetween = Math.abs((sleepTime+3600*sleepHours)-compare);
+                long timeBetween = Math.abs(((sleepTime+3600*sleepHours)% 86400)-compare);
                 timeUntil1.setText(formatTime2(timeBetween/3600, (timeBetween%3600)/60));
                 Toast.makeText(getContext(), "Napomena: Vrijeme je za spavanje!", Toast.LENGTH_SHORT).show();
             } else {

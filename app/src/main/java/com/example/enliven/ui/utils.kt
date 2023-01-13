@@ -24,6 +24,7 @@ fun Fragment.snackbar(message: String, retry:(()->Unit)? = null){
 
 
 
+
     fun getRoundedShape(scaleBitmapImage: Bitmap): Bitmap? {
         // TODO Auto-generated method stub
         val targetWidth = 50
