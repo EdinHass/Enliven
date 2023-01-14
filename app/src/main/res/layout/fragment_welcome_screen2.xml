@@ -31,7 +31,7 @@
             android:layout_below="@id/ll1"
             android:layout_centerHorizontal="true"
             android:textColor="@color/Pallete3"
-            android:textSize="30sp"
+            android:textSize="30dp"
             android:id="@+id/mainText"
             android:layout_marginTop="20dp"
             android:layout_marginStart="50dp"

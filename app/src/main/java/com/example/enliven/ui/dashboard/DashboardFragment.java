@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.SystemClock;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -55,6 +56,7 @@ import com.example.enliven.ui.chat.ChatActivity;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.ktx.Firebase;
 
 import org.w3c.dom.Text;
 import java.sql.CallableStatement;
@@ -106,8 +108,13 @@ public class DashboardFragment extends Fragment {
 
 
         enlivensocial.setOnClickListener(new View.OnClickListener() {
+            private long lastClickTime = 0;
             @Override
             public void onClick(View v) {
+                if (SystemClock.elapsedRealtime() - lastClickTime < 1000){
+                    return;
+                }
+                lastClickTime = SystemClock.elapsedRealtime();
                 SharedPreferences prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
                 FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
                 if (currentUser == null) {
@@ -129,6 +136,7 @@ public class DashboardFragment extends Fragment {
                         }else{
                             Log.e("ERROR", result.error().getMessage());
                             Toast.makeText(getContext(), "Login Error", Toast.LENGTH_LONG).show();
+                            FirebaseAuth.getInstance().signOut();
                         }
                     });
                 }
@@ -192,6 +200,8 @@ public class DashboardFragment extends Fragment {
         ){
             noText.setVisibility(View.VISIBLE);
             return;
+        }else{
+            noText.setVisibility(View.GONE);
         }
         if(prefs.getString("lastEmotion1",null)!=null)
             setupIcon(icons[0], prefs.getString("lastEmotion1",null));
