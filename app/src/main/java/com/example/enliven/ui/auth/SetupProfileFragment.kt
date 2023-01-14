@@ -48,6 +48,7 @@ class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile){
         binding.buttonNext.setOnClickListener {
             binding.buttonNext.visibility = View.GONE
             binding.loadingImg.visibility = View.VISIBLE
+            Thread.sleep(5);
             for(tries in 0..3)
                 try{
                     setupProfile()
