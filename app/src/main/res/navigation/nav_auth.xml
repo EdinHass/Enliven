@@ -1,19 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_auth"
-    app:startDestination="@id/enterPhoneFragment">
+    app:startDestination="@id/enlivenIntroFragment">
 
     <fragment
         android:id="@+id/enterPhoneFragment"
         android:name="com.example.enliven.ui.auth.EnterPhoneFragment"
-        android:label="EnterPhoneFragment" />
+        android:label="EnterPhoneFragment">
+        <action
+            android:id="@+id/action_enterPhoneFragment_to_verifyPhoneFragment"
+            app:destination="@id/verifyPhoneFragment"
+            app:enterAnim="@anim/slide_from_right_pure"
+            app:exitAnim="@anim/slide_to_left_pure" />
+    </fragment>
     <fragment
         android:id="@+id/verifyPhoneFragment"
         android:name="com.example.enliven.ui.auth.VerifyPhoneFragment"
-        android:label="VerifyPhoneFragment" />
+        android:label="VerifyPhoneFragment">
+        <action
+            android:id="@+id/action_verifyPhoneFragment_to_setupProfileFragment"
+            app:destination="@id/setupProfileFragment"
+            app:enterAnim="@anim/slide_from_right_pure"
+            app:exitAnim="@anim/slide_to_left_pure" />
+    </fragment>
     <fragment
         android:id="@+id/setupProfileFragment"
         android:name="com.example.enliven.ui.auth.SetupProfileFragment"
         android:label="SetupProfileFragment" />
+    <fragment
+        android:id="@+id/enlivenWelcomeFragment"
+        android:name="com.example.enliven.ui.auth.EnlivenWelcomeFragment"
+        android:label="EnlivenWelcomeFragment" >
+        <action
+            android:id="@+id/action_enlivenWelcomeFragment_to_enlivenInfoFragment1"
+            app:destination="@id/enlivenInfoFragment1"
+            app:enterAnim="@anim/slide_from_right_pure"
+            app:exitAnim="@anim/slide_to_left_pure" />
+    </fragment>
+    <fragment
+        android:id="@+id/enlivenIntroFragment"
+        android:name="com.example.enliven.ui.auth.EnlivenIntroFragment"
+        android:label="EnlivenIntroFragment">
+        <action
+            app:popUpTo="@id/enlivenIntroFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_enlivenIntroFragment_to_enlivenWelcomeFragment"
+            app:destination="@id/enlivenWelcomeFragment"
+            app:enterAnim="@anim/slide_from_right_pure"
+            app:exitAnim="@anim/slide_to_left_pure" />
+    </fragment>
+    <fragment
+        android:id="@+id/enlivenInfoFragment1"
+        android:name="com.example.enliven.ui.auth.EnlivenInfoFragment1"
+        android:label="EnlivenInfoFragment1" >
+        <action
+            android:id="@+id/action_enlivenInfoFragment1_to_enlivenWelcomeFragment"
+            app:destination="@id/enlivenWelcomeFragment"
+            app:enterAnim="@anim/slide_from_left_purer"
+            app:exitAnim="@anim/slide_to_right_pure" />
+        <action
+            android:id="@+id/action_enlivenInfoFragment1_to_enlivenInfoFragment2"
+            app:destination="@id/enlivenInfoFragment2"
+            app:enterAnim="@anim/slide_from_right_pure"
+            app:exitAnim="@anim/slide_to_left_pure" />
+    </fragment>
+    <fragment
+        android:id="@+id/enlivenInfoFragment2"
+        android:name="com.example.enliven.ui.auth.EnlivenInfoFragment2"
+        android:label="EnlivenInfoFragment2" >
+        <action
+            android:id="@+id/action_enlivenInfoFragment2_to_enlivenInfoFragment1"
+            app:destination="@id/enlivenInfoFragment1"
+            app:enterAnim="@anim/slide_from_left_purer"
+            app:exitAnim="@anim/slide_to_right_pure" />
+        <action
+            android:id="@+id/action_enlivenInfoFragment2_to_enterPhoneFragment"
+            app:destination="@id/enterPhoneFragment"
+            app:enterAnim="@anim/slide_from_right_pure"
+            app:exitAnim="@anim/slide_to_left_pure" />
+    </fragment>
 </navigation>

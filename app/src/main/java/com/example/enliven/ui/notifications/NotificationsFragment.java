@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -251,8 +252,13 @@ public class NotificationsFragment extends Fragment {
 
     public void setupCustomSounds(View view, float[] vols){
         view.setOnClickListener(new View.OnClickListener() {
+            private long lastClickTime = 0;
             @Override
             public void onClick(View v) {
+                if (SystemClock.elapsedRealtime() - lastClickTime < 1000){
+                    return;
+                }
+                lastClickTime = SystemClock.elapsedRealtime();
                 view.setClickable(false);
                 Intent i = new Intent(getActivity(), CustomSoundActivity.class);
                 i.putExtra("vol1", vols[0]);
@@ -271,10 +277,15 @@ public class NotificationsFragment extends Fragment {
 
     public void setupSound(View view, SoundItem soundItem){
         view.setOnClickListener(new View.OnClickListener() {
+            private long lastClickTime = 0;
             @Override
             public void onClick(View view) {
+                if (SystemClock.elapsedRealtime() - lastClickTime < 1000){
+                    return;
+                }
+                lastClickTime = SystemClock.elapsedRealtime();
                 view.setClickable(false);
-                Intent i = new Intent(getActivity(), SoundsPlayerActivity.class);
+                Intent i = new Intent(getContext(), SoundsPlayerActivity.class);
                 i.putExtra("SoundName", soundItem.getName());
                 i.putExtra("SoundData", soundItem.getSoundData());
                 i.putExtra("ImageData", soundItem.getPictureData());

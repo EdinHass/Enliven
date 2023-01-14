@@ -33,7 +33,7 @@ class VerifyPhoneFragment: Fragment(R.layout.fragment_verify_phone) {
 
         val options = PhoneAuthOptions.newBuilder()
             .setPhoneNumber(phone)
-            .setTimeout(60, TimeUnit.SECONDS)
+            .setTimeout(120, TimeUnit.SECONDS)
             .setActivity(requireActivity())
             .setCallbacks(callbacks)
             .build()
@@ -69,7 +69,7 @@ class VerifyPhoneFragment: Fragment(R.layout.fragment_verify_phone) {
     private fun signInWithCredentials(credential: PhoneAuthCredential) {
         auth.signInWithCredential(credential).addOnCompleteListener{ task ->
             if(task.isSuccessful){
-                findNavController().navigate(R.id.setupProfileFragment)
+                findNavController().navigate(R.id.action_verifyPhoneFragment_to_setupProfileFragment)
             }else{
                 val exc = task.exception
                 Log.e("ERROR", task.exception?.message!!)

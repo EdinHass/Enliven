@@ -36,7 +36,7 @@ class EnterPhoneFragment: Fragment(R.layout.fragment_enter_phone) {
             val phone = binding.editTextPhone.text.toString()
             val phoneNumber = "+${country.phoneCode}$phone"
 
-            findNavController().navigate(R.id.verifyPhoneFragment,
+            findNavController().navigate(R.id.action_enterPhoneFragment_to_verifyPhoneFragment,
                 bundleOf(VerifyPhoneFragment.KEY_PHONE to phoneNumber)
             )
         }

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
@@ -92,8 +93,13 @@ public class card1activity extends AppCompatActivity {
 
     public void setupSound(View view, SoundItem soundItem){
         view.setOnClickListener(new View.OnClickListener() {
+            private long lastClickTime = 0;
             @Override
             public void onClick(View view) {
+                if (SystemClock.elapsedRealtime() - lastClickTime < 1000){
+                    return;
+                }
+                lastClickTime = SystemClock.elapsedRealtime();
                 view.setClickable(false);
                 Intent i = new Intent(getApplicationContext(), SoundsPlayerActivity.class);
                 i.putExtra("SoundName", soundItem.getName());
@@ -113,8 +119,13 @@ public class card1activity extends AppCompatActivity {
 
     public void setupCustomSounds(View view, float[] vols){
         view.setOnClickListener(new View.OnClickListener() {
+            private long lastClickTime = 0;
             @Override
             public void onClick(View v) {
+                if (SystemClock.elapsedRealtime() - lastClickTime < 1000){
+                    return;
+                }
+                lastClickTime = SystemClock.elapsedRealtime();
                 view.setClickable(false);
                 Intent i = new Intent(getApplicationContext(), CustomSoundActivity.class);
                 i.putExtra("vol1", vols[0]);

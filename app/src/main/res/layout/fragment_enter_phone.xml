@@ -14,6 +14,7 @@
         android:layout_width="0dp"
         android:textSize="30dp"
         android:textColor="@color/Pallete3"
+        android:backgroundTint="@color/Pallete2"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="104dp"
@@ -55,14 +56,19 @@
     <Button
         android:id="@+id/buttonNext"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/opaque"
         android:text="next"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

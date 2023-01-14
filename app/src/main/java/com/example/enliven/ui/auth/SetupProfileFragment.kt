@@ -20,8 +20,10 @@ import com.example.enliven.ui.snackbar
 import com.example.enliven.ui.startNewActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.squareup.picasso.Picasso
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.User
+import java.net.SocketTimeoutException
 
 class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile){
     private lateinit var binding: FragmentSetupProfileBinding
@@ -39,22 +41,20 @@ class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile){
             binding.buttonNext.isEnabled = it?.isNotEmpty() == true
         }
 
-        var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                binding.imageavatar.setImageURI(result.data?.data)
-                chosenImage = result.data?.data.toString()
-            }
-        }
-
-        binding.frameLayout.setOnClickListener {
-            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-            resultLauncher.launch(gallery)
-        }
+        Picasso.get().load(getImageEmotion()).into(binding.imageavatar)
 
         currentUser = FirebaseAuth.getInstance().currentUser ?: return
 
         binding.buttonNext.setOnClickListener {
-            setupProfile()
+            binding.buttonNext.visibility = View.GONE
+            binding.loadingImg.visibility = View.VISIBLE
+            for(tries in 0..3)
+                try{
+                    setupProfile()
+                    break
+                }catch (exception: SocketTimeoutException){
+                    Log.e("ERROR", exception.message!!)
+                }
         }
     }
 
