@@ -18,11 +18,19 @@
         android:theme="@style/Theme.Enliven"
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
-        <activity android:name=".CustomSoundActivity"
+        <activity
+            android:name=".vjezba_disanja2"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
-                android:value=""/>
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".CustomSoundActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
         <activity
             android:name=".meditacija"
@@ -90,11 +98,11 @@
         </activity>
         <activity
             android:name=".osjecanja_tips"
-            android:noHistory="true"
-            android:exported="false">
-        <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
+            android:exported="false"
+            android:noHistory="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
         <activity
             android:name=".general_tip"

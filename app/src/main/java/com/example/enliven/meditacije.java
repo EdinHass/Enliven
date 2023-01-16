@@ -1,5 +1,6 @@
 package com.example.enliven;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,7 +16,7 @@ import android.widget.RelativeLayout;
 
 public class meditacije extends Fragment {
 
-   private RelativeLayout zastoMeditacije, vjezbaDisanja;
+   private RelativeLayout zastoMeditacije, vjezbaDisanja, interaktivnemeditacije;
    private LinearLayout meditacijaZaPocetnike;
 
     @Override
@@ -26,6 +27,7 @@ public class meditacije extends Fragment {
         zastoMeditacije=view1.findViewById(R.id.zastomeditacija);
         meditacijaZaPocetnike=view1.findViewById(R.id.meditacija);
         vjezbaDisanja=view1.findViewById(R.id.cardvjezbaDisanja);
+        interaktivnemeditacije=view1.findViewById(R.id.interaktivnemeditacije);
 
         zastoMeditacije.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +49,17 @@ public class meditacije extends Fragment {
                 Navigation.findNavController(getActivity(),R.id.meditacijaFragmentView).navigate(R.id.action_meditacije_to_vjezba_disanja);
             }
         });
+        interaktivnemeditacije.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), osnovna_meditacija_korak1.class);
+                i.putExtra("Okean", "https://cdn.pixabay.com/download/audio/2021/09/06/audio_37aad22374.mp3?filename=sandy-beach-calm-waves-water-nature-sounds-8052.mp3");
+                startActivity(i);
+            }
+        });
+
 
         return view1;
     }
+
 }

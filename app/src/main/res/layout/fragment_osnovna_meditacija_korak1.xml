@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".osnovna_meditacija_korak1"
+    android:background="@drawable/gradient_dark_purple">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="20dp"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/int_med1_korak1"
+        android:textColor="@color/white"
+        android:fontFamily="@font/alata"
+        android:textSize="25dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:gravity="center"
+       />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true">
+            <Button
+                android:id="@+id/buttonnext1"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@drawable/osjecanjaa_card2"
+                android:clickable="true"
+                android:textColor="@color/white"
+                android:text="Next"
+                >
+            </Button>
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>
