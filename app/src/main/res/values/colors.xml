@@ -13,9 +13,15 @@
     <color name="Pallete3">#c61369</color>
     <color name="PalleteLightText">#46434A</color>
     <color name="transparent">#00000000</color>
+    <color name="opaque">#88fcf5fc</color>
     <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
+    <color name="dark_gray"> #1d2022</color>
+    <color name="light_gray">#A9A9AC</color>
+    <color name="light_gray2">#5F608B</color>
+    <color name="purple">#37386E</color>
+    <color name="red">#D10D0D</color>
 </resources>

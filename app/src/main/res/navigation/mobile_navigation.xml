@@ -9,7 +9,20 @@
         android:id="@+id/navigation_home"
         android:name="com.example.enliven.ui.home.HomeFragment"
         android:label="@string/title_item1"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_final_habitslist"
+            app:destination="@id/final_habitslist" />
+
+        <action
+            android:id="@+id/action_navigation_home_to_habits"
+            app:destination="@id/habits"/>
+
+        <action
+            android:id="@+id/action_navigation_home_to_MainActivity2"
+            app:destination="@id/main2"/>
+
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -56,6 +69,24 @@
         android:name="com.example.enliven.mood"
         android:label="fragment_mood"
         tools:layout="@layout/fragment_mood" />
+    <activity
+        android:id="@+id/final_habitslist"
+        android:name="com.example.enliven.final_habitslist"
+        android:label="activity_final_habitslist"
+        tools:layout="@layout/activity_final_habitslist" />
+
+    <activity
+        android:id="@+id/habits"
+        android:name="com.example.enliven.habits"
+        android:label="activity_habits"
+        tools:layout="@layout/activity_habits" />
+
+    <activity
+        android:id="@+id/main2"
+        android:name="com.example.enliven.MainActivity2"
+        android:label="activity_main2"
+        tools:layout="@layout/activity_main2" />
+
 
 
 </navigation>
