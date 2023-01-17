@@ -86,8 +86,7 @@
         <action
             android:id="@+id/action_osnovna_meditacija_korak1_to_vjezba_disanja2"
             app:destination="@id/vjezba_disanja2"
-            app:enterAnim="@anim/slide_from_right_pure"
-            app:exitAnim="@anim/slide_to_left_pure"/>
+            />
     </fragment>
     <activity
         android:id="@+id/vjezba_disanja2"
@@ -97,8 +96,7 @@
         <action
             android:id="@+id/action_vjezba_disanja2_to_osnovna_meditacija_korak3"
             app:destination="@id/osnovna_meditacija_korak3"
-            app:enterAnim="@anim/slide_from_right_pure"
-            app:exitAnim="@anim/slide_to_left_pure"/>
+    />
     </activity>
     <fragment
         android:id="@+id/osnovna_meditacija_korak3"
@@ -108,7 +106,6 @@
         <action
             android:id="@+id/action_osnovna_meditacija_korak3_to_vjezba_disanja2"
             app:destination="@id/vjezba_disanja2"
-            app:enterAnim="@anim/slide_from_right_pure"
-            app:exitAnim="@anim/slide_to_left_pure"/>
+     />
     </fragment>
 </navigation>

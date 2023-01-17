@@ -208,41 +208,7 @@
 
 
             </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/interaktivnemeditacije"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:background="@drawable/curved_dark"
-                        android:clickable="true"
-                        >
 
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:orientation="vertical"
-                            android:layout_marginStart="20dp">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/alata"
-                                android:text="Interaktivne meditacije"
-                                android:textColor="@color/white"
-                                android:textSize="30dp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/alata"
-                                android:text="Saznaj više"
-                                android:layout_marginTop="20dp"
-                                android:textColor="@color/Pallete3"
-                                android:textSize="18dp" />
-                        </LinearLayout>
-
-                    </RelativeLayout>
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
