@@ -15,6 +15,27 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="CircularDeterminateProgressBar">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/circle</item>
+    </style>
+
+    <style name="CalenderViewCustom" parent="Theme.AppCompat">
+        <item name="colorAccent">@color/Pallete3</item>
+        <item name="colorPrimary">@color/Pallete2</item>
+    </style>
+
+    <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="fontFamily">@font/alata</item>
+        <item name="android:textColor">@color/Pallete2</item>
+        <item name="android:weekNumberColor">@color/Pallete3</item>
+    </style>
+
+    <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="fontFamily">@font/alata</item>
+        <item name="android:textColor">@color/Pallete2</item>
+    </style>
+
     <style name="Theme.Enliven.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Pallete0</item>

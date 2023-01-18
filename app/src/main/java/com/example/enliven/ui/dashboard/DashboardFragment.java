@@ -1,9 +1,12 @@
 package com.example.enliven.ui.dashboard;
 
+import static com.example.enliven.ui.UtilsKt.getcurrentDateAndTime;
+
 import android.content.Intent;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
@@ -16,14 +19,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
@@ -31,6 +37,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.chart.common.dataentry.ValueDataEntry;
+import com.anychart.charts.Cartesian;
+import com.anychart.core.cartesian.series.Line;
+import com.example.enliven.EventDecorator;
 import com.example.enliven.MoodActivity;
 import com.example.enliven.R;
 import com.example.enliven.MainActivity;
@@ -57,12 +70,24 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.ktx.Firebase;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.CalendarMode;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
 import org.w3c.dom.Text;
 import java.sql.CallableStatement;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import io.getstream.chat.android.client.ChatClient;
 import io.getstream.chat.android.client.models.User;
@@ -79,6 +104,7 @@ public class DashboardFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        Log.e("IMP", "VIEW CREATED!");
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         root = binding.getRoot();
@@ -100,7 +126,6 @@ public class DashboardFragment extends Fragment {
         story_citati.startAnimation(slideoutright);
         tipscard.startAnimation(floatUpFast);
         vodic.startAnimation(floatUpFast);
-
 
         prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
 
@@ -178,11 +203,67 @@ public class DashboardFragment extends Fragment {
 
         setupLastEmotions();
 
-
-
-
         return root;
     }
+
+    private void setupLevels() {
+        ProgressBar progressBar = root.findViewById(R.id.lvlBar);
+        progressBar.setMax(100);
+        progressBar.setMin(0);
+        TextView levelText = root.findViewById(R.id.lvlText);
+        TextView currentXPText = root.findViewById(R.id.textCurrentXP);
+        TextView streaksText = root.findViewById(R.id.streakText);
+        streaksText.setText(String.valueOf(prefs.getInt("currentStreak", 1)));
+        int currentXP = prefs.getInt("XP", 0);
+        levelText.setText(String.valueOf(currentXP/100));
+        progressBar.setProgress(currentXP%100, false);
+        currentXPText.setText(currentXP%100+"/100 XP");
+
+        MaterialCalendarView calendarView = root.findViewById(R.id.streaksCalender);
+        AnyChartView anyChartView = root.findViewById(R.id.lvlChart);
+
+        Cartesian cartesian = AnyChart.line();
+        cartesian.animation(true);
+        List<DataEntry> seriesData = new ArrayList<>();
+        cartesian.yAxis(0).title("Trenutni XP");
+
+        seriesData.add(new ValueDataEntry("1", prefs.getInt(getcurrentDateAndTime(-4),prefs.getInt(getcurrentDateAndTime(-3),prefs.getInt(getcurrentDateAndTime(-2),prefs.getInt(getcurrentDateAndTime(-1),currentXP))))));
+        seriesData.add(new ValueDataEntry("2", prefs.getInt(getcurrentDateAndTime(-3),prefs.getInt(getcurrentDateAndTime(-2),prefs.getInt(getcurrentDateAndTime(-1),currentXP)))));
+        seriesData.add(new ValueDataEntry("3", prefs.getInt(getcurrentDateAndTime(-2),prefs.getInt(getcurrentDateAndTime(-1),currentXP))));
+        seriesData.add(new ValueDataEntry("4", prefs.getInt(getcurrentDateAndTime(-1),currentXP)));
+        seriesData.add(new ValueDataEntry("5", currentXP));
+
+
+        Line series1 = cartesian.line(seriesData);
+        series1.color("#c61369");
+
+        cartesian.legend().enabled(false);
+        cartesian.legend().fontSize(8d);
+        cartesian.background().fill("#00000000");
+        anyChartView.setChart(cartesian);
+
+        anyChartView.setBackgroundColor("#00000000");
+
+        calendarView.setBackgroundColor(Color.TRANSPARENT);
+        calendarView.setTopbarVisible(false);
+        calendarView.setSelectionMode(MaterialCalendarView.SELECTION_MODE_NONE);
+        calendarView.state().edit()
+                .setCalendarDisplayMode(CalendarMode.WEEKS)
+                .commit();
+        Set<CalendarDay> set = new HashSet<>();
+        Set<String> currentLoginDates = new HashSet<String>(prefs.getStringSet("LoginDates", new HashSet<String>()));
+        for(int i = -7; i<=7; i++){
+            if(currentLoginDates.contains(getcurrentDateAndTime(i))) {
+                String[] curr = getcurrentDateAndTime(i).split("-");
+                CalendarDay day = CalendarDay.from(Integer.parseInt(curr[0]), Integer.parseInt(curr[1]), Integer.parseInt(curr[2]));
+                set.add(day);
+            }
+        }
+
+        calendarView.addDecorator(new EventDecorator(getResources().getColor(R.color.Pallete3, getContext().getTheme()), set));
+    }
+
+
 
     public void setupLastEmotions(){
 
@@ -258,9 +339,11 @@ public class DashboardFragment extends Fragment {
 
     @Override
     public void onResume() {
+        Log.e("IMP", "VIEW RESUMED!");
         story_citati.removeAllViews();
         setupStories();
         setupLastEmotions();
+        setupLevels();
         super.onResume();
     }
 
@@ -380,4 +463,6 @@ public class DashboardFragment extends Fragment {
             }
         }
     }
+
+
 }
