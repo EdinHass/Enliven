@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vjezbe_disanja"
+    android:background="@drawable/gradient_dark_purple">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       >
+       <ScrollView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+
+
+
+           <TextView
+               android:layout_marginTop="20dp"
+               android:layout_marginStart="20dp"
+               android:id="@+id/textnaslov"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:fontFamily="@font/alata"
+               android:text="Vježbe disanja"
+               android:textColor="@color/white"
+               android:textSize="30dp"
+               android:typeface="normal"
+               />
+
+
+           <LinearLayout
+               android:id="@+id/linearLayout"
+               android:layout_width="80dp"
+               android:layout_height="2dp"
+               android:background="@color/white"
+               android:layout_marginStart="20dp"
+               android:orientation="horizontal"
+               android:layout_marginVertical="20dp"/>
+
+           <TextView
+               android:layout_marginStart="20dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:fontFamily="@font/alata"
+               android:text="Preporučeno"
+               android:textColor="@color/PalleteLightText"
+               android:textSize="14dp"
+               />
+
+           <RelativeLayout
+               android:id="@+id/zasan"
+               android:layout_marginHorizontal="20dp"
+               android:layout_marginTop="20dp"
+               android:layout_width="match_parent"
+               android:layout_height="180dp"
+               android:background="@drawable/curved_dark"
+               android:clickable="true"
+               >
+
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerVertical="true"
+                   android:orientation="vertical"
+                   android:layout_marginStart="20dp">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/alata"
+                       android:text="Vježba disanja"
+                       android:textColor="@color/white"
+                       android:textSize="30dp" />
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/alata"
+                       android:text="za bolji san"
+                       android:layout_marginTop="20dp"
+                       android:textColor="@color/Pallete3"
+                       android:textSize="18dp" />
+               </LinearLayout>
+
+           </RelativeLayout>
+
+           <TextView
+               android:layout_marginStart="20dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:fontFamily="@font/alata"
+               android:text="Istraži"
+               android:textColor="@color/PalleteLightText"
+               android:textSize="14dp"
+               android:layout_marginVertical="20dp"
+               />
+
+           <RelativeLayout
+               android:id="@+id/zaopustanje"
+               android:layout_marginHorizontal="20dp"
+               android:layout_marginBottom="20dp"
+               android:layout_width="match_parent"
+               android:layout_height="180dp"
+               android:background="@drawable/curved_dark"
+               android:clickable="true"
+               >
+
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerVertical="true"
+                   android:orientation="vertical"
+                   android:layout_marginStart="20dp">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/alata"
+                       android:text="Vježba disanja"
+                       android:textColor="@color/white"
+                       android:textSize="30dp" />
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/alata"
+                       android:text="za opuštanje"
+                       android:layout_marginTop="20dp"
+                       android:textColor="@color/Pallete3"
+                       android:textSize="18dp" />
+               </LinearLayout>
+
+           </RelativeLayout>
+
+           <RelativeLayout
+               android:id="@+id/zafokus"
+               android:layout_marginHorizontal="20dp"
+               android:layout_marginBottom="20dp"
+               android:layout_width="match_parent"
+               android:layout_height="180dp"
+               android:background="@drawable/curved_dark"
+               android:clickable="true"
+               >
+
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerVertical="true"
+                   android:orientation="vertical"
+                   android:layout_marginStart="20dp">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/alata"
+                       android:text="Vježba disanja"
+                       android:textColor="@color/white"
+                       android:textSize="30dp" />
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/alata"
+                       android:text="za bolji fokus"
+                       android:layout_marginTop="20dp"
+                       android:textColor="@color/Pallete3"
+                       android:textSize="18dp" />
+               </LinearLayout>
+
+           </RelativeLayout>
+           <RelativeLayout
+               android:id="@+id/zaravnotezu"
+               android:layout_marginHorizontal="20dp"
+               android:layout_marginBottom="20dp"
+               android:layout_width="match_parent"
+               android:layout_height="180dp"
+               android:background="@drawable/curved_dark"
+               android:clickable="true"
+               >
+
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerVertical="true"
+                   android:orientation="vertical"
+                   android:layout_marginStart="20dp">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/alata"
+                       android:text="Vježba disanja"
+                       android:textColor="@color/white"
+                       android:textSize="30dp" />
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/alata"
+                       android:text="za ravnotežu"
+                       android:layout_marginTop="20dp"
+                       android:textColor="@color/Pallete3"
+                       android:textSize="18dp" />
+               </LinearLayout>
+
+           </RelativeLayout>
+       </LinearLayout>
+
+
+       </ScrollView>
+   </RelativeLayout>
+
+
+
+</FrameLayout>
