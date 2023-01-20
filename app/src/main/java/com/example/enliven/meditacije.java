@@ -46,7 +46,8 @@ public class meditacije extends Fragment {
         vjezbaDisanja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(getActivity(),R.id.meditacijaFragmentView).navigate(R.id.action_meditacije_to_vjezba_disanja);
+                Intent intent = new Intent(getContext(), vjezbe_disanjaa.class);
+                startActivity(intent);
             }
         });
 

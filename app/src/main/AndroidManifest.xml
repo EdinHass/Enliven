@@ -19,6 +19,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
         <activity
+            android:name=".vjezbe_disanjaa"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".CustomSoundActivity"
             android:exported="false">
             <meta-data
