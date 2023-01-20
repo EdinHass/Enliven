@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/alata"
-                    android:text="Neka Vam vježba disanja bude svakodnevna navika"
+                    android:text="Stvorite naviku"
                     android:textColor="@color/Pallete3"
                     android:textSize="30dp"
                     android:gravity="center"/>
