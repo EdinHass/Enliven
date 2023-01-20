@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -41,6 +42,7 @@ public class vjezba_disanja1 extends AppCompatActivity {
         text = findViewById(R.id.text);
         buttonStart = findViewById(R.id.buttonStart);
         imageView = findViewById(R.id.vjezbaSlika);
+        progressBar=findViewById(R.id.progressBar2);
 
         mediaPlayer = MyMediaPlayer.getInstance(this);
         mediaPlayer.setLooping(true);
@@ -67,31 +69,30 @@ public class vjezba_disanja1 extends AppCompatActivity {
 
 
         Title.setText(vjezbaIme);
+
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mediaPlayer.seekTo(0);
+                mediaPlayer.setVolume(1,7);
                 mediaPlayer.start();
 
                 new Thread(new Runnable() {
-                    @Override
                     public void run() {
-                        int j=0;
-                        for (int i = 0; i < 7; i++) {
-                            j = 0;
-                            progressStatus = 0;
-                            while (j < (vrijemeIzdisanja + vrijemeUzdisanja)) {
-                                progressStatus++;
-                                j++;
+
+                        for(int i=0;i<=7;i++) {
+                            progressStatus=0;
+                            while (progressStatus < (vrijemeIzdisanja+vrijemeUzdisanja)) {
+                                progressStatus += 1;
                                 handler.post(new Runnable() {
-                                    @Override
                                     public void run() {
                                         progressBar.setProgress(progressStatus);
-                                        if (progressStatus <= vrijemeUzdisanja) {
+                                        progressBar.setMax((vrijemeIzdisanja+vrijemeUzdisanja));
+                                        if (progressStatus<=vrijemeUzdisanja) {
                                             text.setText("Udahni");
-                                        } else if ((progressStatus > vrijemeUzdisanja) && (progressStatus <= vrijemeIzdisanja)) {
+                                        } else if (progressStatus>vrijemeUzdisanja && progressStatus<=vrijemeIzdisanja) {
                                             text.setText("Izdahni");
                                         }
-
                                     }
                                 });
                                 try {
@@ -99,14 +100,20 @@ public class vjezba_disanja1 extends AppCompatActivity {
                                 } catch (InterruptedException e) {
                                     e.printStackTrace();
                                 }
-                            }
 
+                            }
                         }
+                        mediaPlayer.pause();
+
                     }
                 }).start();
-
-
             }
         });
+
+
+    }
+    public void onBackPressed(){
+        mediaPlayer.pause();
+        this.finish();
     }
 }

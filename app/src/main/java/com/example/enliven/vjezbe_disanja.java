@@ -54,4 +54,7 @@ public class vjezbe_disanja extends Fragment {
 
         return view1;
     }
+
+
+
 }

@@ -23,4 +23,9 @@ public class vjezbe_disanjaa extends AppCompatActivity {
                 (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.vjezbedisanja_fragmentView);
         NavController navController = navHostFragment.getNavController();
     }
+
+    @Override
+    public void onBackPressed(){
+        this.finish();
+    }
 }
