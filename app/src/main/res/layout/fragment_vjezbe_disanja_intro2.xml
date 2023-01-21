@@ -35,6 +35,8 @@
                 android:layout_marginStart="75dp"
                 android:layout_marginEnd="75dp"
                 android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
                 >
 
                 <TextView
@@ -46,6 +48,7 @@
                     android:text="Prilagođene vježbe"
                     android:textColor="@color/Pallete3"
                     android:textSize="30dp"
+                    android:gravity="center"
                     />
 
                 <TextView

@@ -23,6 +23,7 @@ public class vjezba_disanja_za_ravnotezu extends Fragment {
         View view1= inflater.inflate(R.layout.fragment_vjezba_disanja_za_ravnotezu, container, false);
         TextView saznajvise=view1.findViewById(R.id.saznajvise);
         ImageView imageView=view1.findViewById(R.id.imageView);
+
         saznajvise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

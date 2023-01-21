@@ -1,11 +1,16 @@
 package com.example.enliven;
 
+import static com.example.enliven.ui.UtilsKt.interpolateColor;
+import static com.example.enliven.ui.UtilsKt.manipulateColor;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -17,10 +22,12 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class vjezba_disanja1 extends AppCompatActivity {
 
@@ -34,6 +41,7 @@ public class vjezba_disanja1 extends AppCompatActivity {
     private Handler handler = new Handler();
     ImageView imageView;
     ValueAnimator animator;
+    RelativeLayout background;
 
 
 
@@ -50,6 +58,7 @@ public class vjezba_disanja1 extends AppCompatActivity {
         buttonStart = findViewById(R.id.buttonStart);
         imageView = findViewById(R.id.vjezbaSlika);
         progressBar=findViewById(R.id.progressBar2);
+        background=findViewById(R.id.backgroundSound);
 
         mediaPlayer = MyMediaPlayer.getInstance(this);
         mediaPlayer.setLooping(true);
@@ -77,9 +86,21 @@ public class vjezba_disanja1 extends AppCompatActivity {
 
         Title.setText(vjezbaIme);
 
+        int color = (new ColorDiagram()).getColor(vrijemeIzdisanja);
+        GradientDrawable gd = new GradientDrawable(
+                GradientDrawable.Orientation.TOP_BOTTOM,
+                new int[] {0xFF130c20, interpolateColor(0xFF130c20, interpolateColor(0xFF130c20, manipulateColor(color, 0.4f), 0.4f), 0.4f), interpolateColor(0xFF130c20, manipulateColor(color, 0.4f), 0.4f), manipulateColor(color, 0.4f)});
+        gd.setGradientType(GradientDrawable.LINEAR_GRADIENT);
+        gd.setGradientRadius(1.0f);
+        background.setBackground(gd);
+
+
+
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressStatus=0;
+
                  new Thread(new Runnable() {
                      public void run() {
                          mediaPlayer.seekTo(0);
@@ -88,22 +109,33 @@ public class vjezba_disanja1 extends AppCompatActivity {
                          for (int i = 0; i <= 7; i++) {
                              progressStatus = 0;
                              while (progressStatus < (vrijemeIzdisanja + vrijemeUzdisanja)) {
-                                 progressStatus += 1;
+
                                  handler.post(new Runnable() {
                                      public void run() {
                                          progressBar.setProgress(progressStatus);
                                          progressBar.setMax((vrijemeIzdisanja + vrijemeUzdisanja));
                                          if (progressStatus <= vrijemeUzdisanja) {
                                              text.setText("Udahni");
-                                             slideView(imageView, imageView.getLayoutParams().height, 160, vrijemeUzdisanja);
-                                             }
+
+                                             int dimensionInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 160, getResources().getDisplayMetrics());
+                                             imageView.getLayoutParams().height = dimensionInDp;
+                                             imageView.getLayoutParams().width = dimensionInDp;
+                                             imageView.requestLayout();
+
+                                         }
+
 
                                          else if (progressStatus > vrijemeUzdisanja && progressStatus <= vrijemeIzdisanja) {
                                              text.setText("Izdahni");
-                                             slideView(imageView, imageView.getLayoutParams().height, 130, vrijemeIzdisanja);
+                                             int dimensionInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 130, getResources().getDisplayMetrics());
+                                             imageView.getLayoutParams().height = dimensionInDp;
+                                             imageView.getLayoutParams().width = dimensionInDp;
+                                             imageView.requestLayout();
+
                                          }
                                      }
                                  });
+                                 progressStatus += 1;
                                  try {
                                      Thread.sleep(1000);
                                  } catch (InterruptedException e) {
@@ -113,10 +145,10 @@ public class vjezba_disanja1 extends AppCompatActivity {
                              }
 
                          }
+                         if(mediaPlayer.isPlaying()){
+                             mediaPlayer.pause();
+                         }
 
-                             if(mediaPlayer.isPlaying()) {
-                                 mediaPlayer.pause();
-                             }
 
 
 
@@ -133,33 +165,45 @@ public class vjezba_disanja1 extends AppCompatActivity {
 
 
     }
-    public static void slideView(View view,
-                                 int currentHeight,
-                                 int newHeight,
-                                 int time) {
+    public class ColorDiagram {
+        // Member variables (properties about the object)
+        public String[] mColors = {
+                "#39add1", // light blue
+                "#3079ab", // dark blue
+                "#c25975", // mauve
+                "#e15258", // red
+                "#f9845b", // orange
+                "#838cc7", // lavender
+                "#7d669e", // purple
+                "#53bbb4", // aqua
+                "#51b46d", // green
+                "#e0ab18", // mustard
+                "#637a91", // dark gray
+                "#f092b0", // pink
+                "#b7c0c7"  // light gray
+        };
 
-        ValueAnimator slideAnimator = ValueAnimator
-                .ofInt(currentHeight, newHeight)
-                .setDuration(time);
+        // Method (abilities: things the object can do)
+        public int getColor(int number) {
+            String color = "";
 
 
 
-        slideAnimator.addUpdateListener(animation1 -> {
-            Integer value = (Integer) animation1.getAnimatedValue();
-            view.getLayoutParams().height = value.intValue();
-            view.requestLayout();
-        });
+            color = mColors[number];
+            int colorAsInt = Color.parseColor(color);
 
+            return colorAsInt;
+        }
 
-        AnimatorSet animationSet = new AnimatorSet();
-        animationSet.setInterpolator(new AccelerateDecelerateInterpolator());
-        animationSet.play(slideAnimator);
-        animationSet.start();
     }
     public void onBackPressed(){
-        if(mediaPlayer.isPlaying()){
-            mediaPlayer.pause();
-        }
+        mediaPlayer.stop();
+        mediaPlayer.reset();
+        mediaPlayer.release();
+        mediaPlayer=null;
+
         this.finish();
+        }
+
     }
-}
+

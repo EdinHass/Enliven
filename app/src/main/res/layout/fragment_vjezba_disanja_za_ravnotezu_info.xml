@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/alata"
-                android:text="Udisaj 5 sekunde \nIzdisaj 7 sekundi"
+                android:text="Udisaj 5 sekunde \nIzdisaj 7 sekunde"
                 android:textColor="@color/Pallete2"
                 android:textSize="18dp" />
         </RelativeLayout>

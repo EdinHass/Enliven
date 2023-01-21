@@ -109,7 +109,7 @@
         android:id="@+id/vjezba_disanja_opustanje_info"
         android:name="com.example.enliven.vjezba_disanja_opustanje_info"
         android:label="vjezba_disanja_opustanje_info" />
-    <fragment
+    <dialog
         android:id="@+id/vjezba_disanja_za_ravnotezu_info"
         android:name="com.example.enliven.vjezba_disanja_za_ravnotezu_info"
         android:label="vjezba_disanja_za_ravnotezu_info" />

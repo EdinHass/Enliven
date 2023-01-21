@@ -28,7 +28,7 @@ public class vjezba_disanja_za_san extends Fragment {
                 Navigation.findNavController(getActivity(), R.id.vjezbedisanja_fragmentView).navigate(R.id.action_vjezba_disanja_za_san_to_vjezba_disanja_za_san_info);
             }
         });
-        Postavi(imageView, new PostaviVjezbeDisanja("Vježba za san", "https://cdn.pixabay.com/download/audio/2021/08/09/audio_ad0a86b2e0.mp3?filename=peaceful-piano-loop-6903.mp3", 6 , 4));
+        Postavi(imageView, new PostaviVjezbeDisanja("Vježba za san", "https://cdn.pixabay.com/download/audio/2021/08/09/audio_ad0a86b2e0.mp3?filename=peaceful-piano-loop-6903.mp3", 5 , 3));
         return view1;
     }
 

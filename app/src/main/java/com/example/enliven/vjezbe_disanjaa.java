@@ -13,19 +13,15 @@ public class vjezbe_disanjaa extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vjezbe_disanjaa);
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Vježbe disanja");
 
         getIntent();
 
-        NavHostFragment navHostFragment=
+        NavHostFragment navHostFragment =
                 (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.vjezbedisanja_fragmentView);
         NavController navController = navHostFragment.getNavController();
     }
 
-    @Override
-    public void onBackPressed(){
-        this.finish();
-    }
 }

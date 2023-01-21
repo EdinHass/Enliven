@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/alata"
-                android:text="Bhramari Pranayama disanje (4-6)"
+                android:text="Bhramari Pranayama disanje (3-5)"
                 android:textAlignment="center"
                 android:textColor="@color/PalleteLightText"
                 android:textSize="18dp" />
