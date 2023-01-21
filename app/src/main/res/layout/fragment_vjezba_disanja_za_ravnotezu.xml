@@ -91,11 +91,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/alata"
-                android:text="Produženi izdah (4-6)"
+                android:text="Disanje sa mentalnim pregledom tijela"
                 android:textAlignment="center"
                 android:textColor="@color/PalleteLightText"
                 android:textSize="18dp" />
             <TextView
+                android:id="@+id/saznajvise"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

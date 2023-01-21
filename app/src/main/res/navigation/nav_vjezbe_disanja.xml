@@ -82,19 +82,43 @@
         android:id="@+id/vjezbe_disanja_za_fokus"
         android:name="com.example.enliven.vjezbe_disanja_za_fokus"
         android:label="fragment_vjezbe_disanja_za_fokus"
-        tools:layout="@layout/fragment_vjezbe_disanja_za_fokus" />
+        tools:layout="@layout/fragment_vjezbe_disanja_za_fokus" >
+        <action
+            android:id="@+id/action_vjezbe_disanja_za_fokus_to_vjezbe_disanja_za_fokus_info"
+            app:destination="@id/vjezbe_disanja_za_fokus_info" />
+    </fragment>
     <fragment
         android:id="@+id/vjezba_disanja_za_ravnotezu"
         android:name="com.example.enliven.vjezba_disanja_za_ravnotezu"
         android:label="fragment_vjezba_disanja_za_ravnotezu"
-        tools:layout="@layout/fragment_vjezba_disanja_za_ravnotezu" />
+        tools:layout="@layout/fragment_vjezba_disanja_za_ravnotezu" >
+        <action
+            android:id="@+id/action_vjezba_disanja_za_ravnotezu_to_vjezba_disanja_za_ravnotezu_info"
+            app:destination="@id/vjezba_disanja_za_ravnotezu_info" />
+    </fragment>
     <fragment
         android:id="@+id/vjezba_disanja_za_san"
         android:name="com.example.enliven.vjezba_disanja_za_san"
         android:label="fragment_vjezba_disanja_za_san"
-        tools:layout="@layout/fragment_vjezba_disanja_za_san" />
+        tools:layout="@layout/fragment_vjezba_disanja_za_san" >
+        <action
+            android:id="@+id/action_vjezba_disanja_za_san_to_vjezba_disanja_za_san_info"
+            app:destination="@id/vjezba_disanja_za_san_info" />
+    </fragment>
     <dialog
         android:id="@+id/vjezba_disanja_opustanje_info"
         android:name="com.example.enliven.vjezba_disanja_opustanje_info"
         android:label="vjezba_disanja_opustanje_info" />
+    <fragment
+        android:id="@+id/vjezba_disanja_za_ravnotezu_info"
+        android:name="com.example.enliven.vjezba_disanja_za_ravnotezu_info"
+        android:label="vjezba_disanja_za_ravnotezu_info" />
+    <dialog
+        android:id="@+id/vjezba_disanja_za_san_info"
+        android:name="com.example.enliven.vjezba_disanja_za_san_info"
+        android:label="vjezba_disanja_za_san_info" />
+    <dialog
+        android:id="@+id/vjezbe_disanja_za_fokus_info"
+        android:name="com.example.enliven.vjezbe_disanja_za_fokus_info"
+        android:label="vjezbe_disanja_za_fokus_info" />
 </navigation>

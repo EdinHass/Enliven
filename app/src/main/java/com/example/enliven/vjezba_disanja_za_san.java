@@ -1,64 +1,48 @@
 package com.example.enliven;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link vjezba_disanja_za_san#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class vjezba_disanja_za_san extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public vjezba_disanja_za_san() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment vjezba_disanja_za_san.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static vjezba_disanja_za_san newInstance(String param1, String param2) {
-        vjezba_disanja_za_san fragment = new vjezba_disanja_za_san();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vjezba_disanja_za_san, container, false);
+        View view1= inflater.inflate(R.layout.fragment_vjezba_disanja_za_san, container, false);
+        TextView saznajvise=view1.findViewById(R.id.saznajvise);
+        ImageView imageView=view1.findViewById(R.id.imageView);
+        saznajvise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(getActivity(), R.id.vjezbedisanja_fragmentView).navigate(R.id.action_vjezba_disanja_za_san_to_vjezba_disanja_za_san_info);
+            }
+        });
+        Postavi(imageView, new PostaviVjezbeDisanja("Vježba za san", "https://cdn.pixabay.com/download/audio/2021/08/09/audio_ad0a86b2e0.mp3?filename=peaceful-piano-loop-6903.mp3", 6 , 4));
+        return view1;
+    }
+
+    public void Postavi(ImageView imageView, PostaviVjezbeDisanja postaviVjezbeDisanja){
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(),vjezba_disanja1.class);
+                i.putExtra("vjezbaIme", postaviVjezbeDisanja.getName());
+                i.putExtra("SoundData", postaviVjezbeDisanja.getSoundData());
+                i.putExtra("vrijemeIzdisanja", postaviVjezbeDisanja.getVrijemeIzdisanja());
+                i.putExtra("vrijemeUdisanja",postaviVjezbeDisanja.getVrijemeUzdisanja());
+                startActivity(i);
+            }
+        });
     }
 }
