@@ -9,6 +9,8 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.example.enliven.R
 import com.example.enliven.databinding.FragmentChannelsBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -26,7 +28,6 @@ class ChannelsFragment : Fragment(R.layout.fragment_channels){
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentChannelsBinding.bind(view)
         currentUser = FirebaseAuth.getInstance().currentUser ?: return
-        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
         (activity as AppCompatActivity).supportActionBar?.title = "Enliven Social"
         (activity as AppCompatActivity).supportActionBar?.show()
 
@@ -44,6 +45,7 @@ class ChannelsFragment : Fragment(R.layout.fragment_channels){
             findNavController().navigate(R.id.chatFragment, bundleOf(ChatFragment.CHANNEL_ID to channel.id,
             ChatFragment.RECIPIENT_ID to "n/a"))
         }
+
 
     }
 

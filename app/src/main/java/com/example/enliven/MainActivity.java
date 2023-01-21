@@ -1,9 +1,12 @@
 package com.example.enliven;
 
+import static com.example.enliven.ui.UtilsKt.getcurrentDateAndTime;
+
 import android.app.Notification;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -24,7 +27,13 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.enliven.databinding.ActivityMainBinding;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -47,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-
+        lastLoginSetup();
 
     }
 
@@ -65,8 +74,33 @@ public class MainActivity extends AppCompatActivity {
         if (prefs.getBoolean("firstrun", true)) {
             startActivity(new Intent(this, Welcome_Activity.class));
         }
+
+        lastLoginSetup();
+
+
+
     }
 
+    public void lastLoginSetup(){
+        if (!prefs.getString("LastLogin", "n/a").equals(getcurrentDateAndTime(0))){
+            int currentStreak = prefs.getInt("currentStreak", 1);
+            if(prefs.getString("LastLogin", "n/a").equals(getcurrentDateAndTime(-1))){
+                currentStreak++;
+            }else{
+                currentStreak=1;
+            }
+            prefs.edit().putInt("currentStreak", currentStreak).apply();
+
+            prefs.edit().putString("LastLogin", getcurrentDateAndTime(0)).apply();
+
+            Set<String> currentLoginDates = new HashSet<String>(prefs.getStringSet("LoginDates", new HashSet<String>()));
+            currentLoginDates.add(getcurrentDateAndTime(0));
+            prefs.edit().putStringSet("LoginDates", currentLoginDates).apply();
+
+            int currentXP = prefs.getInt("XP", 0);
+            prefs.edit().putInt(getcurrentDateAndTime(-1), currentXP).apply();
+        }
+    }
 
 
 }

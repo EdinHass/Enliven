@@ -251,12 +251,10 @@
 
         <TextView
             android:id="@+id/noFavs"
-            android:layout_marginStart="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/alata"
             android:layout_gravity="center"
-            android:layout_marginEnd="30dp"
             android:text="Nemate trenutno favorita."
             android:textColor="@color/PalleteLightText"
             android:textSize="14dp"

@@ -1,10 +1,14 @@
 package com.example.enliven.ui
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.graphics.*
+import android.view.View
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
+import java.text.SimpleDateFormat
+import java.util.*
 
 fun <A: Activity>Activity.startNewActivity(activity: Class<A>){
     Intent(this, activity).also{
@@ -64,7 +68,7 @@ private fun interpolate(a: Float, b: Float, proportion: Float): Float {
 }
 
 fun interpolateColor(a: Int, b: Int, proportion: Float): Int {
-    require(!(proportion > 1 || proportion < 0)) { "proportion must be [0 - 1]" }
+    require(!(proportion > 1 || proportion < 0)) { "proporijca mora biti [0 - 1]" }
     val hsva = FloatArray(3)
     val hsvb = FloatArray(3)
     val hsv_output = FloatArray(3)
@@ -90,4 +94,64 @@ fun manipulateColor(color: Int, factor: Float): Int {
         Math.min(g, 255),
         Math.min(b, 255)
     )
+}
+
+fun getcurrentDateAndTime(offsetDays: Int): String? {
+    val calendar = Calendar.getInstance()
+    calendar.add(Calendar.DAY_OF_YEAR, offsetDays)
+    val c = calendar.time
+    val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
+    return simpleDateFormat.format(c)
+}
+
+enum class addXP{
+    SOUNDS, HABITS, EMOTION
+}
+
+fun addXP(XP: Int, context: Context, view: View, case: addXP){
+    val sharedPref = context.getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE)
+    var currentXP = sharedPref.getInt("XP", 0)
+
+    when(case){
+        addXP.SOUNDS -> {
+            val lastSoundXP = sharedPref.getLong("lastSoundXP", 0)
+            if(Calendar.getInstance().timeInMillis-lastSoundXP>3000) {
+            currentXP += XP
+            sharedPref.edit().putInt("XP", currentXP).apply()
+            sharedPref.edit().putLong("lastSoundXP", Calendar.getInstance().timeInMillis).apply()
+            Snackbar.make(
+                view.getRootView(),
+                "Dobili ste " + XP + " poena!",
+                Snackbar.LENGTH_SHORT
+            ).show()
+            }
+        }
+        addXP.HABITS -> {
+            val lastHabitsXP = sharedPref.getLong("lastHabitsXP", 0)
+            if(Calendar.getInstance().timeInMillis-lastHabitsXP>300000) {
+                currentXP += XP
+                sharedPref.edit().putInt("XP", currentXP).apply()
+                sharedPref.edit().putLong("lastHabitsXP", Calendar.getInstance().timeInMillis).apply()
+                Snackbar.make(
+                    view.getRootView(),
+                    "Dobili ste " + XP + " poena!",
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            }
+        }
+        addXP.EMOTION -> {
+            val lastEmotionXP = sharedPref.getLong("lastEmotionXP", 0)
+            if(Calendar.getInstance().timeInMillis-lastEmotionXP>300000) {
+                currentXP += XP
+                sharedPref.edit().putInt("XP", currentXP).apply()
+                sharedPref.edit().putLong("lastEmotionXP", Calendar.getInstance().timeInMillis).apply()
+                Snackbar.make(
+                    view.getRootView(),
+                    "Dobili ste " + XP + " poena!",
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
 }
