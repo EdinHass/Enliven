@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/gradient_dark_purple"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:text="Vježbe disanja za bolji san"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textFontWeight="800"
+            android:typeface="normal" />
+
+        <LinearLayout
+
+            android:layout_width="80dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            android:layout_marginVertical="20dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:id="@+id/zastotext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:text="Utišajte svoj um i zaboravite na okruženje. Idealno kada imate probleme sa nesanicom i želite da se opustite i utonote u dubok san "
+                android:textColor="@color/Pallete2"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:fontFamily="@font/alata"/>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="20dp"/>
+
+        <RelativeLayout
+            android:id="@+id/tehnika1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+
+
+            <TextView
+                android:id="@+id/tehnika"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/alata"
+                android:text="Tehnika:"
+                android:textColor="@color/Pallete2"
+                android:textSize="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/tehnika2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_below="@+id/tehnika1"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/alata"
+                android:text="Bhramari Pranayama disanje (4-6)"
+                android:textColor="@color/Pallete2"
+                android:textSize="18dp" />
+
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/tehnika3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/tehnika2"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/alata"
+                android:text="Udisaj 4 sekunde \nIzdisaj 6 sekundi"
+                android:textColor="@color/Pallete2"
+                android:textSize="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/tehnika3"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/alata"
+                android:gravity="center"
+                android:text="Sjednite u udoban položaj i stavite palčeve na uši kako biste blokirali vanjske zvukove.\nS palčevima koji pokrivaju uši, postavite kažiprste iznad obrva, a preostalim prstima držite zatvorene oči.\nDuboko udahnite, zatim polako izdahnite kroz nos ispuštajući zvuk pjevušenja ili zujanja i usmjeravajući pažnju na područje između obrva."
+                android:textColor="@color/Pallete2"
+                android:textSize="18dp" />
+        </RelativeLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="20dp"/>
+
+        <RelativeLayout
+            android:id="@+id/kako1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+
+
+            <TextView
+                android:id="@+id/kako"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/alata"
+                android:text="Kako ovo funkcioniše?"
+                android:textColor="@color/Pallete2"
+                android:textSize="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/kako1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/alata"
+                android:gravity="center"
+                android:text="Duboki udah praćen dužim, sporijim izdahom signalizira stanje opuštenosti tijela i smanjuje stres. Duži izdisaji u usporedbi s udisajima pomažu usporiti rad srca i opuštaju živce. Prikrivajući oči i uši prstima isključit ćete vanjsi svijet i očistiti svoje misle kako biste lakše zaspali"
+                android:textColor="@color/Pallete2"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+</ScrollView>

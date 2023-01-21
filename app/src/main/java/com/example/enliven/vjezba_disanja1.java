@@ -1,13 +1,16 @@
 package com.example.enliven;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.ValueAnimator;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -28,6 +31,8 @@ public class vjezba_disanja1 extends AppCompatActivity {
     int progressStatus = 0;
     private Handler handler = new Handler();
     ImageView imageView;
+    ValueAnimator animator;
+
 
 
     @Override
@@ -73,47 +78,78 @@ public class vjezba_disanja1 extends AppCompatActivity {
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mediaPlayer.seekTo(0);
-                mediaPlayer.setVolume(1,7);
-                mediaPlayer.start();
+                 new Thread(new Runnable() {
+                     public void run() {
+                         mediaPlayer.seekTo(0);
+                         mediaPlayer.setVolume(1, 7);
+                         mediaPlayer.start();
+                         for (int i = 0; i <= 7; i++) {
+                             int pom;
+                             pom=i;
 
-                new Thread(new Runnable() {
-                    public void run() {
+                             progressStatus = 0;
+                             while (progressStatus < (vrijemeIzdisanja + vrijemeUzdisanja)) {
+                                 progressStatus += 1;
+                                 handler.post(new Runnable() {
+                                     public void run() {
+                                         progressBar.setProgress(progressStatus);
+                                         progressBar.setMax((vrijemeIzdisanja + vrijemeUzdisanja));
+                                         if (progressStatus <= vrijemeUzdisanja) {
+                                             text.setText("Udahni");
+                                                     int dimensionInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 160, getResources().getDisplayMetrics());
+                                                     imageView.getLayoutParams().height = dimensionInDp;
+                                                     imageView.getLayoutParams().width = dimensionInDp;
+                                                     imageView.requestLayout();
 
-                        for(int i=0;i<=7;i++) {
-                            progressStatus=0;
-                            while (progressStatus < (vrijemeIzdisanja+vrijemeUzdisanja)) {
-                                progressStatus += 1;
-                                handler.post(new Runnable() {
-                                    public void run() {
-                                        progressBar.setProgress(progressStatus);
-                                        progressBar.setMax((vrijemeIzdisanja+vrijemeUzdisanja));
-                                        if (progressStatus<=vrijemeUzdisanja) {
-                                            text.setText("Udahni");
-                                        } else if (progressStatus>vrijemeUzdisanja && progressStatus<=vrijemeIzdisanja) {
-                                            text.setText("Izdahni");
-                                        }
-                                    }
-                                });
-                                try {
-                                    Thread.sleep(1000);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
+                                             }
 
-                            }
-                        }
-                        mediaPlayer.pause();
+                                         else if (progressStatus > vrijemeUzdisanja && progressStatus <= vrijemeIzdisanja) {
+                                             text.setText("Izdahni");
 
-                    }
-                }).start();
-            }
+
+                                                     int dimensionInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 130, getResources().getDisplayMetrics());
+                                                     imageView.getLayoutParams().height = dimensionInDp;
+                                                     imageView.getLayoutParams().width = dimensionInDp;
+                                                     imageView.requestLayout();
+
+
+
+                                         }
+                                     }
+                                 });
+                                 try {
+                                     Thread.sleep(1000);
+                                 } catch (InterruptedException e) {
+                                     e.printStackTrace();
+                                 }
+
+                             }
+                             if(pom==7){
+                                 if(mediaPlayer.isPlaying()) {
+                                     mediaPlayer.pause();
+                                 }
+                             }
+                         }
+
+
+
+                     }
+                 }).start();
+
+
+
+
+               }
+
+
         });
 
 
     }
     public void onBackPressed(){
-        mediaPlayer.pause();
+        if(mediaPlayer.isPlaying()){
+            mediaPlayer.pause();
+        }
         this.finish();
     }
 }
