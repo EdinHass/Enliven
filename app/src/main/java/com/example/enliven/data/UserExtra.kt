@@ -4,6 +4,8 @@ object UserExtra {
     const val NAME = "name"
     const val PHONE = "phone"
     const val IMAGE = "image"
+    const val XP = "xp"
+    const val STREAK = "streak"
     const val DEFAULT_AVATAR = "https://pics.freeicons.io/uploads/icons/png/10590121841583408429-512.png"
 }
 

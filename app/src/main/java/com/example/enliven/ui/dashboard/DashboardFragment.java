@@ -104,7 +104,6 @@ public class DashboardFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        Log.e("IMP", "VIEW CREATED!");
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         root = binding.getRoot();
@@ -148,9 +147,9 @@ public class DashboardFragment extends Fragment {
                     User user = new User();
                     user.setId(currentUser.getUid());
                     HashMap extraData = new HashMap<String, String>();
-                    extraData.put(UserExtra.NAME, prefs.getString("loginName", ""));
-                    extraData.put(UserExtra.PHONE, prefs.getString("loginPhone", ""));
                     extraData.put(UserExtra.IMAGE, getImageEmotion());
+                    extraData.put(UserExtra.XP, prefs.getInt("XP", 0));
+                    extraData.put(UserExtra.STREAK, prefs.getInt("currentStreak", 1));
                     if(ChatClient.instance().getCurrentUser()!=null){
                         ChatClient.instance().getCurrentUser().setImage(getImageEmotion());
                     }
@@ -204,63 +203,6 @@ public class DashboardFragment extends Fragment {
         setupLastEmotions();
 
         return root;
-    }
-
-    private void setupLevels() {
-        ProgressBar progressBar = root.findViewById(R.id.lvlBar);
-        progressBar.setMax(100);
-        progressBar.setMin(0);
-        TextView levelText = root.findViewById(R.id.lvlText);
-        TextView currentXPText = root.findViewById(R.id.textCurrentXP);
-        TextView streaksText = root.findViewById(R.id.streakText);
-        streaksText.setText(String.valueOf(prefs.getInt("currentStreak", 1)));
-        int currentXP = prefs.getInt("XP", 0);
-        levelText.setText(String.valueOf(currentXP/100));
-        progressBar.setProgress(currentXP%100, false);
-        currentXPText.setText(currentXP%100+"/100 XP");
-
-        MaterialCalendarView calendarView = root.findViewById(R.id.streaksCalender);
-        AnyChartView anyChartView = root.findViewById(R.id.lvlChart);
-
-        Cartesian cartesian = AnyChart.line();
-        cartesian.animation(true);
-        List<DataEntry> seriesData = new ArrayList<>();
-        cartesian.yAxis(0).title("Trenutni XP");
-
-        seriesData.add(new ValueDataEntry("1", prefs.getInt(getcurrentDateAndTime(-4),prefs.getInt(getcurrentDateAndTime(-3),prefs.getInt(getcurrentDateAndTime(-2),prefs.getInt(getcurrentDateAndTime(-1),currentXP))))));
-        seriesData.add(new ValueDataEntry("2", prefs.getInt(getcurrentDateAndTime(-3),prefs.getInt(getcurrentDateAndTime(-2),prefs.getInt(getcurrentDateAndTime(-1),currentXP)))));
-        seriesData.add(new ValueDataEntry("3", prefs.getInt(getcurrentDateAndTime(-2),prefs.getInt(getcurrentDateAndTime(-1),currentXP))));
-        seriesData.add(new ValueDataEntry("4", prefs.getInt(getcurrentDateAndTime(-1),currentXP)));
-        seriesData.add(new ValueDataEntry("5", currentXP));
-
-
-        Line series1 = cartesian.line(seriesData);
-        series1.color("#c61369");
-
-        cartesian.legend().enabled(false);
-        cartesian.legend().fontSize(8d);
-        cartesian.background().fill("#00000000");
-        anyChartView.setChart(cartesian);
-
-        anyChartView.setBackgroundColor("#00000000");
-
-        calendarView.setBackgroundColor(Color.TRANSPARENT);
-        calendarView.setTopbarVisible(false);
-        calendarView.setSelectionMode(MaterialCalendarView.SELECTION_MODE_NONE);
-        calendarView.state().edit()
-                .setCalendarDisplayMode(CalendarMode.WEEKS)
-                .commit();
-        Set<CalendarDay> set = new HashSet<>();
-        Set<String> currentLoginDates = new HashSet<String>(prefs.getStringSet("LoginDates", new HashSet<String>()));
-        for(int i = -7; i<=7; i++){
-            if(currentLoginDates.contains(getcurrentDateAndTime(i))) {
-                String[] curr = getcurrentDateAndTime(i).split("-");
-                CalendarDay day = CalendarDay.from(Integer.parseInt(curr[0]), Integer.parseInt(curr[1]), Integer.parseInt(curr[2]));
-                set.add(day);
-            }
-        }
-
-        calendarView.addDecorator(new EventDecorator(getResources().getColor(R.color.Pallete3, getContext().getTheme()), set));
     }
 
 
@@ -343,7 +285,6 @@ public class DashboardFragment extends Fragment {
         story_citati.removeAllViews();
         setupStories();
         setupLastEmotions();
-        setupLevels();
         super.onResume();
     }
 

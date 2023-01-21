@@ -303,14 +303,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:layout_toRightOf="@id/textCardSounds1"
+                        android:layout_toEndOf="@id/textCardSounds1"
                         android:src="@drawable/ambient_illustration2" />
 
 
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_marginVertical="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="60dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="20dp"
@@ -329,17 +330,17 @@
 
                     <TextView
                         android:id="@+id/nohisttext"
-                        android:visibility="gone"
-                        android:layout_below="@id/historijaem"
-                        android:layout_centerHorizontal="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
+                        android:layout_below="@id/historijaem"
+                        android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
+                        android:fontFamily="@font/alata"
                         android:text="Nemate zabilježenih osjećanja"
                         android:textColor="@color/PalleteLightText"
                         android:textSize="14sp"
-                        android:typeface="normal" />
+                        android:typeface="normal"
+                        android:visibility="gone" />
 
 
                     <LinearLayout
@@ -393,163 +394,7 @@
 
                     </LinearLayout>
                 </RelativeLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:fontFamily="@font/alata"
-                    android:text="Statistika"
-                    android:textColor="@color/PalleteLightText"
-                    android:textSize="14dp" />
-                <RelativeLayout
-                    android:layout_marginBottom="20dp"
-                    android:id="@+id/myenliven"
-                    android:padding="30dp"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_height="260dp"
-                    android:layout_width="match_parent"
-                    android:background="@drawable/curved_dark"
-                    android:outlineAmbientShadowColor="@android:color/transparent">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:orientation="vertical"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Moj Enliven Level"
-                            android:fontFamily="@font/alata"
-                            android:textSize="30dp"
-                            android:textColor="@color/Pallete2"/>
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                        <RelativeLayout
-                            android:layout_gravity="center_vertical"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <ProgressBar
-                                android:id="@+id/lvlBar"
-                                style="@style/CircularDeterminateProgressBar"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_centerInParent="true" />
-
-                            <TextView
-                                android:id="@+id/lvlText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginTop="37dp"
-                                android:fontFamily="@font/alata"
-                                android:text="5"
-                                android:textColor="@color/Pallete2"
-                                android:textSize="42dp" />
-                            <TextView
-                                android:id="@+id/textCurrentXP"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerHorizontal="true"
-                                android:layout_below="@id/lvlBar"
-                                android:layout_marginTop="20dp"
-                                android:fontFamily="@font/alata"
-                                android:text="15/100 XP"
-                                android:textColor="@color/Pallete2"
-                                android:textSize="18dp" />
-
-                        </RelativeLayout>
-                                <com.anychart.AnyChartView
-                                android:id="@+id/lvlChart"
-                                android:layout_margin="20dp"
-                                android:layout_width="200dp"
-                                android:layout_height="150dp"/>
-                    </LinearLayout>
-
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_marginBottom="60dp"
-                    android:padding="30dp"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:background="@drawable/curved_dark"
-                    android:outlineAmbientShadowColor="@android:color/transparent">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:orientation="vertical"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Enliven Streaks"
-                            android:layout_marginBottom="20dp"
-                            android:fontFamily="@font/alata"
-                            android:textSize="30dp"
-                            android:textColor="@color/Pallete2"/>
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <RelativeLayout
-                                android:layout_gravity="center_vertical"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:layout_marginTop="20dp"
-                                    android:id="@+id/fireImg"
-                                    android:layout_width="50dp"
-                                    android:layout_height="50dp"
-                                    android:layout_centerInParent="true"
-                                    android:src="@drawable/fire_icon"
-                                    app:tint="@color/Pallete1" />
-
-                                <TextView
-                                    android:layout_marginTop="20dp"
-                                    android:id="@+id/streakText"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_centerInParent="true"
-                                    android:fontFamily="@font/alata"
-                                    android:text="5"
-                                    android:textColor="@color/Pallete2"
-                                    android:textSize="30dp" />
-
-
-                            </RelativeLayout>
-                            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-                                android:layout_marginStart="20dp"
-                                android:layout_gravity="center"
-                                style="@style/CalenderViewCustom"
-                                app:mcv_weekDayTextAppearance="@style/CalenderViewWeekCustomText"
-                                app:mcv_headerTextAppearance="@style/CalenderViewWeekCustomText"
-                                app:mcv_dateTextAppearance="@style/CalenderViewDateCustomText"
-                                android:id="@+id/streaksCalender"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                </RelativeLayout>
 
 
             </LinearLayout>
