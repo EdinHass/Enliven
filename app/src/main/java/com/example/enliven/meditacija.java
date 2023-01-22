@@ -23,4 +23,10 @@ public class meditacija extends AppCompatActivity {
                 (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.meditacijaFragmentView);
         NavController navController = navHostFragment.getNavController();
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
 }

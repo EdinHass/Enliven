@@ -145,9 +145,7 @@ public class vjezba_disanja1 extends AppCompatActivity {
                              }
 
                          }
-                         if(mediaPlayer.isPlaying()){
-                             mediaPlayer.pause();
-                         }
+
 
 
 
@@ -197,13 +195,16 @@ public class vjezba_disanja1 extends AppCompatActivity {
 
     }
     public void onBackPressed(){
-        mediaPlayer.stop();
-        mediaPlayer.reset();
-        mediaPlayer.release();
-        mediaPlayer=null;
+
 
         this.finish();
         }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
 
     }
 
