@@ -2,11 +2,11 @@ package com.example.enliven;
 public class PostaviVjezbeDisanja {
 
     String name;
-    String soundData;
+    int soundData;
     int vrijemeUzdisanja;
     int vrijemeIzdisanja;
 
-    public PostaviVjezbeDisanja(String name, String soundData, int vrijemeIzdisanja, int vrijemeUzdisanja){
+    public PostaviVjezbeDisanja(String name, int soundData, int vrijemeIzdisanja, int vrijemeUzdisanja){
         this.name=name;
         this.soundData=soundData;
         this.vrijemeIzdisanja=vrijemeIzdisanja;
@@ -16,8 +16,8 @@ public class PostaviVjezbeDisanja {
     public String getName(){return name;}
     public void setName(String name){this.name=name;}
 
-    public String getSoundData(){return  soundData;}
-    public void setSoundData(String soundData){this.soundData=soundData;}
+    public int getSoundData(){return  soundData;}
+    public void setSoundData(int soundData){this.soundData=soundData;}
 
     public int getVrijemeUzdisanja(){return vrijemeUzdisanja;}
     public void setVrijemeUzdisanja(int vrijemeUzdisanja){this.vrijemeUzdisanja=vrijemeUzdisanja;}

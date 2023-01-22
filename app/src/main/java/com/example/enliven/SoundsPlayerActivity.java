@@ -91,7 +91,7 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         favoriteIcon = findViewById(R.id.favoriteIcon);
         SharedPreferences prefs = getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
 
-        addXP(20, getApplicationContext(), startButton.getRootView(), addXP.SOUNDS);
+        addXP(20, this, startButton.getRootView(), addXP.SOUNDS);
 
         Drawable soundIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_volume_up_24);
         Drawable playIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_play_arrow_24);

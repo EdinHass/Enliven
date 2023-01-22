@@ -90,12 +90,14 @@ class ChatActivity : AppCompatActivity() {
                     }
                     prefs.edit().putBoolean("Anon", false).apply()
                     FirebaseAuth.getInstance().signOut()
-                    finish()})
+                    finish()
+                })
             builder.setNegativeButton("Ne",
                 DialogInterface.OnClickListener { dialog, which -> })
 
             val dialog: AlertDialog = builder.create()
             dialog.show()
+
 
             true
         }

@@ -32,7 +32,7 @@ public class vjezba_disanja_za_opusatnje extends Fragment {
                 Navigation.findNavController(getActivity(), R.id.vjezbedisanja_fragmentView).navigate(R.id.action_vjezba_disanja_za_opusatnje_to_vjezba_disanja_opustanje_info);
             }
         });
-        Postavi(imageView, new PostaviVjezbeDisanja("Vježba za opuštanje", "https://cdn.pixabay.com/download/audio/2022/05/16/audio_ad37bb9464.mp3?filename=eilegeiya-111391.mp3", 6 , 4));
+        Postavi(imageView, new PostaviVjezbeDisanja("Vježba za opuštanje", R.raw.waves_custom_sounds, 6 , 4));
                 return view1;
     }
 

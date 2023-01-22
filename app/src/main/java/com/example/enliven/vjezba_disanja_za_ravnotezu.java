@@ -30,7 +30,7 @@ public class vjezba_disanja_za_ravnotezu extends Fragment {
                 Navigation.findNavController(getActivity(), R.id.vjezbedisanja_fragmentView).navigate(R.id.action_vjezba_disanja_za_ravnotezu_to_vjezba_disanja_za_ravnotezu_info);
             }
         });
-        Postavi(imageView, new PostaviVjezbeDisanja("Vježba za ravnotežu", "https://cdn.pixabay.com/download/audio/2021/09/06/audio_37aad22374.mp3?filename=sandy-beach-calm-waves-water-nature-sounds-8052.mp3", 7 , 5));
+        Postavi(imageView, new PostaviVjezbeDisanja("Vježba za ravnotežu", R.raw.rain_custom_sounds, 7 , 5));
         return view1;
     }
 

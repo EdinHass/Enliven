@@ -29,7 +29,7 @@ public class vjezbe_disanja_za_fokus extends Fragment {
                 Navigation.findNavController(getActivity(), R.id.vjezbedisanja_fragmentView).navigate(R.id.action_vjezbe_disanja_za_fokus_to_vjezbe_disanja_za_fokus_info);
             }
         });
-        Postavi(imageView, new PostaviVjezbeDisanja("Vježba za fokus", "https://cdn.pixabay.com/download/audio/2022/03/09/audio_83741f0f8c.mp3?filename=mystic-forest-ambient-23812.mp3", 4 , 2));
+        Postavi(imageView, new PostaviVjezbeDisanja("Vježba za fokus", R.raw.piano_custom_sounds, 4 , 2));
         return view1;
     }
 

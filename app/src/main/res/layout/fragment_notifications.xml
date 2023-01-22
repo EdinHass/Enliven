@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".ui.notifications.NotificationsFragment">
     <LinearLayout
+        android:id="@+id/mainLayoutSleep"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/gradient_dark_purple"
