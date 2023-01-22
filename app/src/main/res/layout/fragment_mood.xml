@@ -29,7 +29,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/alata"
-                android:text="Koje osjećanje danas preovladava?"
+                android:text="Koje osjećanje je danas prisutno?"
                 android:textColor="@color/white"
                 android:textSize="30dp"
                 android:typeface="normal" />
@@ -44,8 +44,8 @@
                 android:id="@+id/crta"></LinearLayout>
 
             <LinearLayout
-                android:layout_width="409dp"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -54,233 +54,369 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/crta">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="0dp"
                     android:layout_marginBottom="20dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center">
 
                     <RelativeLayout
-                        android:layout_width="320dp"
-                        android:layout_height="80dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="20dp"
-                        android:background="@drawable/curved_light"
+                        android:id="@+id/sreca"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_toStartOf="@+id/ljuta"
+                        >
+
+                    <RelativeLayout
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:background="@drawable/circle_background_purple"
                         android:clickable="true"
                         android:id="@+id/textsreca1">
 
                         <LinearLayout
+                            android:id="@+id/ikonaSreca"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:orientation="vertical"
-                            android:layout_marginStart="20dp">
+                            android:layout_centerInParent="true"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/happyicon" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_below="@+id/textsreca1"
+                            android:layout_centerHorizontal="true"
+
+
+                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/alata"
                                 android:text="Sreća"
                                 android:textColor="@color/white"
-                                android:textSize="30dp" />
+                                android:textSize="30dp"
+                                />
 
-                        </LinearLayout>
+                        </RelativeLayout>
                     </RelativeLayout>
 
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="horizontal">
-
                     <RelativeLayout
-                        android:layout_width="320dp"
-                        android:layout_height="80dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="20dp"
-                        android:background="@drawable/curved_light"
-                        android:clickable="true"
-                        android:id="@+id/textljutnja1">
+                        android:id="@+id/ljuta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        >
 
-                        <LinearLayout
+                        <RelativeLayout
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:background="@drawable/circle_background_purple"
+                            android:clickable="true"
+                            android:id="@+id/textljutnja1">
+
+                            <LinearLayout
+                                android:id="@+id/ikonaLjutnja"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:orientation="vertical"
+                                android:layout_centerInParent="true"
+                                android:gravity="center">
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/angryicon" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                        <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
                             android:orientation="vertical"
-                            android:layout_marginStart="20dp">
+                            android:layout_below="@+id/textljutnja1"
+                            android:layout_centerHorizontal="true"
+
+
+                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/alata"
                                 android:text="Ljutnja"
                                 android:textColor="@color/white"
-                                android:textSize="30dp" />
+                                android:textSize="30dp"
+                                />
 
-                        </LinearLayout>
-
+                        </RelativeLayout>
                     </RelativeLayout>
 
-
-                </LinearLayout>
-
-                <LinearLayout
+                </RelativeLayout>
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="0dp"
                     android:layout_marginBottom="20dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center">
 
                     <RelativeLayout
-                        android:layout_width="320dp"
-                        android:layout_height="80dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="20dp"
-                        android:background="@drawable/curved_light"
-                        android:clickable="true"
-                        android:id="@+id/textstrah1">
+                        android:id="@+id/strah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_toStartOf="@+id/stres"
+                        >
 
-                        <LinearLayout
+                        <RelativeLayout
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:background="@drawable/circle_background_purple"
+                            android:clickable="true"
+                            android:id="@+id/textstrah1">
+
+                            <LinearLayout
+                                android:id="@+id/ikonaStrah"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:orientation="vertical"
+                                android:layout_centerInParent="true"
+                                android:gravity="center">
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/scaredicon" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                        <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
                             android:orientation="vertical"
-                            android:layout_marginStart="20dp">
+                            android:layout_below="@+id/textstrah1"
+                            android:layout_centerHorizontal="true"
+
+
+                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/alata"
                                 android:text="Strah"
                                 android:textColor="@color/white"
-                                android:textSize="30dp" />
+                                android:textSize="30dp"
+                                />
 
-                        </LinearLayout>
-
+                        </RelativeLayout>
                     </RelativeLayout>
 
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="horizontal">
-
                     <RelativeLayout
-                        android:layout_width="320dp"
-                        android:layout_height="80dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="20dp"
-                        android:background="@drawable/curved_light"
-                        android:clickable="true"
-                        android:id="@+id/textstres1">
+                        android:id="@+id/stres"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        >
 
-                        <LinearLayout
+                        <RelativeLayout
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:background="@drawable/circle_background_purple"
+                            android:clickable="true"
+                            android:id="@+id/textstres1">
+
+                            <LinearLayout
+                                android:id="@+id/ikonaStres"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:orientation="vertical"
+                                android:layout_centerInParent="true"
+                                android:gravity="center">
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/stressicon" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                        <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
                             android:orientation="vertical"
-                            android:layout_marginStart="20dp">
+                            android:layout_below="@+id/textstres1"
+                            android:layout_centerHorizontal="true"
+
+
+                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/alata"
                                 android:text="Stres"
                                 android:textColor="@color/white"
-                                android:textSize="30dp" />
+                                android:textSize="30dp"
+                                />
 
-                        </LinearLayout>
-
+                        </RelativeLayout>
                     </RelativeLayout>
 
-
-                </LinearLayout>
-
-
-                <LinearLayout
+                </RelativeLayout>
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="0dp"
                     android:layout_marginBottom="20dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center">
 
                     <RelativeLayout
-                        android:layout_width="320dp"
-                        android:layout_height="80dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="20dp"
-                        android:background="@drawable/curved_light"
-                        android:clickable="true"
-                        android:id="@+id/texttuga1">
+                        android:id="@+id/tuga"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_toStartOf="@+id/anksioznost"
+                        >
 
-                        <LinearLayout
+                        <RelativeLayout
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:background="@drawable/circle_background_purple"
+                            android:clickable="true"
+                            android:id="@+id/texttuga1">
+
+                            <LinearLayout
+                                android:id="@+id/ikonaTuga"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:orientation="vertical"
+                                android:layout_centerInParent="true"
+                                android:gravity="center">
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/sadicon" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                        <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
                             android:orientation="vertical"
-                            android:layout_marginStart="20dp">
+                            android:layout_below="@+id/texttuga1"
+                            android:layout_centerHorizontal="true"
+
+
+                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/alata"
                                 android:text="Tuga"
                                 android:textColor="@color/white"
-                                android:textSize="30dp" />
+                                android:textSize="30dp"
+                                />
 
-                        </LinearLayout>
+                        </RelativeLayout>
                     </RelativeLayout>
 
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="horizontal">
-
                     <RelativeLayout
-                        android:layout_width="320dp"
-                        android:layout_height="80dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="20dp"
-                        android:background="@drawable/curved_light"
-                        android:clickable="true"
-                        android:id="@+id/textanksioznost1">
+                        android:id="@+id/anksioznost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        >
 
+                        <RelativeLayout
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:background="@drawable/circle_background_purple"
+                            android:clickable="true"
+                            android:id="@+id/textanksioznost1">
 
-                        <LinearLayout
+                            <LinearLayout
+                                android:id="@+id/ikonaAnksioznost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:orientation="vertical"
+                                android:layout_centerInParent="true"
+                                android:gravity="center">
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/anxiousicon" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                        <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
                             android:orientation="vertical"
-                            android:layout_marginStart="20dp">
+                            android:layout_below="@+id/textanksioznost1"
+                            android:layout_centerHorizontal="true"
+
+
+                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/alata"
                                 android:text="Anksioznost"
                                 android:textColor="@color/white"
-                                android:textSize="30dp" />
+                                android:textSize="30dp"
+                                />
 
-                        </LinearLayout>
-
+                        </RelativeLayout>
                     </RelativeLayout>
 
-
-                </LinearLayout>
-
+                </RelativeLayout>
 
 
 
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:layout_marginHorizontal="20dp"
+    >
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nastavi"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:visibility="invisible"/>
 
+</RelativeLayout>
 
 
             </LinearLayout>
