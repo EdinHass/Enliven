@@ -164,7 +164,6 @@ fun addXP(XP: Int, context: Context, view: View, case: addXP) {
     if ((currentXP - XP) / 100 < currentXP / 100) {
         val builder: AlertDialog.Builder = AlertDialog.Builder(context, R.style.MyDialogTheme)
         builder.setView(R.layout.levelup_dialog)
-
         builder.setCancelable(true)
         builder.setPositiveButton("OK") { dialog, which -> }
         val dialog: AlertDialog = builder.create()
@@ -177,12 +176,12 @@ fun addXP(XP: Int, context: Context, view: View, case: addXP) {
                 .angle(Angle.BOTTOM)
                 .spread(Spread.ROUND)
                 .shapes(Arrays.asList(Shape.Square, Shape.Circle))
-                .colors(Arrays.asList(0xfce18a, 0xff726d, 0xf4306d, 0xb48def))
+                .colors(Arrays.asList(0xc61366, 0x2d1a4e, 0x46434a))
                 .setSpeedBetween(0f, 15f)
                 .position(Relative(0.0, 0.0).between(Relative(1.0, 0.0)))
                 .build()
         )
-        dialog.findViewById<TextView>(R.id.lvlTextDialog)?.setText("LVL${currentXP / 100}")
+        dialog.findViewById<TextView>(R.id.lvlTextDialog)?.setText("LVL ${currentXP / 100}")
 
     }
 }
