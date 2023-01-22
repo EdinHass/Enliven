@@ -16,6 +16,18 @@
         <action
             android:id="@+id/action_meditacije_to_meditacija_za_pocetnike"
             app:destination="@id/meditacija_za_pocetnike" />
+        <action
+            android:id="@+id/action_meditacije_to_osnovna_meditacija"
+            app:destination="@id/osnovna_meditacija" />
+        <action
+            android:id="@+id/action_meditacije_to_meditacija_za_spavanje"
+            app:destination="@id/meditacija_za_spavanje" />
+        <action
+            android:id="@+id/action_meditacije_to_vjezba_disanja_za_san2"
+            app:destination="@id/vjezba_disanja_za_san2" />
+        <action
+            android:id="@+id/action_meditacije_to_vjezba_disanja_za_opusatnje2"
+            app:destination="@id/vjezba_disanja_za_opusatnje2" />
     </fragment>
     <dialog
         android:id="@+id/dialog_meditacija"
@@ -67,7 +79,16 @@
         android:name="com.example.enliven.meditacija_za_spavanje"
         android:label="fragment_meditacija_za_spavanje"
         tools:layout="@layout/fragment_meditacija_za_spavanje" />
-
+    <fragment
+        android:id="@+id/vjezba_disanja_za_san2"
+        android:name="com.example.enliven.vjezba_disanja_za_san"
+        android:label="fragment_vjezba_disanja_za_san"
+        tools:layout="@layout/fragment_vjezba_disanja_za_san" />
+    <fragment
+        android:id="@+id/vjezba_disanja_za_opusatnje2"
+        android:name="com.example.enliven.vjezba_disanja_za_opusatnje"
+        android:label="fragment_vjezba_disanja_za_opusatnje"
+        tools:layout="@layout/fragment_vjezba_disanja_za_opusatnje" />
 
 
 </navigation>
