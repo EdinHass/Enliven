@@ -11,6 +11,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.example.enliven.databinding.FragmentDashboardBinding;
@@ -25,6 +26,7 @@ public class mood extends Fragment {
     RelativeLayout strah;
     RelativeLayout stres;
     RelativeLayout anksioznost;
+    Button button;
 
     private FragmentMoodBinding binding;
 
@@ -43,6 +45,9 @@ public class mood extends Fragment {
         stres=view1.findViewById(R.id.textstres1);
         anksioznost=view1.findViewById(R.id.textanksioznost1);
         tuga=view1.findViewById(R.id.texttuga1);
+        button=view1.findViewById(R.id.button2);
+
+        button.setVisibility(View.INVISIBLE);
 
 
 
@@ -50,7 +55,15 @@ public class mood extends Fragment {
         tuga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view1).navigate(R.id.action_mood_to_tuga_tips);
+                button.setVisibility(View.VISIBLE);
+
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Navigation.findNavController(view1).navigate(R.id.action_mood_to_tuga_tips);
+                    }
+                });
+
 
             }
         });
@@ -58,7 +71,14 @@ public class mood extends Fragment {
         sreca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view1).navigate(R.id.action_mood_to_sreca_tips);
+                button.setVisibility(View.VISIBLE);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Navigation.findNavController(view1).navigate(R.id.action_mood_to_sreca_tips);
+                    }
+                });
+
 
 
             }
@@ -69,7 +89,14 @@ public class mood extends Fragment {
         ljutnja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view1).navigate(R.id.action_mood_to_ljutnja_tips);
+                button.setVisibility(View.VISIBLE);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Navigation.findNavController(view1).navigate(R.id.action_mood_to_ljutnja_tips);
+                    }
+                });
+
 
             }
         });
@@ -77,7 +104,14 @@ public class mood extends Fragment {
         strah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view1).navigate(R.id.action_mood_to_strah_tips);
+                button.setVisibility(View.VISIBLE);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Navigation.findNavController(view1).navigate(R.id.action_mood_to_strah_tips);
+                    }
+                });
+
 
             }
         });
@@ -85,7 +119,14 @@ public class mood extends Fragment {
         stres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view1).navigate(R.id.action_mood_to_stres_tips);
+                button.setVisibility(View.VISIBLE);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Navigation.findNavController(view1).navigate(R.id.action_mood_to_stres_tips);
+                    }
+                });
+
 
             }
         });
@@ -93,7 +134,14 @@ public class mood extends Fragment {
         anksioznost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view1).navigate(R.id.action_mood_to_anksioznost_tips);
+                button.setVisibility(View.VISIBLE);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Navigation.findNavController(view1).navigate(R.id.action_mood_to_anksioznost_tips);
+                    }
+                });
+
 
             }
         });

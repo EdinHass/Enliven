@@ -26,10 +26,10 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/alata"
-                android:text="Koje osjećanje je danas prisutno?"
+                android:text="Osjećanje danas?"
                 android:textColor="@color/white"
                 android:textSize="30dp"
                 android:typeface="normal" />
@@ -39,14 +39,14 @@
                 android:layout_height="2dp"
                 android:orientation="vertical"
                 android:background="@color/white"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:id="@+id/crta"></LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="40dp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -72,8 +72,8 @@
                         >
 
                     <RelativeLayout
-                        android:layout_width="140dp"
-                        android:layout_height="140dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:background="@drawable/circle_background_purple"
                         android:clickable="true"
                         android:id="@+id/textsreca1">
@@ -109,7 +109,7 @@
                                 android:fontFamily="@font/alata"
                                 android:text="Sreća"
                                 android:textColor="@color/white"
-                                android:textSize="30dp"
+                                android:textSize="18dp"
                                 />
 
                         </RelativeLayout>
@@ -121,11 +121,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
+                        android:layout_toStartOf="@+id/strah"
                         >
 
                         <RelativeLayout
-                            android:layout_width="140dp"
-                            android:layout_height="140dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:background="@drawable/circle_background_purple"
                             android:clickable="true"
                             android:id="@+id/textljutnja1">
@@ -161,33 +162,21 @@
                                 android:fontFamily="@font/alata"
                                 android:text="Ljutnja"
                                 android:textColor="@color/white"
-                                android:textSize="30dp"
+                                android:textSize="18dp"
                                 />
 
                         </RelativeLayout>
                     </RelativeLayout>
-
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center"
-                    android:gravity="center">
-
                     <RelativeLayout
                         android:id="@+id/strah"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
-                        android:layout_toStartOf="@+id/stres"
                         >
 
                         <RelativeLayout
-                            android:layout_width="140dp"
-                            android:layout_height="140dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:background="@drawable/circle_background_purple"
                             android:clickable="true"
                             android:id="@+id/textstrah1">
@@ -223,23 +212,32 @@
                                 android:fontFamily="@font/alata"
                                 android:text="Strah"
                                 android:textColor="@color/white"
-                                android:textSize="30dp"
+                                android:textSize="18dp"
                                 />
 
                         </RelativeLayout>
                     </RelativeLayout>
+                </RelativeLayout>
 
-
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center">
                     <RelativeLayout
                         android:id="@+id/stres"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
+                        android:layout_toStartOf="@+id/tuga"
                         >
 
                         <RelativeLayout
-                            android:layout_width="140dp"
-                            android:layout_height="140dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:background="@drawable/circle_background_purple"
                             android:clickable="true"
                             android:id="@+id/textstres1">
@@ -275,21 +273,11 @@
                                 android:fontFamily="@font/alata"
                                 android:text="Stres"
                                 android:textColor="@color/white"
-                                android:textSize="30dp"
+                                android:textSize="18dp"
                                 />
 
                         </RelativeLayout>
                     </RelativeLayout>
-
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center"
-                    android:gravity="center">
 
                     <RelativeLayout
                         android:id="@+id/tuga"
@@ -300,11 +288,13 @@
                         >
 
                         <RelativeLayout
-                            android:layout_width="140dp"
-                            android:layout_height="140dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:background="@drawable/circle_background_purple"
                             android:clickable="true"
-                            android:id="@+id/texttuga1">
+                            android:id="@+id/texttuga1"
+                            android:layout_centerHorizontal="true"
+                            >
 
                             <LinearLayout
                                 android:id="@+id/ikonaTuga"
@@ -337,7 +327,7 @@
                                 android:fontFamily="@font/alata"
                                 android:text="Tuga"
                                 android:textColor="@color/white"
-                                android:textSize="30dp"
+                                android:textSize="18dp"
                                 />
 
                         </RelativeLayout>
@@ -348,15 +338,16 @@
                         android:id="@+id/anksioznost"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginHorizontal="10dp"
                         >
 
                         <RelativeLayout
-                            android:layout_width="140dp"
-                            android:layout_height="140dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:background="@drawable/circle_background_purple"
                             android:clickable="true"
-                            android:id="@+id/textanksioznost1">
+                            android:id="@+id/textanksioznost1"
+                            android:layout_centerHorizontal="true">
 
                             <LinearLayout
                                 android:id="@+id/ikonaAnksioznost"
@@ -389,13 +380,13 @@
                                 android:fontFamily="@font/alata"
                                 android:text="Anksioznost"
                                 android:textColor="@color/white"
-                                android:textSize="30dp"
+                                android:textSize="18dp"
                                 />
 
                         </RelativeLayout>
                     </RelativeLayout>
-
                 </RelativeLayout>
+
 
 
 
