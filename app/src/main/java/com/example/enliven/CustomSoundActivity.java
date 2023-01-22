@@ -57,7 +57,7 @@ public class CustomSoundActivity extends AppCompatActivity implements TimerDialo
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Vaš zvuk");
 
-        addXP(5, getApplicationContext(), startButton.getRootView(), addXP.SOUNDS);
+        addXP(20, this, startButton.getRootView(), addXP.SOUNDS);
 
         Drawable soundIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_volume_up_24);
         Drawable playIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_play_arrow_24);

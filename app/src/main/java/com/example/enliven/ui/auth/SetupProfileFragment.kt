@@ -3,6 +3,7 @@ package com.example.enliven.ui.auth
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
@@ -34,10 +35,10 @@ class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile) {
     private lateinit var currentUser: FirebaseUser
     private val streamApi = StreamTokenApi()
     private val tokenProvider = StreamTokenProvider(streamApi)
-    private val sharedPreference =
-        requireActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE)
+    private lateinit var sharedPreference : SharedPreferences
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        sharedPreference = requireActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE)
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSetupProfileBinding.bind(view)
         binding.buttonNext.isEnabled = false
@@ -50,8 +51,9 @@ class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile) {
         currentUser = FirebaseAuth.getInstance().currentUser ?: return
 
         binding.buttonNext.setOnClickListener {
-
-
+            binding.buttonNext.isEnabled = false
+            binding.buttonNext.visibility = View.GONE
+            binding.loadingImg.visibility = View.VISIBLE
             val executor = Executors.newSingleThreadExecutor()
             val handler = Handler(Looper.getMainLooper())
             executor.execute {
@@ -64,6 +66,7 @@ class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile) {
                     }
 
                 handler.post {
+                    binding.buttonNext.isEnabled = false
                     binding.buttonNext.visibility = View.GONE
                     binding.loadingImg.visibility = View.VISIBLE
                 }
