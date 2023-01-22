@@ -282,7 +282,7 @@
                 android:text="Započni"
                 android:textColor="@color/PalleteLightText"
                 android:textSize="14dp"
-                android:layout_marginVertical="20dp"
+                android:layout_marginBottom="20dp"
                 />
 
             <RelativeLayout
