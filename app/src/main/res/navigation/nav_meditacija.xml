@@ -14,9 +14,6 @@
             android:id="@+id/action_meditacije_to_dialog_meditacija"
             app:destination="@id/dialog_meditacija" />
         <action
-            android:id="@+id/action_meditacije_to_vjezba_disanja"
-            app:destination="@id/vjezba_disanja" />
-        <action
             android:id="@+id/action_meditacije_to_meditacija_za_pocetnike"
             app:destination="@id/meditacija_za_pocetnike" />
     </fragment>
@@ -45,11 +42,6 @@
             android:id="@+id/action_meditacija_za_pocetnike_to_meditacija_za_spavanje"
             app:destination="@id/meditacija_za_spavanje" />
     </fragment>
-    <activity
-        android:id="@+id/vjezba_disanja"
-        android:name="com.example.enliven.vjezba_disanja"
-        android:label="activity_vjezba_disanja"
-        tools:layout="@layout/activity_vjezba_disanja" />
     <fragment
         android:id="@+id/osnovna_meditacija"
         android:name="com.example.enliven.osnovna_meditacija"
@@ -75,4 +67,7 @@
         android:name="com.example.enliven.meditacija_za_spavanje"
         android:label="fragment_meditacija_za_spavanje"
         tools:layout="@layout/fragment_meditacija_za_spavanje" />
+
+
+
 </navigation>

@@ -2,6 +2,7 @@ package com.example.enliven.ui.chat
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
@@ -23,6 +24,7 @@ class NewMessageFragment : Fragment(R.layout.fragment_new_message) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentNewMessageBinding.bind(view)
+        (activity as AppCompatActivity).supportActionBar?.setTitle("Enliven Social")
         (activity as AppCompatActivity).supportActionBar?.hide()
         currentUser = FirebaseAuth.getInstance().currentUser ?: return
         binding.recyclerViewUsers.adapter = adapter
@@ -51,7 +53,7 @@ class NewMessageFragment : Fragment(R.layout.fragment_new_message) {
             if(it.isSuccess){
                 adapter.submitList(it.data())
             }else{
-
+                Log.e("ERROR", it.error().message!!)
             }
         }
     }

@@ -303,7 +303,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:layout_toRightOf="@id/textCardSounds1"
+                        android:layout_toEndOf="@id/textCardSounds1"
                         android:src="@drawable/ambient_illustration2" />
 
 
@@ -330,17 +330,17 @@
 
                     <TextView
                         android:id="@+id/nohisttext"
-                        android:visibility="gone"
-                        android:layout_below="@id/historijaem"
-                        android:layout_centerHorizontal="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
+                        android:layout_below="@id/historijaem"
+                        android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
+                        android:fontFamily="@font/alata"
                         android:text="Nemate zabilježenih osjećanja"
                         android:textColor="@color/PalleteLightText"
                         android:textSize="14sp"
-                        android:typeface="normal" />
+                        android:typeface="normal"
+                        android:visibility="gone" />
 
 
                     <LinearLayout
@@ -393,8 +393,9 @@
 
 
                     </LinearLayout>
-
                 </RelativeLayout>
+
+
 
             </LinearLayout>
         </ScrollView>

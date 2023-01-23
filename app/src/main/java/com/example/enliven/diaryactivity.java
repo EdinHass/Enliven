@@ -22,6 +22,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.material.card.MaterialCardView;
@@ -36,7 +37,7 @@ public class diaryactivity extends AppCompatActivity {
     ListView notesListView;
     TextView emptyText;
     ImageView dodaj_note;
-    TextView plus;
+    RelativeLayout plus;
 
     static List<String> notes;
     HashSet<String> noteSet;
@@ -58,7 +59,7 @@ public class diaryactivity extends AppCompatActivity {
         notesListView = findViewById(R.id.notes_ListView);
         emptyText = findViewById(R.id.emptyText);
         dodaj_note = findViewById(R.id.imageView2);
-        plus=findViewById(R.id.textView6);
+        plus=findViewById(R.id.plusButton);
         notes = new ArrayList<>();
 
         noteSet = (HashSet<String>) sharedpref.getStringSet("notes", null);

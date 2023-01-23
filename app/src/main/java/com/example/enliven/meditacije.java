@@ -1,5 +1,6 @@
 package com.example.enliven;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,7 +16,7 @@ import android.widget.RelativeLayout;
 
 public class meditacije extends Fragment {
 
-   private RelativeLayout zastoMeditacije, vjezbaDisanja;
+   private RelativeLayout zastoMeditacije, vjezbaDisanja, interaktivnemeditacije;
    private LinearLayout meditacijaZaPocetnike;
 
     @Override
@@ -26,6 +27,7 @@ public class meditacije extends Fragment {
         zastoMeditacije=view1.findViewById(R.id.zastomeditacija);
         meditacijaZaPocetnike=view1.findViewById(R.id.meditacija);
         vjezbaDisanja=view1.findViewById(R.id.cardvjezbaDisanja);
+
 
         zastoMeditacije.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,10 +46,14 @@ public class meditacije extends Fragment {
         vjezbaDisanja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(getActivity(),R.id.meditacijaFragmentView).navigate(R.id.action_meditacije_to_vjezba_disanja);
+                Intent intent = new Intent(getContext(), vjezbe_disanjaa.class);
+                startActivity(intent);
             }
         });
 
+
+
         return view1;
     }
+
 }

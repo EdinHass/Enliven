@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/gradient_dark_purple"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:text="Vježba disanja za ravnotežu"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textFontWeight="800"
+            android:typeface="normal" />
+
+        <LinearLayout
+
+            android:layout_width="80dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            android:layout_marginVertical="20dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:id="@+id/zastotext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:text="Vježbu disanja uparite s pažljivim mentalnim pregledom tijela. Obratite pažnju na to kako se osjećate. Ova će vježba biti od koristi kada se želite osjećati prisutnijima, a ujedno je i moćno sredstvo za smirivanje živaca i tjeskobe, kao i da postignete ravnotežu tijela i misli."
+                android:textColor="@color/Pallete2"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:fontFamily="@font/alata"/>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="20dp"/>
+
+        <RelativeLayout
+            android:id="@+id/tehnika1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+
+
+            <TextView
+                android:id="@+id/tehnika"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/alata"
+                android:text="Tehnika:"
+                android:textColor="@color/Pallete2"
+                android:textSize="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/tehnika2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_below="@+id/tehnika1"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/alata"
+                android:text="Disanje sa mentalnim pregledom tijela"
+                android:textColor="@color/Pallete2"
+                android:textSize="18dp" />
+
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/tehnika3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/tehnika2"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/alata"
+                android:text="Udisaj 5 sekunde \nIzdisaj 7 sekunde"
+                android:textColor="@color/Pallete2"
+                android:textSize="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/tehnika3"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/alata"
+                android:gravity="center"
+                android:text="Možete izvesti vježbu sjedeći, stojeći ili čak ležeći na leđima.\nJednu ruku stavite na srce, a drugu na trbuh.\nJednostavno primijetite, osjetite i postanite svjesni svog daha i tijela.\nPočevši od dna tijela, obratite pažnju na nožne prste, udahnite i izdahnite.\nPenjite se gore uz tijelo dok pažljivo skenirate svaki dio tijela, od stopala do glave, i pritom sve pratite udahom i izdahom"
+                android:textColor="@color/Pallete2"
+                android:textSize="18dp" />
+        </RelativeLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="20dp"/>
+
+        <RelativeLayout
+            android:id="@+id/kako1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+
+
+            <TextView
+                android:id="@+id/kako"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/alata"
+                android:text="Kako ovo funkcioniše?"
+                android:textColor="@color/Pallete2"
+                android:textSize="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/kako1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/alata"
+                android:gravity="center"
+                android:text="Duboki udah praćen dužim, sporijim izdahom signalizira stanje opuštenosti tijela i smanjuje stres. Razmišljanje o tome kako dišete odvraća Vas da mislite o drugim stvarima i tako poboljšava Vašu fokusiranost i koncentraciju."
+                android:textColor="@color/Pallete2"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+</ScrollView>

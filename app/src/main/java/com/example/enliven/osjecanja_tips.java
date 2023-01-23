@@ -21,9 +21,10 @@ public class osjecanja_tips extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return super.onSupportNavigateUp();
-    }
+
+        @Override
+        public boolean onSupportNavigateUp() {
+            finish();
+            return true;
+        }
 }

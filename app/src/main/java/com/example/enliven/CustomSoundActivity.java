@@ -1,5 +1,7 @@
 package com.example.enliven;
 
+import static com.example.enliven.ui.UtilsKt.addXP;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.enliven.ui.addXP;
 import com.google.android.material.slider.LabelFormatter;
 import com.google.android.material.slider.Slider;
 
@@ -53,6 +56,8 @@ public class CustomSoundActivity extends AppCompatActivity implements TimerDialo
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Vaš zvuk");
+
+        addXP(20, this, startButton.getRootView(), addXP.SOUNDS);
 
         Drawable soundIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_volume_up_24);
         Drawable playIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_play_arrow_24);

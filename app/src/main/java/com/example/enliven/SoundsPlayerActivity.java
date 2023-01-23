@@ -1,5 +1,6 @@
 package com.example.enliven;
 
+import static com.example.enliven.ui.UtilsKt.addXP;
 import static com.example.enliven.ui.UtilsKt.interpolateColor;
 import static com.example.enliven.ui.UtilsKt.manipulateColor;
 
@@ -44,6 +45,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.enliven.ui.addXP;
 import com.google.android.material.slider.LabelFormatter;
 import com.google.android.material.slider.Slider;
 import com.google.android.material.snackbar.Snackbar;
@@ -88,6 +90,8 @@ public class SoundsPlayerActivity extends AppCompatActivity implements TimerDial
         startButton = findViewById(R.id.startButton);
         favoriteIcon = findViewById(R.id.favoriteIcon);
         SharedPreferences prefs = getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
+
+        addXP(20, this, startButton.getRootView(), addXP.SOUNDS);
 
         Drawable soundIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_volume_up_24);
         Drawable playIcon = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.ic_baseline_play_arrow_24);

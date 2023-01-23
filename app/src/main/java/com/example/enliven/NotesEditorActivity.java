@@ -31,17 +31,9 @@ import java.util.List;
 public class NotesEditorActivity extends AppCompatActivity {
 
     EditText noteEditText;
-
-
-
-
     String emotion;
     int noteId;
-
     SharedPreferences sharedPreferences;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

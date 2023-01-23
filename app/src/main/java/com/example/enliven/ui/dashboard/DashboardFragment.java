@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.SystemClock;
 import android.util.Log;
 import android.util.TypedValue;
@@ -23,23 +25,44 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.content.res.AppCompatResources;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
+import com.example.enliven.MoodActivity;
 import com.example.enliven.R;
+import com.example.enliven.MainActivity;
 import com.example.enliven.SocialDialogFragment;
+import com.example.enliven.SoundsPlayerActivity;
 import com.example.enliven.citati_activity;
 import com.example.enliven.data.ImageURLS;
 import com.example.enliven.data.UserExtra;
 import  com.example.enliven.diaryactivity;
 import com.example.enliven.databinding.FragmentDashboardBinding;
 import com.example.enliven.general_tip;
+import com.example.enliven.general_tips;
+import com.example.enliven.osjecanja_tips;
+import com.example.enliven.sreca_tips;
 import com.example.enliven.ui.auth.AuthActivity;
 import com.example.enliven.ui.chat.ChatActivity;
+import com.example.enliven.data.StreamTokenApi;
+import com.example.enliven.data.UserExtra;
+import com.example.enliven.ui.auth.AuthActivity;
+import com.example.enliven.ui.auth.SetupProfileFragment;
+import com.example.enliven.ui.auth.StreamTokenProvider;
+import com.example.enliven.ui.chat.ChatActivity;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.ktx.Firebase;
+
+import org.w3c.dom.Text;
+import java.sql.CallableStatement;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import io.getstream.chat.android.client.ChatClient;
 import io.getstream.chat.android.client.models.User;
@@ -293,7 +316,7 @@ public class DashboardFragment extends Fragment {
             ImageView temp = new ImageView(getContext());
             if(prefs.getBoolean("storyCitat"+i, false)) {
                 currIndex[0]++;
-                temp.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.checked));
+                temp.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.check));
             }
             else{
                 continue;
