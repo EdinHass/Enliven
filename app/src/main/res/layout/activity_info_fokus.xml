@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".info_funkcija"
+    android:background="@drawable/gradient_dark_purple">
+
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Lekcija 5: Fokus"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textFontWeight="800"
+                android:typeface="normal" />
+
+            <LinearLayout
+
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:background="@color/white"
+                android:layout_marginVertical="20dp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txt10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="3dp"
+                    android:fontFamily="@font/alata"
+                    android:text="1. Dio"
+                    android:textColor="@color/Pallete3"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/txt11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt10"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="3dp"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/dio19"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:layout_width="332dp"
+                    android:layout_height="122dp"
+                    android:layout_below="@id/txt11"
+                    android:layout_marginTop="26dp"
+                    android:src="@drawable/focus"></ImageView>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="396dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="3dp"
+                    android:fontFamily="@font/alata"
+                    android:text="2. Dio"
+                    android:textColor="@color/Pallete3"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt1"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="3dp"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/dio20"
+                    android:textColor="@color/Pallete2"
+                    android:textSize="14dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/curved_dark"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="3dp"
+                    android:fontFamily="@font/alata"
+                    android:text="3. Dio"
+                    android:textColor="@color/Pallete3"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/txt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt3"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="3dp"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/dio21"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

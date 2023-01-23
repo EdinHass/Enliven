@@ -15,8 +15,8 @@
             app:destination="@id/final_habitslist" />
 
         <action
-            android:id="@+id/action_navigation_home_to_habits"
-            app:destination="@id/habits"/>
+            android:id="@+id/action_navigation_home_to_main_habits"
+            app:destination="@id/mainhabits"/>
 
         <action
             android:id="@+id/action_navigation_home_to_MainActivity2"
@@ -76,10 +76,10 @@
         tools:layout="@layout/activity_final_habitslist" />
 
     <activity
-        android:id="@+id/habits"
-        android:name="com.example.enliven.habits"
-        android:label="activity_habits"
-        tools:layout="@layout/activity_habits" />
+        android:id="@+id/mainhabits"
+        android:name="com.example.enliven.main_habits"
+        android:label="activity_main_habits"
+        tools:layout="@layout/activity_main_habits" />
 
     <activity
         android:id="@+id/main2"

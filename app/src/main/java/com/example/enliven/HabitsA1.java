@@ -36,52 +36,27 @@ public class HabitsA1 extends RecyclerView.Adapter<HabitsA.ViewHolder> {
         String picUrl = "";
         switch (position) {
             case 0: {
-                picUrl = "icon_goal";
+                picUrl = "brightness";
                 holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.addhabit_background));
                 break;
             }
             case 1: {
-                picUrl = "icon_boardgame";
+                picUrl = "meditation";
                 holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.addhabit_background));
                 break;
             }
             case 2: {
-                picUrl = "icon_puzzle";
+                picUrl = "bed__1_";
                 holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.addhabit_background));
                 break;
             }
             case 3: {
-                picUrl = "icon_workout";
+                picUrl = "exercise";
                 holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.addhabit_background));
                 break;
             }
             case 4: {
-                picUrl = "icon_instruments";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.addhabit_background));
-                break;
-            }
-            case 5: {
-                picUrl = "icon_recipe";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.addhabit_background));
-                break;
-            }
-            case 6: {
-                picUrl = "icon_karaoke";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.addhabit_background));
-                break;
-            }
-            case 7: {
-                picUrl = "icon_tidy";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.addhabit_background));
-                break;
-            }
-            case 8: {
-                picUrl = "icon_plants";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.addhabit_background));
-                break;
-            }
-            case 9: {
-                picUrl = "icon_laundry";
+                picUrl = "brush_teeth";
                 holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.addhabit_background));
                 break;
             }

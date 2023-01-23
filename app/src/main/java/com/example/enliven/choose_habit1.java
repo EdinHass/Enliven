@@ -35,16 +35,12 @@ public class choose_habit1 extends AppCompatActivity {
         recyclerViewhabitslist1.setLayoutManager(linearLayoutManager);
 
         ArrayList<HabitsDomain> habits = new ArrayList<>();
-        habits.add(new HabitsDomain("nesto drugo", "icon_goal"));
-        habits.add(new HabitsDomain("Igraj društvene igre", "icon_calendar"));
-        habits.add(new HabitsDomain("Sklopi slagalicu", "icon_puzzle"));
-        habits.add(new HabitsDomain("Trening", "icon_workout"));
-        habits.add(new HabitsDomain("Nauči svirati instrument", "icon_instruments"));
-        habits.add(new HabitsDomain("Probaj novi recept", "icon_recipe"));
-        habits.add(new HabitsDomain("Karaoke", "icon_karaoke"));
-        habits.add(new HabitsDomain("Očisti kuću", "icon_tidy"));
-        habits.add(new HabitsDomain("Zalij cvijeće", "icon_plants"));
-        habits.add(new HabitsDomain("Operi veš", "icon_laundry"));
+        habits.add(new HabitsDomain("Ustani ranije", "brightness"));
+        habits.add(new HabitsDomain("Meditiraj", "meditation"));
+        habits.add(new HabitsDomain("Napravi krevet", "bed__1_"));
+        habits.add(new HabitsDomain("Jutarnje vježbe", "exercise"));
+        habits.add(new HabitsDomain("Operi zube", "brush_teeth"));
+
 
         adapter3  = new HabitsA1(habits);
         recyclerViewhabitslist1.setAdapter(adapter3);
