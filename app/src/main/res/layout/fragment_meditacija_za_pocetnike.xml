@@ -39,17 +39,151 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alata"
+                android:text="Izaberi neku od meditacija:"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                />
+
+            <TextView
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Meditacije za svaki dan"
+                android:textColor="@color/PalleteLightText"
+                android:textSize="14dp"
+                android:layout_marginTop="20dp"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/med1"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/curved_dark"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/alata"
+                        android:text="Za"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="prihvaćanje i opuštanje misli"
+                        android:textColor="@color/Pallete3"
+                        android:textSize="14dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/ambient_illustration2" />
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/med3"
+                android:gravity="center_vertical"
+                android:layout_toEndOf="@id/med1"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="190dp"
+                android:layout_width="fill_parent"
+                android:padding="20dp"
+                android:background="@drawable/curved_dark"
+                android:clickable="true"
+                android:outlineAmbientShadowColor="@android:color/transparent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Za"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:gravity="center"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="prihvaćanje sebe"
+                        android:textColor="@color/Pallete3"
+                        android:textSize="14dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/prihvacanje_sebe"
+
+                        ></ImageView>
+
+                </LinearLayout>
+            </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
                 android:text="Izdvajamo"
                 android:textColor="@color/PalleteLightText"
                 android:textSize="14dp"
+                android:layout_marginBottom="20dp"
                 />
+
             <RelativeLayout
-                android:id="@+id/med3"
+                android:id="@+id/med4"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_width="320dp"
+                android:layout_width="360dp"
                 android:layout_height="180dp"
-                android:background="@drawable/curved_dark"
+                android:background="@drawable/newcard_pink"
                 android:clickable="true"
                 >
 
@@ -57,123 +191,22 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
+                   android:layout_centerVertical="true"
                     android:orientation="vertical"
                     android:layout_marginStart="20dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/alata"
-                        android:text="Meditacija"
-                        android:textColor="@color/white"
+                        android:text="Za bolji san"
+                        android:textColor="@color/Pallete3"
                         android:textSize="30dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="za prihćanje sebe"
-                        android:layout_marginTop="20dp"
-                        android:textColor="@color/Pallete3"
-                        android:textSize="18dp" />
                 </LinearLayout>
 
             </RelativeLayout>
-            <TextView
-                android:layout_marginStart="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/alata"
-                android:text="Preporučene meditacije za svaki dan"
-                android:textColor="@color/PalleteLightText"
-                android:textSize="14dp"
-                android:layout_marginVertical="20dp"
-                />
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RelativeLayout
-                    android:id="@+id/med1"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_width="320dp"
-                    android:layout_height="180dp"
-                    android:background="@drawable/curved_dark"
-                    android:clickable="true"
-                    android:outlineAmbientShadowColor="@android:color/transparent">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="20dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
-                            android:text="Osnovna \nmeditacija"
-                            android:textColor="@color/white"
-                            android:textSize="30dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:fontFamily="@font/alata"
-                            android:text="za prihvaćanje i otpuštanje misli"
-                            android:textColor="@color/Pallete3"
-                            android:textSize="18dp" />
-                    </LinearLayout>
-
-                </RelativeLayout>
 
 
-                <RelativeLayout
-                    android:id="@+id/med4"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_width="320dp"
-                    android:layout_height="180dp"
-                    android:background="@drawable/curved_dark"
-                    android:clickable="true"
-                    android:outlineAmbientShadowColor="@android:color/transparent">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:orientation="vertical"
-                        android:layout_marginStart="20dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
-                            android:text="Meditacija"
-                            android:textColor="@color/white"
-                            android:textSize="30dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:fontFamily="@font/alata"
-                            android:text="za bolji san"
-                            android:textColor="@color/Pallete3"
-                            android:textSize="18dp" />
-                    </LinearLayout>
-
-                </RelativeLayout>
-            </LinearLayout>
-
-            </HorizontalScrollView>
 
             <TextView
                 android:layout_marginStart="20dp"
@@ -183,93 +216,119 @@
                 android:text="Meditacije za raspoloženje"
                 android:textColor="@color/PalleteLightText"
                 android:textSize="14dp"
-                android:layout_marginVertical="20dp"
+                android:layout_marginTop="20dp"
                 />
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:id="@+id/med2"
+                    android:layout_width="160dp"
+                    android:layout_height="190dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/curved_dark"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:clickable="true">
 
-                    <RelativeLayout
-                        android:id="@+id/med2"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_width="320dp"
-                        android:layout_height="180dp"
-                        android:background="@drawable/curved_dark"
-                        android:clickable="true"
-                        android:outlineAmbientShadowColor="@android:color/transparent">
-
-                        <LinearLayout
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="20dp"
-                            android:orientation="vertical">
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/alata"
+                            android:text="Za"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"/>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/alata"
-                                android:text="Meditacija"
-                                android:textColor="@color/white"
-                                android:textSize="30dp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="20dp"
-                                android:fontFamily="@font/alata"
-                                android:text="za ublažavanje stresa"
-                                android:textColor="@color/Pallete3"
-                                android:textSize="18dp" />
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-
-                    <RelativeLayout
-                        android:id="@+id/med5"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_width="320dp"
-                        android:layout_height="180dp"
-                        android:background="@drawable/curved_dark"
-                        android:clickable="true"
-                        android:outlineAmbientShadowColor="@android:color/transparent">
-
-                        <LinearLayout
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="20dp"
-                            android:orientation="vertical">
+                            android:fontFamily="@font/alata"
+                            android:text="ublažavanje stresa"
+                            android:textColor="@color/Pallete3"
+                            android:textSize="14dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"/>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/alata"
-                                android:text="Meditacija"
-                                android:textColor="@color/white"
-                                android:textSize="30dp" />
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/za_stres" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="20dp"
-                                android:fontFamily="@font/alata"
-                                android:text="za bolje raspoloženje"
-                                android:textColor="@color/Pallete3"
-                                android:textSize="18dp" />
-                        </LinearLayout>
+                    </LinearLayout>
 
-                    </RelativeLayout>
+
+
+
+
+
+
+
                 </LinearLayout>
 
-            </HorizontalScrollView>
+                <RelativeLayout
+                    android:id="@+id/med5"
+                    android:gravity="center_vertical"
+                    android:layout_toEndOf="@id/med2"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="190dp"
+                    android:layout_width="fill_parent"
+                    android:padding="20dp"
+                    android:background="@drawable/curved_dark"
+                    android:clickable="true"
+                    android:outlineAmbientShadowColor="@android:color/transparent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Za"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            android:gravity="center"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="bolje raspoloženje"
+                            android:textColor="@color/Pallete3"
+                            android:textSize="14dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="20dp"
+                            android:gravity="center"/>
+
+                        <ImageView
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/za_raspolozenje"
+
+                            ></ImageView>
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
 
 
 

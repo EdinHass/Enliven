@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".mood"
     android:background="@drawable/gradient_dark_purple">
-
-    <ScrollView
-        android:id="@+id/moodfragmentview"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/alata"
                 android:text="Osjećanje danas?"
@@ -39,29 +31,36 @@
                 android:layout_height="2dp"
                 android:orientation="vertical"
                 android:background="@color/white"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:id="@+id/crta"></LinearLayout>
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:id="@+id/crta"
+                android:layout_below="@id/textView3"
+               />
+<LinearLayout
+    android:id="@+id/osjecanja"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_below="@+id/crta"
+    android:layout_centerInParent="true"
+    android:gravity="center_vertical"
+    android:layout_alignParentBottom="true"
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/crta">
-
+    >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
                 <RelativeLayout
+                    android:id="@+id/first"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:layout_marginBottom="20dp"
                     android:orientation="horizontal"
                     android:layout_gravity="center"
-                    android:gravity="center">
+                    android:gravity="center"
+                    >
 
                     <RelativeLayout
                         android:id="@+id/sreca"
@@ -219,14 +218,17 @@
                     </RelativeLayout>
                 </RelativeLayout>
 
+
                 <RelativeLayout
+                    android:id="@+id/second"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:layout_marginBottom="20dp"
                     android:orientation="horizontal"
                     android:layout_gravity="center"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:layout_below="@+id/first">
                     <RelativeLayout
                         android:id="@+id/stres"
                         android:layout_width="wrap_content"
@@ -390,29 +392,20 @@
 
 
 
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="20dp"
-    android:layout_marginHorizontal="20dp"
-    >
+    </RelativeLayout>
+</LinearLayout>
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            android:text="Nastavi"
+            android:visibility="invisible" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nastavi"
-        android:layout_alignParentEnd="true"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="20dp"
-        android:visibility="invisible"/>
+
 
 </RelativeLayout>
-
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
