@@ -16,7 +16,7 @@ import android.widget.RelativeLayout;
 
 public class meditacije extends Fragment {
 
-   private RelativeLayout zastoMeditacije, vjezbaDisanja, interaktivnemeditacije;
+   private RelativeLayout zastoMeditacije, vjezbaDisanja, MeditacijaZaSpavanje, MeditacijaZaPocetnike, VjezbaDisanjaZaSan, VjezbaDisanjaZaOpustanje;
    private LinearLayout meditacijaZaPocetnike;
 
     @Override
@@ -27,7 +27,38 @@ public class meditacije extends Fragment {
         zastoMeditacije=view1.findViewById(R.id.zastomeditacija);
         meditacijaZaPocetnike=view1.findViewById(R.id.meditacija);
         vjezbaDisanja=view1.findViewById(R.id.cardvjezbaDisanja);
+        MeditacijaZaSpavanje=view1.findViewById(R.id.meditacijaZaSpavanje);
+        MeditacijaZaPocetnike=view1.findViewById(R.id.MeditacijaZaPocetnike);
+        VjezbaDisanjaZaOpustanje=view1.findViewById(R.id.VjezbaDisanjaZaOpustanje);
+        VjezbaDisanjaZaSan=view1.findViewById(R.id.VjezbaDisanjaZaSan);
 
+        MeditacijaZaPocetnike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(getActivity(),R.id.meditacijaFragmentView).navigate(R.id.action_meditacije_to_osnovna_meditacija);
+            }
+        });
+
+        MeditacijaZaSpavanje.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(getActivity(),R.id.meditacijaFragmentView).navigate(R.id.action_meditacije_to_meditacija_za_spavanje);
+            }
+        });
+
+        VjezbaDisanjaZaSan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(getActivity(),R.id.meditacijaFragmentView).navigate(R.id.action_meditacije_to_vjezba_disanja_za_san2);
+            }
+        });
+
+        VjezbaDisanjaZaOpustanje.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(getActivity(),R.id.meditacijaFragmentView).navigate(R.id.action_meditacije_to_vjezba_disanja_za_opusatnje2);
+            }
+        });
 
         zastoMeditacije.setOnClickListener(new View.OnClickListener() {
             @Override

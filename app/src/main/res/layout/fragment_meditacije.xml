@@ -92,6 +92,187 @@
             </LinearLayout>
 
         </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_marginStart="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Preporučeno"
+                            android:textColor="@color/PalleteLightText"
+                            android:textSize="14dp"
+                            android:layout_marginBottom="20dp"/>
+
+                        <HorizontalScrollView
+                            android:scrollbars="none"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:id="@+id/recommended"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/meditacijaZaSpavanje"
+                                    android:layout_width="220dp"
+                                    android:layout_height="150dp"
+                                    android:layout_marginStart="20dp"
+                                    android:background="@drawable/newcard_blue"
+                                    android:clickable="true"
+                                    android:padding="30dp">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:fontFamily="@font/alata"
+                                            android:text="Meditacija"
+                                            android:textColor="@color/white"
+                                            android:textSize="18dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/alata"
+                                            android:text="za mirno spavanje"
+
+                                            android:textColor="@color/Pallete2"
+                                            android:textSize="14dp" />
+
+
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/MeditacijaZaPocetnike"
+                                    android:layout_width="220dp"
+                                    android:layout_height="150dp"
+                                    android:layout_marginStart="20dp"
+                                    android:background="@drawable/newcard_pink"
+                                    android:clickable="true"
+                                    android:padding="30dp">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:fontFamily="@font/alata"
+                                            android:text="Meditacija"
+                                            android:textColor="@color/white"
+                                            android:textSize="18dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/alata"
+                                            android:text="za početnike"
+
+                                            android:textColor="@color/Pallete2"
+                                            android:textSize="14dp" />
+
+                                    </LinearLayout>
+
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/VjezbaDisanjaZaSan"
+                                    android:layout_width="220dp"
+                                    android:layout_height="150dp"
+                                    android:layout_marginStart="20dp"
+                                    android:background="@drawable/newcard_green"
+                                    android:clickable="true"
+                                    android:padding="30dp">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:fontFamily="@font/alata"
+                                            android:text="Vježba disanja"
+                                            android:textColor="@color/white"
+                                            android:textSize="18dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/alata"
+                                            android:text="za bolji san"
+
+                                            android:textColor="@color/Pallete2"
+                                            android:textSize="14dp" />
+
+
+
+                                    </LinearLayout>
+
+
+
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:id="@+id/VjezbaDisanjaZaOpustanje"
+                                    android:layout_width="220dp"
+                                    android:layout_height="150dp"
+                                    android:layout_marginStart="20dp"
+                                    android:background="@drawable/newcard_blue"
+                                    android:clickable="true"
+                                    android:padding="30dp">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:fontFamily="@font/alata"
+                                            android:text="Vježba disanja"
+                                            android:textColor="@color/white"
+                                            android:textSize="18dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/alata"
+                                            android:text="za opuštanje"
+
+                                            android:textColor="@color/Pallete2"
+                                            android:textSize="14dp" />
+
+
+
+                                    </LinearLayout>
+
+
+
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </HorizontalScrollView>
+                    </LinearLayout>
 
             <TextView
                 android:layout_marginStart="20dp"
@@ -101,7 +282,7 @@
                 android:text="Započni"
                 android:textColor="@color/PalleteLightText"
                 android:textSize="14dp"
-                android:layout_marginVertical="20dp"
+                android:layout_marginBottom="20dp"
                 />
 
             <RelativeLayout

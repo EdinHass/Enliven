@@ -10,19 +10,11 @@
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        >
-       <ScrollView
-           android:layout_width="match_parent"
-           android:layout_height="match_parent">
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:orientation="vertical">
-
 
 
            <TextView
-               android:layout_marginTop="20dp"
-               android:layout_marginStart="20dp"
+               android:layout_marginHorizontal="20dp"
+               android:layout_marginVertical="20dp"
                android:id="@+id/textnaslov"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -39,181 +31,266 @@
                android:layout_width="80dp"
                android:layout_height="2dp"
                android:background="@color/white"
-               android:layout_marginStart="20dp"
+               android:layout_marginHorizontal="20dp"
                android:orientation="horizontal"
-               android:layout_marginVertical="20dp"/>
+               android:layout_marginBottom="20dp"
+               android:layout_below="@+id/textnaslov"/>
 
-           <TextView
-               android:layout_marginStart="20dp"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:fontFamily="@font/alata"
-               android:text="Preporučeno"
-               android:textColor="@color/PalleteLightText"
-               android:textSize="14dp"
-               />
+               <TextView
+                   android:layout_marginHorizontal="20dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/alata"
+                   android:text="Izaberi vježbu disanja za:"
+                   android:textColor="@color/white"
+                   android:textSize="18dp"
+                   android:layout_marginBottom="20dp"
+                   android:layout_below="@+id/linearLayout"
+                   />
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_centerInParent="true"
+           android:layout_gravity="center_vertical"
+           android:gravity="center_vertical"
+           android:orientation="vertical">
 
            <RelativeLayout
-               android:id="@+id/zasan"
-               android:layout_marginHorizontal="20dp"
+               android:id="@+id/first"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
                android:layout_marginTop="20dp"
-               android:layout_width="match_parent"
-               android:layout_height="180dp"
-               android:background="@drawable/curved_dark"
-               android:clickable="true"
-               >
+               android:layout_marginBottom="20dp"
+               android:gravity="center"
+               android:orientation="horizontal">
 
-
-               <LinearLayout
+               <RelativeLayout
+                   android:id="@+id/zasan1"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_centerVertical="true"
-                   android:orientation="vertical"
-                   android:layout_marginStart="20dp">
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:fontFamily="@font/alata"
-                       android:text="Vježba disanja"
-                       android:textColor="@color/white"
-                       android:textSize="30dp" />
+                   android:layout_marginHorizontal="40dp"
+                   android:layout_toStartOf="@+id/zaopustanje1">
 
-                   <TextView
+                   <RelativeLayout
+                       android:id="@+id/zasan"
+                       android:layout_width="120dp"
+                       android:layout_height="120dp"
+                       android:background="@drawable/circle_background_purple"
+                       android:clickable="true">
+
+                       <LinearLayout
+                           android:id="@+id/ikonaSan"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_centerInParent="true"
+                           android:layout_centerVertical="true"
+                           android:gravity="center"
+                           android:orientation="vertical">
+
+                           <ImageView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:src="@drawable/sleep__2_" />
+
+                       </LinearLayout>
+
+                   </RelativeLayout>
+
+                   <RelativeLayout
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:fontFamily="@font/alata"
-                       android:text="za bolji san"
-                       android:layout_marginTop="20dp"
-                       android:textColor="@color/Pallete3"
-                       android:textSize="18dp" />
-               </LinearLayout>
+                       android:layout_below="@+id/zasan"
+                       android:layout_centerHorizontal="true"
+                       android:orientation="vertical"
+
+
+                       >
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:fontFamily="@font/alata"
+                           android:text="San"
+                           android:textColor="@color/white"
+                           android:textSize="18dp" />
+
+                   </RelativeLayout>
+               </RelativeLayout>
+
+
+               <RelativeLayout
+                   android:id="@+id/zaopustanje1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginHorizontal="40dp">
+
+                   <RelativeLayout
+                       android:id="@+id/zaopustanje"
+                       android:layout_width="120dp"
+                       android:layout_height="120dp"
+                       android:background="@drawable/circle_background_purple"
+                       android:clickable="true">
+
+                       <LinearLayout
+                           android:id="@+id/ikonaOpustanje"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_centerInParent="true"
+                           android:layout_centerVertical="true"
+                           android:gravity="center"
+                           android:orientation="vertical">
+
+                           <ImageView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:src="@drawable/relax" />
+
+                       </LinearLayout>
+
+                   </RelativeLayout>
+
+                   <RelativeLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_below="@+id/zaopustanje"
+                       android:layout_centerHorizontal="true"
+                       android:orientation="vertical"
+
+
+                       >
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:fontFamily="@font/alata"
+                           android:text="Opuštanje"
+                           android:textColor="@color/white"
+                           android:textSize="18dp" />
+
+                   </RelativeLayout>
+               </RelativeLayout>
 
            </RelativeLayout>
 
-           <TextView
-               android:layout_marginStart="20dp"
-               android:layout_width="wrap_content"
+           <RelativeLayout
+               android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:fontFamily="@font/alata"
-               android:text="Istraži"
-               android:textColor="@color/PalleteLightText"
-               android:textSize="14dp"
-               android:layout_marginVertical="20dp"
-               />
-
-           <RelativeLayout
-               android:id="@+id/zaopustanje"
-               android:layout_marginHorizontal="20dp"
+               android:layout_gravity="center"
+               android:layout_marginTop="20dp"
                android:layout_marginBottom="20dp"
-               android:layout_width="match_parent"
-               android:layout_height="180dp"
-               android:background="@drawable/curved_dark"
-               android:clickable="true"
-               >
+               android:gravity="center"
+               android:orientation="horizontal">
 
-
-               <LinearLayout
+               <RelativeLayout
+                   android:id="@+id/zafokus1"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_centerVertical="true"
-                   android:orientation="vertical"
-                   android:layout_marginStart="20dp">
-                   <TextView
+                   android:layout_marginHorizontal="40dp"
+                   android:layout_toStartOf="@+id/zaravnotezu1">
+
+                   <RelativeLayout
+                       android:id="@+id/zafokus"
+                       android:layout_width="120dp"
+                       android:layout_height="120dp"
+                       android:background="@drawable/circle_background_purple"
+                       android:clickable="true">
+
+                       <LinearLayout
+                           android:id="@+id/ikonaFokus"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_centerInParent="true"
+                           android:layout_centerVertical="true"
+                           android:gravity="center"
+                           android:orientation="vertical">
+
+                           <ImageView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:src="@drawable/focus__2_" />
+
+                       </LinearLayout>
+
+                   </RelativeLayout>
+
+                   <RelativeLayout
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:fontFamily="@font/alata"
-                       android:text="Vježba disanja"
-                       android:textColor="@color/white"
-                       android:textSize="30dp" />
-
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:fontFamily="@font/alata"
-                       android:text="za opuštanje"
-                       android:layout_marginTop="20dp"
-                       android:textColor="@color/Pallete3"
-                       android:textSize="18dp" />
-               </LinearLayout>
-
-           </RelativeLayout>
-
-           <RelativeLayout
-               android:id="@+id/zafokus"
-               android:layout_marginHorizontal="20dp"
-               android:layout_marginBottom="20dp"
-               android:layout_width="match_parent"
-               android:layout_height="180dp"
-               android:background="@drawable/curved_dark"
-               android:clickable="true"
-               >
+                       android:layout_below="@+id/zafokus"
+                       android:layout_centerHorizontal="true"
+                       android:orientation="vertical"
 
 
-               <LinearLayout
+                       >
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:fontFamily="@font/alata"
+                           android:text="Fokus"
+                           android:textColor="@color/white"
+                           android:textSize="18dp" />
+
+                   </RelativeLayout>
+               </RelativeLayout>
+
+
+               <RelativeLayout
+                   android:id="@+id/zaravnotezu1"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_centerVertical="true"
-                   android:orientation="vertical"
-                   android:layout_marginStart="20dp">
-                   <TextView
+                   android:layout_marginHorizontal="40dp">
+
+                   <RelativeLayout
+                       android:id="@+id/zaravnotezu"
+                       android:layout_width="120dp"
+                       android:layout_height="120dp"
+                       android:background="@drawable/circle_background_purple"
+                       android:clickable="true">
+
+                       <LinearLayout
+                           android:id="@+id/ikonaRavnoteza"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_centerInParent="true"
+                           android:layout_centerVertical="true"
+                           android:gravity="center"
+                           android:orientation="vertical">
+
+                           <ImageView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:src="@drawable/balance__2_" />
+
+                       </LinearLayout>
+
+                   </RelativeLayout>
+
+                   <RelativeLayout
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:fontFamily="@font/alata"
-                       android:text="Vježba disanja"
-                       android:textColor="@color/white"
-                       android:textSize="30dp" />
-
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:fontFamily="@font/alata"
-                       android:text="za bolji fokus"
-                       android:layout_marginTop="20dp"
-                       android:textColor="@color/Pallete3"
-                       android:textSize="18dp" />
-               </LinearLayout>
-
-           </RelativeLayout>
-           <RelativeLayout
-               android:id="@+id/zaravnotezu"
-               android:layout_marginHorizontal="20dp"
-               android:layout_marginBottom="20dp"
-               android:layout_width="match_parent"
-               android:layout_height="180dp"
-               android:background="@drawable/curved_dark"
-               android:clickable="true"
-               >
+                       android:layout_below="@+id/zaravnotezu"
+                       android:layout_centerHorizontal="true"
+                       android:orientation="vertical"
 
 
-               <LinearLayout
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_centerVertical="true"
-                   android:orientation="vertical"
-                   android:layout_marginStart="20dp">
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:fontFamily="@font/alata"
-                       android:text="Vježba disanja"
-                       android:textColor="@color/white"
-                       android:textSize="30dp" />
+                       >
 
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:fontFamily="@font/alata"
-                       android:text="za ravnotežu"
-                       android:layout_marginTop="20dp"
-                       android:textColor="@color/Pallete3"
-                       android:textSize="18dp" />
-               </LinearLayout>
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:fontFamily="@font/alata"
+                           android:text="Ravnotežu"
+                           android:textColor="@color/white"
+                           android:textSize="18dp" />
+
+                   </RelativeLayout>
+               </RelativeLayout>
 
            </RelativeLayout>
        </LinearLayout>
-
-
-       </ScrollView>
    </RelativeLayout>
 
 

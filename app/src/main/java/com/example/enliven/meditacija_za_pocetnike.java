@@ -9,12 +9,14 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 
 public class meditacija_za_pocetnike extends Fragment {
 
-    RelativeLayout med1, med2, med3, med4, med5;
+    RelativeLayout med3, med4, med5;
+    LinearLayout med1, med2;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
