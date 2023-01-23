@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,11 +20,8 @@ import java.util.List;
 public class MainActivity2 extends AppCompatActivity implements OnDialogCloseListener{
 
 
-    private ImageView cardplus;
-
-
     private RecyclerView mRecycleview;
-    private ImageView fab;
+    private TextView btn;
     private DataBaseHelper myDB;
     private List<ToDoModel> mList;
     private ToDoA adapter;
@@ -36,12 +34,12 @@ public class MainActivity2 extends AppCompatActivity implements OnDialogCloseLis
         setContentView(R.layout.activity_main2);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle("Meditacije");
+        actionBar.setTitle("To-Do List");
 
 
 
         mRecycleview = findViewById(R.id.rv);
-        fab= findViewById(R.id.cardplus);
+        btn= findViewById(R.id.addbtn);
         myDB = new DataBaseHelper(MainActivity2.this);
         mList = new ArrayList<>();
         adapter = new ToDoA(myDB, MainActivity2.this);
@@ -54,7 +52,7 @@ public class MainActivity2 extends AppCompatActivity implements OnDialogCloseLis
         Collections.reverse(mList);
         adapter.setTasks(mList);
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addhabit.newInstance().show(getSupportFragmentManager(), addhabit.TAG);

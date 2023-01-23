@@ -35,15 +35,15 @@ public class choose_habit extends AppCompatActivity {
 
         ArrayList<HabitsDomain> habits = new ArrayList<>();
         habits.add(new HabitsDomain("Online učenje", "icon_laptop"));
-        habits.add(new HabitsDomain("Igraj društvene igre", "icon_boardgame"));
-        habits.add(new HabitsDomain("Sklopi slagalicu", "icon_puzzle"));
-        habits.add(new HabitsDomain("Trening", "icon_workout"));
-        habits.add(new HabitsDomain("Nauči svirati instrument", "icon_instruments"));
-        habits.add(new HabitsDomain("Probaj novi recept", "icon_recipe"));
-        habits.add(new HabitsDomain("Karaoke", "icon_karaoke"));
-        habits.add(new HabitsDomain("Očisti kuću", "icon_tidy"));
-        habits.add(new HabitsDomain("Zalije cvijeće", "icon_plants"));
-        habits.add(new HabitsDomain("Operi veš", "icon_laundry"));
+        habits.add(new HabitsDomain("Igraj društvene igre", "ic_boardgame"));
+        habits.add(new HabitsDomain("Sklopi slagalicu", "ic_puzzle"));
+        habits.add(new HabitsDomain("Trening", "ic_fit"));
+        habits.add(new HabitsDomain("Sviraj instrument", "ic_instruments2"));
+        habits.add(new HabitsDomain("Probaj novi recept", "ic_recipe"));
+        habits.add(new HabitsDomain("Karaoke", "ic_karaoke"));
+        habits.add(new HabitsDomain("Očisti kuću", "ic_cleanhouse2"));
+        habits.add(new HabitsDomain("Zalij cvijeće", "ic_plants"));
+        habits.add(new HabitsDomain("Operi veš", "ic_laundry2"));
 
         adapter2  =new HabitsA(habits);
         recyclerViewhabitslist.setAdapter(adapter2);

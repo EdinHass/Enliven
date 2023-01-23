@@ -1,12 +1,9 @@
 package com.example.enliven.ui.dashboard;
 
-import static com.example.enliven.ui.UtilsKt.getcurrentDateAndTime;
-
 import android.content.Intent;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
@@ -19,17 +16,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
@@ -37,13 +31,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import com.anychart.AnyChart;
-import com.anychart.AnyChartView;
-import com.anychart.chart.common.dataentry.DataEntry;
-import com.anychart.chart.common.dataentry.ValueDataEntry;
-import com.anychart.charts.Cartesian;
-import com.anychart.core.cartesian.series.Line;
-import com.example.enliven.EventDecorator;
 import com.example.enliven.MoodActivity;
 import com.example.enliven.R;
 import com.example.enliven.MainActivity;
@@ -70,24 +57,12 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.ktx.Firebase;
-import com.prolificinteractive.materialcalendarview.CalendarDay;
-import com.prolificinteractive.materialcalendarview.CalendarMode;
-import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
 import org.w3c.dom.Text;
 import java.sql.CallableStatement;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import io.getstream.chat.android.client.ChatClient;
 import io.getstream.chat.android.client.models.User;
@@ -126,6 +101,7 @@ public class DashboardFragment extends Fragment {
         tipscard.startAnimation(floatUpFast);
         vodic.startAnimation(floatUpFast);
 
+
         prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
 
 
@@ -147,9 +123,9 @@ public class DashboardFragment extends Fragment {
                     User user = new User();
                     user.setId(currentUser.getUid());
                     HashMap extraData = new HashMap<String, String>();
+                    extraData.put(UserExtra.NAME, prefs.getString("loginName", ""));
+                    extraData.put(UserExtra.PHONE, prefs.getString("loginPhone", ""));
                     extraData.put(UserExtra.IMAGE, getImageEmotion());
-                    extraData.put(UserExtra.XP, prefs.getInt("XP", 0));
-                    extraData.put(UserExtra.STREAK, prefs.getInt("currentStreak", 1));
                     if(ChatClient.instance().getCurrentUser()!=null){
                         ChatClient.instance().getCurrentUser().setImage(getImageEmotion());
                     }
@@ -202,10 +178,11 @@ public class DashboardFragment extends Fragment {
 
         setupLastEmotions();
 
+
+
+
         return root;
     }
-
-
 
     public void setupLastEmotions(){
 
@@ -281,7 +258,6 @@ public class DashboardFragment extends Fragment {
 
     @Override
     public void onResume() {
-        Log.e("IMP", "VIEW RESUMED!");
         story_citati.removeAllViews();
         setupStories();
         setupLastEmotions();
@@ -404,6 +380,4 @@ public class DashboardFragment extends Fragment {
             }
         }
     }
-
-
 }

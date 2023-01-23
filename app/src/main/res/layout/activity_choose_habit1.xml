@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:fontFamily="@font/alata"
-            android:text="12 navika"
+            android:text="5 navika"
             android:textColor="@color/light_gray"
             android:textSize="18dp"
             android:typeface="normal" />

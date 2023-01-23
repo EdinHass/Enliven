@@ -12,12 +12,8 @@
         tools:layout="@layout/fragment_home" >
 
         <action
-            android:id="@+id/action_navigation_home_to_final_habitslist"
-            app:destination="@id/final_habitslist" />
-
-        <action
-            android:id="@+id/action_navigation_home_to_habits"
-            app:destination="@id/habits" />
+            android:id="@+id/action_navigation_home_to_main_habits"
+            app:destination="@id/mainhabits" />
 
         <action
             android:id="@+id/action_navigation_home_to_MainActivity2"
@@ -27,17 +23,20 @@
 
 
     <activity
-        android:id="@+id/habits"
-        android:name="com.example.enliven.habits"
-        android:label="activity_habits"
-        tools:layout="@layout/activity_habits">
+        android:id="@+id/mainhabits"
+        android:name="com.example.enliven.main_habits"
+        android:label="activity_main_habits"
+        tools:layout="@layout/activity_main_habits">
 
         <action
-            android:id="@+id/action_navigation_habits_choose_habit"
-            app:destination="@id/choose_habit" />
+            android:id="@+id/action_navigation_mainhabits_habits"
+            app:destination="@id/habits" />
         <action
-            android:id="@+id/action_navigation_habits_choose_habit1"
-            app:destination="@id/choose_habit1" />
+            android:id="@+id/action_navigation_home_to_final_habitslist"
+            app:destination="@id/final_habitslist" />
+        <action
+            android:id="@+id/action_navigation_home_to_habits_info"
+            app:destination="@id/habitsinfo" />
     </activity>
 
 
@@ -76,6 +75,25 @@
         android:name="com.example.enliven.MainActivity2"
         android:label="activity_main2"
         tools:layout="@layout/activity_main2" />
+
+    <activity
+        android:id="@+id/habits"
+        android:name="com.example.enliven.habits"
+        android:label="activity_habits"
+        tools:layout="@layout/activity_habits">
+
+        <action
+            android:id="@+id/action_navigation_habits_choose_habit1"
+            app:destination="@id/choose_habit1" />
+    </activity>
+
+
+
+    <activity
+        android:id="@+id/habitsinfo"
+        android:name="com.example.enliven.habits_info"
+        android:label="activity_habits_info"
+        tools:layout="@layout/activity_habits_info" />
 
 
 </navigation>
