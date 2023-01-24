@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1080052965076-ebgbddtp3r20d2qegl3ltp30g3t2o7f3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.enliven",
+            "certificate_hash": "2841252723fae91e0d2cae4f30371dea54b2ce50"
+          }
+        },
+        {
           "client_id": "1080052965076-kcn609fjq7j9d8a9hak10gqhv6hk29kb.apps.googleusercontent.com",
           "client_type": 3
         }

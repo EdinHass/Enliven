@@ -92,6 +92,11 @@ class ChatActivity : AppCompatActivity() {
                         }
                     }
                     prefs.edit().putBoolean("Anon", false).apply()
+                    ChatClient.instance().disconnect(false).enqueue(){
+                        if(it.isError){
+                            Log.e("ERROR", it.error().message!!)
+                        }
+                    }
                     FirebaseAuth.getInstance().signOut()
                     finish()
                 })
