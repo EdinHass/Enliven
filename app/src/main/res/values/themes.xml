@@ -57,11 +57,6 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="ThemeOverlay.Enliven.FullscreenContainer" parent="">
-        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
-        <item name="fullscreenTextColor">@color/light_blue_A200</item>
-    </style>
-
     <style name="BottomNavigationViewTextStyle">
         <item name="android:fontFamily">@font/alata</item>
     </style>

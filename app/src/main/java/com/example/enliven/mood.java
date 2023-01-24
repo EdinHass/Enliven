@@ -1,6 +1,8 @@
 package com.example.enliven;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -33,29 +35,28 @@ public class mood extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
-                                ViewGroup container, Bundle savedInstanceState) {
+                             ViewGroup container, Bundle savedInstanceState) {
         View view1 = inflater.inflate(R.layout.fragment_mood, container, false);
 
 
-
-        sreca=view1.findViewById(R.id.textsreca1);
-        tuga=view1.findViewById(R.id.texttuga1);
-        ljutnja=view1.findViewById(R.id.textljutnja1);
-        strah=view1.findViewById(R.id.textstrah1);
-        stres=view1.findViewById(R.id.textstres1);
-        anksioznost=view1.findViewById(R.id.textanksioznost1);
-        tuga=view1.findViewById(R.id.texttuga1);
-        button=view1.findViewById(R.id.button2);
+        sreca = view1.findViewById(R.id.textsreca1);
+        tuga = view1.findViewById(R.id.texttuga1);
+        ljutnja = view1.findViewById(R.id.textljutnja1);
+        strah = view1.findViewById(R.id.textstrah1);
+        stres = view1.findViewById(R.id.textstres1);
+        anksioznost = view1.findViewById(R.id.textanksioznost1);
+        tuga = view1.findViewById(R.id.texttuga1);
+        button = view1.findViewById(R.id.button2);
 
         button.setVisibility(View.INVISIBLE);
-
-
 
 
         tuga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 button.setVisibility(View.VISIBLE);
+                resetall();
+                tuga.setBackgroundTintList(getResources().getColorStateList(R.color.Pallete1, getActivity().getTheme()));
 
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -72,6 +73,8 @@ public class mood extends Fragment {
             @Override
             public void onClick(View view) {
                 button.setVisibility(View.VISIBLE);
+                resetall();
+                sreca.setBackgroundTintList(getResources().getColorStateList(R.color.Pallete1, getActivity().getTheme()));
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -80,16 +83,16 @@ public class mood extends Fragment {
                 });
 
 
-
             }
         });
-
 
 
         ljutnja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 button.setVisibility(View.VISIBLE);
+                resetall();
+                ljutnja.setBackgroundTintList(getResources().getColorStateList(R.color.Pallete1, getActivity().getTheme()));
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -105,6 +108,8 @@ public class mood extends Fragment {
             @Override
             public void onClick(View view) {
                 button.setVisibility(View.VISIBLE);
+                resetall();
+                strah.setBackgroundTintList(getResources().getColorStateList(R.color.Pallete1, getActivity().getTheme()));
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -120,10 +125,13 @@ public class mood extends Fragment {
             @Override
             public void onClick(View view) {
                 button.setVisibility(View.VISIBLE);
+                resetall();
+                stres.setBackgroundTintList(getResources().getColorStateList(R.color.Pallete1, getActivity().getTheme()));
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Navigation.findNavController(view1).navigate(R.id.action_mood_to_stres_tips);
+
                     }
                 });
 
@@ -135,6 +143,8 @@ public class mood extends Fragment {
             @Override
             public void onClick(View view) {
                 button.setVisibility(View.VISIBLE);
+                resetall();
+                anksioznost.setBackgroundTintList(getResources().getColorStateList(R.color.Pallete1, getActivity().getTheme()));
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -148,6 +158,15 @@ public class mood extends Fragment {
 
 
         return view1;
+    }
+
+    void resetall() {
+        tuga.setBackgroundTintList(getResources().getColorStateList(R.color.transparent, getActivity().getTheme()));
+        sreca.setBackgroundTintList(getResources().getColorStateList(R.color.transparent, getActivity().getTheme()));
+        anksioznost.setBackgroundTintList(getResources().getColorStateList(R.color.transparent, getActivity().getTheme()));
+        strah.setBackgroundTintList(getResources().getColorStateList(R.color.transparent, getActivity().getTheme()));
+        stres.setBackgroundTintList(getResources().getColorStateList(R.color.transparent, getActivity().getTheme()));
+        ljutnja.setBackgroundTintList(getResources().getColorStateList(R.color.transparent, getActivity().getTheme()));
     }
 
 
