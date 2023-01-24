@@ -16,6 +16,7 @@
         <item name="colorOnSurface">@color/white</item>
         <item name="colorOnSurfaceVariant">@color/white</item>
 
+        <item name="android:windowBackground">@color/black</item>
     </style>
 
     <style name="ThemeOverlay.Enliven.FullscreenContainer" parent="">

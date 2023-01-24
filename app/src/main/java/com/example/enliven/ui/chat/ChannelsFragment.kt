@@ -6,6 +6,8 @@ import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.drawerlayout.widget.DrawerLayout.LOCK_MODE_UNLOCKED
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -27,6 +29,8 @@ class ChannelsFragment : Fragment(R.layout.fragment_channels){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentChannelsBinding.bind(view)
+        val dl: DrawerLayout? = activity?.findViewById<DrawerLayout>(R.id.drawer_layout);
+        dl?.setDrawerLockMode(LOCK_MODE_UNLOCKED)
         currentUser = FirebaseAuth.getInstance().currentUser ?: return
         (activity as AppCompatActivity).supportActionBar?.title = "Enliven Social"
         (activity as AppCompatActivity).supportActionBar?.show()

@@ -11,10 +11,11 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.core.view.get
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
+import androidx.drawerlayout.widget.DrawerLayout.*
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -37,6 +38,7 @@ class ChatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
         supportActionBar?.title = "Enliven Social"
+        delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES;
 
         val navController by lazy {
             val navHostFragment = supportFragmentManager
@@ -45,6 +47,7 @@ class ChatActivity : AppCompatActivity() {
         }
         this.navController = navController
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
+        drawerLayout.setDrawerLockMode(LOCK_MODE_UNLOCKED)
         val appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         val navView = findViewById<NavigationView>(R.id.nav_view)
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -120,7 +123,6 @@ class ChatActivity : AppCompatActivity() {
             }
 
         })
-
         navController.navigate(R.id.channelsFragment)
 
     }
@@ -153,6 +155,7 @@ class ChatActivity : AppCompatActivity() {
 
     override fun closeOptionsMenu() {
         drawerLayout.closeDrawer(GravityCompat.START)
+        drawerLayout.setDrawerLockMode(LOCK_MODE_LOCKED_CLOSED)
         super.closeOptionsMenu()
     }
 }

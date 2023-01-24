@@ -23,9 +23,12 @@
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
+        app:itemIconTint="@color/Pallete3"
+        android:background="@color/black"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:itemTextColor="@color/Pallete2"
         app:headerLayout="@layout/drawer_layout"
         app:menu="@menu/drawer_menu">
 

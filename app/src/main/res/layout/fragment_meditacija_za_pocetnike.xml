@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alata"
-                android:text="Meditacije"
+                android:text="Meditacije sa koracima"
                 android:textColor="@color/white"
                 android:textSize="30dp"
                 android:textFontWeight="800"
@@ -28,28 +28,18 @@
                 android:layout_marginStart="20dp"/>
 
             <LinearLayout
-
                 android:layout_width="80dp"
                 android:layout_height="2dp"
                 android:background="@color/white"
-                android:layout_marginVertical="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"/>
-            <TextView
-                android:layout_marginStart="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/alata"
-                android:text="Izaberi neku od meditacija:"
-                android:textColor="@color/white"
-                android:textSize="18dp"
-                />
 
             <TextView
                 android:layout_marginStart="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alata"
-                android:text="Meditacije za svaki dan"
+                android:text="Dnevne meditacije"
                 android:textColor="@color/PalleteLightText"
                 android:textSize="14dp"
                 android:layout_marginTop="20dp"
@@ -91,7 +81,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/alata"
-                        android:text=" za opuštanje misli"
+                        android:text=" za opuštanje"
                         android:textColor="@color/Pallete3"
                         android:textSize="14dp"
                         android:layout_gravity="center"
@@ -149,7 +139,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/alata"
-                        android:text="za prihvaćanje sebe"
+                        android:text="za prihvaćanje"
                         android:textColor="@color/Pallete3"
                         android:textSize="14dp"
                         android:layout_gravity="center"
@@ -172,7 +162,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alata"
-                android:text="Izdvajamo"
+                android:text="Izdvojeno"
                 android:textColor="@color/PalleteLightText"
                 android:textSize="14dp"
                 android:layout_marginBottom="20dp"
@@ -182,18 +172,19 @@
                 android:id="@+id/med4"
                 android:layout_marginHorizontal="20dp"
                 android:layout_width="350dp"
-                android:layout_height="180dp"
-                android:background="@drawable/newcard_blue"
+                android:layout_height="220dp"
+                android:background="@drawable/curved_dark"
                 android:clickable="true"
                 >
 
 
                 <LinearLayout
+                    android:id="@+id/mainTextLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                   android:layout_centerVertical="true"
+                    android:layout_centerVertical="true"
                     android:orientation="vertical"
-                    android:layout_marginStart="20dp">
+                    android:layout_marginStart="40dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -206,11 +197,28 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/alata"
                         android:text="za bolji san"
+                        android:textColor="@color/Pallete2"
+                        android:textSize="18dp"
+                        />
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Saznaj više"
                         android:textColor="@color/Pallete3"
                         android:textSize="18dp"
                         />
 
                 </LinearLayout>
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_toRightOf="@id/mainTextLayout"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="20dp"
+                    android:src="@drawable/sleep_illustration"/>
 
             </RelativeLayout>
 
@@ -221,7 +229,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alata"
-                android:text="Meditacije za raspoloženje"
+                android:text="Ostalo"
                 android:textColor="@color/PalleteLightText"
                 android:textSize="14dp"
                 android:layout_marginTop="20dp"
@@ -320,7 +328,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/alata"
-                            android:text="za bolje raspoloženje"
+                            android:text="za raspoloženje"
                             android:textColor="@color/Pallete3"
                             android:textSize="14dp"
                             android:layout_gravity="center"

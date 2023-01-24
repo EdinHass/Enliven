@@ -87,4 +87,6 @@ public class meditacije extends Fragment {
         return view1;
     }
 
+
+
 }

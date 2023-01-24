@@ -35,7 +35,7 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentChatBinding.bind(view)
         currentUser = FirebaseAuth.getInstance().currentUser ?: return
-
+        activity?.closeOptionsMenu()
         (activity as AppCompatActivity).supportActionBar?.hide()
 
         val currentUsersId = currentUser.uid

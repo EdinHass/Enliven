@@ -24,6 +24,7 @@ class NewMessageFragment : Fragment(R.layout.fragment_new_message) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentNewMessageBinding.bind(view)
+        activity?.closeOptionsMenu()
         (activity as AppCompatActivity).supportActionBar?.setTitle("Enliven Social")
         (activity as AppCompatActivity).supportActionBar?.hide()
         currentUser = FirebaseAuth.getInstance().currentUser ?: return

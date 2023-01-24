@@ -12,22 +12,46 @@
         tools:layout="@layout/fragment_meditacije" >
         <action
             android:id="@+id/action_meditacije_to_dialog_meditacija"
-            app:destination="@id/dialog_meditacija" />
+            app:destination="@id/dialog_meditacija"
+            app:enterAnim="@anim/slide_out_bottom_full"
+            app:exitAnim="@anim/fade_out_fast"
+            app:popEnterAnim="@anim/fade_in_fast"
+            app:popExitAnim="@anim/slide_out_bottom_reverse"/>
         <action
             android:id="@+id/action_meditacije_to_meditacija_za_pocetnike"
-            app:destination="@id/meditacija_za_pocetnike" />
+            app:destination="@id/meditacija_za_pocetnike"
+            app:enterAnim="@anim/slide_out_bottom_full"
+            app:exitAnim="@anim/fade_out_fast"
+            app:popEnterAnim="@anim/fade_in_fast"
+            app:popExitAnim="@anim/slide_out_bottom_reverse"/>
         <action
             android:id="@+id/action_meditacije_to_osnovna_meditacija"
-            app:destination="@id/osnovna_meditacija" />
+            app:destination="@id/osnovna_meditacija"
+            app:enterAnim="@anim/slide_out_bottom_full"
+            app:exitAnim="@anim/fade_out_fast"
+            app:popEnterAnim="@anim/fade_in_fast"
+            app:popExitAnim="@anim/slide_out_bottom_reverse"/>
         <action
             android:id="@+id/action_meditacije_to_meditacija_za_spavanje"
-            app:destination="@id/meditacija_za_spavanje" />
+            app:destination="@id/meditacija_za_spavanje"
+            app:enterAnim="@anim/slide_out_bottom_full"
+            app:exitAnim="@anim/fade_out_fast"
+            app:popEnterAnim="@anim/fade_in_fast"
+            app:popExitAnim="@anim/slide_out_bottom_reverse"/>
         <action
             android:id="@+id/action_meditacije_to_vjezba_disanja_za_san2"
-            app:destination="@id/vjezba_disanja_za_san2" />
+            app:destination="@id/vjezba_disanja_za_san2"
+            app:enterAnim="@anim/slide_out_bottom_full"
+            app:exitAnim="@anim/fade_out_fast"
+            app:popEnterAnim="@anim/fade_in_fast"
+            app:popExitAnim="@anim/slide_out_bottom_reverse"/>
         <action
             android:id="@+id/action_meditacije_to_vjezba_disanja_za_opusatnje2"
-            app:destination="@id/vjezba_disanja_za_opusatnje2" />
+            app:destination="@id/vjezba_disanja_za_opusatnje2"
+            app:enterAnim="@anim/slide_out_bottom_full"
+            app:exitAnim="@anim/fade_out_fast"
+            app:popEnterAnim="@anim/fade_in_fast"
+            app:popExitAnim="@anim/slide_out_bottom_reverse"/>
     </fragment>
     <dialog
         android:id="@+id/dialog_meditacija"
@@ -40,19 +64,39 @@
         tools:layout="@layout/fragment_meditacija_za_pocetnike" >
         <action
             android:id="@+id/action_meditacija_za_pocetnike_to_osnovna_meditacija"
-            app:destination="@id/osnovna_meditacija" />
+            app:destination="@id/osnovna_meditacija"
+            app:enterAnim="@anim/slide_out_bottom_full"
+            app:exitAnim="@anim/fade_out_fast"
+            app:popEnterAnim="@anim/fade_in_fast"
+            app:popExitAnim="@anim/slide_out_bottom_reverse"/>
         <action
             android:id="@+id/action_meditacija_za_pocetnike_to_meditacija_stres"
-            app:destination="@id/meditacija_stres" />
+            app:destination="@id/meditacija_stres"
+            app:enterAnim="@anim/slide_out_bottom_full"
+            app:exitAnim="@anim/fade_out_fast"
+            app:popEnterAnim="@anim/fade_in_fast"
+            app:popExitAnim="@anim/slide_out_bottom_reverse"/>
         <action
             android:id="@+id/action_meditacija_za_pocetnike_to_meditacija_prihvacanje_sebe"
-            app:destination="@id/meditacija_prihvacanje_sebe" />
+            app:destination="@id/meditacija_prihvacanje_sebe"
+            app:enterAnim="@anim/slide_out_bottom_full"
+            app:exitAnim="@anim/fade_out_fast"
+            app:popEnterAnim="@anim/fade_in_fast"
+            app:popExitAnim="@anim/slide_out_bottom_reverse"/>
         <action
             android:id="@+id/action_meditacija_za_pocetnike_to_meditacija_za_raspolozenje"
-            app:destination="@id/meditacija_za_raspolozenje" />
+            app:destination="@id/meditacija_za_raspolozenje"
+            app:enterAnim="@anim/slide_out_bottom_full"
+            app:exitAnim="@anim/fade_out_fast"
+            app:popEnterAnim="@anim/fade_in_fast"
+            app:popExitAnim="@anim/slide_out_bottom_reverse"/>
         <action
             android:id="@+id/action_meditacija_za_pocetnike_to_meditacija_za_spavanje"
-            app:destination="@id/meditacija_za_spavanje" />
+            app:destination="@id/meditacija_za_spavanje"
+            app:enterAnim="@anim/slide_out_bottom_full"
+            app:exitAnim="@anim/fade_out_fast"
+            app:popEnterAnim="@anim/fade_in_fast"
+            app:popExitAnim="@anim/slide_out_bottom_reverse"/>
     </fragment>
     <fragment
         android:id="@+id/osnovna_meditacija"
@@ -89,6 +133,4 @@
         android:name="com.example.enliven.vjezba_disanja_za_opusatnje"
         android:label="fragment_vjezba_disanja_za_opusatnje"
         tools:layout="@layout/fragment_vjezba_disanja_za_opusatnje" />
-
-
 </navigation>

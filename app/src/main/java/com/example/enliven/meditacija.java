@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 public class meditacija extends AppCompatActivity {
 
+    NavController navController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,12 +22,12 @@ public class meditacija extends AppCompatActivity {
 
         NavHostFragment navHostFragment =
                 (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.meditacijaFragmentView);
-        NavController navController = navHostFragment.getNavController();
+        navController = navHostFragment.getNavController();
     }
 
     @Override
     public boolean onSupportNavigateUp() {
-        finish();
+        onBackPressed();
         return true;
     }
 }
