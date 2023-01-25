@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vjezba_disanja_za_opusatnje"
+    tools:context=".ui.sleep.meditacije.vjezba_disanja_za_opusatnje"
     android:background="@drawable/gradient_dark_purple">
 
     <RelativeLayout

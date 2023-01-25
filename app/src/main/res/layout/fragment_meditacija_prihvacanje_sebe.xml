@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".meditacija_prihvacanje_sebe"
+    tools:context=".ui.sleep.meditacije.meditacija_prihvacanje_sebe"
     android:background="@drawable/gradient_dark_purple">
 
     <ScrollView

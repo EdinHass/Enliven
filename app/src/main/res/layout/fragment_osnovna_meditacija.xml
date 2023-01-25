@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".osnovna_meditacija"
+    tools:context=".ui.emotions.osnovna_meditacija"
     android:background="@drawable/gradient_dark_purple">
 
     <ScrollView

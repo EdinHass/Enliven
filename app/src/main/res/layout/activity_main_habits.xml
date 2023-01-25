@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_dark_purple"
-    tools:context=".main_habits">
+    tools:context=".ui.habits.main_habits">
 
     <LinearLayout
         android:id="@+id/linearLayout4"
@@ -50,10 +50,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/alata"
-                android:text="Istaknuto"
+                android:text="Akcije"
                 android:textColor="@color/PalleteLightText"
                 android:textSize="14dp" />
 
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="0dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/curved_dark"
             android:padding="20dp">
 
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="0dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/curved_dark"
             android:padding="20dp">
 
@@ -127,7 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginBottom="25dp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/alata"
                     android:text="Istraži"
                     android:textColor="@color/PalleteLightText"
@@ -181,7 +181,13 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
                         android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
                         android:layout_toRightOf="@id/textCardSounds"
                         android:src="@drawable/pic_learn" />
 

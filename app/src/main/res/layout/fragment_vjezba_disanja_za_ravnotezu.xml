@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_dark_purple"
-    tools:context=".vjezba_disanja_za_ravnotezu">
+    tools:context=".ui.sleep.meditacije.vjezba_disanja_za_ravnotezu">
 
     <RelativeLayout
         android:layout_width="match_parent"

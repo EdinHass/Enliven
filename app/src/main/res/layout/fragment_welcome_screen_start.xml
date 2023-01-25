@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".welcome_screen_start">
+    tools:context=".ui.welcomescreen.welcome_screen_start">
 
 
 

@@ -4,59 +4,34 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import com.example.enliven.CustomSoundActivity;
-import com.example.enliven.MainActivity;
-import com.example.enliven.R;
-import com.example.enliven.SoundItem;
-import com.example.enliven.SoundsPlayerActivity;
-import com.example.enliven.Welcome_Activity;
-import com.example.enliven.card1activity;
-import com.example.enliven.data.StreamTokenApi;
-import com.example.enliven.data.UserExtra;
 import com.example.enliven.databinding.FragmentNotificationsBinding;
-import com.example.enliven.meditacija;
-import com.example.enliven.ui.auth.AuthActivity;
-import com.example.enliven.ui.auth.SetupProfileFragment;
-import com.example.enliven.ui.auth.StreamTokenProvider;
-import com.example.enliven.ui.chat.ChatActivity;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.example.enliven.ui.sleep.sounds.CustomSoundActivity;
+import com.example.enliven.R;
+import com.example.enliven.ui.sleep.sounds.SoundItem;
+import com.example.enliven.ui.sleep.sounds.SoundsPlayerActivity;
+import com.example.enliven.ui.welcomescreen.Welcome_Activity;
+import com.example.enliven.ui.sleep.meditacije.meditacija;
 
-import org.w3c.dom.Text;
-
-import java.sql.CallableStatement;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Set;
-
-import io.getstream.chat.android.client.ChatClient;
-import io.getstream.chat.android.client.models.User;
 
 public class NotificationsFragment extends Fragment {
 

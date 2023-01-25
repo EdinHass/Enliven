@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".general_tip2"
+    tools:context=".ui.emotions.general_tip2"
     android:background="@drawable/gradient_dark_purple">
 
     <RelativeLayout
@@ -51,8 +51,8 @@
             android:id="@+id/buttonnext1"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:background="@drawable/osjecanjaa_card2"
             android:clickable="true"
+            android:backgroundTint="@color/transparent"
             android:textColor="@color/white"
             android:text="Next"
             >

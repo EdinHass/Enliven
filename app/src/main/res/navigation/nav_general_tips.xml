@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/general_tips2"
-        android:name="com.example.enliven.general_tips"
+        android:name="com.example.enliven.ui.emotions.general_tips"
         android:label="fragment_general_tips"
         tools:layout="@layout/fragment_general_tips" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/general_tip2"
-        android:name="com.example.enliven.general_tip2"
+        android:name="com.example.enliven.ui.emotions.general_tip2"
         android:label="fragment_general_tip2"
         tools:layout="@layout/fragment_general_tip2" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/general_tip3"
-        android:name="com.example.enliven.general_tip3"
+        android:name="com.example.enliven.ui.emotions.general_tip3"
         android:label="fragment_general_tip3"
         tools:layout="@layout/fragment_general_tip3" >
         <action
@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/tip_o_pisanju"
-        android:name="com.example.enliven.tip_o_pisanju"
+        android:name="com.example.enliven.ui.emotions.tip_o_pisanju"
         android:label="fragment_tip_o_pisanju"
         tools:layout="@layout/fragment_tip_o_pisanju" >
         <action
@@ -50,7 +50,7 @@
     </fragment>
     <activity
         android:id="@+id/diaryactivity2"
-        android:name="com.example.enliven.diaryactivity"
+        android:name="com.example.enliven.ui.emotions.diaryactivity"
         android:label="activity_diaryactivity"
         tools:layout="@layout/activity_diaryactivity" />
 </navigation>

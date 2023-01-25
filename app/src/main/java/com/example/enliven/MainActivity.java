@@ -2,47 +2,31 @@ package com.example.enliven;
 
 import static com.example.enliven.ui.UtilsKt.getcurrentDateAndTime;
 
-import android.app.Dialog;
-import android.app.Notification;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.airbnb.lottie.LottieAnimationView;
-import com.example.enliven.ui.auth.AuthActivity;
-import com.example.enliven.ui.notifications.NotificationsFragment;
+import com.example.enliven.databinding.ActivityMainBinding;
+import com.example.enliven.ui.welcomescreen.Welcome_Activity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatTextView;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.enliven.databinding.ActivityMainBinding;
-
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -56,11 +40,12 @@ import nl.dionsegijn.konfetti.core.emitter.EmitterConfig;
 import nl.dionsegijn.konfetti.core.models.Shape;
 import nl.dionsegijn.konfetti.xml.KonfettiView;
 
-
 public class MainActivity extends AppCompatActivity {
 
+    NavController navController;
     private ActivityMainBinding binding;
     SharedPreferences prefs = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,12 +54,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         prefs = getSharedPreferences("com.example.enliven", MODE_PRIVATE);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
         lastLoginSetup();
@@ -97,6 +80,12 @@ public class MainActivity extends AppCompatActivity {
 
         lastLoginSetup();
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
     }
 
     public void lastLoginSetup() {

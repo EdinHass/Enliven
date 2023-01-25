@@ -5,7 +5,7 @@
     app:startDestination="@id/welcome_screen_start">
     <fragment
         android:id="@+id/welcome_screen_start"
-        android:name="com.example.enliven.welcome_screen_start"
+        android:name="com.example.enliven.ui.welcomescreen.welcome_screen_start"
         android:label="fragment_welcome_screen_start"
         tools:layout="@layout/fragment_welcome_screen_start" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcome_screen2"
-        android:name="com.example.enliven.welcome_screen2"
+        android:name="com.example.enliven.ui.welcomescreen.welcome_screen2"
         android:label="fragment_welcome_screen2"
         tools:layout="@layout/fragment_welcome_screen2" >
         <action
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcome_screen3"
-        android:name="com.example.enliven.welcome_screen3"
+        android:name="com.example.enliven.ui.welcomescreen.welcome_screen3"
         android:label="fragment_welcome_screen3"
         tools:layout="@layout/fragment_welcome_screen3" >
         <action
@@ -58,7 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcome_screen4"
-        android:name="com.example.enliven.welcome_screen4"
+        android:name="com.example.enliven.ui.welcomescreen.welcome_screen4"
         android:label="fragment_welcome_screen4"
         tools:layout="@layout/fragment_welcome_screen4" >
         <action
@@ -79,7 +79,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcome_screen_info1"
-        android:name="com.example.enliven.welcome_screen_info1"
+        android:name="com.example.enliven.ui.welcomescreen.welcome_screen_info1"
         android:label="fragment_welcome_screen_info1"
         tools:layout="@layout/fragment_welcome_screen_info1" >
         <action
@@ -99,7 +99,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcome_sleep"
-        android:name="com.example.enliven.welcome_sleep"
+        android:name="com.example.enliven.ui.welcomescreen.welcome_sleep"
         android:label="fragment_welcome_sleep"
         tools:layout="@layout/fragment_welcome_sleep" >
         <action
@@ -119,7 +119,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcome_sleep2"
-        android:name="com.example.enliven.welcome_sleep2"
+        android:name="com.example.enliven.ui.welcomescreen.welcome_sleep2"
         android:label="fragment_welcome_sleep2"
         tools:layout="@layout/fragment_welcome_sleep2" >
         <action

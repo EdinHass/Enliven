@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.Enliven"
-    tools:context=".osjecanja_tips">
+    tools:context=".ui.emotions.osjecanja_tips">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/osjecanja_fragmentView"

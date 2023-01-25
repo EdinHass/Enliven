@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Pallete0"
-    tools:context=".choose_habit5"
+    tools:context=".ui.habits.choose_habit5"
     tools:ignore="ExtraText">
 
 

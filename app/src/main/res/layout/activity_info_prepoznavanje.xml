@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".info_prepoznavanje"
+    tools:context=".ui.habits.info_prepoznavanje"
     android:background="@drawable/gradient_dark_purple">
 
     <ScrollView

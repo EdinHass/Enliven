@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_navigation_home_to_MainActivity2"
             app:destination="@id/main2"/>
+        <action
+            android:id="@+id/action_navigation_home_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
 
     </fragment>
 
@@ -50,41 +53,45 @@
     </fragment>
     <activity
         android:id="@+id/card1activity"
-        android:name="com.example.enliven.card1activity"
+        android:name="com.example.enliven.ui.sleep.sounds.card1activity"
         android:label="activity_card1activity"
         tools:layout="@layout/activity_card1activity" />
     <activity
         android:id="@+id/citati_activity"
-        android:name="com.example.enliven.citati_activity"
+        android:name="com.example.enliven.ui.emotions.citati_activity"
         android:label="activity_citati"
         tools:layout="@layout/activity_citati" />
     <activity
         android:id="@+id/general_tip"
-        android:name="com.example.enliven.general_tip"
+        android:name="com.example.enliven.ui.emotions.general_tip"
         android:label="activity_general_tip"
         tools:layout="@layout/activity_general_tip" />
     <fragment
         android:id="@+id/mood2"
-        android:name="com.example.enliven.mood"
+        android:name="com.example.enliven.ui.emotions.mood"
         android:label="fragment_mood"
         tools:layout="@layout/fragment_mood" />
     <activity
         android:id="@+id/final_habitslist"
-        android:name="com.example.enliven.final_habitslist"
+        android:name="com.example.enliven.ui.habits.final_habitslist"
         android:label="activity_final_habitslist"
         tools:layout="@layout/activity_final_habitslist" />
 
     <activity
         android:id="@+id/mainhabits"
-        android:name="com.example.enliven.main_habits"
+        android:name="com.example.enliven.ui.habits.main_habits"
         android:label="activity_main_habits"
         tools:layout="@layout/activity_main_habits" />
 
     <activity
         android:id="@+id/main2"
-        android:name="com.example.enliven.MainActivity2"
+        android:name="com.example.enliven.ui.habits.MainActivity2"
         android:label="activity_main2"
         tools:layout="@layout/activity_main2" />
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.example.enliven.ui.chat.ProfileFragment"
+        android:label="ProfileFragment" />
 
 
 </navigation>

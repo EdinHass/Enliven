@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".welcome_screen3">
+    tools:context=".ui.welcomescreen.welcome_screen3">
 
     <RelativeLayout
         android:orientation="vertical"

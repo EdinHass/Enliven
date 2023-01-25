@@ -3,60 +3,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tip_o_pisanju"
-    android:background="@drawable/gradient_dark_purple">
+    android:background="@drawable/gradient_dark_purple"
+    tools:context=".ui.emotions.tip_o_pisanju">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="75dp"
-            android:layout_marginEnd="75dp"
             android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="75dp"
             android:layout_marginTop="100dp"
-            android:layout_gravity="center_horizontal">
+            android:layout_marginEnd="75dp">
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="250dp"
                 android:layout_height="250dp"
                 android:src="@drawable/pisanje" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="75dp"
-            android:layout_marginTop="110dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="110dp"
             android:layout_marginEnd="75dp">
+
             <TextView
                 android:id="@+id/tip2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alata"
+                android:gravity="center"
                 android:text="Zapiši svoje emocije"
                 android:textColor="@color/Pallete3"
-                android:textSize="30dp"
-                android:gravity="center"/>
+                android:textSize="30dp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            android:layout_margin="30dp">
+
             <Button
                 android:id="@+id/buttonnext1"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
-                android:background="@drawable/osjecanjaa_card2"
+                android:backgroundTint="@color/transparent"
                 android:clickable="true"
-                android:textColor="@color/white"
                 android:text="Next"
-                >
+                android:textColor="@color/white">
 
             </Button>
         </LinearLayout>

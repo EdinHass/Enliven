@@ -6,10 +6,12 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.marginBottom
 import androidx.fragment.app.Fragment
 import com.anychart.AnyChart
 import com.anychart.AnyChartView
@@ -40,7 +42,16 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         (activity as AppCompatActivity).supportActionBar?.title = "My Profile"
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        binding.usernameText.text = ChatClient.instance().getCurrentUser()?.name
+        if(ChatClient.instance().getCurrentUser()?.name==null){
+            binding.usernameText.text = "Statistike Profila"
+            binding.anonSwitch.visibility = View.GONE
+            binding.phoneText.visibility = View.GONE
+            binding.imageemotion.visibility = View.GONE
+            binding.anonText.visibility = View.GONE
+            binding.statText.visibility = View.GONE
+        }else{
+            binding.usernameText.text = ChatClient.instance().getCurrentUser()?.name
+        }
         binding.phoneText.text = ChatClient.instance().getCurrentUser()?.getExtraValue("phone", "")
         Picasso.get().load(ChatClient.instance().getCurrentUser()?.image).into(binding.imageemotion)
         setupLevels()
@@ -76,6 +87,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             }
 
         }
+
     }
 
 

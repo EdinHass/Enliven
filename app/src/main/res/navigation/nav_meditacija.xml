@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/meditacije"
-        android:name="com.example.enliven.meditacije"
+        android:name="com.example.enliven.ui.sleep.meditacije.meditacije"
         android:label="fragment_meditacije"
         tools:layout="@layout/fragment_meditacije" >
         <action
@@ -54,11 +54,11 @@
     </fragment>
     <dialog
         android:id="@+id/dialog_meditacija"
-        android:name="com.example.enliven.dialog_meditacija"
+        android:name="com.example.enliven.ui.sleep.meditacije.dialog_meditacija"
         android:label="dialog_meditacija" />
     <fragment
         android:id="@+id/meditacija_za_pocetnike"
-        android:name="com.example.enliven.meditacija_za_pocetnike"
+        android:name="com.example.enliven.ui.sleep.meditacije.meditacija_za_pocetnike"
         android:label="fragment_meditacija_za_pocetnike"
         tools:layout="@layout/fragment_meditacija_za_pocetnike" >
         <action
@@ -99,37 +99,37 @@
     </fragment>
     <fragment
         android:id="@+id/osnovna_meditacija"
-        android:name="com.example.enliven.osnovna_meditacija"
+        android:name="com.example.enliven.ui.emotions.osnovna_meditacija"
         android:label="fragment_osnovna_meditacija"
         tools:layout="@layout/fragment_osnovna_meditacija" />
     <fragment
         android:id="@+id/meditacija_stres"
-        android:name="com.example.enliven.meditacija_stres"
+        android:name="com.example.enliven.ui.sleep.meditacije.meditacija_stres"
         android:label="fragment_meditacija_stres"
         tools:layout="@layout/fragment_meditacija_stres" />
     <fragment
         android:id="@+id/meditacija_prihvacanje_sebe"
-        android:name="com.example.enliven.meditacija_prihvacanje_sebe"
+        android:name="com.example.enliven.ui.sleep.meditacije.meditacija_prihvacanje_sebe"
         android:label="fragment_meditacija_prihvacanje_sebe"
         tools:layout="@layout/fragment_meditacija_prihvacanje_sebe" />
     <fragment
         android:id="@+id/meditacija_za_raspolozenje"
-        android:name="com.example.enliven.meditacija_za_raspolozenje"
+        android:name="com.example.enliven.ui.sleep.meditacije.meditacija_za_raspolozenje"
         android:label="fragment_meditacija_za_raspolozenje"
         tools:layout="@layout/fragment_meditacija_za_raspolozenje" />
     <fragment
         android:id="@+id/meditacija_za_spavanje"
-        android:name="com.example.enliven.meditacija_za_spavanje"
+        android:name="com.example.enliven.ui.sleep.meditacije.meditacija_za_spavanje"
         android:label="fragment_meditacija_za_spavanje"
         tools:layout="@layout/fragment_meditacija_za_spavanje" />
     <fragment
         android:id="@+id/vjezba_disanja_za_san2"
-        android:name="com.example.enliven.vjezba_disanja_za_san"
+        android:name="com.example.enliven.ui.sleep.meditacije.vjezba_disanja_za_san"
         android:label="fragment_vjezba_disanja_za_san"
         tools:layout="@layout/fragment_vjezba_disanja_za_san" />
     <fragment
         android:id="@+id/vjezba_disanja_za_opusatnje2"
-        android:name="com.example.enliven.vjezba_disanja_za_opusatnje"
+        android:name="com.example.enliven.ui.sleep.meditacije.vjezba_disanja_za_opusatnje"
         android:label="fragment_vjezba_disanja_za_opusatnje"
         tools:layout="@layout/fragment_vjezba_disanja_za_opusatnje" />
 </navigation>

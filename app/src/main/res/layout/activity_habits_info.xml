@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".habits_info"
+    tools:context=".ui.habits.habits_info"
     android:background="@drawable/gradient_dark_purple">
 
     <ScrollView
