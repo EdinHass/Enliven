@@ -17,15 +17,14 @@ import com.example.enliven.R;
 public class vjezbe_disanja extends Fragment {
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view1 = inflater.inflate(R.layout.fragment_vjezbe_disanja, container, false);
-        RelativeLayout vjezbeZaSan=view1.findViewById(R.id.zasan);
-        RelativeLayout vjezbeZaOpustanje=view1.findViewById(R.id.zaopustanje);
-        RelativeLayout vjezbeZaFokus=view1.findViewById(R.id.zafokus);
-        RelativeLayout vjezbeZaRazvnotezu=view1.findViewById(R.id.zaravnotezu);
+        RelativeLayout vjezbeZaSan = view1.findViewById(R.id.zasan);
+        RelativeLayout vjezbeZaOpustanje = view1.findViewById(R.id.zaopustanje);
+        RelativeLayout vjezbeZaFokus = view1.findViewById(R.id.zafokus);
+        RelativeLayout vjezbeZaRazvnotezu = view1.findViewById(R.id.zaravnotezu);
 
         vjezbeZaSan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +55,6 @@ public class vjezbe_disanja extends Fragment {
 
         return view1;
     }
-
 
 
 }

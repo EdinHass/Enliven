@@ -1,10 +1,14 @@
 package com.example.enliven.ui.habits;
 
+import static com.example.enliven.ui.UtilsKt.addXP;
+
+import android.app.Activity;
 import android.content.Context;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.enliven.ChangeNumberItemsListener;
+import com.example.enliven.ui.addXP;
 
 import java.util.ArrayList;
 
@@ -56,13 +60,11 @@ public class HabitsList<numbertxt> {
     }
 
 
-
     public static void minusNumber(ArrayList<HabitsDomain> listHabit, int position, ChangeNumberItemsListener changeNumberItemsListener) {
 
         if (listHabit.get(position).getGoalnumber()==1) {
             listHabit.remove(position);
-            Toast.makeText(context, "Cilj je ispunjen", Toast.LENGTH_SHORT).show();
-
+            addXP(10, context, ((Activity)context).getWindow().getDecorView().findViewById(android.R.id.content), addXP.HABITS);
         }
         else {
             listHabit.get(position).setGoalnumber(listHabit.get(position).getGoalnumber()-1);

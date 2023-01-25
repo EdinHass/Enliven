@@ -1,5 +1,6 @@
 package com.example.enliven.ui.sleep.meditacije;
 
+import static com.example.enliven.ui.UtilsKt.addXP;
 import static com.example.enliven.ui.UtilsKt.interpolateColor;
 import static com.example.enliven.ui.UtilsKt.manipulateColor;
 
@@ -35,6 +36,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.enliven.R;
+import com.example.enliven.ui.addXP;
 import com.google.protobuf.Value;
 
 import java.io.IOException;
@@ -139,7 +141,9 @@ public class vjezba_disanja1 extends AppCompatActivity {
         Animation fadein = AnimationUtils.loadAnimation(this, R.anim.fade_in_slow);
 
         final boolean[] pressed = {false};
+        final boolean[] xpcollected = {false};
         buttonStart.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 if (!pressed[0]) {
@@ -149,6 +153,10 @@ public class vjezba_disanja1 extends AppCompatActivity {
                     animatorCircle.start();
                     text.startAnimation(fadein);
                     text.setText("Udahni");
+                    if(!xpcollected[0]){
+                        addXP(10, vjezba_disanja1.this, getWindow().getDecorView().findViewById(android.R.id.content), addXP.SOUNDS);
+                        xpcollected[0] = true;
+                    }
 
                 } else {
                     mediaPlayer.seekTo(0);

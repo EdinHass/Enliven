@@ -1,9 +1,12 @@
 package com.example.enliven.ui.emotions;
 
+import static com.example.enliven.ui.UtilsKt.addXP;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +18,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.enliven.R;
+import com.example.enliven.ui.addXP;
 
 import java.util.HashSet;
 
@@ -61,7 +65,6 @@ public class NotesEditorActivity extends AppCompatActivity {
         menuInflater.inflate(R.menu.save_note_menu, menu);
         return  super.onCreateOptionsMenu(menu);}
 
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -84,6 +87,11 @@ public class NotesEditorActivity extends AppCompatActivity {
             return true;
         }
         return false;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     @Override

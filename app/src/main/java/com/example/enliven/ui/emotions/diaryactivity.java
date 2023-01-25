@@ -1,5 +1,7 @@
 package com.example.enliven.ui.emotions;
 
+import static com.example.enliven.ui.UtilsKt.addXP;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
@@ -21,6 +23,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.enliven.R;
+import com.example.enliven.ui.addXP;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -32,6 +35,7 @@ public class diaryactivity extends AppCompatActivity {
     TextView emptyText;
     ImageView dodaj_note;
     RelativeLayout plus;
+    int temp = -3;
 
     static List<String> notes;
     HashSet<String> noteSet;
@@ -202,6 +206,10 @@ public class diaryactivity extends AppCompatActivity {
             emptyText.setVisibility(View.GONE);
         }
         adapter.notifyDataSetChanged();
+        if(notes.size()>temp && temp!=-3){
+            addXP(10, this, getWindow().getDecorView().findViewById(android.R.id.content), addXP.SOUNDS);
+        }
+        temp = notes.size();
     }
 
     @Override

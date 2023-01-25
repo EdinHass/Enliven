@@ -62,13 +62,13 @@ public class DashboardFragment extends Fragment {
 
         dnevnikcard = root.findViewById(R.id.dnevnikcard);
         tipscard = root.findViewById(R.id.card2);
-        story_citati=root.findViewById(R.id.citati);
-        socialinfo=root.findViewById(R.id.socialinfo);
-        vodic=root.findViewById(R.id.vodic);
-        enlivensocial=root.findViewById(R.id.enlivensocial);
+        story_citati = root.findViewById(R.id.citati);
+        socialinfo = root.findViewById(R.id.socialinfo);
+        vodic = root.findViewById(R.id.vodic);
+        enlivensocial = root.findViewById(R.id.enlivensocial);
         TextView pocetniText = root.findViewById(R.id.textpocetni);
 
-        Animation floatUpFast = AnimationUtils.loadAnimation(getActivity(),R.anim.animation_bottom_lighter);
+        Animation floatUpFast = AnimationUtils.loadAnimation(getActivity(), R.anim.animation_bottom_lighter);
         Animation floatDown = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_out_top_light);
         Animation slideoutright = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_from_right_light);
         pocetniText.startAnimation(floatDown);
@@ -82,13 +82,12 @@ public class DashboardFragment extends Fragment {
         prefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
 
 
-
-
         enlivensocial.setOnClickListener(new View.OnClickListener() {
             private long lastClickTime = 0;
+
             @Override
             public void onClick(View v) {
-                if (SystemClock.elapsedRealtime() - lastClickTime < 1000){
+                if (SystemClock.elapsedRealtime() - lastClickTime < 1000) {
                     return;
                 }
                 lastClickTime = SystemClock.elapsedRealtime();
@@ -103,14 +102,14 @@ public class DashboardFragment extends Fragment {
                     extraData.put(UserExtra.NAME, prefs.getString("loginName", ""));
                     extraData.put(UserExtra.PHONE, prefs.getString("loginPhone", ""));
                     extraData.put(UserExtra.IMAGE, getImageEmotion());
-                    if(ChatClient.instance().getCurrentUser()!=null){
+                    if (ChatClient.instance().getCurrentUser() != null) {
                         ChatClient.instance().getCurrentUser().setImage(getImageEmotion());
                     }
                     user.setExtraData(extraData);
                     ChatClient.instance().connectUser(user, prefs.getString("loginToken", "")).enqueue(result -> {
-                        if(result.isSuccess()){
+                        if (result.isSuccess()) {
                             startActivity(new Intent(getContext(), ChatActivity.class));
-                        }else{
+                        } else {
                             Log.e("ERROR", result.error().getMessage());
                             Toast.makeText(getContext(), "Login Error", Toast.LENGTH_LONG).show();
                             FirebaseAuth.getInstance().signOut();
@@ -128,12 +127,11 @@ public class DashboardFragment extends Fragment {
         });
 
 
-
         tipscard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SocialDialogFragment socialDialogFragment = new SocialDialogFragment();
-                socialDialogFragment.show(getChildFragmentManager(),"Informacije");
+                socialDialogFragment.show(getChildFragmentManager(), "Informacije");
             }
         });
 
@@ -147,55 +145,52 @@ public class DashboardFragment extends Fragment {
 
 
         SharedPreferences sprefs = getActivity().getSharedPreferences("com.example.enliven", Context.MODE_PRIVATE);
-        if(sprefs.getString("UserName", "invalid").equals("invalid")){
-            pocetniText.setText( "Dobrodošli!");
-        }else{
-            pocetniText.setText( "Kako si, " + sprefs.getString("UserName", "invalid") + "?");
+        if (sprefs.getString("UserName", "invalid").equals("invalid")) {
+            pocetniText.setText("Dobrodošli!");
+        } else {
+            pocetniText.setText("Kako si, " + sprefs.getString("UserName", "invalid") + "?");
         }
 
         setupLastEmotions();
 
 
-
-
         return root;
     }
 
-    public void setupLastEmotions(){
+    public void setupLastEmotions() {
 
 
         ImageView[] icons = new ImageView[5];
-        icons[0]=root.findViewById(R.id.icon5);
-        icons[1]=root.findViewById(R.id.icon4);
-        icons[2]=root.findViewById(R.id.icon3);
-        icons[3]=root.findViewById(R.id.icon2);
-        icons[4]=root.findViewById(R.id.icon1);
+        icons[0] = root.findViewById(R.id.icon5);
+        icons[1] = root.findViewById(R.id.icon4);
+        icons[2] = root.findViewById(R.id.icon3);
+        icons[3] = root.findViewById(R.id.icon2);
+        icons[4] = root.findViewById(R.id.icon1);
 
         TextView noText = root.findViewById(R.id.nohisttext);
-        if(prefs.getString("lastEmotion1",null)==null && prefs.getString("lastEmotion2",null)==null && prefs.getString("lastEmotion3",null)==null
-           && prefs.getString("lastEmotion4",null)==null && prefs.getString("lastEmotion5",null)==null
-        ){
+        if (prefs.getString("lastEmotion1", null) == null && prefs.getString("lastEmotion2", null) == null && prefs.getString("lastEmotion3", null) == null
+                && prefs.getString("lastEmotion4", null) == null && prefs.getString("lastEmotion5", null) == null
+        ) {
             noText.setVisibility(View.VISIBLE);
             return;
-        }else{
+        } else {
             noText.setVisibility(View.GONE);
         }
-        if(prefs.getString("lastEmotion1",null)!=null)
-            setupIcon(icons[0], prefs.getString("lastEmotion1",null));
-        if(prefs.getString("lastEmotion2",null)!=null)
-            setupIcon(icons[1], prefs.getString("lastEmotion2",null));
-        if(prefs.getString("lastEmotion3",null)!=null)
-            setupIcon(icons[2], prefs.getString("lastEmotion3",null));
-        if(prefs.getString("lastEmotion4",null)!=null)
-            setupIcon(icons[3], prefs.getString("lastEmotion4",null));
-        if(prefs.getString("lastEmotion5",null)!=null)
-            setupIcon(icons[4], prefs.getString("lastEmotion5",null));
-
+        if (prefs.getString("lastEmotion1", null) != null)
+            setupIcon(icons[0], prefs.getString("lastEmotion1", null));
+        if (prefs.getString("lastEmotion2", null) != null)
+            setupIcon(icons[1], prefs.getString("lastEmotion2", null));
+        if (prefs.getString("lastEmotion3", null) != null)
+            setupIcon(icons[2], prefs.getString("lastEmotion3", null));
+        if (prefs.getString("lastEmotion4", null) != null)
+            setupIcon(icons[3], prefs.getString("lastEmotion4", null));
+        if (prefs.getString("lastEmotion5", null) != null)
+            setupIcon(icons[4], prefs.getString("lastEmotion5", null));
 
 
     }
 
-    public void setupIcon(ImageView viewIcon, String emotion){
+    public void setupIcon(ImageView viewIcon, String emotion) {
         Drawable happyIcon = AppCompatResources.getDrawable(getContext(), R.drawable.happyicon);
         Drawable sadIcon = AppCompatResources.getDrawable(getContext(), R.drawable.sadicon);
         Drawable angryIcon = AppCompatResources.getDrawable(getContext(), R.drawable.angryicon);
@@ -203,7 +198,7 @@ public class DashboardFragment extends Fragment {
         Drawable scaredIcon = AppCompatResources.getDrawable(getContext(), R.drawable.scaredicon);
         Drawable stressIcon = AppCompatResources.getDrawable(getContext(), R.drawable.stressicon);
 
-        switch(emotion){
+        switch (emotion) {
             case "sad":
                 viewIcon.setImageDrawable(sadIcon);
                 viewIcon.setVisibility(View.VISIBLE);
@@ -247,15 +242,14 @@ public class DashboardFragment extends Fragment {
         binding = null;
     }
 
-    public void setupStories(){
+    public void setupStories() {
         final int[] currIndex = {-1};
-        for(int i=0;i<20;i++){
+        for (int i = 0; i < 20; i++) {
             int finalI = i;
             ImageView temp = new ImageView(getContext());
-            if(prefs.getBoolean("storyCitat"+i, false)) {
+            if (prefs.getBoolean("storyCitat" + i, false)) {
                 continue;
-            }
-            else{
+            } else {
                 currIndex[0]++;
                 temp.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.questionmark));
             }
@@ -272,12 +266,12 @@ public class DashboardFragment extends Fragment {
                     10,
                     r.getDisplayMetrics()
             );
-            layoutParams.setMargins(0,0,px, 0);
+            layoutParams.setMargins(0, 0, px, 0);
             temp.setLayoutParams(layoutParams);
             story_citati.addView(temp);
 
             temp.setClickable(true);
-            prefs.edit().putInt("storyRedoslijed"+ currIndex[0], finalI).apply();
+            prefs.edit().putInt("storyRedoslijed" + currIndex[0], finalI).apply();
             temp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -288,14 +282,13 @@ public class DashboardFragment extends Fragment {
             });
         }
 
-        for(int i=0;i<20;i++){
+        for (int i = 0; i < 20; i++) {
             int finalI = i;
             ImageView temp = new ImageView(getContext());
-            if(prefs.getBoolean("storyCitat"+i, false)) {
+            if (prefs.getBoolean("storyCitat" + i, false)) {
                 currIndex[0]++;
                 temp.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.check));
-            }
-            else{
+            } else {
                 continue;
             }
 
@@ -311,7 +304,7 @@ public class DashboardFragment extends Fragment {
                     10,
                     r.getDisplayMetrics()
             );
-            layoutParams.setMargins(0,0,px, 0);
+            layoutParams.setMargins(0, 0, px, 0);
             temp.setLayoutParams(layoutParams);
             story_citati.addView(temp);
 
@@ -326,20 +319,20 @@ public class DashboardFragment extends Fragment {
                 }
             });
         }
-        currIndex[0]=-1;
+        currIndex[0] = -1;
     }
 
-    public String getImageEmotion(){
+    public String getImageEmotion() {
         String emotion = null;
         int i = 5;
-        while(emotion==null && i>0) {
+        while (emotion == null && i > 0) {
             emotion = prefs.getString("lastEmotion" + i, null);
             i--;
         }
-        if(emotion==null){
+        if (emotion == null) {
             return UserExtra.DEFAULT_AVATAR;
-        }else{
-            switch(emotion){
+        } else {
+            switch (emotion) {
                 case "sad":
                     return ImageURLS.SAD;
                 case "hap":

@@ -3,296 +3,297 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.sleep.meditacije.vjezbe_disanja"
-    android:background="@drawable/gradient_dark_purple">
+    android:background="@drawable/gradient_dark_purple"
+    tools:context=".ui.sleep.meditacije.vjezbe_disanja">
 
-   <RelativeLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       >
-
-
-           <TextView
-               android:layout_marginHorizontal="20dp"
-               android:layout_marginVertical="20dp"
-               android:id="@+id/textnaslov"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:fontFamily="@font/alata"
-               android:text="Vježbe disanja"
-               android:textColor="@color/white"
-               android:textSize="30dp"
-               android:typeface="normal"
-               />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
-           <LinearLayout
-               android:id="@+id/linearLayout"
-               android:layout_width="80dp"
-               android:layout_height="2dp"
-               android:background="@color/white"
-               android:layout_marginHorizontal="20dp"
-               android:orientation="horizontal"
-               android:layout_marginBottom="20dp"
-               android:layout_below="@+id/textnaslov"/>
-
-               <TextView
-                   android:layout_marginHorizontal="20dp"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:fontFamily="@font/alata"
-                   android:text="Izaberi vježbu disanja za:"
-                   android:textColor="@color/white"
-                   android:textSize="18dp"
-                   android:layout_marginBottom="20dp"
-                   android:layout_below="@+id/linearLayout"
-                   />
-
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_centerInParent="true"
-           android:layout_gravity="center_vertical"
-           android:gravity="center_vertical"
-           android:orientation="vertical">
-
-           <RelativeLayout
-               android:id="@+id/first"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_gravity="center"
-               android:layout_marginTop="20dp"
-               android:layout_marginBottom="20dp"
-               android:gravity="center"
-               android:orientation="horizontal">
-
-               <RelativeLayout
-                   android:id="@+id/zasan1"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginHorizontal="40dp"
-                   android:layout_toStartOf="@+id/zaopustanje1">
-
-                   <RelativeLayout
-                       android:id="@+id/zasan"
-                       android:layout_width="120dp"
-                       android:layout_height="120dp"
-                       android:background="@drawable/circle_background_purple"
-                       android:clickable="true">
-
-                       <LinearLayout
-                           android:id="@+id/ikonaSan"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_centerInParent="true"
-                           android:layout_centerVertical="true"
-                           android:gravity="center"
-                           android:orientation="vertical">
-
-                           <ImageView
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:src="@drawable/sleep__2_" />
-
-                       </LinearLayout>
-
-                   </RelativeLayout>
-
-                   <RelativeLayout
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_below="@+id/zasan"
-                       android:layout_centerHorizontal="true"
-                       android:orientation="vertical"
+        <TextView
+            android:id="@+id/textnaslov"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            android:fontFamily="@font/alata"
+            android:text="Vježbe disanja"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:typeface="normal" />
 
 
-                       >
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="80dp"
+            android:layout_height="2dp"
+            android:layout_below="@+id/textnaslov"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white"
+            android:orientation="horizontal" />
 
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:fontFamily="@font/alata"
-                           android:text="San"
-                           android:textColor="@color/white"
-                           android:textSize="18dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/alata"
+            android:text="Izaberi tehniku disanja prilagođenu za:"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
 
-                   </RelativeLayout>
-               </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
+            <RelativeLayout
+                android:id="@+id/first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-               <RelativeLayout
-                   android:id="@+id/zaopustanje1"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginHorizontal="40dp">
+                <RelativeLayout
+                    android:id="@+id/zasan1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toStartOf="@+id/zaopustanje1">
 
-                   <RelativeLayout
-                       android:id="@+id/zaopustanje"
-                       android:layout_width="120dp"
-                       android:layout_height="120dp"
-                       android:background="@drawable/circle_background_purple"
-                       android:clickable="true">
+                    <RelativeLayout
+                        android:id="@+id/zasan"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/circle_background_purple"
+                        android:backgroundTint="@color/Pallete0"
+                        android:clickable="true">
 
-                       <LinearLayout
-                           android:id="@+id/ikonaOpustanje"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_centerInParent="true"
-                           android:layout_centerVertical="true"
-                           android:gravity="center"
-                           android:orientation="vertical">
+                        <LinearLayout
+                            android:id="@+id/ikonaSan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                           <ImageView
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:src="@drawable/relax" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/sleep__2_" />
 
-                       </LinearLayout>
+                        </LinearLayout>
 
-                   </RelativeLayout>
+                    </RelativeLayout>
 
-                   <RelativeLayout
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_below="@+id/zaopustanje"
-                       android:layout_centerHorizontal="true"
-                       android:orientation="vertical"
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/zasan"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="San"
+                            android:textColor="@color/white"
+                            android:textSize="18dp" />
 
-                       >
-
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:fontFamily="@font/alata"
-                           android:text="Opuštanje"
-                           android:textColor="@color/white"
-                           android:textSize="18dp" />
-
-                   </RelativeLayout>
-               </RelativeLayout>
-
-           </RelativeLayout>
-
-           <RelativeLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_gravity="center"
-               android:layout_marginTop="20dp"
-               android:layout_marginBottom="20dp"
-               android:gravity="center"
-               android:orientation="horizontal">
-
-               <RelativeLayout
-                   android:id="@+id/zafokus1"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginHorizontal="40dp"
-                   android:layout_toStartOf="@+id/zaravnotezu1">
-
-                   <RelativeLayout
-                       android:id="@+id/zafokus"
-                       android:layout_width="120dp"
-                       android:layout_height="120dp"
-                       android:background="@drawable/circle_background_purple"
-                       android:clickable="true">
-
-                       <LinearLayout
-                           android:id="@+id/ikonaFokus"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_centerInParent="true"
-                           android:layout_centerVertical="true"
-                           android:gravity="center"
-                           android:orientation="vertical">
-
-                           <ImageView
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:src="@drawable/focus__2_" />
-
-                       </LinearLayout>
-
-                   </RelativeLayout>
-
-                   <RelativeLayout
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_below="@+id/zafokus"
-                       android:layout_centerHorizontal="true"
-                       android:orientation="vertical"
+                    </RelativeLayout>
+                </RelativeLayout>
 
 
-                       >
+                <RelativeLayout
+                    android:id="@+id/zaopustanje1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="60dp">
 
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:fontFamily="@font/alata"
-                           android:text="Fokus"
-                           android:textColor="@color/white"
-                           android:textSize="18dp" />
+                    <RelativeLayout
+                        android:id="@+id/zaopustanje"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/circle_background_purple"
+                        android:backgroundTint="@color/Pallete0"
+                        android:clickable="true">
 
-                   </RelativeLayout>
-               </RelativeLayout>
+                        <LinearLayout
+                            android:id="@+id/ikonaOpustanje"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/relax" />
 
-               <RelativeLayout
-                   android:id="@+id/zaravnotezu1"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginHorizontal="40dp">
+                        </LinearLayout>
 
-                   <RelativeLayout
-                       android:id="@+id/zaravnotezu"
-                       android:layout_width="120dp"
-                       android:layout_height="120dp"
-                       android:background="@drawable/circle_background_purple"
-                       android:clickable="true">
+                    </RelativeLayout>
 
-                       <LinearLayout
-                           android:id="@+id/ikonaRavnoteza"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_centerInParent="true"
-                           android:layout_centerVertical="true"
-                           android:gravity="center"
-                           android:orientation="vertical">
-
-                           <ImageView
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:src="@drawable/balance__2_" />
-
-                       </LinearLayout>
-
-                   </RelativeLayout>
-
-                   <RelativeLayout
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_below="@+id/zaravnotezu"
-                       android:layout_centerHorizontal="true"
-                       android:orientation="vertical"
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/zaopustanje"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical"
 
 
-                       >
+                        >
 
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:fontFamily="@font/alata"
-                           android:text="Ravnotežu"
-                           android:textColor="@color/white"
-                           android:textSize="18dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Opuštanje"
+                            android:textColor="@color/white"
+                            android:textSize="18dp" />
 
-                   </RelativeLayout>
-               </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
 
-           </RelativeLayout>
-       </LinearLayout>
-   </RelativeLayout>
+            </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/zafokus1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toStartOf="@+id/zaravnotezu1">
+
+                    <RelativeLayout
+                        android:id="@+id/zafokus"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/circle_background_purple"
+                        android:backgroundTint="@color/Pallete0"
+                        android:clickable="true">
+
+                        <LinearLayout
+                            android:id="@+id/ikonaFokus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/focus__2_" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/zafokus"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical"
+
+
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Fokus"
+                            android:textColor="@color/white"
+                            android:textSize="18dp" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/zaravnotezu1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="60dp">
+
+                    <RelativeLayout
+                        android:id="@+id/zaravnotezu"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/circle_background_purple"
+                        android:backgroundTint="@color/Pallete0"
+                        android:clickable="true">
+
+                        <LinearLayout
+                            android:id="@+id/ikonaRavnoteza"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/balance__2_" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/zaravnotezu"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical"
+
+
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Ravnotežu"
+                            android:textColor="@color/white"
+                            android:textSize="18dp" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
 
 
 </FrameLayout>

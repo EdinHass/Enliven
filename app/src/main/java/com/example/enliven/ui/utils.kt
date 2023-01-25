@@ -132,7 +132,7 @@ fun addXP(XP: Int, context: Context, view: View, case: addXP) {
     when (case) {
         addXP.SOUNDS -> {
             val lastSoundXP = sharedPref.getLong("lastSoundXP", 0)
-            if (Calendar.getInstance().timeInMillis - lastSoundXP > 3000) {
+            if (Calendar.getInstance().timeInMillis - lastSoundXP > 20000) {
                 currentXP += XP
                 sharedPref.edit().putInt("XP", currentXP).apply()
                 sharedPref.edit().putLong("lastSoundXP", Calendar.getInstance().timeInMillis)
@@ -142,7 +142,7 @@ fun addXP(XP: Int, context: Context, view: View, case: addXP) {
         }
         addXP.HABITS -> {
             val lastHabitsXP = sharedPref.getLong("lastHabitsXP", 0)
-            if (Calendar.getInstance().timeInMillis - lastHabitsXP > 300000) {
+            if (Calendar.getInstance().timeInMillis - lastHabitsXP > 1000) {
                 currentXP += XP
                 sharedPref.edit().putInt("XP", currentXP).apply()
                 sharedPref.edit().putLong("lastHabitsXP", Calendar.getInstance().timeInMillis)
@@ -152,7 +152,7 @@ fun addXP(XP: Int, context: Context, view: View, case: addXP) {
         }
         addXP.EMOTION -> {
             val lastEmotionXP = sharedPref.getLong("lastEmotionXP", 0)
-            if (Calendar.getInstance().timeInMillis - lastEmotionXP > 300000) {
+            if (Calendar.getInstance().timeInMillis - lastEmotionXP > 30000) {
                 currentXP += XP
                 sharedPref.edit().putInt("XP", currentXP).apply()
                 sharedPref.edit().putLong("lastEmotionXP", Calendar.getInstance().timeInMillis)
