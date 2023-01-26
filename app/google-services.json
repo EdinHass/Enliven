@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "1080052965076-hd2fhq89f28jvknvsrrulbv10otmclks.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.enliven",
+            "certificate_hash": "2f63e3041b226075f33cf2f76a583632f30aa676"
+          }
+        },
+        {
           "client_id": "1080052965076-kcn609fjq7j9d8a9hak10gqhv6hk29kb.apps.googleusercontent.com",
           "client_type": 3
         }
