@@ -100,6 +100,7 @@ class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile) {
             .connectUser(user, sharedPreference.getString("loginToken", "")!!)
             .enqueue { result ->
                 if (result.isSuccess) {
+                    ChatClient.instance().getCurrentUser()!!.image = getImageEmotion()!!
                     requireActivity().startNewActivity(ChatActivity::class.java)
                 } else {
                     Log.e("ERROR", result.error().message!!);
