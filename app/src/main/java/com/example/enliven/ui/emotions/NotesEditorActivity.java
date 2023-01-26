@@ -82,6 +82,7 @@ public class NotesEditorActivity extends AppCompatActivity {
                 HashSet<String> notesSet = new HashSet<>(diaryactivity.notes);
                 updateLast();
                 sharedPreferences.edit().putStringSet("notes", notesSet).apply();
+                sharedPreferences.edit().putBoolean("added", true).apply();
                 finish();
             }
             return true;

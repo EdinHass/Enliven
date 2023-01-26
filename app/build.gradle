@@ -6,6 +6,20 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\Korisnik\\keystores\\enliven_keystore.jks')
+            storePassword 'edin12345'
+            keyAlias 'Enliven'
+            keyPassword 'edin12345'
+        }
+        enliven {
+            storeFile file('C:\\Users\\Korisnik\\keystores\\enliven_keystore.jks')
+            storePassword 'edin12345'
+            keyAlias 'Enliven'
+            keyPassword 'edin12345'
+        }
+    }
     namespace 'com.example.enliven'
     compileSdk 33
 
@@ -25,6 +39,8 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.enliven
+            debuggable true
         }
     }
     compileOptions {

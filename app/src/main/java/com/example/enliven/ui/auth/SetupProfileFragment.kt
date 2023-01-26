@@ -11,6 +11,7 @@ import android.os.Looper
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
@@ -102,7 +103,7 @@ class SetupProfileFragment : Fragment(R.layout.fragment_setup_profile) {
                     requireActivity().startNewActivity(ChatActivity::class.java)
                 } else {
                     Log.e("ERROR", result.error().message!!);
-                    snackbar("${result.error().message}")
+                    Toast.makeText(requireContext(), result.error().message!!, Toast.LENGTH_LONG).show()
                 }
             }
     }

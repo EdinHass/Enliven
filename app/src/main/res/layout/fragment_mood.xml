@@ -36,16 +36,15 @@
             android:orientation="vertical" />
 
         <LinearLayout
+            android:layout_marginTop="40dp"
             android:id="@+id/osjecanja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/crta"
-            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
             android:layout_centerInParent="true"
             android:gravity="center_vertical"
-            android:orientation="vertical"
-
-            >
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -407,14 +406,16 @@
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginHorizontal="20dp"
             android:layout_marginVertical="20dp"
+            android:backgroundTint="@color/transparent"
             android:text="Nastavi"
-            android:visibility="invisible" />
+            android:textSize="14dp"
+            android:visibility="visible" />
 
 
     </RelativeLayout>

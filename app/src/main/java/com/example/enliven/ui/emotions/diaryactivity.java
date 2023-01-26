@@ -206,10 +206,10 @@ public class diaryactivity extends AppCompatActivity {
             emptyText.setVisibility(View.GONE);
         }
         adapter.notifyDataSetChanged();
-        if(notes.size()>temp && temp!=-3){
-            addXP(10, this, getWindow().getDecorView().findViewById(android.R.id.content), addXP.SOUNDS);
+        if(sharedpref.getBoolean("added", false)){
+            addXP(10, this, getWindow().getDecorView().findViewById(android.R.id.content), addXP.HABITS);
+            sharedpref.edit().putBoolean("added", false).apply();
         }
-        temp = notes.size();
     }
 
     @Override

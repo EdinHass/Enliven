@@ -1,6 +1,9 @@
 package com.example.enliven
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import com.google.android.material.chip.ChipDrawable.Delegate
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.offline.model.message.attachments.UploadAttachmentsNetworkType
 import io.getstream.chat.android.offline.plugin.configuration.Config
@@ -21,5 +24,6 @@ class StreamChatApp: Application() {
             appContext = applicationContext,
         )
         ChatClient.Builder("dhha7wesgt7e", applicationContext).withPlugin(offlinePluginFactory).build()
+        AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
     }
 }
