@@ -198,13 +198,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.habits.addhabit"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".ui.habits.choose_habit"
             android:exported="false">
             <meta-data

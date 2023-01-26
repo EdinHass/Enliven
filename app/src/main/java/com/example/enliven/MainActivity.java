@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-        lastLoginSetup();
+
     }
 
     protected void fullscreen() {
@@ -76,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (prefs.getBoolean("firstrun", true)) {
             startActivity(new Intent(this, Welcome_Activity.class));
+        }else{
+            lastLoginSetup();
         }
-
-        lastLoginSetup();
 
     }
 

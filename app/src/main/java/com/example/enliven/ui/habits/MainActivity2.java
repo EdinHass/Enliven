@@ -46,7 +46,6 @@ public class MainActivity2 extends AppCompatActivity implements OnDialogCloseLis
         mList = new ArrayList<>();
         adapter = new ToDoA(myDB, MainActivity2.this);
 
-        mRecycleview.setHasFixedSize(true);
         mRecycleview.setLayoutManager(new LinearLayoutManager(this ));
         mRecycleview.setAdapter(adapter);
 
