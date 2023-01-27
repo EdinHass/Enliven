@@ -1,4 +1,7 @@
-#Enliven
+# Enliven
+
+![slika_za_feature_graphics](https://user-images.githubusercontent.com/116839465/215102825-28e25d1e-da8b-4d4e-98ea-dc5a37096abc.jpg)
+
 
 ## Logo:
 
@@ -81,6 +84,10 @@ Neke od najbitnijih su:
 Server su hostani 24/7, sa trenutnim kapacitetom od 7,000,000 poruka mjesečno i 200 uporednih korisnika. Sign up je ograničen na 50 mjesečno radi Firebase-ove mobilne verifikacije. Po potrebi, serveri su skalabilni, te nisu skupi za održavanje (naravno, to zavisi od server load-a).
 
 # Fotografije aplikacije:
+|![screenshot1](https://user-images.githubusercontent.com/116839465/215104501-a80d3669-65f0-4c4e-a889-b3ab5235488e.jpeg)| ![screenshot2](https://user-images.githubusercontent.com/116839465/215104578-34c41d9b-ac6c-4c37-a6e2-a6125c4f57cf.jpeg)|![screenshot3](https://user-images.githubusercontent.com/116839465/215104661-f8eb4ce4-1482-4168-832c-212b8fc84851.jpeg)|![screenshot4](https://user-images.githubusercontent.com/116839465/215104741-3a8658d6-582c-4cf2-912a-85eb04210d23.jpeg)|![screenshot5](https://user-images.githubusercontent.com/116839465/215104799-b2f84a76-a05d-4e2c-aa7c-cff7c199d564.jpeg)|![screenshot6](https://user-images.githubusercontent.com/116839465/215104874-8415d637-286b-4d19-b51f-a01b36a6a324.jpeg)|![screenshot7](https://user-images.githubusercontent.com/116839465/215104930-66d2f8a5-d7f4-4152-aba7-6c889b306c1c.jpeg)|![screenshot8](https://user-images.githubusercontent.com/116839465/215104988-cf602ee7-82cf-4f2c-a60e-9486c2f44094.jpeg)|
+| :------------: | :------------: | :------------: | :------------: | :------------: | :------------: | :------------: | :------------: |
+
+
 
 # Autori
 
