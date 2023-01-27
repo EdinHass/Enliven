@@ -1,8 +1,5 @@
-# Avant Team
+#Enliven
 
-
-
-## Naziv aplikacije: Enliven
 ## Logo:
 
 ![logo](https://user-images.githubusercontent.com/116839465/215085914-3e84d679-cc03-4a7e-9be8-e4e8f2c2bd62.png)
@@ -84,6 +81,14 @@ Neke od najbitnijih su:
 Server su hostani 24/7, sa trenutnim kapacitetom od 7,000,000 poruka mjesečno i 200 uporednih korisnika. Sign up je ograničen na 50 mjesečno radi Firebase-ove mobilne verifikacije. Po potrebi, serveri su skalabilni, te nisu skupi za održavanje (naravno, to zavisi od server load-a).
 
 # Fotografije aplikacije:
+
+# Autori
+
+Autor ove aplikacije je tim **Avant**, čiji su članovi: 
+
+* Edin Hasanović
+* Ajla Frkić
+* Lejla Gutić
 
 
 
