@@ -7,7 +7,7 @@
 
 ![logo](https://user-images.githubusercontent.com/116839465/215085914-3e84d679-cc03-4a7e-9be8-e4e8f2c2bd62.png)
 
-## Kratak opis:
+## Kratki opis aplikacije:
 Pronađite najbolju verziju sebe i poboljšajte kvalitetu življenja uz Enliven.
 
 ## Puni opis aplikacije:
