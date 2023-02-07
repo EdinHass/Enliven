@@ -23,7 +23,7 @@ class StreamChatApp: Application() {
             ),
             appContext = applicationContext,
         )
-        ChatClient.Builder("dhha7wesgt7e", applicationContext).withPlugin(offlinePluginFactory).build()
+        ChatClient.Builder("efvau2adu3pn", applicationContext).withPlugin(offlinePluginFactory).build()
         AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
     }
 }
