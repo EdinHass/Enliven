@@ -18,8 +18,6 @@ Find the best version of yourself and improve your quality of life with Enliven.
 
 # Application description:
 
-## Elevate your life with Enliven
-
 Enliven is the ultimate tool designed to help you build healthy habits, manage emotions, and improve sleep quality. With personalized plans and activities tailored to your individual needs and lifestyle, Enliven empowers you to take control of your life. Our learning section provides resources on recognizing and changing unhealthy habits, managing stress, staying motivated, and taking proactive steps to enhance your overall well-being.
 
 ### Habits
@@ -44,57 +42,57 @@ To enhance your sleep experience, we offer relaxing sounds available 24/7. You c
 
 Enliven welcomes new users with a brief introduction and guides them through the initial setup. Users are prompted to enter their name, bedtime, and select a sleep plan (6-hour, 7-hour, or 8-hour). Once the setup is complete, users access the "Main Activity," featuring a navigation menu that allows seamless switching between three primary fragments: "Habits" (Home), "Mood" (Dashboard), and "Sleep" (Notifications).
 
-## Habits:
+### Habits:
 
-### Overview
+#### Overview
 The "Habits" fragment starts with a personalized greeting message, "What are you doing?" followed by the user's name. Below the greeting, users find a section dedicated to habits, where they can choose from predefined habits or create a custom To-Do list.
 
-### Selecting Habits
+#### Selecting Habits
 Users can choose from several categories of habits, each containing multiple tasks. After selecting a desired task, users can set a goal (e.g., the number of pages of a book to read). Clicking the "Add" button confirms the addition of the habit, and a success message confirms it has been added to their list. The selected tasks appear on the user's habit list, and as they progress towards their goal, the remaining count decreases. Upon completing the goal, users receive a congratulatory message: "Congratulations! You have successfully completed the task."
 
-### Custom To-Do List
+#### Custom To-Do List
 Users can create custom tasks in the To-Do list, with options to edit or delete them. Once a custom task is completed, users can check it off as successfully finished.
 
-### Lessons and Tracking Progress
+#### Lessons and Tracking Progress
 The "Habits" segment also includes short lessons on habits that require just a few minutes of the user's day. In the "My Profile" section, users can track their XP and streaks. Completing sound sessions, habits, breathing exercises, or recording feelings increases the user's XP, while streaks accumulate with each consecutive day of app use.
 
-## Mood
+### Mood
 
-### Overview
+#### Overview
 Upon entering the "Mood" fragment, users are greeted with a personalized message, "How are you?" alongside their name. This section is dedicated to enhancing emotional well-being through interactive and supportive features.
 
-### Quotes and Stories
+#### Quotes and Stories
 The fragment features 20 stories, each containing motivational quotes. Unread quotes are marked with a question mark icon within the story circle, while read quotes are indicated with a checkmark. Read quotes are automatically moved to the end of the horizontal list to prioritize unread content. Each story is presented for 5 seconds and offers interactive controls: users can pause by holding, skip by swiping right, or exit by swiping down.
 
-### Enliven Social
+#### Enliven Social
 For first-time users, Enliven Social begins with an introductory prompt. Users are prompted to enter their phone number, and upon completion, a verification code is sent to authenticate their number. Following this, users select a username and log into their profile.
 
 Enliven Social facilitates communication through a chat function where users can exchange messages, images, react to messages, reply within threads, and view message history. The profile picture is dynamically updated to reflect the user's last chosen emotion from the Emotion Book.
 
-### Profile and Leaderboard
+#### Profile and Leaderboard
 Users can view their profile overview, including their ranking on the leaderboard for both streaks and XP compared to other users. Optionally, users can choose to remain anonymous, with their profile and ranking displayed as "anonymous" instead of their username.
 
-### Tips and Emotion Guide
+#### Tips and Emotion Guide
 Adjacent to Enliven Social, users can access mood tips, offering practical suggestions to improve mood. The "Emotion Guide" section underscores the benefits of emotional expression, highlighting Enliven Social and the Emotion Book as primary tools for sharing feelings.
 
-### Emotion Book
+#### Emotion Book
 The Emotion Book serves as a confidential platform for users to express and manage their emotions at any time. Upon accessing the Emotion Book, users select an emotion category, followed by tips to enhance emotional well-being. Users can record their emotions in the main section of the Emotion Book, with each entry accompanied by an emoji reflecting the selected emotion. Entries can be edited by clicking on them or deleted by holding the entry.
 
-### Emotion History
+#### Emotion History
 To provide continuity, the "Mood" fragment concludes with a card displaying the last five emotions recorded in the Emotion Book, allowing users to reflect on recent emotional experiences.
 
-## Sleep
+### Sleep
 
-### Overview
+#### Overview
 The "Sleep" fragment adapts its greeting message based on the time of day: "Good night" appears at bedtime, while "Hello" greets users during waking hours. The fragment focuses on optimizing sleep quality through tailored features and functionalities.
 
-### Bedtime Management
+#### Bedtime Management
 The selected bedtime and calculated wake-up time are prominently displayed on a card, along with a countdown indicating time remaining until the next sleep or wake period. Users can adjust their bedtime preferences by clicking the "Change" button.
 
-### Ambient Sounds
+#### Ambient Sounds
 Users can access ambient sounds categorized into nature, music, ambient, rain, and space themes. Each category offers themed sounds aimed at promoting relaxation and aiding sleep quality. Upon selecting a sound, users can adjust volume settings, set timers, and add sounds to their favorites list. The activity background dynamically changes to match the selected sound theme, enhancing user immersion.
 
-### Meditations and Breathing Exercises
+#### Meditations and Breathing Exercises
 The fragment introduces the benefits of meditation through an informative dialog, emphasizing its role in promoting relaxation and improving sleep quality. Users can choose from a variety of recommended meditations and breathing exercises, each explained in detail to facilitate relaxation and mental clarity. The section offers guided breathing exercises designed for specific purposes such as focus, sleep enhancement, relaxation, and balance. Each exercise includes session duration, repetition count, and detailed inhalation and exhalation guidance to optimize effectiveness.
 
 # Code description:
