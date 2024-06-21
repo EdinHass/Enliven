@@ -2,14 +2,13 @@
 
 ![feature_graphics](https://user-images.githubusercontent.com/116839465/215102825-28e25d1e-da8b-4d4e-98ea-dc5a37096abc.jpg)
 
+(translation: "awaken the best in you.")
 
 ## Logo:
 
 ![logo](https://user-images.githubusercontent.com/116839465/215085914-3e84d679-cc03-4a7e-9be8-e4e8f2c2bd62.png)
 
-(translation: "awaken the best in you.")
-
-**Team Avant is proud to present Enliven, the winner of m:tel's Regional App Competition, and the runner-up in the Balkan App Competition!**
+## Team Avant is proud to present Enliven, the winner of m:tel's Regional App Competition, and the runner-up in the Balkan App Competition!
 
 **Important Note After September 2023:** The servers for this application are no longer up! Thank you to everyone who supported the application and its development. The development of this app was an incredibly fulfilling experience, and I will look to revive it sometime during my time at Princeton. Mental health is serious and we should be doing more about it.
 
@@ -144,7 +143,7 @@ Servers are hosted 24/7, with a current capacity of 7,000,000 messages per month
 
 
 
-# The team
+# The Team
 
 The authors of this application is team **Avant**, with the following members: 
 
